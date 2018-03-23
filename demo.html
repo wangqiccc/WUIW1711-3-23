@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        box-sizing: border-box;
+    }
+    .bword{
+        width: 100%;
+        margin: 0 auto;
+        background-color:#0e90d2;
+        position: relative;
+    }
+    .word{
+        width: 700px;
+        height: 100px;
+        margin: 0 auto;
+        background-color: red;
+
+    }
+    .words{
+        float: left;
+        padding: 37px;
+        font-size: 20px;
+    }
+    .bigbox{
+        width: 100%;
+        height: 300px;
+        background-color: #7b7b7b;
+        display: none;
+        position: absolute;
+        top: 100px;
+        left: 0;
+    }
+    .boxs{
+        width: 1200px;
+        height: 300px;
+        background-color: yellow;
+        text-align: center;
+        font-size: 50px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+    .active{
+    z-index: 50;
+        cursor: pointer;
+    }
+    .banner{
+        width: 1226px;
+        height: 300px;
+        background-color: red;
+        margin: 0 auto;
+        margin-top: 200px;
+        position: relative;
+    }
+    .bannertu{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: pink;
+        line-height: 300px;
+        text-align: center;
+        font-size: 50px;
+        /*transition: all 1s;*/
+    }
+    .banner div.active{
+        z-index: 1;
+    }
+    .prev{
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        background-color: red;
+        z-index: 2;
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        display: none;
+    }
+    .next{
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        background-color: red;
+        z-index: 2;
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        display: none;
+    }
+    .banner ul{
+        position: absolute;
+        bottom: 10px;
+        left: 45%;
+
+        z-index: 2;
+    }
+    .banner ul>li{
+        width: 20px;
+        height: 20px;
+        background-color: red;
+        float: left;
+    }
+    .banner ul>li.active2{
+        background-color: #fff;
+    }
+    .lunbo{
+        width: 1226px;
+        height: 300px;
+        background-color: red;
+        margin: 0 auto;
+        overflow: hidden;
+        position: relative;
+    }
+    .inner{
+        width: 5000px;
+        height: 100%;
+        background-color: blue;
+    }
+    .dianji{
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 100px;
+        height: 30px;
+        background-color: green;
+    }
+    .dianji div{
+        float: left;
+    }
+    .dianji_prev{
+        width: 50%;
+        height: 100%;
+        line-height: 30px;
+        text-align: center;
+    }
+    .dianji_next{
+        width: 50%;
+        height: 100%;
+        line-height: 30px;
+        text-align: center;
+    }
+    .dianji div.active3{
+        color: #fff;
+    }
+    .inner div{
+        width: 1226px;
+        height: 100%;
+        line-height: 300px;
+        text-align: center;
+        font-size: 100px;
+        float: left;
+    }
+</style>
+<body>
+<div class="bword">
+    <ul class="word">
+        <li class="words">1</li>
+        <li class="words">2</li>
+        <li class="words">3</li>
+        <li class="words">4</li>
+        <li class="words">5</li>
+        <li class="words">6</li>
+        <li class="words">7</li>
+        <li class="words">8</li>
+
+        <div class="bigbox">
+            <div class="boxs">1</div>
+            <div class="boxs">2</div>
+            <div class="boxs">3</div>
+            <div class="boxs">4</div>
+            <div class="boxs">5</div>
+            <div class="boxs">6</div>
+            <div class="boxs">7</div>
+            <div class="boxs">8</div>
+        </div>
+    </ul>
+
+</div>
+
+<div class="banner">
+    <div class="bannertu active">1</div>
+    <div class="bannertu">2</div>
+    <div class="bannertu">3</div>
+    <div class="bannertu">4</div>
+    <div class="bannertu">5</div>
+    <div class="prev">←</div>
+    <div class="next">→</div>
+    <ul>
+        <li class="active2">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+</div>
+
+
+<div class="lunbo">
+    <div class="inner">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+
+    </div>
+    <div class="dianji">
+        <div class="dianji_prev">←</div>
+        <div class="dianji_next active3">→</div>
+    </div>
+</div>
+
+
+
+
+
+
+<script src="../../jquery-3.3.1.min.js"></script>
+<script>
+//1
+{
+    $(".word").mouseenter(function () {
+        $(".bigbox").slideDown(500)
+    }).mouseleave(function () {
+        $(".bigbox").slideUp(500)
+    })
+    
+    $(".word").each(function (index,ele) {
+        $(".words").mouseenter(function () {
+            let index=$(this).index();
+            $(this).addClass("active");
+            $(".bigbox .boxs").eq(index).addClass("active");
+        }).mouseleave(function () {
+            let index=$(this).index();
+            $(this).removeClass("active");
+            $(".bigbox .boxs").eq(index).removeClass("active");
+        })
+
+        $(".bigbox .boxs").mouseleave(function () {
+                let index=$(this).index();
+                $(this).removeClass("active");
+                $(".bigbox .boxs").eq(index).removeClass("active");
+            })
+    })
+
+}
+//2
+{
+    $(".banner").mouseenter(function () {
+        $(".prev").fadeIn(500);
+        $(".next").fadeIn(500);
+    }).mouseleave(function () {
+        $(".prev").fadeOut(500);
+        $(".next").fadeOut(500);
+    })
+    var n=0;
+    $(".next").click(function () {
+        n++;
+        if(n==5){
+            n=0;
+        }
+        $(".bannertu").removeClass("active");
+        $(".bannertu").eq(n).addClass("active");
+        $(".banner ul>li").removeClass("active2");
+        $(".banner ul>li").eq(n).addClass("active2");
+    })
+    $(".prev").click(function () {
+        n--;
+        if(n==-1){
+            n=4;
+        }
+        $(".bannertu").removeClass("active");
+        $(".bannertu").eq(n).addClass("active");
+        $(".banner ul>li").removeClass("active2");
+        $(".banner ul>li").eq(n).addClass("active2");
+
+    })
+    // n=index1;
+    $(".banner ul>li").each(function () {
+        $(".banner ul>li").click(function () {
+            let index1=$(this).index();
+            $(".banner ul>li").removeClass("active2");
+            $(".banner ul>li").eq(index1).addClass("active2");
+            $(".bannertu").removeClass("active");
+            $(".bannertu").eq(index1).addClass("active");
+            n=index1;
+        })
+    })
+
+
+    let b=0;
+    $(".dianji_next").click(function () {
+        b++;
+        $(".dianji_prev").addClass("active3");
+        if(b==2){
+            $(".dianji_next").removeClass("active3");
+        }
+        if(b==3){
+            b=2;
+        }
+        $(".inner").animate({marginLeft:-1226*b},500);
+    })
+    $(".dianji_prev").click(function () {
+        b--;
+        $(".dianji_next").addClass("active3");
+        if(b-1){
+            $(".dianji_prev").removeClass("active3");
+        }
+        if(b==-1){
+            b=0;
+        }
+        $(".inner").animate({marginLeft:-1226*b},500);
+    })
+}
+</script>
+</body>
+</html>
