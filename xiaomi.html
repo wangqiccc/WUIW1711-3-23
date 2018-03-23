@@ -1,0 +1,566 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+
+            margin: 0;
+            text-decoration: none;
+            font-style: normal;
+            padding: 0;
+            list-style: none;
+        }
+        #banner {
+            width: 1226px;
+            height: 460px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .imgbox{
+            width: 1226px;
+            height: 460px;
+
+
+        }
+        .imgbox li{
+            width: 1226px;
+            height: 460px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition:all 0.5s linear;
+            opacity: 0.5;
+        }
+        .imgbox .active{
+            z-index: 9;
+            opacity: 1;
+        }
+        .pagebox{
+            width:100px;
+            height: 10px;
+            position: absolute;
+            bottom: 10px;
+            right: 60px;
+            z-index: 22;
+        }
+        .pagebox li{
+            width: 8px;
+            height: 8px;
+            float: left;
+            border-radius: 4px;
+            margin-left: 10px;
+            background-color: #FFF;
+        }
+        .pagebox .active{
+            background-color: red;
+
+        }
+
+        .pagebox li:hover{
+            background-color: red;
+            cursor: pointer;
+        }
+        .prev,.next{
+            width: 41px;
+            height: 69px;
+            position: absolute;
+            top: 50%;
+            margin-top: -35px;
+            z-index: 100;
+            background: url('../img/icon-slides.png');
+            opacity: 0.6;
+            cursor: pointer;
+        }
+        .prev{
+            left: 234px;
+            background-position: -84px 0;
+        }
+        .prev:hover{
+            background-position: 0 0;
+        }
+        .next{
+            right: 0;
+            background-position: -124px 0;
+        }
+        .next:hover{
+            background-position: -42px 0;
+        }
+        #buy{
+            width: 1226px;
+            margin: 0 auto;
+            height: auto;
+        }
+        .buy_top{
+            width: 100%;
+            height: 30px;
+            background-color: red;
+        }
+        .buy_arrow{
+            width: 100px;
+            height: 30px;
+            float: right ;
+            cursor: pointer;
+            background: blue;
+        }
+        .buy_arrow span{
+            display: block;
+            width: 50%;
+            height: 30px;
+            float: left;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            text-align: center;
+            line-height: 30px;
+            color: #ccc;
+            font-weight: bold;
+            user-select: none;
+        }
+        .buy_arrow span:hover{
+            color: yellow;
+        }
+        .buy_arrow  .disable{
+            color: #333;
+        }
+        .buy_bottom{
+            width: 100%;
+            height: 300px;
+            background-color:yellow;
+        }
+        .buy-time {
+            width: 234px;
+            float: left;
+            height: 300px;
+            margin-right: 14px;
+            background-color: green;
+
+
+        }
+        .buy-list{
+            width:976px;
+            height:300px;
+            float: left;
+            overflow: hidden;
+
+        }
+        .buy-inner{
+            width: 3000px;
+            height: 340px;
+            background: #ccc;
+        }
+        .item{
+            width: 234px;
+            margin-right: 16px;
+            float: left;
+            height: 300px;
+
+        }
+        .item:nth-child(2n){
+            background-image: url('../img/s.jpg');
+            background-repeat: no-repeat;
+
+        }
+
+        .item:nth-child(2n-1){
+            background-image: url('../img/s.jpg');
+            background-repeat: no-repeat;
+
+        }
+
+        .content{
+            width: 1226px;
+            height: 400px;
+            margin: 0 auto;
+            border: 1px solid  #000;
+        }
+        .content_top{
+            width: 100%;
+            height: 30px;
+        }
+        .content_top .type{
+            float: left;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            margin: 0 20px;
+            cursor: pointer;
+            transition: all 0.5s;
+        }
+        .content_top .active{
+            color: orange;
+            border-bottom: 1px solid  orange;
+            height: 29px;
+        }
+        .content_bottom{
+            width: 1226px;
+            height: 370px;
+            position: relative;
+        }
+        .goodslist{
+            width: 1226px;
+            position: absolute;
+            left: 0;
+            font-size: 30px;
+            color: red;
+            line-height: 370px;
+            text-align: center;
+            background-color: #ccc;
+
+        }
+        .content_bottom .active{
+            z-index: 30;
+        }
+    </style>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .container{
+            width: 1000px;
+            height: 200px;
+            border: 1px solid #ccc;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+        }
+        .inner{
+            width: 5000px;
+            height: 200px;
+            margin-left: -1000px;
+        }
+        .inner li{
+            width: 200px;
+            height: 200px;
+            float: left;
+            /*border-right: 1px solid red;*/
+
+        }
+        .inner li a{
+            display: block;
+        }
+        .inner li img{
+            width: 200px;
+            height: 200px;
+        }
+        .prev,.next{
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            background: red;
+            position: absolute;
+            top: 85px;
+            cursor: pointer;
+            display: none;
+        }
+        .prev{
+            left: 0;
+        }
+        .next{
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="banner">
+        <ul class="imgbox">
+            <li class="active"><img src="../img/99.jpg" alt=""></li>
+            <li><img src="../img/9.jpg" alt=""></li>
+            <li><img src="../img/ban4.jpg" alt=""></li>
+            <li><img src="../img/ban5.jpg" alt=""></li>
+            <li><img src="../img/b5.jpg" alt=""></li>
+        </ul>
+        <ul class="pagebox">
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <div class="prev"></div>
+        <div class="next"></div>
+    </div>
+    <div id="buy">
+        <div class="buy_top">
+            <div class="buy_arrow">
+                <span class="buy_prev disable">&lt;</span>
+                <span class="buy_next">&gt;</span>
+            </div>
+        </div>
+        <div class="buy_bottom">
+            <div class="buy-time"></div>
+            <div class="buy-list">
+                <ul class="buy-inner">
+                    <li class="item"></li>
+                    <li class="item"></li>
+                    <li class="item"></li>
+                    <li class="item"></li>
+                    <li class="item"></li>
+                    <li class="item"></li>
+                    <li class="item"></li>
+                    <li class="item"></li>
+                    <li class="item"></li>
+                    <li class="item"></li>
+                    <li class="item"></li>
+                    <li class="item"></li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="content_top">
+            <div class="type active">热门</div>
+            <div class="type">电影</div>
+            <div class="type">电脑</div>
+            <div class="type">家具</div>
+        </div>
+        <div class="content_bottom">
+            <div class="goodslist active">1</div>
+            <div class="goodslist">2</div>
+            <div class="goodslist">3</div>
+            <div class="goodslist">4</div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="content_top">
+            <div class="type active">热门</div>
+            <div class="type">电影</div>
+            <div class="type">电脑</div>
+            <div class="type">家具</div>
+        </div>
+        <div class="content_bottom">
+            <div class="goodslist active">1</div>
+            <div class="goodslist">2</div>
+            <div class="goodslist">3</div>
+            <div class="goodslist">4</div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="content_top">
+            <div class="type active">热门</div>
+            <div class="type">电影</div>
+            <div class="type">电脑</div>
+            <div class="type">家具</div>
+        </div>
+        <div class="content_bottom">
+            <div class="goodslist active">1</div>
+            <div class="goodslist">2</div>
+            <div class="goodslist">3</div>
+            <div class="goodslist">4</div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="content_top">
+            <div class="type active">热门</div>
+            <div class="type">电影</div>
+            <div class="type">电脑</div>
+            <div class="type">家具</div>
+        </div>
+        <div class="content_bottom">
+            <div class="goodslist active">1</div>
+            <div class="goodslist">2</div>
+            <div class="goodslist">3</div>
+            <div class="goodslist">4</div>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <ul class="inner">
+            <li class="item">
+                <a href=""><img src="../img/1.png" alt=""></a>
+            </li>
+            <li class="item">
+                <a href=""><img src="../img/1.png" alt=""></a>
+            </li>
+            <li class="item">
+                <a href=""><img src="../img/1.png" alt=""></a>
+            </li>
+            <li class="item">
+                <a href=""><img src="../img/1.png" alt=""></a>
+            </li>
+            <li class="item">
+                <a href=""><img src="../img/1.png" alt=""></a>
+            </li>
+            <li class="item">
+                <a href=""><img src="../img/cdh1.png" alt=""></a>
+            </li>
+            <li class="item">
+                <a href=""><img src="../img/cdh1.png" alt=""></a>
+            </li>
+            <li class="item">
+                <a href=""><img src="../img/cdh1.png" alt=""></a>
+            </li>
+            <li class="item">
+                <a href=""><img src="../img/cdh1.png" alt=""></a>
+            </li>
+            <li class="item">
+                <a href=""><img src="../img/cdh1.png" alt=""></a>
+            </li>
+            <li class="item">
+                <a href=""><img src="../img/congdianbo.jpg" alt=""></a>
+            </li>
+            <li class="item">
+                <a href=""><img src="../img/congdianbo.jpg" alt=""></a>
+            </li>
+            <li class="item">
+                <a href=""><img src="../img/congdianbo.jpg" alt=""></a>
+            </li>
+            <li class="item">
+                <a href=""><img src="../img/congdianbo.jpg" alt=""></a>
+            </li>
+            <li class="item">
+                <a href=""><img src="../img/congdianbo.jpg" alt=""></a>
+            </li>
+            <li class="item">
+                <a href=""><img src="../img/1.png" alt=""></a>
+            </li>
+            <li class="item">
+                <a href=""><img src="../img/1.png" alt=""></a>
+            </li>
+            <li class="item">
+                <a href=""><img src="../img/1.png" alt=""></a>
+            </li>
+            <li class="item">
+                <a href=""><img src="../img/1.png" alt=""></a>
+            </li>
+            <li class="item">
+                <a href=""><img src="../img/1.png" alt=""></a>
+            </li>
+            <li class="item">
+                <a href=""><img src="../img/cdh1.png" alt=""></a>
+            </li>
+            <li class="item">
+                <a href=""><img src="../img/cdh1.png" alt=""></a>
+            </li>
+            <li class="item">
+                <a href=""><img src="../img/cdh1.png" alt=""></a>
+            </li>
+            <li class="item">
+                <a href=""><img src="../img/cdh1.png" alt=""></a>
+            </li>
+            <li class="item">
+                <a href=""><img src="../img/cdh1.png" alt=""></a>
+            </li>
+
+        </ul>
+        <div class="prev">&lt</div>
+        <div class="next">&gt</div>
+    </div>
+    <script src="../jquery-3.3.1/jquery-3.3.1.js"></script>
+    <script>
+		let banner=document.querySelector("#banner");
+        console.log($(".pagebox li"));
+		$(".pagebox li").each(function(index){
+			$(this).click(function(){
+				$(".pagebox li").removeClass("active")
+                    .eq(index).addClass("active");
+				$(".imgbox li").removeClass("active")
+					.eq(index).addClass("active");
+			})
+		});
+		let m=0;
+        $(".next").click(function(){
+			m=m+1;
+            if(m===$(".imgbox li").length){
+                    m=0;
+            }
+            if(m<0){
+                m=$(".imgbox li").length-1;
+            }
+			$(".pagebox li").removeClass("active")
+				.eq(m).addClass("active");
+			$(".imgbox li").removeClass("active")
+				.eq(m).addClass("active");
+
+			})
+		$(".prev").click(function(){
+		    m-=1;
+				if(m===$(".imgbox li").length){
+					m=0;
+				}
+				if(m<0){
+					m=$(".imgbox li").length-1;
+				}
+				$(".pagebox li").removeClass("active")
+					.eq(m).addClass("active");
+				$(".imgbox li").removeClass("active")
+					.eq(m).addClass("active");
+		})
+
+		function move(){
+			m++;
+			if(m===$(".imgbox li").length){
+				m=0;
+			}
+			if(m<0){
+				m=$(".imgbox li").length-1;
+			}
+			$(".pagebox li").removeClass("active")
+				.eq(m).addClass("active");
+			$(".imgbox li").removeClass("active")
+				.eq(m).addClass("active");
+			console.log($(".pagebox li"));
+		}
+
+		let t=setInterval(move,1000);
+
+		banner.onmouseenter=function(){
+			clearInterval(t);
+		};
+		banner.onmouseleave=function(){
+			t=setInterval(move,1000);
+		};
+
+
+		// 轮播
+	var n = 0;
+	$(".buy_next").click(function () {
+		n++;
+		$(".buy_prev").removeClass("disable");
+		if (n === 2) {
+			$(this).addClass("disable");
+		}
+		if (n === 3) {
+			n = 2;
+			return;
+		}
+	    $(".buy-inner").animate({"marginLeft": -992 * n + "px"}, 1000);
+	})
+
+	$(".buy_prev").click(function () {
+		n--;
+		$(".buy_next").removeClass("disable");
+		if (n === 0) {
+			$(this).addClass("disable");
+		}
+		if (n === -1) {
+			n = 0;
+			return;
+		}
+		$(".buy-inner").animate({"marginLeft": -992 * n + "px"}, 1000);
+	})
+
+    // 选项卡
+	$(".type").each(function(index){
+
+		$(this).mouseenter(function(){
+			$(".type").removeClass("active").eq(index).addClass("active");
+            $(".goodslist").removeClass("active").eq(index).addClass("active")
+		})
+	})
+
+    </script>
+</body>
+</html>
