@@ -1,0 +1,796 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0; /* body—8px */
+            padding: 0;
+            text-decoration: none;
+            font-style: normal;
+            list-style: none;
+        }
+
+        #banner {
+            width: 1226px;
+            height: 460px;
+            margin: 0 auto;
+            position: relative;
+            background-color: red;
+        }
+
+        .imgbox {
+            width: 1226px;
+            height: 460px;
+            position: relative;
+        }
+
+        .imgbox li {
+            width: 1226px;
+            height: 460px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: all .5s;
+            opacity: 0;
+        }
+
+        .imgbox li.active {
+            z-index: 9;
+            opacity: 1;
+        }
+
+        .pagerbox {
+            width: 150px;
+            height: 10px;
+            position: absolute;
+            bottom: 20px;
+            right: 40px;
+            z-index: 999;
+            transition: all .5s;
+        }
+
+        .pagerbox li.active {
+            background-color: red;
+        }
+
+        .pagerbox li {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background-color: #fff;
+            border: 2px solid rgba(0, 0, 0, 0);
+            margin-right: 15px;
+            cursor: pointer;
+            float: left;
+            transition: all .5s;
+        }
+
+        .pagerbox li:hover {
+            background-color: red;
+        }
+
+        .banner_jiantou {
+            float: right;
+        }
+
+        .banner_btn {
+            width: 41px;
+            height: 69px;
+            text-align: center;
+            line-height: 69px;
+            color: #A7A8AA;
+            font-size: 50px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            z-index: 999;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .banner_lbtn {
+            left: 234px;
+        }
+
+        .banner_rbtn {
+            right: 0;
+        }
+
+        .banner_btn:hover {
+            cursor: pointer;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: #fff;
+        }
+
+        .buy {
+            width: 1226px;
+            margin: 0 auto;
+        }
+
+        .buy-top {
+            width: 100%;
+            height: 30px;
+            background-color: yellow;
+        }
+
+        .buy-arrow {
+            width: 100px;
+            height: 30px;
+            background-color: #0DD3F0;
+            cursor: pointer;
+            float: right;
+        }
+
+        .buy-arrow span {
+            display: block;
+            width: 50%;
+            height: 30px;
+            float: left;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            text-align: center;
+            line-height: 30px;
+            color: #ccc;
+            font-weight: bold;
+            user-select: none;
+        }
+
+        .buy-arrow span:hover {
+            color: yellow;
+        }
+
+        /*.buy-arrow span#disable {*/
+        /*color: #333;*/
+        /*}*/
+
+        .buy-bottom {
+            width: 1226px;
+            height: 340px;
+            margin: 0 auto;
+            background-color: #C2CCD1;
+            position: relative;
+        }
+
+        .buy-time {
+            width: 234px;
+            height: 300px;
+            background-color: #b70f07;
+            border-top: 1px solid #FFAC12;
+            padding-top: 39px;
+            float: left;
+            margin-right: 14px;
+        }
+
+        .buy-list {
+            width: 978px;
+            height: 340px;
+            float: left;
+            overflow: hidden;
+        }
+
+        .buy-inner {
+            width: 5000px;
+            height: 340px;
+            background-color: blue;
+            /*transition: all .5s;*/
+            margin-left: -992px;
+        }
+
+        .buy-item {
+            width: 234px;
+            height: 340px;
+            background-color: #30e260;
+            float: left;
+            margin-right: 14px;
+        }
+
+        .content {
+            width: 1226px;
+            height: 400px;
+            margin: 0 auto;
+            border: 1px solid red;
+        }
+
+        .content-top {
+            width: 100%;
+            height: 30px;
+        }
+
+        .content-top .type {
+            float: left;
+            height: 29px;
+            text-align: center;
+            line-height: 29px;
+            margin: 0 20px;
+            cursor: pointer;
+        }
+
+        .content-top .active1 {
+            color: orange;
+            border-bottom: 1px solid orange;
+        }
+
+        .content-bottom {
+            width: 1226px;
+            height: 370px;
+            position: relative;
+        }
+
+        .goodslist {
+            width: 1226px;
+            height: 370px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: #ccc;
+            font-size: 30px;
+            line-height: 370px;
+            color: #8E2020;
+            text-align: center;
+            opacity: 0;
+        }
+
+        .active1 {
+            z-index: 9;
+            opacity: 1;
+        }
+
+        .box {
+            width: 1000px;
+            height: auto;
+            background-color: #00A5C4;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .top {
+            width: 1000px;
+            height: 50px;
+            background-color: #00CC00;
+        }
+
+        .bottom {
+            position: absolute;
+            top: 50px;
+            left: 0;
+            z-index: 999;
+            width: 1000px;
+            height: 0;
+            background-color: yellowgreen;
+            overflow: hidden;
+            /*transition: all 1s;*/
+        }
+
+        .sidebar {
+            width: 234px;
+            height: 460px;
+            background: #1b6d85;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 998;
+        }
+
+        .label {
+            width: 234px;
+            height: 40px;
+            font-size: 18px;
+            text-align: center;
+            line-height: 40px;
+            color: #fff;
+            float: left;
+        }
+
+        .label:hover {
+            background-color: #0DD3F0;
+        }
+
+        .menu {
+            width: 300px;
+            height: 300px;
+            background: red;
+            float: left;
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 234px;
+        }
+
+        .demo {
+            width: 100px;
+            height: 100px;
+            background: red;
+            /*transition: all 1s;*/
+        }
+
+        .neirong_item {
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        .reping_item {
+            width: 296px;
+            height: 415px;
+            background-color: #f8f8f8;
+            transition: all 0.1s linear;
+            margin: 0 auto;
+            margin-top: 30px;
+        }
+
+        .title {
+            width: 296px;
+            height: 51px;
+            border-top: 1px solid #FFAC13;
+            text-align: center;
+        }
+
+        .title h1 {
+            padding-top: 45px;
+            color: #ffac13;
+            font-size: 16px;
+        }
+
+        .dapei_img h1 {
+            font-size: 14px;
+            color: #ff6700;
+            text-align: center;
+            margin-top: 0;
+        }
+
+        .tw_box {
+            width: 1200px;
+            height: 310px;
+            position: absolute;
+            top: 50px;
+            left: 0;
+            transition: all .5s;
+        }
+
+        .tuwen {
+            width: 296px;
+            height: 310px;
+            float: left;
+        }
+
+        .lbd {
+            width: 296px;
+            height: 30px;
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+        }
+
+        .nr_lbtn {
+            margin-left: 0;
+        }
+
+        .nr_btn {
+            width: 20px;
+            height: 48px;
+            text-align: center;
+            line-height: 48px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #fff;
+            position: absolute;
+            top: 183px;
+            margin: auto;
+            cursor: pointer;
+            background-color: rgba(0, 0, 0, 0.2);
+            display: none;
+            user-select: none;
+        }
+
+        .nr_rbtn {
+            margin-left: 276px;
+        }
+
+        .wenzi1 {
+            width: 256px;
+            height: 25px;
+            margin: 0 auto;
+            font-size: 20px;
+            font-weight: 400;
+            text-align: center;
+            padding-top: 28px;
+            cursor: pointer;
+        }
+
+        .wenzi2 {
+            width: 192px;
+            height: 34px;
+            margin: 0 auto;
+            margin-top: 12px;
+            margin-bottom: 21px;
+            font-size: 12px;
+            color: #b0b0b0;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .wenzi3 {
+            width: 276px;
+            height: 21px;
+            margin: 0 auto;
+            margin-bottom: 15px;
+            font-size: 14px;
+            color: #333;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .neirong_item img {
+            width: 216px;
+            height: 154px;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .lbd .active3 {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            border: 2px solid #ff6700;
+            background-color: #fff;
+            cursor: default;
+        }
+
+        .lbd1 {
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            background-color: #B0B0B0;
+            border: 2px solid rgba(0, 0, 0, 0);
+            margin-top: 10px;
+            margin-left: 113px;
+            position: absolute;
+            cursor: pointer;
+            float: left;
+        }
+
+        .lbd2 {
+            margin-left: 143px;
+        }
+
+        .lbd3 {
+            margin-left: 173px;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="top"></div>
+    <div class="bottom"></div>
+</div>
+<div id="banner">
+    <div class="sidebar">
+        <div class="label">
+            <span>1</span>
+            <div class="menu">1</div>
+        </div>
+        <div class="label">
+            <span>2</span>
+            <div class="menu">2</div>
+        </div>
+        <div class="label">
+            <span>3</span>
+            <div class="menu">3</div>
+        </div>
+        <div class="label">
+            <span>4</span>
+            <div class="menu">4</div>
+        </div>
+        <div class="label">
+            <span>5</span>
+            <div class="menu">5</div>
+        </div>
+    </div>
+    <ul class="imgbox">
+        <li class="active"><img src="img/banner1.jpg" alt=""></li>
+        <li><img src="img/banner2.jpg" alt=""></li>
+        <li><img src="img/banner3.jpg" alt=""></li>
+        <li><img src="img/banner4.jpg" alt=""></li>
+        <li><img src="img/banner5.jpg" alt=""></li>
+    </ul>
+    <ul class="pagerbox">
+        <li class="active"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <div class="banner_btn banner_lbtn">&lt;</div>
+    <div class="banner_btn banner_rbtn">&gt;</div>
+    <!--<div class="demo"></div>-->
+
+</div>
+<div class="buy">
+    <div class="buy-top">
+        <div class="buy-arrow">
+            <span id="prev" class="active">&lt;</span>
+            <span id="next">&gt;</span>
+        </div>
+    </div>
+
+    <div class="buy-bottom">
+        <div class="buy-time"></div>
+        <div class="buy-list">
+            <ul class="buy-inner">
+                <li class="buy-item">9</li>
+                <li class="buy-item">10</li>
+                <li class="buy-item">11</li>
+                <li class="buy-item">12</li>
+                <li class="buy-item">1</li>
+                <li class="buy-item">2</li>
+                <li class="buy-item">3</li>
+                <li class="buy-item">4</li>
+                <li class="buy-item">5</li>
+                <li class="buy-item">6</li>
+                <li class="buy-item">7</li>
+                <li class="buy-item">8</li>
+                <li class="buy-item">9</li>
+                <li class="buy-item">10</li>
+                <li class="buy-item">11</li>
+                <li class="buy-item">12</li>
+                <li class="buy-item">1</li>
+                <li class="buy-item">2</li>
+                <li class="buy-item">3</li>
+                <li class="buy-item">4</li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+<div class="content">
+    <div class="content-top">
+        <div class="type active1">热门</div>
+        <div class="type">电视影音</div>
+        <div class="type">电脑</div>
+        <div class="type">家居</div>
+    </div>
+    <div class="content-bottom">
+        <div class="goodslist active1">1</div>
+        <div class="goodslist">2</div>
+        <div class="goodslist">3</div>
+        <div class="goodslist">4</div>
+    </div>
+</div>
+<div class="reping_item neirong_item">
+    <div class="title">
+        <h1>图书</h1>
+    </div>
+    <div class="tw_box">
+        <div class="tuwen">
+            <div class="wenzi1">
+                哈利·波特与被诅咒的孩子
+            </div>
+            <div class="wenzi2">
+                “哈利·波特”第八个故事中文版震撼来袭！特别彩排版剧本！
+            </div>
+            <div class="wenzi3">
+                <span>29.37元</span>
+            </div>
+            <img src="img/neirong1.png" alt="" class="">
+            <div class="lunbodian">
+                <main class="dian2"></main>
+            </div>
+        </div>
+        <div class="tuwen">
+            <div class="wenzi1">
+                哈利·波特与被诅咒的孩子
+            </div>
+            <div class="wenzi2">
+                “哈利·波特”第八个故事中文版震撼来袭！特别彩排版剧本！
+            </div>
+            <div class="wenzi3">
+                <span>29.37元</span>
+            </div>
+            <img src="img/neirong1.png" alt="" class="">
+            <div class="lunbodian">
+                <main class="dian2"></main>
+            </div>
+        </div>
+        <div class="tuwen">
+            <div class="wenzi1">
+                哈利·波特与被诅咒的孩子
+            </div>
+            <div class="wenzi2">
+                “哈利·波特”第八个故事中文版震撼来袭！特别彩排版剧本！
+            </div>
+            <div class="wenzi3">
+                <span>29.37元</span>
+            </div>
+            <img src="img/neirong1.png" alt="" class="">
+            <div class="lunbodian">
+                <main class="dian2"></main>
+            </div>
+        </div>
+    </div>
+    <div class="lbd">
+        <span class="lbd1 active3"></span>
+        <span class="lbd1 lbd2"></span>
+        <span class="lbd1 lbd3"></span>
+    </div>
+    <div class="nr_btn nr_lbtn">&lt;</div>
+    <div class="nr_btn nr_rbtn">&gt;</div>
+</div>
+<script src="jquery-3.3.1.min.js"></script>
+<script>
+    //top
+    {
+        $(".top")
+            .mouseenter(function () {
+                $(".bottom").animate({height: 300}, 1000)
+            });
+        $(".box")
+            .mouseleave(function () {
+                $(".bottom").animate({height: 0}, 1000)
+            })
+    }
+    //banner
+    {
+        $(".pagerbox li").click(function () {
+            let index = $(this).index(".pagerbox li");
+            $(".pagerbox li").removeClass("active").eq(index).addClass("active");
+            $(".imgbox li").removeClass("active").eq(index).addClass("active");
+            n = index;
+        });
+        let n = 0;
+        let flag = true;
+        function move() {
+            n++;
+            if (n === $(".imgbox li").length) {
+                n = 0;
+            }
+            if (n < 0) {
+                n = $(".imgbox li").length - 1;
+            }
+            $(".imgbox li").each(function () {
+                flag = true;
+                $(".imgbox li").removeClass("active").eq(n).addClass("active");
+                $(".pagerbox li").removeClass("active").eq(n).addClass("active");
+            });
+        }
+        $(".banner_rbtn").click(function () {
+            if (flag) {
+                flag = false;
+                move();
+            }
+        });
+        $(".banner_lbtn").click(function () {
+            if (flag) {
+                flag = false;
+                n -= 2;
+                move();
+            }
+        });
+    }
+    //banner list
+    {
+
+        $(".label")
+            .mouseenter(function () {
+                let index = $(this).index(".label");
+                $(".menu").eq(index).show();
+            })
+            .mouseleave(function () {
+                let index = $(this).index(".label");
+                $(".menu").eq(index).hide();
+            })
+
+    }
+    //wufenglunbo
+    {
+        let inner = $(".buy-inner");
+        // $(".buy-list").hover(function () {
+        //     $("#prev,#next").fadeIn(500);
+        // })
+
+        // $(".buy-list")
+        //     .mouseenter(function () {
+        //         $("#prev,#next").fadeIn(500);
+        //     })
+        //     .mouseleave(function () {
+        //         $("#prev,#next").fadeOut(500);
+        //     })//不受事件流影响
+        let n = 1;
+        let flag = true;
+        $("#next").click(function () {
+            if (flag) {
+                flag = false;
+                n++;
+                inner.animate({marginLeft: -n * 992}, 1000, function () {
+                    flag = true;
+                    if (n === 4) {
+                        inner.css("marginLeft", -992);
+                        n = 1;
+                    }
+                })
+            }
+        });
+        $("#prev").click(function () {
+            if (flag) {
+                flag = false;
+                n--;
+                inner.animate({marginLeft: -n * 992}, 1000, function () {
+                    flag = true;
+                    if (n === 0) {
+                        inner.css("marginLeft", -2976);
+                        n = 3;
+                    }
+                })
+            }
+        })
+    }
+    //neirong
+    {
+        $(".type ")
+            .mouseenter(function () {
+                let index = $(this).index(".type");
+                $(".type").removeClass("active1").eq(index).addClass("active1");
+                $(".goodslist ").removeClass("active1").eq(index).addClass("active1");
+            })
+    }
+    //book
+    {
+        let box = $(".tw_box");
+        $(".reping_item ")
+            .mouseenter(function () {
+                $(".nr_btn").fadeIn(1);
+            })
+            .mouseleave(function () {
+                $(".nr_btn").fadeOut(1);
+            });
+        $(".nr_lbtn ")
+            .mouseenter(function () {
+                $(".nr_lbtn").css({"background": "rgba(0, 0, 0,0.4)"});
+            })
+            .mouseleave(function () {
+                $(".nr_lbtn").css({"background": "rgba(0, 0, 0,0.2)"});
+            });
+        $(".nr_rbtn ")
+            .mouseenter(function () {
+                $(".nr_rbtn").css({"background": "rgba(0, 0, 0,0.4)"});
+            })
+            .mouseleave(function () {
+                $(".nr_rbtn").css({"background": "rgba(0, 0, 0,0.2)"});
+            });
+        let n = 0;
+        let l = $(".tuwen").length;
+        $(".nr_rbtn ").click(function () {
+            n++;
+            if (n === l) {
+                n = l - 1;
+                return;
+            }
+            box.animate({left: -n * 296}, 100);
+            $(".lbd1").removeClass("active3").eq(n).addClass("active3");
+        });
+        $(".nr_lbtn ").click(function () {
+            n--;
+            if (n < 0) {
+                n = 0;
+                return;
+            }
+            box.animate({left: -n * 296}, 100);
+            $(".lbd1").removeClass("active3").eq(n).addClass("active3");
+        });
+        $(".lbd1").click(function () {
+            let index = $(this).index(".lbd1");
+            $(".lbd1").removeClass("active3").eq(index).addClass("active3");
+            box.animate({left: -index * 296}, 100);
+        })
+
+    }
+
+</script>
+
+</body>
+</html>
