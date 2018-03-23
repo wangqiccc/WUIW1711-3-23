@@ -1,0 +1,804 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ffd</title>
+    <style>
+        .demo{
+            width: 100px;
+            height: 100px;
+            background-color: lightcoral;
+            transition: all 1s;
+        }
+        *{
+            margin:0;
+            padding:0;
+            list-style: none;
+            /*margin:0 auto;*/
+        }
+        #banner{
+            width:1226px;
+            height: 460px;
+            margin:0 auto;
+            position: relative;
+        }
+        .imgbox{
+            width: 1226px;
+            height: 460px;
+            position: relative;
+
+        }
+        .imgbox li{
+            width: 1226px;
+            height: 460px;
+            position: absolute;
+            left:0;
+            top:0;
+            transition: all 1s ease-in;
+            opacity: 0;
+        }
+        .imgbox .item{
+            width: 1226px;
+            height: 460px;
+            background-color: #ff2b0c;
+        }
+        .imgbox .item2{
+            background-color: #22ddff;
+        }
+        .imgbox .item3{
+            background-color: #3333ff;
+        }
+        .imgbox .item4{
+            background-color: #9999ff;
+        }
+        .imgbox .item5{
+            background-color: #ff6700;
+        }
+        .imgbox li.active{
+            z-index: 9;
+            opacity: 1;
+        }
+        .pagebox{
+            width:150px;
+            height: 10px;
+            /*background-color: aqua;*/
+            position: absolute;
+            right:30px;
+            bottom:30px;
+            z-index: 15;
+        }
+        .pagebox li{
+            width: 6px;
+            height: 6px;
+            margin:0 10px;
+            float: left;
+            border-radius: 50%;
+            background-color: #fff;
+            border:2px solid #ccc;
+            transition: all 1s;
+            cursor: pointer;
+        }
+        .pagebox li.active{
+            background-color: red;
+        }
+        .pagebox li:hover{
+            background-color: red;
+        }
+        .prev,.next {
+            width: 41px;
+            height: 69px;
+            text-align: center;
+            line-height: 69px;
+            color: #000;
+            font-size: 50px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            z-index: 999;
+            cursor: pointer;
+            user-select: none;
+        }
+        .prev {
+            left: 234px;
+        }
+        .next {
+            right:0px;
+        }
+        .sidebar {
+            width: 234px;
+            height: 460px;
+            background: #ff9;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 90;
+        }
+        .label {
+            width: 234px;
+            height: 40px;
+            font-size: 18px;
+            text-align: center;
+            line-height: 40px;
+            color: #fff;
+            float: left;
+        }
+        .label:hover {
+            background-color: #0DD3F0;
+        }
+        .menu {
+            width: 600px;
+            height: 400px;
+            background: yellow;
+            float: left;
+            text-align: center;
+            line-height: 300px;
+            font-size: 40px;
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 234px;
+        }
+
+        #buy{
+            width: 1226px;
+            height: auto;
+            margin:0 auto;
+            background-color: black;
+        }
+        .buy-top{
+            width:100%;
+            height: 30px;
+            /*margin:0 auto;*/
+            background-color: blueviolet;
+        }
+        .buy-arrow{
+            width:100px;
+            height: 30px;
+            float: right;
+            cursor: pointer;
+            background-color: pink;
+        }
+        .buy-arrow span{
+            display: block;
+            width: 50%;
+            height: 30px;
+            float: left;
+            box-sizing: border-box;
+            border:1px solid #ccc;
+            text-align: center;
+            line-height: 30px;
+            color:#ccc;
+            font-weight: bold;
+            user-select: none;
+        }
+        .buy-arrow span:hover{
+            color:#ff6700;
+        }
+        .buy-arrow span.disable{
+            color:#333;
+        }
+        .buy-bottom{
+            width:100%;
+            height: 300px;
+            background-color: yellow;
+            margin:0 auto;
+            overflow: hidden;
+        }
+        .buy-time{
+            width:234px;
+            float: left;
+            height: 300px;
+            margin-right: 14px;
+            background-color: aqua;
+        }
+        .buy-list{
+            width:978px;
+            height: 300px;
+            float: left;
+            overflow: hidden;
+        }
+
+        .buy-inner {
+            width: 5000px;
+            height: 340px;
+            background-color: red;
+            margin-left: -992px;
+        }
+        .buy-item{
+            width: 234px;
+            height: 300px;
+            margin-right: 14px;
+            float: left;
+            background-color: #fff;
+            background-size: 100% auto;
+            background-repeat: no-repeat;
+        }
+
+        .content{
+            width: 1226px;
+            height: 400px;
+            margin:0 auto;
+            border:1px solid #000;
+        }
+        .content-top{
+            width:100%;
+            height: 30px;
+        }
+        .content-top .type{
+            float: left;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            margin:0 20px;
+            cursor: pointer;
+            transition: all 1s;
+        }
+        .content-top .active{
+            color:#ff6700;
+            border-bottom: 1px solid #ff6700;
+        }
+        .content-bottom{
+            width: 1226px;
+            height: 370px;
+            position: relative;
+        }
+        .goodslist{
+            width: 1226px;
+            height: 370px;
+            position: absolute;
+            top:0;
+            left: 0;
+            background: #ccc;
+            font-size: 30px;
+            color:#000;
+        }
+        .content-bottom div.active{
+            z-index: 9;
+        }
+        .neirong{
+            width: 1200px;
+            height: 420px;
+            margin:0 auto;
+        }
+        .neirong_item{
+            width: 296px;
+            height: 419px;
+            background-color: #9999ff;
+            border-top: 1px solid #ffac13;
+            float: left;
+            margin-right: 10px;
+            text-align: center;
+            margin-top: 0px;
+            padding: 0px;
+            position: relative;
+            overflow: hidden;
+        }
+        .neirong_tu{
+            margin-top: 50px;
+        }
+        .neirong_item p{
+            font-size: 14px;
+            color: #ff6700;
+            font-weight: 400;
+            margin-top:50px;
+        }
+        .neirong_item h1{
+            font-size: 18px;
+            color: #505050;
+            margin-top: 25px;
+            font-weight: normal;
+        }
+        .neirong_item .r1{
+            color: #83C44E;
+        }
+        .neirong_item .r2{
+            color: #E53935;
+        }
+        .neirong_item .r3{
+            color: #2196F3;
+        }
+        .neirong_item h2{
+            margin-left: 52px;
+            margin-right: 52px;
+            font-size: 12px;
+            color: #b0b0b0;
+            font-weight: normal;
+            margin-top: 10px;
+        }
+        .neirong_item h3 {
+            display: block;
+            font-size: 12px;
+            color: #505050;
+            margin-top: 12px;
+            margin-right: 124px;
+            margin-left: 124px;
+            font-weight: normal;
+            text-align: center;
+        }
+        .nrimg{
+            width: 296px;
+            height: 340px;
+            float: left;
+        }
+        .nrimg li{
+            width: 296px;
+            height: 340px;
+        }
+        .nrimg .tushu{
+            width: 216px;
+            height: 154px;
+            background-color: #ff6700;
+            margin-left: 30px;
+            color:#fff;
+            font-size: 18px;
+        }
+        .neirong_item .nrdian{
+            z-index: 15;
+            width: 120px;
+            height: 20px;
+            position: absolute;
+            right: 88px;
+            bottom: 15px;
+        }
+        .nrdian li{
+            width: 8px;
+            height: 8px;
+            margin:0 10px;
+            float: left;
+            border-radius: 50%;
+            background-color: #ccc;
+            /*transition: all 1s;*/
+            cursor: pointer;
+        }
+        .nrdian li.active{
+            background-color: #fff;
+            border:2px solid #ff6700;
+        }
+        .nrdian li:hover{
+            background-color: #ff6700;
+        }
+        .nr_prev, .nr_next {
+            width: 30px;
+            height:50px;
+            background-color: #cccccc;
+            color: #fff;
+            text-align: center;
+            position: absolute;
+            top: 140px;
+            line-height: 30px;
+            cursor: pointer;
+        }
+        .nr_prev{
+            left:0px;
+            background-position: -84px 0;
+        }
+        .nr_next{
+            right:0;
+            background-position: -124px 0;
+        }
+        .nr_prev:hover{
+            background-position: 0 0;
+            opacity: .8;
+        }
+        .nr_next:hover{
+            background-position: -42px 0;
+            opacity: .8;
+        }
+        .neirong_item .wenzi{
+            height: 34px;
+            margin: 0 auto;
+            position: absolute;
+            top: -20px;
+            left: 135px;
+        }
+        .neirong_item .nr_inner{
+            width: 2000px;
+            height: 420px;
+            /* background-color: #333; */
+            position: absolute;
+            left: 0;
+            top: 45px;
+        }
+
+
+        /*头部*/
+        .toubu{
+            width: 750px;
+            height: 100px;
+            background-color: #9999ff;
+            margin:0 auto;
+        }
+        .xiaomi{
+            width: 100px;
+            height: 100px;
+            margin-right: 5px;
+            background-color: #ff6700;
+            float: left;
+            text-align: center;
+            line-height: 100px;
+        }
+        .wenzi .active{
+            background-color: #22ddff;
+        }
+        .bottom{
+            width: 1226px;
+            height: 200px;
+            background-color: #cccccc;
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 50px;
+            z-index: 200;
+        }
+        .xiaoguo{
+            width: 1226px;
+            height: 200px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .xiaoguo .active{
+            z-index: 999;
+        }
+        .toubu_neirong{
+            width: 1200px;
+            height: 140px;
+            background-color: blue;
+            position: absolute;
+            top:20px;
+            left: 10px;
+            right:10px;
+            text-align: center;
+            line-height: 200px;
+            font-size: 50px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="toubu">
+    <div class="wenzi">
+        <span class="xiaomi active">小米手机</span>
+        <span class="xiaomi">智能</span>
+        <span class="xiaomi">通话</span>
+        <span class="xiaomi">路由器</span>
+        <span class="xiaomi">平板</span>
+        <span class="xiaomi">电视</span>
+        <span class="xiaomi">红米</span>
+    </div>
+    <div class="bottom">
+        <div class="xiaoguo">
+            <span class="toubu_neirong active">11</span>
+            <span class="toubu_neirong">22</span>
+            <span class="toubu_neirong">33</span>
+            <span class="toubu_neirong">44</span>
+            <span class="toubu_neirong">55</span>
+            <span class="toubu_neirong">66</span>
+            <span class="toubu_neirong">77</span>
+        </div>
+    </div>
+</div>
+</div>
+    <div id="banner">
+        <div class="sidebar">
+            <div class="label">
+                <span>1</span>
+                <div class="menu">11</div>
+            </div>
+            <div class="label">
+                <span>2</span>
+                <div class="menu">22</div>
+            </div>
+            <div class="label">
+                <span>3</span>
+                <div class="menu">33</div>
+            </div>
+            <div class="label">
+                <span>4</span>
+                <div class="menu">44</div>
+            </div>
+            <div class="label">
+                <span>5</span>
+                <div class="menu">55</div>
+            </div>
+            <div class="label">
+                <span>6</span>
+                <div class="menu">66</div>
+            </div>
+            <div class="label">
+                <span>7</span>
+                <div class="menu">77</div>
+            </div>
+            <div class="label">
+                <span>8</span>
+                <div class="menu">88</div>
+            </div>
+        </div>
+        <ul class="imgbox">
+            <li class="active"><p class="item"></p></li>
+            <li><p class="item item2"></p></li>
+            <li><p class="item item3"></li>
+            <li><p class="item item4"></li>
+            <li><p class="item item5"></li>
+        </ul>
+        <ul class="pagebox">
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <div class="prev">&lt;</div>
+        <div class="next">&gt;</div>
+    </div>
+    <div id="buy">
+        <div class="buy-top">
+            <div class="buy-arrow">
+                <span class="buy-prev disable">&lt;</span>
+                <span class="buy-next">&gt;</span>
+            </div>
+        </div>
+        <div class="buy-bottom">
+            <div class="buy-time">
+            </div>
+            <div class="buy-list">
+                <ul class="buy-inner">
+                    <li class="buy-item">9</li>
+                    <li class="buy-item">10</li>
+                    <li class="buy-item">11</li>
+                    <li class="buy-item">12</li>
+                    <li class="buy-item">1</li>
+                    <li class="buy-item">2</li>
+                    <li class="buy-item">3</li>
+                    <li class="buy-item">4</li>
+                    <li class="buy-item">5</li>
+                    <li class="buy-item">6</li>
+                    <li class="buy-item">7</li>
+                    <li class="buy-item">8</li>
+                    <li class="buy-item">9</li>
+                    <li class="buy-item">10</li>
+                    <li class="buy-item">11</li>
+                    <li class="buy-item">12</li>
+                    <li class="buy-item">1</li>
+                    <li class="buy-item">2</li>
+                    <li class="buy-item">3</li>
+                    <li class="buy-item">4</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="content-top">
+            <div class="type active">热门</div>
+            <div class="type">电视影音</div>
+            <div class="type">电脑</div>
+            <div class="type">家居</div>
+        </div>
+        <div class="content-bottom">
+            <div class="goodslist active">1</div>
+            <div class="goodslist">2</div>
+            <div class="goodslist">3</div>
+            <div class="goodslist">4</div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="content-top">
+            <div class="type active">热门</div>
+            <div class="type">电视影音</div>
+            <div class="type">电脑</div>
+            <div class="type">家居</div>
+            <div class="type">出行</div>
+        </div>
+        <div class="content-bottom">
+            <div class="goodslist active">1</div>
+            <div class="goodslist">2</div>
+            <div class="goodslist">3</div>
+            <div class="goodslist">4</div>
+            <div class="goodslist">5</div>
+        </div>
+    </div>
+<div class="neirong">
+    <div class="neirong_item">
+        <div class="nr_inner">
+            <ul class="nrimg active">
+                <h1>哈利·波特与被诅咒的孩子</h1>
+                <h2>“哈利·波特”第八个故事中文版震撼来袭！特别彩排版剧本！</h2>
+                <h3>29.37元</h3>
+                <li class="active"><p class="tushu">图片</p></li>
+            </ul>
+            <ul class="nrimg">
+                <h1>哈利·波特与被诅咒的孩子</h1>
+                <h2>“哈利·波特”第八个故事中文版震撼来袭！特别彩排版剧本！</h2>
+                <h3>29.37元</h3>
+                <li><p>图片2</p></li>
+            </ul>
+            <ul class="nrimg">
+                <h1>哈利·波特与被诅咒的孩子</h1>
+                <h2>“哈利·波特”第八个故事中文版震撼来袭！特别彩排版剧本！</h2>
+                <h3>29.37元</h3>
+                <li><p>图片3</p></li>
+            </ul>
+        </div>
+        <ul class="nrdian">
+            <li class="pager active"></li>
+            <li class="pager"></li>
+            <li class=pager></li>
+        </ul>
+        <div class="nr_prev"></div>
+        <div class="nr_next"></div>
+        <div class="wenzi">
+            <p>图书</p>
+        </div>
+    </div>
+</div>
+
+</body>
+<script src="js/index.js"></script>
+<script>
+
+    {   //小米明星单品
+    let inner=$(".buy-inner");
+    let n=1;
+    let flag=true;
+    $(".buy-next").click(function(){
+        if(flag){
+            flag=false;
+        n++;
+        inner.animate({marginLeft:-n*992},1000,function(){
+            flag=true;
+            if(n===4){
+               inner.css("marginLeft",-992);
+               n=1;
+            }
+        })
+        }
+    })
+    $(".buy-prev").click(function () {
+        if (flag) {
+            flag = false;
+            n--;
+            inner.animate({marginLeft: -n * 992}, 1000, function () {
+                flag = true;
+                if (n === 0) {
+                    inner.css("marginLeft", -2976);
+                    n = 3;
+                }
+            })
+        }
+    })
+    }
+
+    {  //内容选项卡
+    $(".type").mouseenter(function(){
+        let index=$(this).index(".type");
+        $(".type").removeClass("active").eq(index).addClass("active");
+        $(".goodslist").removeClass("active").eq(index).addClass("active");
+    })
+    }
+    {//图书部分
+    let inners=$(".nr_inner");
+    $(".neirong_item").mouseenter(function(){
+        $(".nr_prev,.nr_next").fadeIn(500)
+    })
+    $(".neirong_item").mouseleave(function(){
+        $(".nr_prev,.nr_next").fadeOut(500)
+    })
+    // let t=0;
+    // $(".nr_next").click(function(){
+    //    let index=$(".nrimg")
+    //        t++;
+    //        inners.animate({marginLeft:-t*296},2000,function(){
+    //            $(".nrimg").addClass("active").eq(index-1).removeClass("active");
+    //            // $(".pager").removeClass("active").eq(index).addClass("active");
+    //        });
+    // })
+    //
+    // $(".nr_prev").click(function(){
+    //     let index=$(".nrimg")
+    //     t--;
+    //     inners.animate({marginLeft:-t*296},2000,function(){
+    //         $(".nrimg").addClass("active").eq(index-1).removeClass("active");
+    //         // $(".pager").removeClass("active").eq(index).addClass("active");
+    //     });
+    // })
+        let n = 0;
+        let l = $(".nrimg").length;
+        $(".nr_next ").click(function () {
+            n++;
+            if (n === l) {
+                n = l - 1;
+                return;
+            }
+            inners.animate({left: -n * 296}, 100);
+            $(".pager").removeClass("active").eq(n).addClass("active");
+        });
+        $(".nr_prev ").click(function () {
+            n--;
+            if (n < 0) {
+                n = 0;
+                return;
+            }
+            inners.animate({left: -n * 296}, 100);
+            $(".pager").removeClass("active").eq(n).addClass("active");
+        });
+        $(".pager").click(function () {
+            let index = $(this).index(".pager");
+            $(".pager").removeClass("active").eq(index).addClass("active");
+            inners.animate({left: -index * 296}, 100);
+        })
+    }
+    //头部
+    $(".toubu").mouseenter(function(){
+        $(".bottom").slideDown(1000);
+})
+    $(".toubu").mouseleave(function(){
+        $(".bottom").slideUp(1000);
+    })
+    $(".wenzi").each(function(){
+        $(".xiaomi").mouseenter(function(){
+            let index=$(this).index();
+            $(this).addClass("active");
+            $(".toubu_neirong").eq(index).addClass("active");
+        })
+        $(".xiaomi").mouseleave(function(){
+            let index=$(this).index();
+            $(this).removeClass("active");
+            $(".toubu_neirong").eq(index).removeClass("active");
+        })
+    })
+
+    //banner延展
+    {
+    let pagers=$(".pagebox>li");
+    let imgs=$(".imgbox>li");
+
+    pagers.click(function(){
+        let index=$(this).index();
+        imgs.removeClass("active").eq(index).addClass("active");
+        $(this).addClass("active").siblings(".active").removeClass("active");
+        n=index;
+    })
+        let n=0;
+        let flag=true;
+        $(".next").click(function(){
+            if(flag){
+                // flag=false;
+                n++;
+                if(n===5){
+                    n=0;
+                }
+                imgs.removeClass("active").eq(n).addClass("active");
+                pagers.removeClass("active").eq(n).addClass("active");
+            }
+        })
+        $(".prev").click(function(){
+            if(flag){
+                // flag=false;
+                n--;
+                if(n<0){
+                    n=4;
+                }
+                imgs.removeClass("active").eq(n).addClass("active");
+                pagers.removeClass("active").eq(n).addClass("active");
+            }
+        })
+
+
+        //左侧
+        {
+            $(".label")
+                .mouseenter(function () {
+                    let index = $(this).index(".label");
+                    $(".menu").eq(index).show();
+                })
+                .mouseleave(function () {
+                    let index = $(this).index(".label");
+                    $(".menu").eq(index).hide();
+                })
+        }
+    }
+</script>
+</html>
