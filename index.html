@@ -1,0 +1,5957 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: 'iconfont';  /* project id 561434 */
+            src: url('https://at.alicdn.com/t/font_561434_h4hz2oz0jps0pb9.eot');
+            src: url('https://at.alicdn.com/t/font_561434_h4hz2oz0jps0pb9.eot?#iefix') format('embedded-opentype'),
+            url('https://at.alicdn.com/t/font_561434_h4hz2oz0jps0pb9.woff') format('woff'),
+            url('https://at.alicdn.com/t/font_561434_h4hz2oz0jps0pb9.ttf') format('truetype'),
+            url('https://at.alicdn.com/t/font_561434_h4hz2oz0jps0pb9.svg#iconfont') format('svg');
+        }
+        .banner_nav li:hover{
+            background-color: #ff6700;
+        }
+        .liufenzhiyi:hover .liufenzhiyi_up{
+            color: white;
+            cursor: pointer;
+        }
+        .liufenzhiyi:hover .liufenzhiyi_down{
+            color: white;
+            cursor: pointer;
+        }
+
+
+        .head_wenzi:hover{
+            color: white;
+        }
+        .head_gouwu:hover{
+            background-color: white;
+        }
+        .head_gouwu:hover span{
+            color: #ff6700;
+        }
+        .head_car1:hover{
+            color: white;
+        }
+        .head_car2:hover{
+            color: white;
+        }
+        .daohang_wenzi span:hover{
+            color: red;
+        }
+        .bangzhu_yi span:hover{
+            color: #ff6700;
+        }
+        .bangzhu_yi h1:hover{
+            color: #ff6700;
+        }
+        .bangzhu_yi h2:hover{
+            color: #ff6700;
+        }
+        .wufenzhiyi:hover span{
+            color: #ff6700;
+        }
+        .wufenzhiyi:hover p{
+            color: #ff6700;
+        }
+        .dapei_right h2:hover{
+            color: #ff6700;
+
+            padding-bottom: 2px;
+
+            border-bottom: 2px solid #ff6700;
+        }
+        .head_car1{
+            font-family: iconfont;
+            color: #b0b0b0;
+            line-height: 40px;
+        }
+        .head_car2{
+
+            font-size: 12px;
+            color: #b0b0b0;
+            line-height: 40px;
+        }
+
+
+        .head {
+            width: 100%;
+            height: 40px;
+            background-color: #333;
+        }
+        .head_main{
+            width: 1226px;
+            height: 40px;
+            margin: 0 auto;
+
+        }
+
+        .head_wenzi{
+            line-height: 40px;
+            font-size: 12px;
+            float: left;
+            color: #6E7872;
+        }
+        .head_line{
+            width: 1px;
+            height: 12px;
+            background-color: #3B3B3B;
+            float: left;
+            margin: 14px   7px  0;
+        }
+        .head_left{
+            float: left;
+        }
+        .head_right{
+            float: right ;
+        }
+        .head_gouwu{
+            width: 120px;
+            height: 40px;
+            background-color: #424242;
+            float: left;
+            margin-left: 25px;
+            text-align: center;
+        }
+        .daohang:hover .bbottom{
+            display: block;
+        }
+        .daohang_title{
+            width: 100%;
+            height: 100px;
+            position: relative;
+        }
+
+        .daohang{
+            width: 1226px;
+            height: 100px;
+            /* height: auto; */
+            /* overflow: hidden; */
+            margin: 0  auto;
+            position: relative;
+
+
+        }
+        .daohang_r{
+            width: 550px;
+            position: absolute;
+            right: 180px;
+            top: 40px;
+            z-index: 999;
+        }
+
+        .daohang_logo{
+            width: 55px;
+            height: 55px;
+            margin-top: 22px;
+            float: left;
+            background-color: #FF6700;
+
+        }
+
+
+
+
+        .daohang_wenzi{
+            /* float: left; */
+            width: 676px;
+            margin-left: 189px;
+            color: #3A3A3A;
+            font-size: 15px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .daohang_wenzi span,.daohang_r span/* 后代选择器 */{
+            line-height: 100px;
+            /* float: left; */
+            padding: 0  10px;
+            /* 光标样式 */cursor:pointer;
+
+
+        }
+
+        .banner_xia_zong
+        {	margin-top: 18px;
+            width: 100%;
+            height: 170px;
+            background-color: #FFFFFF;
+        }
+        .banner_xia_zong_neirong
+        {
+            width: 1226px;
+            height: 170px;
+            background-color: #FFFFFF;
+            margin: 0 auto;
+        }
+        .neirong_zuo{
+            float: left;
+            width: 234px;
+            height: 100%;
+            background-color: #5F5750;
+            margin-right: 14px;
+        }
+        .neirong_you{
+            float: right;
+
+            background-color: #FFFFFF;
+        }
+        .neirong_you  img{
+            display: block;
+            width: 310px;
+            height: 170px;
+            margin-right: 15px;
+            float: left;
+        }
+        .liufenzhiyi{
+            width: 73px;
+            height: 64px;
+            background-color: #5F5750;
+            float: left;
+            padding-top: 18px;
+            padding-left: 3px;
+            text-align: center;
+            margin:1.5px 1px;
+        }
+
+        .liufenzhiyi_up{
+            color: #CFCDCB;
+            font-size: 20px;
+            font-family: iconfont;
+        }
+        .liufenzhiyi_down{
+            color: #CFCDCB;
+            font-size: 14px;
+
+        }
+
+
+
+
+
+        body{
+            position: relative;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+
+        .daohang_wenzi .active{
+            z-index: 666;
+        }
+        .bo_tolle{
+            width: 100%;
+
+            position: absolute;
+            top: 100px;
+            display: none;
+            background-color: white;
+            z-index: 100;
+
+            transition: all 2s;
+
+        }
+        .bo_tolle:hover{
+            transition: all 2s;
+        }
+        .active{
+            z-index: 999;
+        }
+
+        #bbottom,.bbottom{
+            width: 1226px;
+            /* height: 240px; */
+
+            background-color: white;
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: auto;
+
+            opacity: 1;
+            transition: all 2s;
+            overflow: hidden;
+
+
+        }
+        #bbottom:hover:,.bbottom:hover{
+            transition: all 2s;
+        }
+        .bbottom_item{
+            width: 190px;
+            height: 220px;
+            background-color: white;
+            float: left;
+            margin-right: 10px;
+
+        }
+        #banner{
+            width: 1226px;
+            height: 460px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .imgbox{
+            width: 992px;
+            height: 460px;
+            position: absolute;
+            top: 0;
+            left: 234px;
+        }
+        .imgbox img{
+            width: 992px;
+            height: 460px;
+            position: absolute;
+            left: 0;
+            top: 0;
+
+        }
+        .imgbox li{
+            width: 1226px;
+            height: 460px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: .5;
+            transition:all 1s ease-in;
+
+        }
+        .imgbox .active{
+            z-index: 9;
+            opacity: 1;
+        }
+
+        .pagerbox{
+            position: absolute;
+            width: 150px;
+            height: 10px;
+
+            right: 30px;
+            bottom: 30px;
+            z-index: 20;
+        }
+        .pagerbox li{
+            width: 8px;
+            height: 8px;
+            margin: 0 10px;
+            border-radius: 50%;
+            transition: all 0.5s;
+            float: left;
+            border: 1px solid #fff;
+        }
+        .pagerbox .active{
+            z-index: 999;
+            background-color: blue;
+
+        }
+        .pagerbox li:hover{
+            background-color:#ff6900;
+            cursor: pointer;
+
+        }
+        .prev,.next{
+            width: 42px;
+            height: 69px;
+            position: absolute;
+            top: 50%;
+            margin-top: -35px;
+            background: url('image/icon.png');
+            cursor: pointer;
+            opacity: .6;
+            z-index: 88;
+
+        }
+        .prev{
+            position: absolute;
+            left: 234px;
+            background-position: -84px 0;
+
+        }
+        .prev:hover{
+            background-position: 0 0;
+        }
+        .next{
+            position: absolute;
+            right: 0;
+            background-position: -124px 0;
+        }
+        .next:hover{
+            background-position: -42px 0;
+        }
+        .banner_nav{
+            width: 234px;
+            height: 420px;
+            background-color: rgba(0, 0, 0, 0.6);/* 透明度 */
+            position: absolute;
+            left: 0;
+            top: 0;
+            margin: auto;
+            padding: 20px 0;
+            /* opacity: .6;颜色内容一起透明 */
+
+            /* z-index: -1; */
+        }
+        .little_picture{
+            width: 265px;
+            height: 76.8px;
+            float: left;
+            font-size: 14px;
+            margin: 30px 10px;
+            line-height: 76.8px;
+
+
+        }
+        .little_picture :hover{
+            cursor: pointer;
+
+        }
+        .little_picture img{
+            width: 40px;
+            height: 40px;
+            float: left;
+
+        }
+        .little_picture span{
+
+            float: left;
+            margin-top: -15px;
+            margin-left: 20px;
+            color: black;
+        }
+
+        .little_picture span:hover{
+
+            color: #ff6700;
+
+
+        }
+        .me{
+            width: 795px;
+            height: 460px;
+            display: none;
+            background-color: white;
+            position: absolute;
+            top: 0;
+            left: 234px;
+            z-index: 999;
+
+            transition:all 2s linear;
+            overflow: hidden;
+
+        }
+
+        .banner_nav li:hover{
+            background-color: #ff6700;
+
+        }
+        .banner_nav li{
+            width: 174px;
+            height: 42px;
+            /* background-color: red; */
+            line-height: 42px;
+            font-size: 14px;
+            color: white;
+            padding: 0 30px;
+
+
+        }
+        .banner_jiantou{
+            float: right;
+        }
+
+
+        .banner_btn{
+            width: 41px;
+            height: 69px;
+            color: #D5A5A5;
+            text-align: center;
+            line-height: 100%;
+            font-size: 50px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+
+        }
+        .banner_btn_zuo{
+            left: 234px;
+
+        }
+        .banner_btn_you{
+            right: 0;
+
+        }
+        .search{
+
+            width: 243px;
+            height: 48px;
+            float: right;
+            margin-top: 25px;
+
+        }
+        .search1{
+            border: 1px  solid  #EAEAEA;
+            width: 51px;
+            height: 48px;
+            float: right;
+            margin-top: 25px;
+            font-size: 24px;
+            color: #616161;
+            text-align: center;
+            font-family:iconfont;
+        }
+        .single{
+            width: 1226px;
+            height: 398px;
+
+            background-color:#FFFFFF;
+            margin: 0 auto;
+        }
+        .single_top{
+            width: 100%;
+            height: 58px;
+            float: left;
+            background-color: white;
+            margin-top: 14px;
+            position: relative;
+        }
+        .jiadian_top{
+            width: 100%;
+            height: 58px;
+            float: left;
+            background-color: #f5f5f5;
+            position: relative;
+
+        }
+
+        .single_title{
+            font-size: 21px;
+            line-height: 58px;
+            float: left ;
+            font-weight: 400;
+            color:#6E3333;
+        }
+
+
+        .disable{
+            color: yellow;
+            z-index: 89;
+        }
+        .disable:hover{
+            color: yellow;
+            z-index: 89;
+        }
+        .btn1:hover,.btn2:hover{
+            color: blue;
+            z-index: 79;
+        }
+        .btn1,.btn2 {
+
+            user-select: none;
+            width: 41px;
+            height: 50px;
+            color: red;
+            text-align: center;
+            line-height: 69px;
+            font-size: 25px;
+            position: absolute;
+            background-color: white;
+            display: block;
+
+        }
+        .btn4,.btn5{
+            user-select: none;
+            width: 41px;
+            height: 50px;
+            color: red;
+            text-align: center;
+            line-height: 69px;
+            font-size: 25px;
+            position: absolute;
+
+            display: block;
+        }
+        .btn2,.btn5{
+            top: 0;
+            right:  0;
+        }
+        .btn1,.btn4{
+
+
+            top: 0;
+            right: 42px;
+        }
+
+        .single_bottom{
+            width: 100%;
+            height: 340px;
+            background-color: #FFFFFF;
+        }
+        .single_item{
+            width: 234px;
+            height: 301px;
+            float: left;
+            background-color: #FAFAFA;
+
+            padding-top: 39px;
+            margin-right: 14px;
+        }
+        .ming{
+            width: 978px;
+            height: 301px;
+            overflow: hidden;
+        }
+        .ming-right{
+            width: 3000px;
+            height: 301px;
+            transition: all 1s;
+
+        }
+        .single_item img{
+            width: 166px;
+            height: 166px;
+            margin: 0 auto;
+            display: block;
+        }
+        .single_item h1{
+            text-align: center;
+            font-size: 14px;
+            color: #212121;
+
+            font-weight: 400;
+            margin-top: 22px;
+        }
+        .single_item h2{
+            text-align: center;
+            font-size: 12px;
+            color: #B0B0B0;
+            font-weight: normal;
+            margin-top: 3px;
+        }
+        .single_item h3{
+            text-align: center;
+            font-size: 14px;
+            color: #FF6700;
+            font-weight: normal;
+            margin-top: 12px;
+        }
+        .single_item1{
+            margin-right: 0px;
+        }
+        .single_item2{
+            border-top:1px solid #FFAC13;
+        }
+
+        .single_item3{
+            border-top:1px solid #83C44E;
+        }
+
+        .single_item4{
+            border-top:1px solid #2196F3;
+        }
+        .single_item5{
+            border-top:1px solid #E53935;
+        }
+        .single_item6{
+            border-top:1px solid #00C0A5;
+        }
+        .jd{
+
+            width: 100%;
+            height: 100%;
+
+            background-color: #F5F5F5;
+            padding-top: 30px;
+            margin-top: 60px;
+            float: left;
+            padding-bottom: 30px;
+
+        }
+        .jd_zhineng{
+            margin-top: 40px;
+            width: 1226px;
+            height: 672px;
+            padding-top: 19px;
+            margin: 0 auto;
+            position: relative;
+
+
+            background-color: #f5f5f5;
+
+        }
+        .jd_weini{
+
+            width: 1226px;
+            height: 372px;
+            margin: 0  auto;
+            padding-top: 17px;
+            background-color: #f5f5f5;
+
+        }
+        .jd_reping{
+
+            width: 1226px;
+            height:473px;
+            margin: 0 auto;
+            padding-top: 17px;
+            background-color: #f5f5f5;
+
+        }
+        .nr_neirong{
+
+            width: 1226px;
+            height:100%;
+            margin: 0  auto;
+            padding-top: 17px;
+            background-color: #f5f5f5;
+
+        }
+        .zhineng_more{
+            float: right;
+        }
+        .dapei_right{
+            float: right;
+
+        }
+        .dapei_right  h2{
+            margin-right: 14px;
+            font-size: 14px;
+            font-weight: normal;
+
+            float: left;
+            margin-top: 10px;
+
+
+        }
+
+        .dapei_right .active{
+            border-bottom: 2px solid #ff6700;
+
+            color: #ff6700;
+        }
+
+        .zhineng_more h2{
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 58px;
+            float: left;
+        }
+        .zhineng_btn{
+            width: 23px;
+            height: 23px;
+            color:  #fdfbf5;
+            background-color: #b0b0b0;
+            float: left;
+            margin-top: 17.5px;
+            border-radius: 50%;
+            margin-left: 10px;
+            text-align: center;
+
+        }
+
+        .jd_bottom{
+            width: 100%;
+            height: 614px;
+            background-color:#F5F5F5;
+            position: absolute;
+            right: 0;
+            top: 58px;
+        }
+        .reping_bottom{
+            width: 100%;
+            height: 415px;
+            background-color:#F5F5F5;
+        }
+        .neirong_bottom{
+            width: 100%;
+            height: 465px;
+            background-color:#F5F5F5;
+            position: relative;
+        }
+        .content_i .active{
+            z-index: 66;
+        }
+        .nnv_totle{
+            width: 296px;
+            height: 465px;
+            overflow: hidden;
+            position: relative;
+            float: left;
+            margin-right: 10px;
+        }
+        .nerong_item{
+            width: 296px;
+            height: 415px;
+            background-color:#FEFEFE;
+            margin-right: 14px;
+            padding-top: 50px;
+            position: relative;
+            float: left;
+
+
+        }
+        .content_i{
+            width: 3000px;
+            height: 415px;
+            background-color:#FEFEFE;
+
+
+
+        }
+
+        .nav_prev,.nav_next{
+            width: 30px;
+            height: 60px;
+            text-align: center;
+            line-height: 60px;
+            background-color: #f5f5f5;
+            color: rgba(0, 0, 0, 0.4);
+            opacity: 0;
+            font-size: 25px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            z-index: 88;
+
+        }
+        .nav_prev{
+            left: 0;
+        }
+        .nav_next{
+            right: 0;
+        }
+        .nav_prev:hover,.nav_next:hover{
+            opacity: 1;
+        }
+        .nerong_item img{
+            width: 216px;
+            height: 154px;
+            margin-top: 10px;
+            margin-left: 40px;
+
+
+        }
+
+        .nerong_item h1{
+            font-size:16px;
+            font-weight: normal;
+            text-align: center;
+            color: #ff6700;
+            margin-bottom: 8px;
+
+        }
+        .sangedian{
+            width: 80px;
+            height: 10px;
+            bottom: 50px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            position: absolute;
+            line-height: 10px;
+            text-align: center;
+            z-index: 88;
+
+        }
+        .sangedian .active{
+            background-color: blue;
+            z-index: 111;
+        }
+
+
+        .dian_tiaojie2{
+            margin-left: 65px;
+        }
+        .dian_tiaojie1{
+            margin-left: 60px;
+        }
+        .dian2{
+            width:6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: #b0b0b0;
+
+            float: left;
+            position: absolute;
+            left: 120px;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+
+
+        }
+        .sangedian li{
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            color: #ff6700;
+            border: 2px solid #ff6700;
+            float: left;
+            margin-right: 10px;
+        }
+        .green_haha{
+            color: green;
+            display: block;
+        }
+        .red_haha{
+            color:red;
+        }
+        .blue_haha{
+            color: blue;
+        }
+        .nerong_item h2{
+            font-size:20px;
+            font-weight: normal;
+            text-align: center;
+            color: black;
+            margin-bottom: 4px;
+        }
+        .nerong_item h3{
+            font-size:12px;
+            font-weight: normal;
+            text-align: center;
+            color: #b0b0b0;
+            margin-bottom: 2px;
+        }
+        .nerong_item h4{
+            font-size:12px;
+            font-weight: normal;
+            text-align: center;
+            color: #b0b0b0;
+            margin-bottom: 8px;
+        }
+        .nerong_item h5{
+            font-size:14px;
+            font-weight: normal;
+            text-align: center;
+            color: black;
+        }
+
+        .zhineng_left{
+            width: 234px;
+            height: 100%;
+            float: left;
+            z-index: 99;
+        }
+        .zhineng_right
+        {
+            width: 992px;
+            height: 100%;
+            background-color:#F5F5F5;
+            float: left;
+            position: absolute;
+            top: 0;
+            right: 0;
+            opacity: 0;
+
+            transition: all 1s;
+        }
+        .jd_bottom .active{
+            z-index: 998;
+            opacity: 1;
+
+        }
+
+        .zhineng_item:hover,.zhineng_left:hover,.tupian:hover,.xiao_up:hover,
+        .reping_item:hover,.nerong_item:hover,.shipin_bottom_item:hover{
+            box-shadow: 0 10px 30px 5px rgba(0, 0, 0, 0.1);
+            transform: translateY(-3px);
+
+        }
+        .search1:hover{
+            background-color: #ff6700;
+            cursor: pointer;
+        }
+        .zhineng_item{
+            width: 234px;
+            height: 266px;
+            background-color:#FEFEFE;
+            margin-left: 14px;
+            padding-top: 34px;
+            float: left;
+            position: relative;
+            overflow: hidden;
+
+
+        }
+        .bbottom_item{
+            width: 204px;
+            height: 201px;
+            margin-left: 14px;
+            padding-top: 20px;
+            float: left;
+            position: relative;
+        }
+        .bbottom_item img{
+            width: 160px;
+            height: 110px;
+            border-right: 1px solid #b0b0b0;
+        }
+        .item2{
+            margin-left: 0px;
+        }
+        .item_quyou{
+            margin-right: 0;
+        }
+        .zhineng_item  img{
+            width: 150px;
+            height: 156px;
+            margin: 0 auto;
+            display: block;
+
+        }
+        .zhineng_item  a,.bbottom_item a{
+            display: block;
+            color: #333;
+            text-align: center;
+            margin-top: 18px;
+            font-size: 14px;
+        }
+        .zhineng_item p,.bbottom_item p{
+            font-size: 12px;
+            color: #b0b0b0;
+            text-align: center;
+        }
+        .zhineng_item  h3,.bbottom_item h3{
+            color: #ff6700;
+            font-size: 14px;
+            margin-top: 10px;
+            text-align: center;
+            font-weight: normal;
+        }
+        .item1{
+            margin-top: 14px;
+        }
+        .xiao{
+            width: 234px;
+            height: 266px;
+            background-color:#F5F5F5;
+            margin-left: 14px;
+            margin-top: 14px;
+            float: left;
+
+        }
+        .up_left{
+            float: left;
+        }
+        .xiao_up{
+            width: 100%;
+            height: 143px;
+            margin-bottom: 14px;
+            background-color: white;
+        }
+        .up_left  h1{
+
+
+            font-weight: normal;
+            padding-left: 37px;
+            padding-top: 54px;
+
+        }
+        .up_left  h2{
+
+            margin-left: 37px;
+            margin-top: 16px;
+            font-weight: normal;
+        }
+        .up_right img{
+            display: block;
+            width: 80px;
+            height: 80px;
+            line-height: 100%;
+            padding-top: 30px;
+            padding-right: 14px;
+            float: right;
+
+
+
+        }
+        .up_right{
+            float: right;
+        }
+        .yangshi1{
+            font-size: 16px;
+            font-weight: normal;
+            color: #333333;
+        }
+        .yangshi2{
+            font-size: 12px;
+            font-weight: normal;
+            color: #757575;
+
+        }
+        .yangshi3{
+            font-size: 14px;
+            font-weight: normal;
+            color: #333333;
+        }
+        .yangshi4{
+            font-size: 14px;
+            font-weight: normal;
+            color: #FF9A00;
+        }
+        .jiaotou img{
+            width: 48px;
+            height: 50.4px;
+            display: block;
+            line-height: 100%;
+            padding-top: 59px;
+            padding-right: 35px;
+
+        }
+        h3 span{
+            text-decoration-line: line-through;
+            color: #b0b0b0;
+            font-weight: normal;
+        }
+        p span{
+            text-decoration-line: line-through;
+            color: #ff6700;
+            font-weight: normal;
+        }
+        .up_left h3{
+
+            margin-left: 37px;
+            margin-top: 8px;
+            font-weight: normal;
+        }
+        /* .tupian{
+        padding-top: 0px;
+        float: left;
+        } */
+        .picyuree img{
+            width: 234px;
+            height: 300px;
+
+            float: left;
+        }
+        .picyuree{
+            width: 234px;
+            height: 614px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin-right: 10px;
+        }
+        .tuij_totle{
+            width: 1226px;
+            height: 300px;
+            overflow: hidden;
+        }
+        .tuij_bottom{
+            height: 300px;
+            width: 10000px;
+            transition: all 2s;
+
+        }
+        .dapei_2wenzi p{
+            color: #FF6700;
+            font-weight: normal;
+            font-size: 14px;
+        }
+        .dapei_3wenzi h3{
+            color: #b0b0b0;
+            font-size: 12px;
+        }
+        .zhinngtankuang{
+            width: 100%;
+            height: 80px;
+            background-color: #ff6700;
+            bottom:-80px;
+            left: 0;
+            position: absolute;
+            transition: all 1s  linear;
+            opacity: 0;
+
+        }
+        .zhineng_item:hover .zhinngtankuang{
+            bottom: 0;
+            opacity: 1;
+            line-height: 80px;
+            text-align: center;
+        }
+        .zhineng_2wenzi{
+            font-size: 12px;
+            font-weight: normal;
+            text-align: center;
+            color: #b0b0b0;
+        }
+        .zhineng_3wenzi{
+            font-size: 14px;
+            font-weight: normal;
+            text-align: center;
+            color: #ff6700;
+        }
+        .reping_item{
+            width: 296px;
+            height: 100%;
+            background-color:#FEFEFE;
+            margin-right: 14px;
+
+            float: left;
+
+        }
+
+        .item3{
+            margin-right: 0px;
+        }
+        .reping_item  img{
+            display: block;
+            width: 100%;
+            height: 220px;
+
+        }
+        .reping_wenzi1 {
+
+            padding: 30px 22px 20px 28px ;
+
+
+
+        }
+        .reping_wenzi1 p{
+
+            font-size: 14px;
+            font-weight: normal;
+
+        }
+        .reping_wenzi2{
+            padding: 15px 22px 5px  28px ;
+        }
+        .reping_wenzi2 h3{
+            font-size: 12px;
+            font-weight: normal;
+            color: #b0b0b0;
+        }
+        .reping_wenzi3{
+            padding: 5px 22px 0px 28px ;
+        }
+        .reping_wenzi3 h3{
+            font-size: 14px;
+            font-weight: normal;
+            color: #ff6700;
+        }
+        .reping_xiaozi{
+            font-weight: normal;
+            font-size: 14px;
+            color: black;
+            float: left;
+            margin-right: 10px;
+        }
+        .reping_xiaozi span{
+            color: #b0b0b0;
+            margin-left: 5px;
+        }
+        .reping_tiaojie{
+            margin-bottom: 38px;
+        }
+
+        .foot{
+            width: 100%;
+            height: 272px;
+            background-color: white;
+            margin-top: 17px;
+
+            /* float: left; */
+        }
+        .foot_neirong{
+            width: 1226px;
+            height: 272px;
+            background-color: white;
+
+            margin: 0 auto;
+        }
+        .foot_neirong_up{
+            width: 100%;
+            height: 80px;
+            text-align: center;
+            float: left;
+
+
+
+
+        }
+        .wufenzhiyi p{
+            font-family: iconfont;
+            font-size: 24px;
+            float: left;
+            color: #6A6C85;
+        }
+        .wufenzhiyi span{
+            font-size: 17.5px;
+            font-weight: normal;
+            color: #6A6C85;
+            float: left;
+        }
+        .wufenzhiyi{
+            width: 242.74px;
+            line-height: 25px;
+            height: 25px;
+            float: left;
+            margin-top: 27px;
+        }
+        .wufenzhiyi h1{
+            width: 1px;
+            height: 25px;
+            background-color: #b0b0b0;
+            float: left;
+            margin-left: 50px;
+        }
+        .yuyue{
+            margin-left: 50px;
+        }
+        .foot_hangxian{
+            width: 1226px;
+            height: 1px;
+            background-color: #b0b0b0;
+            float: left;
+            margin-top: 27px;
+            margin-bottom: 40px;
+        }
+
+        .foot_bangzhu{
+            width: 1167px;
+            height: 112px;
+            padding : 40px 0px;
+            margin-left: 59px;
+        }
+        .bangzhu_yi{
+            float: left;
+            margin-right: 80px;
+        }
+        .bangzhu_yi p{
+            font-size: 16.8px;
+            color: black;
+            margin-bottom: 10px;
+        }
+
+        .bangzhu_yi span{
+            font-size: 12px;
+            color: #b0b0b0;
+            margin-bottom: 10px;
+            font-weight: normal;
+            display: block;
+        }
+        .bangzhu_yi h1{
+            font-size: 12px;
+            color: #b0b0b0;
+            margin-bottom: 10px;
+            font-weight: normal;
+        }
+        .bangzhu_yi h2{
+            font-size: 12px;
+            color: #b0b0b0;
+            font-weight: normal;
+        }
+        .foot_right{
+            width: 251px;
+            height: 112px;
+
+            background-color: white;
+            float: left;
+            margin-left: 100px;
+            text-align: center;
+            border-left: 1px solid #b0b0b0;
+
+        }
+        .foot_right p{
+            font-size: 21.6px;
+            color: #ff6700;
+            margin-bottom: 4px;
+        }
+        .foot_right span{
+            font-size: 12px;
+            color: #b0b0b0;
+            margin-bottom: 4px;
+            text-align: center;
+        }
+        .foot_right h1{
+            font-size: 12px;
+            color: #b0b0b0;
+            margin-bottom: 4px;
+            text-align: center;
+            font-weight: normal
+        }
+        .yi_fuzhu{
+            margin-right: 0;
+        }
+        .xiaoshi{
+            width: 120px;
+            height: 30px;
+            text-align: center;
+            border: 1px solid #ff6700;
+            font-size: 12px;
+            line-height: 30px;
+            margin-top: 6px;
+            margin-left: 65px;
+
+        }
+        .foot_xia{
+            width: 1226px;
+            height: 57px;
+            margin: 0 auto;
+            color: #FAFAFA;
+
+        }
+        .foot_xia_zong{
+            width: 100%;
+            height: 57px;
+            padding-top: 40px;
+            background-color: #FAFAFA;
+            float: left;
+            padding-bottom: 30px;
+
+        }
+        .foot_xia_zuo{
+            float: left;
+            width: 800px;
+        }
+        .foot_xia_zuo img{
+            display: block;
+            width: 57px;
+            height: 57px;
+            float: left;
+            margin-right: 10px;
+        }
+        .foot_xia_zuo a{
+            font-size: 12px;
+            display: block;
+
+            color: black;
+            float: left;
+        }
+        .foot_xia_zuo a:hover{
+            cursor: pointer;
+            color: #ff6700;
+        }
+        .jingwenzi{
+
+            float: left;
+
+            color: #b0b0b0;
+
+
+        }
+        .jingwenzi h5:hover{
+            cursor: pointer;
+            color: #ff6700;
+            font-family: normal;
+
+        }
+        .jingwenzi h7:hover{
+            cursor: pointer;
+            color: #ff6700;
+            font-family: normal;
+
+        }
+        .jingwenzi h6:hover{
+            cursor: pointer;
+            color: #ff6700;
+            font-family: normal;
+
+        }
+        .jingwenzi h3{
+            float: left;
+            font-size: 12px;
+            font-family: normal;
+
+        }
+        .jingwenzi h5{
+            float: left;
+            font-size: 12px;
+            font-family: normal;
+
+        }
+        .jingwenzi h6{
+            float: left;
+            font-size: 12px;
+            font-family: normal;
+
+        }
+        .jingwenzi h7{
+            float: left;
+            font-size: 12px;
+            font-family: normal;
+
+        }
+        .foot_xia_zuo span{
+
+            display: block;
+            float: left;
+            width: 1px;
+            height: 12px;
+
+            margin: 3px 1px;
+            background-color: #b0b0b0;
+        }
+        .foot_xia_zuo h4{
+            font-size: 12px;
+            font-family: normal;
+
+            float: left;
+            color: #b0b0b0;
+        }
+        .foot_xia_you{
+            float: right;
+
+        }
+        .foot_xia_you img{
+            display: block;
+            float: left;
+            width: 83.01px;
+            height: 28px;
+        }
+        .foot_jieshu_zong{
+            width: 100%;
+            height: 79px;
+            text-align: center;
+            background-color: #FAFAFA;
+            float: left;
+            line-height:100%;
+
+
+        }
+        .foot_jieshu{
+            width: 1226px;
+            height: 19px;
+
+            color: #b0b0b0;
+            margin: 0 auto;
+            font-size: 19px;
+
+        }
+        .xiaoshi p{
+            font-family:iconfont;
+            font-size: 16px;
+            float: left;
+            margin-left: 4px;
+            color: #ff6700;
+        }
+        /* shipin */
+        .shipin_bottom
+        {
+            width: 1226px;
+            height: 285px;
+            margin: 0  auto;
+        }
+        .shipin_bottom_item{
+            width: 296px;
+            height: 285px;
+            text-align: center;
+            float: left;
+            background-color: white;
+            margin-right: 10px;
+
+        }
+        .bofang  img{
+            width: 296px;
+            height: 180px;
+            display: block;
+
+        }
+        .shipin_bottom_item .item_quyou {
+            margin-right: 0px;
+        }
+        .shipin{
+            width: 100%;
+            height: 344px;
+            margin-top: 17px;
+
+
+        }
+        .shipin_bottom_item p:hover{
+            color: #ff6700;
+            cursor: pointer;
+        }
+        .shipin_bottom_item p{
+            text-align: center;
+            font-size: 16px;
+            color: black;
+            margin-bottom: 5px;
+            margin-top: 30px;
+        }
+        .shipin_bottom_item span{
+            text-align: center;
+            font-size: 12px;
+            color: #b0b0b0;
+        }
+        .xiaoshi:hover{
+            background-color: #ff6700;
+            cursor: pointer;
+
+        }
+        .xiaoshi:hover p{
+            color: white;
+            cursor: pointer;
+
+        }
+        .xiaoshi:hover span{
+            color: white;
+            cursor: pointer;
+
+        }
+
+        .shipin_top_zong{
+            width: 100%;
+            height: 58px;
+            float: left;
+            margin-top: 17px;
+        }
+        .shipin_top{
+            width: 1226px;
+            height: 58px;
+            margin: 0 auto;
+        }
+        .shipin_title{
+            font-size: 21px;
+            line-height: 58px;
+            /* float: left ; */
+            font-weight: 400;
+            color:#6E3333;
+        }
+        .reping_wenzi1:hover{
+            cursor: pointer;
+        }
+        .reping_xiaozi{
+            cursor: pointer;
+
+        }
+        .reping_item img:hover{
+            cursor: pointer;
+
+        }
+        .zhineng_item img:hover{
+            cursor: pointer;
+
+        }
+        .zhineng_item p:hover{
+            cursor: pointer;
+
+        }
+        .zhineng_item a:hover{
+            cursor: pointer;
+
+        }
+        .single_btn：hover{
+            cursor: pointer;
+        }
+        .tupian:hover{
+            cursor: pointer;
+        }
+        .jd_bottom :hover{
+            cursor: pointer;
+        }
+        .single_item img h1:hover{
+            cursor: pointer;
+        }
+        .banner_btn:hover{
+            cursor: pointer;
+            width: 50px;
+            height: 60px;
+            background-color: rgba(0, 0, 0, .4)
+        }
+        .nerong_item  h2:hover{
+            cursor: pointer;
+        }
+        .nerong_item  h3:hover{
+            cursor: pointer;
+        }
+        .nerong_item  h4:hover{
+            cursor: pointer;
+        }
+        .nerong_item  h5:hover{
+            cursor: pointer;
+        }
+        .nerong_item  img:hover{
+            cursor: pointer;
+        }
+        .sangedian li:hover{
+            cursor: pointer;
+            background-color: #ff6700;
+            z-index: 88;
+        }
+
+        .foot_xia_zuo h3:hover{
+            cursor: pointer;
+            color: #ff6700;
+        }
+        .bofang{
+            position: relative;
+            width: 296px;
+            height: 180px;
+
+        }
+        .bofang  p{
+            font-family: iconfont;
+            font-size: 32px;
+            left: 20px;
+            bottom: 5px;
+            position: absolute;
+
+
+            color: white;
+        }
+        .bofang img:hover{
+            cursor: pointer;
+        }
+        .banner_img  span:hover{
+            cursor: pointer;
+            border-color: pink;
+        }
+        .banner_img  i:hover{
+            cursor: pointer;
+            border-color: pink;
+        }
+        .banner_img  a:hover{
+            cursor: pointer;
+            border-color: pink;
+        }
+        .banner_img  p:hover{
+            cursor: pointer;
+            border-color: pink;
+        }
+        .banner_img  em:hover{
+            cursor: pointer;
+            border-color: pink;
+        }
+        *{
+            margin: 0;
+
+            text-decoration: none;
+            font-style: normal;
+            padding: 0;
+            list-style: none;
+        }
+    </style>
+    <link rel="" href="img/logo.png" type="image/png">
+</head>
+<body>
+<!-- 头部开始 -->
+<div class="head">
+    <div class="head_main">
+        <div class="head_left">
+            <a href="" class="head_wenzi">小米商城</a>
+            <div class="head_line"></div>
+            <a href="" class="head_wenzi">MIUI</a>
+            <div class="head_line"></div>
+            <a href="" class="head_wenzi">米聊</a>
+            <div class="head_line"></div>
+            <a href="" class="head_wenzi">游戏</a>
+            <div class="head_line"></div>
+            <a href="" class="head_wenzi">多看阅读</a>
+            <div class="head_line"></div>
+            <a href="" class="head_wenzi">云服务</a>
+            <div class="head_line"></div>
+            <a href="" class="head_wenzi">金融</a>
+            <div class="head_line"></div>
+            <a href="" class="head_wenzi">小米商城移动版</a>
+            <div class="head_line"></div>
+            <a href="" class="head_wenzi">问题反馈</a>
+            <div class="head_line"></div>
+        </div>
+
+        <div class="head_right">
+            <a href="" class="head_wenzi">登陆</a>
+            <a href="" class="head_line"></a>
+            <a href="" class="head_wenzi">注册</a>
+            <a href="" class="head_line"></a>
+            <a href="" class="head_wenzi">消息通知</a>
+            <a href="" class="head_line"></a>
+            <div class="head_gouwu">
+                <span class="head_car1">&#xe707;</span>
+                <span class="head_car2">购物车<i>(0)</i></span>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 头部结束 -->
+
+<!-- 导航开始 -->
+<div class="daohang_r">
+    <span> <a href="">智能硬件</a></span>
+    <span>  <a href="">服务 </a></span>
+
+
+    <!-- <span><a href="">社区 </a></span> -->
+    <input type="text" value="&#xe7b7;" class="search1">
+    <input type="text" placeholder="红米5plus&nbsp;小米note3" class="search" >
+
+</div>
+<div class="daohang_title">
+
+    <main class="daohang">
+        <img src="image/mi-logo.png" alt="" class="daohang_logo">
+
+        <div class="daohang_wenzi">
+                        <span class="active">小米手机
+
+
+                        </span>
+            <span>红米
+
+                        </span>
+            <span>平板.笔记本</span>
+            <span>电视</span>
+            <span>盒子.影音</span>
+            <span>路由器</span>
+        </div>
+
+
+        <!-- <div class="search">
+
+                </div> -->
+
+    </main>
+    <div class="bo_tolle">
+        <div id="bbottom">
+
+            <div class="bbottom_item  active">
+                <img src="image/mi3.jpg" alt="" class="active">
+                <a href="">小米电视4A 49英寸 标准版</a>
+                <p>2GB+8GB 大储存 / 全高清HDR</p>
+                <h3>2199元 <span>2399元</span></h3>
+            </div>
+            <div class="bbottom_item">
+                <img src="image/mi2.png" alt="">
+                <a href="">小米电视4A 49英寸 标准版</a>
+                <p>2GB+8GB 大储存 / 全高清HDR</p>
+                <h3>2199元 <span>2399元</span></h3>
+            </div>
+            <div class="bbottom_item">
+                <img src="image/mi2.png" alt="">
+                <a href="">小米电视4A 49英寸 标准版</a>
+                <p>2GB+8GB 大储存 / 全高清HDR</p>
+                <h3>2199元 <span>2399元</span></h3>
+            </div>
+            <div class="bbottom_item">
+                <img src="image/mi2.png" alt="">
+                <a href="">小米电视4A 49英寸 标准版</a>
+                <p>2GB+8GB 大储存 / 全高清HDR</p>
+                <h3>2199元 <span>2399元</span></h3>
+            </div>
+        </div>
+
+        <div id="bbottom">
+
+            <div class="bbottom_item">
+                <img src="image/mi3.jpg" alt="">
+                <a href="">小米电视4A 32英寸</a>
+                <p>64位四核处理器 / 1GB+4GB大内存</p>
+                <h3>999元 <span>1199元</span></h3>
+            </div>
+            <div class="bbottom_item">
+                <img src="image/mi1.jpg" alt="">
+                <a href="">小米电视4A 32英寸</a>
+                <p>64位四核处理器 / 1GB+4GB大内存</p>
+                <h3>999元 <span>1199元</span></h3>
+            </div>
+            <div class="bbottom_item">
+                <img src="image/mi2.png" alt="">
+                <a href="">小米电视4A 32英寸</a>
+                <p>64位四核处理器 / 1GB+4GB大内存</p>
+                <h3>999元 <span>1199元</span></h3>
+            </div>
+            <div class="bbottom_item">
+                <img src="image/mi1.jpg" alt="">
+                <a href="">小米电视4A 32英寸</a>
+                <p>64位四核处理器 / 1GB+4GB大内存</p>
+                <h3>999元 <span>1199元</span></h3>
+            </div>
+            <div class="bbottom_item">
+                <img src="image/mi1.jpg" alt="">
+                <a href="">小米电视4A 32英寸</a>
+                <p>64位四核处理器 / 1GB+4GB大内存</p>
+                <h3>999元 <span>1199元</span></h3>
+            </div>
+        </div>
+
+
+        <div id="bbottom">
+
+
+            <div class="bbottom_item">
+                <img src="image/mi1.jpg" alt="">
+                <a href="">小米电视4A 32英寸</a>
+                <p>64位四核处理器 / 1GB+4GB大内存</p>
+                <h3>999元 <span>1199元</span></h3>
+            </div>
+            <div class="bbottom_item">
+                <img src="image/mi1.jpg" alt="">
+                <a href="">小米电视4A 32英寸</a>
+                <p>64位四核处理器 / 1GB+4GB大内存</p>
+                <h3>999元 <span>1199元</span></h3>
+            </div>
+            <div class="bbottom_item">
+                <img src="image/mi1.jpg" alt="">
+                <a href="">小米电视4A 32英寸</a>
+                <p>64位四核处理器 / 1GB+4GB大内存</p>
+                <h3>999元 <span>1199元</span></h3>
+            </div>
+            <div class="bbottom_item">
+                <img src="image/mi1.jpg" alt="">
+                <a href="">小米电视4A 32英寸</a>
+                <p>64位四核处理器 / 1GB+4GB大内存</p>
+                <h3>999元 <span>1199元</span></h3>
+            </div>
+        </div>
+
+        <div id="bbottom">
+
+            <div class="bbottom_item">
+                <img src="image/mi1.jpg" alt="">
+                <a href="">小米电视4A 32英寸</a>
+                <p>64位四核处理器 / 1GB+4GB大内存</p>
+                <h3>999元 <span>1199元</span></h3>
+            </div>
+            <div class="bbottom_item">
+                <img src="image/mi1.jpg" alt="">
+                <a href="">小米电视4A 32英寸</a>
+                <p>64位四核处理器 / 1GB+4GB大内存</p>
+                <h3>999元 <span>1199元</span></h3>
+            </div>
+            <div class="bbottom_item">
+                <img src="image/mi1.jpg" alt="">
+                <a href="">小米电视4A 32英寸</a>
+                <p>64位四核处理器 / 1GB+4GB大内存</p>
+                <h3>999元 <span>1199元</span></h3>
+            </div>
+            <div class="bbottom_item">
+                <img src="image/mi1.jpg" alt="">
+                <a href="">小米电视4A 32英寸</a>
+                <p>64位四核处理器 / 1GB+4GB大内存</p>
+                <h3>999元 <span>1199元</span></h3>
+            </div>
+            <div class="bbottom_item">
+                <img src="image/mi1.jpg" alt="">
+                <a href="">小米电视4A 32英寸</a>
+                <p>64位四核处理器 / 1GB+4GB大内存</p>
+                <h3>999元 <span>1199元</span></h3>
+            </div>
+        </div>
+
+        <div id="bbottom">
+
+            <div class="bbottom_item">
+                <img src="image/mi3.jpg" alt="">
+                <a href="">小米电视4A 32英寸</a>
+                <p>64位四核处理器 / 1GB+4GB大内存</p>
+                <h3>999元 <span>1199元</span></h3>
+            </div>
+            <div class="bbottom_item">
+                <img src="image/mi1.jpg" alt="">
+                <a href="">小米电视4A 32英寸</a>
+                <p>64位四核处理器 / 1GB+4GB大内存</p>
+                <h3>999元 <span>1199元</span></h3>
+            </div>
+            <div class="bbottom_item">
+                <img src="image/mi1.jpg" alt="">
+                <a href="">小米电视4A 32英寸</a>
+                <p>64位四核处理器 / 1GB+4GB大内存</p>
+                <h3>999元 <span>1199元</span></h3>
+            </div>
+            <div class="bbottom_item">
+                <img src="image/mi1.jpg" alt="">
+                <a href="">小米电视4A 32英寸</a>
+                <p>64位四核处理器 / 1GB+4GB大内存</p>
+                <h3>999元 <span>1199元</span></h3>
+            </div>
+            <div class="bbottom_item">
+                <img src="image/mi1.jpg" alt="">
+                <a href="">小米电视4A 32英寸</a>
+                <p>64位四核处理器 / 1GB+4GB大内存</p>
+                <h3>999元 <span>1199元</span></h3>
+            </div>
+        </div>
+
+        <div id="bbottom">
+
+            <div class="bbottom_item">
+                <img src="image/mi1.jpg" alt="">
+                <a href="">小米电视4A 32英寸</a>
+                <p>64位四核处理器 / 1GB+4GB大内存</p>
+                <h3>999元 <span>1199元</span></h3>
+            </div>
+            <div class="bbottom_item">
+                <img src="image/mi1.jpg" alt="">
+                <a href="">小米电视4A 32英寸</a>
+                <p>64位四核处理器 / 1GB+4GB大内存</p>
+                <h3>999元 <span>1199元</span></h3>
+            </div>
+            <div class="bbottom_item">
+                <img src="image/mi1.jpg" alt="">
+                <a href="">小米电视4A 32英寸</a>
+                <p>64位四核处理器 / 1GB+4GB大内存</p>
+                <h3>999元 <span>1199元</span></h3>
+            </div>
+            <div class="bbottom_item">
+                <img src="image/mi1.jpg" alt="">
+                <a href="">小米电视4A 32英寸</a>
+                <p>64位四核处理器 / 1GB+4GB大内存</p>
+                <h3>999元 <span>1199元</span></h3>
+            </div>
+            <div class="bbottom_item">
+                <img src="image/mi1.jpg" alt="">
+                <a href="">小米电视4A 32英寸</a>
+                <p>64位四核处理器 / 1GB+4GB大内存</p>
+                <h3>999元 <span>1199元</span></h3>
+            </div>
+        </div>
+
+
+        <div id="bbottom">
+
+            <div class="bbottom_item">
+                <img src="image/mi1.jpg" alt="">
+                <a href="">小米电视4A 32英寸</a>
+                <p>64位四核处理器 / 1GB+4GB大内存</p>
+                <h3>999元 <span>1199元</span></h3>
+            </div>
+            <div class="bbottom_item">
+                <img src="image/mi1.jpg" alt="">
+                <a href="">小米电视4A 32英寸</a>
+                <p>64位四核处理器 / 1GB+4GB大内存</p>
+                <h3>999元 <span>1199元</span></h3>
+            </div>
+            <div class="bbottom_item">
+                <img src="image/mi1.jpg" alt="">
+                <a href="">小米电视4A 32英寸</a>
+                <p>64位四核处理器 / 1GB+4GB大内存</p>
+                <h3>999元 <span>1199元</span></h3>
+            </div>
+            <div class="bbottom_item">
+                <img src="image/mi1.jpg" alt="">
+                <a href="">小米电视4A 32英寸</a>
+                <p>64位四核处理器 / 1GB+4GB大内存</p>
+                <h3>999元 <span>1199元</span></h3>
+            </div>
+            <div class="bbottom_item">
+                <img src="image/mi1.jpg" alt="">
+                <a href="">小米电视4A 32英寸</a>
+                <p>64位四核处理器 / 1GB+4GB大内存</p>
+                <h3>999元 <span>1199元</span></h3>
+            </div>
+        </div>
+
+
+        <div id="bbottom">
+
+            <div class="bbottom_item">
+                <img src="image/mi1.jpg" alt="">
+                <a href="">小米电视4A 32英寸</a>
+                <p>64位四核处理器 / 1GB+4GB大内存</p>
+                <h3>999元 <span>1199元</span></h3>
+            </div>
+            <div class="bbottom_item">
+                <img src="image/mi1.jpg" alt="">
+                <a href="">小米电视4A 32英寸</a>
+                <p>64位四核处理器 / 1GB+4GB大内存</p>
+                <h3>999元 <span>1199元</span></h3>
+            </div>
+            <div class="bbottom_item">
+                <img src="image/mi1.jpg" alt="">
+                <a href="">小米电视4A 32英寸</a>
+                <p>64位四核处理器 / 1GB+4GB大内存</p>
+                <h3>999元 <span>1199元</span></h3>
+            </div>
+            <div class="bbottom_item">
+                <img src="image/mi1.jpg" alt="">
+                <a href="">小米电视4A 32英寸</a>
+                <p>64位四核处理器 / 1GB+4GB大内存</p>
+                <h3>999元 <span>1199元</span></h3>
+            </div>
+            <div class="bbottom_item">
+                <img src="image/mi1.jpg" alt="">
+                <a href="">小米电视4A 32英寸</a>
+                <p>64位四核处理器 / 1GB+4GB大内存</p>
+                <h3>999元 <span>1199元</span></h3>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 结束导航-->
+<!-- banner开始 -->
+<div id="banner">
+    <ul  class="imgbox">
+        <li class="active"><img src="image/b4.jpg" alt=""></li>
+        <li><img src="image/ba1.jpg" alt=""></li>
+        <li><img src="image/ba2.jpg" alt=""></li>
+        <li><img src="image/b4.jpg" alt=""></li>
+        <li><img src="image/ba3.jpg" alt=""></li>
+    </ul>
+    <ul class="pagerbox">
+        <li class="active"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <div class="prev"></div>
+    <div class="next"></div>
+    <ul class="banner_nav">
+        <li>手机电话卡
+            <div class="me">
+                <div class="little_picture">
+                    <img src="image/bbb1.png" alt="">
+                    <span>小米note3</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb1.png" alt="">
+                    <span>小米note3</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb1.png" alt="">
+                    <span>小米note3</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb1.png" alt="">
+                    <span>小米note3</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb1.png" alt="">
+                    <span>小米note3</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb1.png" alt="">
+                    <span>小米note3</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb1.png" alt="">
+                    <span>小米note3</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb1.png" alt="">
+                    <span>小米note3</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb1.png" alt="">
+                    <span>小米note3</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb1.png" alt="">
+                    <span>小米note3</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb1.png" alt="">
+                    <span>小米note3</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb1.png" alt="">
+                    <span>小米note3</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb1.png" alt="">
+                    <span>小米note3</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb1.png" alt="">
+                    <span>小米note3</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb1.png" alt="">
+                    <span>小米note3</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb1.png" alt="">
+                    <span>小米note3</span>
+                </div>
+            </div>
+            <span class="banner_jiantou">&gt;</span>
+        </li>
+        <li> 电视盒子                                                  <span class="banner_jiantou">&gt;</span>
+            <div class="me">
+                <div class="little_picture">
+                    <img src="image/bbb2.jpg" alt="">
+                    <span>小米电视4A&nbsp;32英寸</span>   </div>
+                <div class="little_picture">
+                    <img src="image/bbb2.jpg" alt="">
+                    <span>小米电视4A&nbsp;32英寸</span>   </div>
+                <div class="little_picture">
+                    <img src="image/bbb2.jpg" alt="">
+                    <span>小米电视4A&nbsp;32英寸</span>   </div>
+                <div class="little_picture">
+                    <img src="image/bbb2.jpg" alt="">
+                    <span>小米电视4A&nbsp;32英寸</span>   </div>
+                <div class="little_picture">
+                    <img src="image/bbb2.jpg" alt="">
+                    <span>小米电视4A&nbsp;32英寸</span>   </div>
+                <div class="little_picture">
+                    <img src="image/bbb2.jpg" alt="">
+                    <span>小米电视4A&nbsp;32英寸</span>   </div>
+                <div class="little_picture">
+                    <img src="image/bbb2.jpg" alt="">
+                    <span>小米电视4A&nbsp;32英寸</span>   </div>
+                <div class="little_picture">
+                    <img src="image/bbb2.jpg" alt="">
+                    <span>小米电视4A&nbsp;32英寸</span>   </div>
+                <div class="little_picture">
+                    <img src="image/bbb2.jpg" alt="">
+                    <span>小米电视4A&nbsp;32英寸</span>   </div>
+                <div class="little_picture">
+                    <img src="image/bbb2.jpg" alt="">
+                    <span>小米电视4A&nbsp;32英寸</span>   </div>
+                <div class="little_picture">
+                    <img src="image/bbb2.jpg" alt="">
+                    <span>小米电视4A&nbsp;32英寸</span>   </div>
+                <div class="little_picture">
+                    <img src="image/bbb2.jpg" alt="">
+                    <span>小米电视4A&nbsp;32英寸</span>   </div>
+            </div>
+        </li>
+        <li>笔记本
+            <span class="banner_jiantou">&gt;</span>
+            <div class="me">
+                <div class="little_picture">
+                    <img src="image/bbb3.jpg" alt="">
+                    <span>笔记本Air&nbsp;12.5</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb3.jpg" alt="">
+                    <span>笔记本Air&nbsp;12.5</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb3.jpg" alt="">
+                    <span>笔记本Air&nbsp;12.5</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb3.jpg" alt="">
+                    <span>笔记本Air&nbsp;12.5</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb3.jpg" alt="">
+                    <span>笔记本Air&nbsp;12.5</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb3.jpg" alt="">
+                    <span>笔记本Air&nbsp;12.5</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb3.jpg" alt="">
+                    <span>笔记本Air&nbsp;12.5</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb3.jpg" alt="">
+                    <span>笔记本Air&nbsp;12.5</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb3.jpg" alt="">
+                    <span>笔记本Air&nbsp;12.5</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb3.jpg" alt="">
+                    <span>笔记本Air&nbsp;12.5</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb3.jpg" alt="">
+                    <span>笔记本Air&nbsp;12.5</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb3.jpg" alt="">
+                    <span>笔记本Air&nbsp;12.5</span>
+                </div>
+            </div>
+        </li>
+        <li>  智能家电
+            <span class="banner_jiantou">&gt;</span>
+            <div class="me">
+                <div class="little_picture">
+                    <img src="image/bbb4.jpg" alt="">
+                    <span>空气净化器2</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb4.jpg" alt="">
+                    <span>空气净化器2</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb4.jpg" alt="">
+                    <span>空气净化器2</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb4.jpg" alt="">
+                    <span>空气净化器2</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb4.jpg" alt="">
+                    <span>空气净化器2</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb4.jpg" alt="">
+                    <span>空气净化器2</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb4.jpg" alt="">
+                    <span>空气净化器2</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb4.jpg" alt="">
+                    <span>空气净化器2</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb4.jpg" alt="">
+                    <span>空气净化器2</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb4.jpg" alt="">
+                    <span>空气净化器2</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb4.jpg" alt="">
+                    <span>空气净化器2</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb4.jpg" alt="">
+                    <span>空气净化器2</span>
+                </div>
+            </div>
+        </li>
+        <li>  健康家居
+            <span class="banner_jiantou">&gt;</span>
+            <div class="me">
+                <div class="little_picture">
+                    <img src="image/bbb5.jpg" alt="">
+                    <span>小米手环2</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb5.jpg" alt="">
+                    <span>小米手环2</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb5.jpg" alt="">
+                    <span>小米手环2</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb5.jpg" alt="">
+                    <span>小米手环2</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb5.jpg" alt="">
+                    <span>小米手环2</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb5.jpg" alt="">
+                    <span>小米手环2</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb5.jpg" alt="">
+                    <span>小米手环2</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb5.jpg" alt="">
+                    <span>小米手环2</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb5.jpg" alt="">
+                    <span>小米手环2</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb5.jpg" alt="">
+                    <span>小米手环2</span>
+                </div>
+            </div>
+        </li>
+        <li>出行儿童
+            <span class="banner_jiantou">&gt;</span>
+            <div class="me">
+                <div class="little_picture">
+                    <img src="image/bbb6.jpg" alt="">
+                    <span>九号平衡车</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb6.jpg" alt="">
+                    <span>九号平衡车</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb6.jpg" alt="">
+                    <span>九号平衡车</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb6.jpg" alt="">
+                    <span>九号平衡车</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb6.jpg" alt="">
+                    <span>九号平衡车</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb6.jpg" alt="">
+                    <span>九号平衡车</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb6.jpg" alt="">
+                    <span>九号平衡车</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb6.jpg" alt="">
+                    <span>九号平衡车</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb6.jpg" alt="">
+                    <span>九号平衡车</span>
+                </div>
+            </div>
+        </li>
+        <li>  路由器手机配件
+            <span class="banner_jiantou">&gt;</span>
+            <div class="me">
+                <div class="little_picture">
+                    <img src="image/bbb7.jpg" alt="">
+                    <span>小米路由器3</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb7.jpg" alt="">
+                    <span>小米路由器3</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb7.jpg" alt="">
+                    <span>小米路由器3</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb7.jpg" alt="">
+                    <span>小米路由器3</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb7.jpg" alt="">
+                    <span>小米路由器3</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb7.jpg" alt="">
+                    <span>小米路由器3</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb7.jpg" alt="">
+                    <span>小米路由器3</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb7.jpg" alt="">
+                    <span>小米路由器3</span>
+                </div>
+
+            </div>
+        </li>
+        <li>移动电源插线板
+            <span class="banner_jiantou">&gt;</span>
+            <div class="me">
+                <div class="little_picture">
+                    <img src="image/bbb8.jpg" alt="">
+                    <span>小米移动电源2c</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb8.jpg" alt="">
+                    <span>小米移动电源2c</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb8.jpg" alt="">
+                    <span>小米移动电源2c</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb8.jpg" alt="">
+                    <span>小米移动电源2c</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb8.jpg" alt="">
+                    <span>小米移动电源2c</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb8.jpg" alt="">
+                    <span>小米移动电源2c</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb8.jpg" alt="">
+                    <span>小米移动电源2c</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb8.jpg" alt="">
+                    <span>小米移动电源2c</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb8.jpg" alt="">
+                    <span>小米移动电源2c</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb8.jpg" alt="">
+                    <span>小米移动电源2c</span>
+                </div>
+            </div>
+        </li>
+        <li>  耳机音箱
+            <span class="banner_jiantou">&gt;</span>
+            <div class="me">
+                <div class="little_picture">
+                    <img src="image/bbb9.jpg" alt="">
+                    <span>小米胶囊耳机</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb9.jpg" alt="">
+                    <span>小米胶囊耳机</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb9.jpg" alt="">
+                    <span>小米胶囊耳机</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb9.jpg" alt="">
+                    <span>小米胶囊耳机</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb9.jpg" alt="">
+                    <span>小米胶囊耳机</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb9.jpg" alt="">
+                    <span>小米胶囊耳机</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb9.jpg" alt="">
+                    <span>小米胶囊耳机</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb9.jpg" alt="">
+                    <span>小米胶囊耳机</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb9.jpg" alt="">
+                    <span>小米胶囊耳机</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb9.jpg" alt="">
+                    <span>小米胶囊耳机</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb9.jpg" alt="">
+                    <span>小米胶囊耳机</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb9.jpg" alt="">
+                    <span>小米胶囊耳机</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb9.jpg" alt="">
+                    <span>小米胶囊耳机</span>
+                </div>
+            </div>
+        </li>
+        <li> 手机电话卡
+            <span class="banner_jiantou">&gt;</span>
+            <div class="me">
+                <div class="little_picture">
+                    <img src="image/bbb10.jpg" alt="">
+                    <span>米兔玩偶</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb10.jpg" alt="">
+                    <span>米兔玩偶</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb10.jpg" alt="">
+                    <span>米兔玩偶</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb10.jpg" alt="">
+                    <span>米兔玩偶</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb10.jpg" alt="">
+                    <span>米兔玩偶</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb10.jpg" alt="">
+                    <span>米兔玩偶</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb10.jpg" alt="">
+                    <span>米兔玩偶</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb10.jpg" alt="">
+                    <span>米兔玩偶</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb10.jpg" alt="">
+                    <span>米兔玩偶</span>
+                </div>
+                <div class="little_picture">
+                    <img src="image/bbb10.jpg" alt="">
+                    <span>米兔玩偶</span>
+                </div>
+            </div>
+
+        </li>
+    </ul>
+
+</div>
+<!-- banner结束 -->
+<!-- banner下图片开始 -->
+<div class="banner_xia_zong">
+    <div class="banner_xia_zong_neirong">
+        <div class="neirong_zuo">
+            <div class="liufenzhiyi">
+                <div class="liufenzhiyi_up">
+                    &#xe993;
+                </div>
+                <div class="liufenzhiyi_down">
+                    选购手机
+                </div>
+            </div>
+            <div class="liufenzhiyi">
+                <div class="liufenzhiyi_up">
+                    &#xe612;
+                </div>
+                <div class="liufenzhiyi_down">
+                    企业团购
+                </div>
+            </div>
+            <div class="liufenzhiyi">
+                <div class="liufenzhiyi_up">
+                    &#xe600;
+                </div>
+                <div class="liufenzhiyi_down">
+                    F码通道
+                </div>
+            </div>
+            <div class="liufenzhiyi">
+                <div class="liufenzhiyi_up">
+                    &#xe628;
+                </div>
+                <div class="liufenzhiyi_down">
+                    米粉卡
+                </div>
+            </div>
+            <div class="liufenzhiyi">
+                <div class="liufenzhiyi_up">
+                    &#xe721;
+                </div>
+                <div class="liufenzhiyi_down">
+                    以旧换新
+                </div>
+            </div>
+            <div class="liufenzhiyi">
+                <div class="liufenzhiyi_up">
+                    &#xe61d;
+                </div>
+                <div class="liufenzhiyi_down">
+                    话费充值
+                </div>
+            </div>
+        </div>
+        <div class="neirong_you">
+            <img src="image/b1.jpg" alt="">
+            <img src="image/b2.jpg" alt="">
+            <img src="image/b3.jpg" alt="">
+        </div>
+
+    </div>
+</div>
+<!-- banner下图片结束 -->
+
+
+<!-- 明星单品 -->
+<section class="single">
+    <div class="single_top">
+        <h1 class="single_title">小米明星单品</h1>
+        <!-- <div class="single_btn">
+
+                        <div class="btn1 "><span class="btn2 ">&lt;</span> </div>
+                        <div class="disable"> &gt;</div>
+
+                    </div> -->
+        <div class="btn1 disable">&lt;</div>
+        <div class="btn2">&gt;</div>
+    </div>
+    <div class="single_bottom">
+        <div class="single_item single_item2">
+            <img src="image/10.png" alt="">
+            <h1>小米MIX 2</h1>
+            <h2>全面屏2.0，5.99"大屏</h2>
+            <h3>3299元起</h3>
+        </div>
+        <div class="ming">
+            <div class="ming-right">
+                <li class="single_item single_item3">
+                    <img src="image/7.png" alt="">
+                    <h1>红米5A</h1>
+                    <h2>8天超长待机，137g轻巧机身</h2>
+                    <h3>599元</h3>
+                </li>
+                <li class="single_item single_item4">
+                    <img src="image/4.png" alt="">
+                    <h1>小米6</h1>
+                    <h2>变焦双摄，4 轴防抖</h2>
+                    <h3>2299元起</h3>
+                </li>
+                <li class="single_item   single_item5">
+                    <img src="image/6.png" alt="">
+                    <h1>小米电视4A 43英寸 标准版</h1>
+                    <h2>全高清HDR 四核高性能处理器</h2>
+                    <h3>1999元</h3>
+                </li>
+                <li class="single_item single_item1  single_item6">
+                    <img src="image/9.png" alt="">
+                    <h1>小米笔记本</h1>
+                    <h2>更轻更薄，像杂志一样随身携带</h2>
+                    <h3>3599元起</h3>
+                </li>
+                <li class="single_item single_item3">
+                    <img src="image/7.png" alt="">
+                    <h1>红米5A</h1>
+                    <h2>8天超长待机，137g轻巧机身</h2>
+                    <h3>599元</h3>
+                </li>
+                <li class="single_item single_item4">
+                    <img src="image/4.png" alt="">
+                    <h1>小米6</h1>
+                    <h2>变焦双摄，4 轴防抖</h2>
+                    <h3>2299元起</h3>
+                </li>
+                <li class="single_item   single_item5">
+                    <img src="image/6.png" alt="">
+                    <h1>小米电视4A 43英寸 标准版</h1>
+                    <h2>全高清HDR 四核高性能处理器</h2>
+                    <h3>1999元</h3>
+                </li>
+                <li class="single_item single_item1  single_item6">
+                    <img src="image/9.png" alt="">
+                    <h1>小米笔记本</h1>
+                    <h2>更轻更薄，像杂志一样随身携带</h2>
+                    <h3>3599元起</h3>
+                </li>
+                <li class="single_item single_item3">
+                    <img src="image/7.png" alt="">
+                    <h1>红米5A</h1>
+                    <h2>8天超长待机，137g轻巧机身</h2>
+                    <h3>599元</h3>
+                </li>
+                <li class="single_item single_item4">
+                    <img src="image/4.png" alt="">
+                    <h1>小米6</h1>
+                    <h2>变焦双摄，4 轴防抖</h2>
+                    <h3>2299元起</h3>
+                </li>
+                <li class="single_item   single_item5">
+                    <img src="image/6.png" alt="">
+                    <h1>小米电视4A 43英寸 标准版</h1>
+                    <h2>全高清HDR 四核高性能处理器</h2>
+                    <h3>1999元</h3>
+                </li>
+                <li class="single_item single_item1  single_item6">
+                    <img src="image/9.png" alt="">
+                    <h1>小米笔记本</h1>
+                    <h2>更轻更薄，像杂志一样随身携带</h2>
+                    <h3>3599元起</h3>
+                </li>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- 结束明星单品 -->
+
+<!-- 内容开始 -->
+
+<div class="jd">
+    <!-- 家电开始 -->
+    <section class="jd_zhineng">
+        <div class="jiadian_top">
+            <h1 class="single_title">家电</h1>
+            <!-- <div class="zhineng_more">
+                    <h2>查看全部</h2>
+                    <div class="zhineng_btn">
+                        &gt;
+                    </div>
+                </div>   -->
+            <div class="dapei_right">
+                <h2 class="active" >热门</h2>
+                <h2>出行</h2>
+                <h2>健康</h2>
+                <h2>酷玩</h2>
+                <h2>路由器</h2>
+            </div>
+        </div>
+        <div class="jd_bottom ">
+            <img src="image/j8.jpg" alt="" class="zhineng_left">
+            <div class="zhineng_right active">
+
+                <div class="zhineng_item">
+                    <img src="image/mi2.png" alt="">
+                    <a href="">小米电视4A 49英寸 标准版</a>
+                    <p>2GB+8GB 大储存 / 全高清HDR</p>
+                    <h3>2199元 <span>2399元</span></h3>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/mi1.jpg" alt="">
+                    <a href="">小米电视4A 32英寸</a>
+                    <p>64位四核处理器 / 1GB+4GB大内存</p>
+                    <h3>999元 <span>1199元</span></h3>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/mi3.jpg" alt="">
+                    <a href="">13.3"小米笔记本Air i5 8G 256...</a>
+                    <p> &nbsp;</p>
+                    <h3>5199元</h3>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/mi.jpg" alt="">
+                    <a href="">15.6"小米笔记本Pro i7 16G MX... </a>
+                    <p>  &nbsp;  </p>
+                    <h3>6999元</h3>
+                </div>
+                <div class="zhineng_item item1">
+                    <img src="image/m5.jpg" alt="">
+                    <a href="">飞利浦智睿蜡烛灯泡 水晶版</a>
+                    <p>亮度色温可调，十年使用寿命</p>
+                    <h3>59元</h3>
+                </div>
+                <div class="zhineng_item item1">
+                    <img src="image/m6.jpg" alt="">
+                    <a href="">米家电水壶</a>
+                    <p>一杯水，是一家人的安心</p>
+                    <h3>99元</h3>
+                </div>
+                <div class="zhineng_item item1">
+                    <img src="image/m7.png" alt="">
+                    <a href="">米家空气净化器Pro</a>
+                    <p>限量赠59元插线板</p>
+                    <h3>1199元 <span>1499元</span></h3>
+                </div>
+                <div class="xiao">
+                    <div class="xiao_up">
+                        <div class="up_left">
+                            <h1  class="yangshi3">小白摄像机</h1>
+                            <h2 class="yangshi4">399元</h2>
+                        </div>
+                        <div class="up_right">
+                            <img src="image/shexiangji.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="xiao_up">
+                        <div class="up_left">
+                            <h1 class="yangshi1">浏览更多</h1>
+                            <h2 class="yangshi2 ">热门</h2>
+                        </div>
+                        <div class="up_right">
+                            <div class="jiaotou">
+                                <img src="image/jiantou.png" alt="" >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="zhineng_right">
+                <div class="zhineng_item">
+                    <img src="image/mi1.jpg" alt="">
+                    <a href="">小米电视4A 32英寸</a>
+                    <p>64位四核处理器 / 1GB+4GB大内存</p>
+                    <h3>999元 <span>1199元</span></h3>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/mi2.png" alt="">
+                    <a href="">小米电视4A 49英寸 标准版</a>
+                    <p>2GB+8GB 大储存 / 全高清HDR</p>
+                    <h3>2199元 <span>2399元</span></h3>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/mi3.jpg" alt="">
+                    <a href="">13.3"小米笔记本Air i5 8G 256...</a>
+                    <p> &nbsp;</p>
+                    <h3>5199元</h3>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/mi.jpg" alt="">
+                    <a href="">15.6"小米笔记本Pro i7 16G MX... </a>
+                    <p>  &nbsp;  </p>
+                    <h3>6999元</h3>
+                </div>
+                <div class="zhineng_item item1">
+                    <img src="image/m5.jpg" alt="">
+                    <a href="">飞利浦智睿蜡烛灯泡 水晶版</a>
+                    <p>亮度色温可调，十年使用寿命</p>
+                    <h3>59元</h3>
+                </div>
+                <div class="zhineng_item item1">
+                    <img src="image/m6.jpg" alt="">
+                    <a href="">米家电水壶</a>
+                    <p>一杯水，是一家人的安心</p>
+                    <h3>99元</h3>
+                </div>
+                <div class="zhineng_item item1">
+                    <img src="image/m7.png" alt="">
+                    <a href="">米家空气净化器Pro</a>
+                    <p>限量赠59元插线板</p>
+                    <h3>1199元 <span>1499元</span></h3>
+                </div>
+                <div class="xiao">
+                    <div class="xiao_up">
+                        <div class="up_left">
+                            <h1  class="yangshi3">小白摄像机</h1>
+                            <h2 class="yangshi4">399元</h2>
+                        </div>
+                        <div class="up_right">
+                            <img src="image/shexiangji.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="xiao_up">
+                        <div class="up_left">
+                            <h1 class="yangshi1">浏览更多</h1>
+                            <h2 class="yangshi2 ">热门</h2>
+                        </div>
+                        <div class="up_right">
+                            <div class="jiaotou">
+                                <img src="image/jiantou.png" alt="" >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="zhineng_right">
+                <div class="zhineng_item">
+                    <img src="image/mi1.jpg" alt="">
+                    <a href="">小米电视4A 32英寸</a>
+                    <p>64位四核处理器 / 1GB+4GB大内存</p>
+                    <h3>999元 <span>1199元</span></h3>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/mi2.png" alt="">
+                    <a href="">小米电视4A 49英寸 标准版</a>
+                    <p>2GB+8GB 大储存 / 全高清HDR</p>
+                    <h3>2199元 <span>2399元</span></h3>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/mi3.jpg" alt="">
+                    <a href="">13.3"小米笔记本Air i5 8G 256...</a>
+                    <p> &nbsp;</p>
+                    <h3>5199元</h3>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/mi.jpg" alt="">
+                    <a href="">15.6"小米笔记本Pro i7 16G MX... </a>
+                    <p>  &nbsp;  </p>
+                    <h3>6999元</h3>
+                </div>
+                <div class="zhineng_item item1">
+                    <img src="image/m5.jpg" alt="">
+                    <a href="">飞利浦智睿蜡烛灯泡 水晶版</a>
+                    <p>亮度色温可调，十年使用寿命</p>
+                    <h3>59元</h3>
+                </div>
+                <div class="zhineng_item item1">
+                    <img src="image/m6.jpg" alt="">
+                    <a href="">米家电水壶</a>
+                    <p>一杯水，是一家人的安心</p>
+                    <h3>99元</h3>
+                </div>
+                <div class="zhineng_item item1">
+                    <img src="image/m7.png" alt="">
+                    <a href="">米家空气净化器Pro</a>
+                    <p>限量赠59元插线板</p>
+                    <h3>1199元 <span>1499元</span></h3>
+                </div>
+                <div class="xiao">
+                    <div class="xiao_up">
+                        <div class="up_left">
+                            <h1  class="yangshi3">小白摄像机</h1>
+                            <h2 class="yangshi4">399元</h2>
+                        </div>
+                        <div class="up_right">
+                            <img src="image/shexiangji.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="xiao_up">
+                        <div class="up_left">
+                            <h1 class="yangshi1">浏览更多</h1>
+                            <h2 class="yangshi2 ">热门</h2>
+                        </div>
+                        <div class="up_right">
+                            <div class="jiaotou">
+                                <img src="image/jiantou.png" alt="" >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="zhineng_right">
+                <div class="zhineng_item">
+                    <img src="image/mi1.jpg" alt="">
+                    <a href="">小米电视4A 32英寸</a>
+                    <p>64位四核处理器 / 1GB+4GB大内存</p>
+                    <h3>999元 <span>1199元</span></h3>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/mi2.png" alt="">
+                    <a href="">小米电视4A 49英寸 标准版</a>
+                    <p>2GB+8GB 大储存 / 全高清HDR</p>
+                    <h3>2199元 <span>2399元</span></h3>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/mi3.jpg" alt="">
+                    <a href="">13.3"小米笔记本Air i5 8G 256...</a>
+                    <p> &nbsp;</p>
+                    <h3>5199元</h3>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/mi.jpg" alt="">
+                    <a href="">15.6"小米笔记本Pro i7 16G MX... </a>
+                    <p>  &nbsp;  </p>
+                    <h3>6999元</h3>
+                </div>
+                <div class="zhineng_item item1">
+                    <img src="image/m5.jpg" alt="">
+                    <a href="">飞利浦智睿蜡烛灯泡 水晶版</a>
+                    <p>亮度色温可调，十年使用寿命</p>
+                    <h3>59元</h3>
+                </div>
+                <div class="zhineng_item item1">
+                    <img src="image/m6.jpg" alt="">
+                    <a href="">米家电水壶</a>
+                    <p>一杯水，是一家人的安心</p>
+                    <h3>99元</h3>
+                </div>
+                <div class="zhineng_item item1">
+                    <img src="image/m7.png" alt="">
+                    <a href="">米家空气净化器Pro</a>
+                    <p>限量赠59元插线板</p>
+                    <h3>1199元 <span>1499元</span></h3>
+                </div>
+                <div class="xiao">
+                    <div class="xiao_up">
+                        <div class="up_left">
+                            <h1  class="yangshi3">小白摄像机</h1>
+                            <h2 class="yangshi4">399元</h2>
+                        </div>
+                        <div class="up_right">
+                            <img src="image/shexiangji.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="xiao_up">
+                        <div class="up_left">
+                            <h1 class="yangshi1">浏览更多</h1>
+                            <h2 class="yangshi2 ">热门</h2>
+                        </div>
+                        <div class="up_right">
+                            <div class="jiaotou">
+                                <img src="image/jiantou.png" alt="" >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="zhineng_right">
+                <div class="zhineng_item">
+                    <img src="image/mi1.jpg" alt="">
+                    <a href="">小米电视4A 32英寸</a>
+                    <p>64位四核处理器 / 1GB+4GB大内存</p>
+                    <h3>999元 <span>1199元</span></h3>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/mi2.png" alt="">
+                    <a href="">小米电视4A 49英寸 标准版</a>
+                    <p>2GB+8GB 大储存 / 全高清HDR</p>
+                    <h3>2199元 <span>2399元</span></h3>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/mi3.jpg" alt="">
+                    <a href="">13.3"小米笔记本Air i5 8G 256...</a>
+                    <p> &nbsp;</p>
+                    <h3>5199元</h3>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/mi.jpg" alt="">
+                    <a href="">15.6"小米笔记本Pro i7 16G MX... </a>
+                    <p>  &nbsp;  </p>
+                    <h3>6999元</h3>
+                </div>
+                <div class="zhineng_item item1">
+                    <img src="image/m5.jpg" alt="">
+                    <a href="">飞利浦智睿蜡烛灯泡 水晶版</a>
+                    <p>亮度色温可调，十年使用寿命</p>
+                    <h3>59元</h3>
+                </div>
+                <div class="zhineng_item item1">
+                    <img src="image/m6.jpg" alt="">
+                    <a href="">米家电水壶</a>
+                    <p>一杯水，是一家人的安心</p>
+                    <h3>99元</h3>
+                </div>
+                <div class="zhineng_item item1">
+                    <img src="image/m7.png" alt="">
+                    <a href="">米家空气净化器Pro</a>
+                    <p>限量赠59元插线板</p>
+                    <h3>1199元 <span>1499元</span></h3>
+                </div>
+                <div class="xiao">
+                    <div class="xiao_up">
+                        <div class="up_left">
+                            <h1  class="yangshi3">小白摄像机</h1>
+                            <h2 class="yangshi4">399元</h2>
+                        </div>
+                        <div class="up_right">
+                            <img src="image/shexiangji.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="xiao_up">
+                        <div class="up_left">
+                            <h1 class="yangshi1">浏览更多</h1>
+                            <h2 class="yangshi2 ">热门</h2>
+                        </div>
+                        <div class="up_right">
+                            <div class="jiaotou">
+                                <img src="image/jiantou.png" alt="" >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 家电结束 -->
+    <!-- 智能开始 -->
+    <section class="jd_zhineng">
+        <div class="jiadian_top">
+            <h1 class="single_title">智能</h1>
+
+            <div class="dapei_right">
+                <h2 class="active" >热门</h2>
+                <h2>出行</h2>
+                <h2>健康</h2>
+                <h2>酷玩</h2>
+                <h2>路由器</h2>
+            </div>
+        </div>
+        <div class="jd_bottom ">
+
+            <div class="picyuree">
+                <img src="image/z1.jpg" alt="">
+                <img src="image/z6.jpg" alt="" class="item1">
+            </div>
+            <div class="zhineng_right active">
+                <div class="zhineng_item">
+                    <img src="image/z2.jpg" alt="">
+                    <a href="">米兔积木机器人 履带机甲</a>
+                    <div class="zhineng_2wenzi">
+                        <p >履带底盘，智能操控，百变拼插</p>
+
+                    </div>
+                    <div class="zhineng_3wenzi">
+                        <h3>499元 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/z3.jpg" alt="">
+                    <a href="">米兔智能故事机</a>
+                    <div class="zhineng_2wenzi">
+                        <p >微信远程互动，智能语音交互</p>
+
+                    </div>
+                    <div class="zhineng_3wenzi">
+                        <h3>179元 <span>199元</span></h3>
+                    </div>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/z4.png" alt="">
+                    <a href="">米家骑记电助力折叠自行车</a>
+                    <div class="zhineng_2wenzi">
+                        <p >力矩传感电助力，折叠便携设计</p>
+
+                    </div>
+                    <div class="zhineng_3wenzi">
+                        <h3>2949元 <span>2999元</span></h3>
+                    </div>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/z5.jpg" alt="">
+                    <a href="">米家多功能网关</a>
+                    <div class="zhineng_2wenzi">
+                        <p >米家智能配件控制中心</p>
+
+                    </div>
+                    <div class="zhineng_3wenzi">
+                        <h3>149</h3>
+                    </div>
+                    <div class="zhinngtankuang">
+                        大功率将如何鉴别
+                    </div>
+                </div>
+
+
+
+                <div class="zhineng_item item1">
+                    <img src="image/z7.jpg" alt="">
+                    <a href="">小米无人机4K版套装</a>
+                    <div class="zhineng_2wenzi">
+                        <p >探索触手可及的新视角</p>
+
+                    </div>
+                    <div class="zhineng_3wenzi">
+                        <h3>2999元 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item item1">
+                    <img src="image/z8.jpg" alt="">
+                    <a href="">米兔儿童电话手表2</a>
+                    <div class="zhineng_2wenzi">
+                        <p >AMOLED高清彩屏，6 天超长续航</p>
+
+                    </div>
+                    <div class="zhineng_3wenzi">
+                        <h3>399元 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item item1">
+                    <img src="image/z9.jpg" alt="">
+                    <a href="">小米网络收音机增强版</a>
+                    <div class="zhineng_2wenzi">
+                        <p >蓝牙 Wi-Fi 双无线，专业扬声器</p>
+
+                    </div>
+                    <div class="zhineng_3wenzi">
+                        <h3>149元 </h3>
+                    </div>
+                </div>
+                <div class="xiao">
+                    <div class="xiao_up">
+                        <div class="up_left">
+                            <h1  class="yangshi3">小米活塞耳...</h1>
+                            <h2 class="yangshi4">25元</h2>
+                        </div>
+                        <div class="up_right">
+                            <img src="image/z10.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="xiao_up">
+                        <div class="up_left">
+                            <h1 class="yangshi1">浏览更多</h1>
+                            <h2 class="yangshi2 ">热门</h2>
+                        </div>
+                        <div class="up_right">
+                            <div class="jiaotou">
+                                <img src="image/jiantou.png" alt="" >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="zhineng_right ">
+                <div class="zhineng_item">
+                    <img src="image/z2.jpg" alt="">
+                    <a href="">米兔积木机器人 履带机甲</a>
+                    <div class="zhineng_2wenzi">
+                        <p >履带底盘，智能操控，百变拼插</p>
+
+                    </div>
+                    <div class="zhineng_3wenzi">
+                        <h3>499元 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/z3.jpg" alt="">
+                    <a href="">米兔智能故事机</a>
+                    <div class="zhineng_2wenzi">
+                        <p >微信远程互动，智能语音交互</p>
+
+                    </div>
+                    <div class="zhineng_3wenzi">
+                        <h3>179元 <span>199元</span></h3>
+                    </div>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/z4.png" alt="">
+                    <a href="">米家骑记电助力折叠自行车</a>
+                    <div class="zhineng_2wenzi">
+                        <p >力矩传感电助力，折叠便携设计</p>
+
+                    </div>
+                    <div class="zhineng_3wenzi">
+                        <h3>2949元 <span>2999元</span></h3>
+                    </div>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/z5.jpg" alt="">
+                    <a href="">米家多功能网关</a>
+                    <div class="zhineng_2wenzi">
+                        <p >米家智能配件控制中心</p>
+
+                    </div>
+                    <div class="zhineng_3wenzi">
+                        <h3>149</h3>
+                    </div>
+                    <div class="zhinngtankuang">
+                        大功率将如何鉴别
+                    </div>
+                </div>
+
+
+
+                <div class="zhineng_item item1">
+                    <img src="image/z7.jpg" alt="">
+                    <a href="">小米无人机4K版套装</a>
+                    <div class="zhineng_2wenzi">
+                        <p >探索触手可及的新视角</p>
+
+                    </div>
+                    <div class="zhineng_3wenzi">
+                        <h3>2999元 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item item1">
+                    <img src="image/z8.jpg" alt="">
+                    <a href="">米兔儿童电话手表2</a>
+                    <div class="zhineng_2wenzi">
+                        <p >AMOLED高清彩屏，6 天超长续航</p>
+
+                    </div>
+                    <div class="zhineng_3wenzi">
+                        <h3>399元 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item item1">
+                    <img src="image/z9.jpg" alt="">
+                    <a href="">小米网络收音机增强版</a>
+                    <div class="zhineng_2wenzi">
+                        <p >蓝牙 Wi-Fi 双无线，专业扬声器</p>
+
+                    </div>
+                    <div class="zhineng_3wenzi">
+                        <h3>149元 </h3>
+                    </div>
+                </div>
+                <div class="xiao">
+                    <div class="xiao_up">
+                        <div class="up_left">
+                            <h1  class="yangshi3">小米活塞耳...</h1>
+                            <h2 class="yangshi4">25元</h2>
+                        </div>
+                        <div class="up_right">
+                            <img src="image/z10.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="xiao_up">
+                        <div class="up_left">
+                            <h1 class="yangshi1">浏览更多</h1>
+                            <h2 class="yangshi2 ">热门</h2>
+                        </div>
+                        <div class="up_right">
+                            <div class="jiaotou">
+                                <img src="image/jiantou.png" alt="" >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="zhineng_right ">
+                <div class="zhineng_item">
+                    <img src="image/z2.jpg" alt="">
+                    <a href="">米兔积木机器人 履带机甲</a>
+                    <div class="zhineng_2wenzi">
+                        <p >履带底盘，智能操控，百变拼插</p>
+
+                    </div>
+                    <div class="zhineng_3wenzi">
+                        <h3>499元 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/z3.jpg" alt="">
+                    <a href="">米兔智能故事机</a>
+                    <div class="zhineng_2wenzi">
+                        <p >微信远程互动，智能语音交互</p>
+
+                    </div>
+                    <div class="zhineng_3wenzi">
+                        <h3>179元 <span>199元</span></h3>
+                    </div>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/z4.png" alt="">
+                    <a href="">米家骑记电助力折叠自行车</a>
+                    <div class="zhineng_2wenzi">
+                        <p >力矩传感电助力，折叠便携设计</p>
+
+                    </div>
+                    <div class="zhineng_3wenzi">
+                        <h3>2949元 <span>2999元</span></h3>
+                    </div>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/z5.jpg" alt="">
+                    <a href="">米家多功能网关</a>
+                    <div class="zhineng_2wenzi">
+                        <p >米家智能配件控制中心</p>
+
+                    </div>
+                    <div class="zhineng_3wenzi">
+                        <h3>149</h3>
+                    </div>
+                    <div class="zhinngtankuang">
+                        大功率将如何鉴别
+                    </div>
+                </div>
+
+
+
+                <div class="zhineng_item item1">
+                    <img src="image/z7.jpg" alt="">
+                    <a href="">小米无人机4K版套装</a>
+                    <div class="zhineng_2wenzi">
+                        <p >探索触手可及的新视角</p>
+
+                    </div>
+                    <div class="zhineng_3wenzi">
+                        <h3>2999元 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item item1">
+                    <img src="image/z8.jpg" alt="">
+                    <a href="">米兔儿童电话手表2</a>
+                    <div class="zhineng_2wenzi">
+                        <p >AMOLED高清彩屏，6 天超长续航</p>
+
+                    </div>
+                    <div class="zhineng_3wenzi">
+                        <h3>399元 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item item1">
+                    <img src="image/z9.jpg" alt="">
+                    <a href="">小米网络收音机增强版</a>
+                    <div class="zhineng_2wenzi">
+                        <p >蓝牙 Wi-Fi 双无线，专业扬声器</p>
+
+                    </div>
+                    <div class="zhineng_3wenzi">
+                        <h3>149元 </h3>
+                    </div>
+                </div>
+                <div class="xiao">
+                    <div class="xiao_up">
+                        <div class="up_left">
+                            <h1  class="yangshi3">小米活塞耳...</h1>
+                            <h2 class="yangshi4">25元</h2>
+                        </div>
+                        <div class="up_right">
+                            <img src="image/z10.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="xiao_up">
+                        <div class="up_left">
+                            <h1 class="yangshi1">浏览更多</h1>
+                            <h2 class="yangshi2 ">热门</h2>
+                        </div>
+                        <div class="up_right">
+                            <div class="jiaotou">
+                                <img src="image/jiantou.png" alt="" >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="zhineng_right ">
+                <div class="zhineng_item">
+                    <img src="image/z2.jpg" alt="">
+                    <a href="">米兔积木机器人 履带机甲</a>
+                    <div class="zhineng_2wenzi">
+                        <p >履带底盘，智能操控，百变拼插</p>
+
+                    </div>
+                    <div class="zhineng_3wenzi">
+                        <h3>499元 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/z3.jpg" alt="">
+                    <a href="">米兔智能故事机</a>
+                    <div class="zhineng_2wenzi">
+                        <p >微信远程互动，智能语音交互</p>
+
+                    </div>
+                    <div class="zhineng_3wenzi">
+                        <h3>179元 <span>199元</span></h3>
+                    </div>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/z4.png" alt="">
+                    <a href="">米家骑记电助力折叠自行车</a>
+                    <div class="zhineng_2wenzi">
+                        <p >力矩传感电助力，折叠便携设计</p>
+
+                    </div>
+                    <div class="zhineng_3wenzi">
+                        <h3>2949元 <span>2999元</span></h3>
+                    </div>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/z5.jpg" alt="">
+                    <a href="">米家多功能网关</a>
+                    <div class="zhineng_2wenzi">
+                        <p >米家智能配件控制中心</p>
+
+                    </div>
+                    <div class="zhineng_3wenzi">
+                        <h3>149</h3>
+                    </div>
+                    <div class="zhinngtankuang">
+                        大功率将如何鉴别
+                    </div>
+                </div>
+
+
+
+                <div class="zhineng_item item1">
+                    <img src="image/z7.jpg" alt="">
+                    <a href="">小米无人机4K版套装</a>
+                    <div class="zhineng_2wenzi">
+                        <p >探索触手可及的新视角</p>
+
+                    </div>
+                    <div class="zhineng_3wenzi">
+                        <h3>2999元 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item item1">
+                    <img src="image/z8.jpg" alt="">
+                    <a href="">米兔儿童电话手表2</a>
+                    <div class="zhineng_2wenzi">
+                        <p >AMOLED高清彩屏，6 天超长续航</p>
+
+                    </div>
+                    <div class="zhineng_3wenzi">
+                        <h3>399元 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item item1">
+                    <img src="image/z9.jpg" alt="">
+                    <a href="">小米网络收音机增强版</a>
+                    <div class="zhineng_2wenzi">
+                        <p >蓝牙 Wi-Fi 双无线，专业扬声器</p>
+
+                    </div>
+                    <div class="zhineng_3wenzi">
+                        <h3>149元 </h3>
+                    </div>
+                </div>
+                <div class="xiao">
+                    <div class="xiao_up">
+                        <div class="up_left">
+                            <h1  class="yangshi3">小米活塞耳...</h1>
+                            <h2 class="yangshi4">25元</h2>
+                        </div>
+                        <div class="up_right">
+                            <img src="image/z10.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="xiao_up">
+                        <div class="up_left">
+                            <h1 class="yangshi1">浏览更多</h1>
+                            <h2 class="yangshi2 ">热门</h2>
+                        </div>
+                        <div class="up_right">
+                            <div class="jiaotou">
+                                <img src="image/jiantou.png" alt="" >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="zhineng_right ">
+                <div class="zhineng_item">
+                    <img src="image/z2.jpg" alt="">
+                    <a href="">米兔积木机器人 履带机甲</a>
+                    <div class="zhineng_2wenzi">
+                        <p >履带底盘，智能操控，百变拼插</p>
+
+                    </div>
+                    <div class="zhineng_3wenzi">
+                        <h3>499元 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/z3.jpg" alt="">
+                    <a href="">米兔智能故事机</a>
+                    <div class="zhineng_2wenzi">
+                        <p >微信远程互动，智能语音交互</p>
+
+                    </div>
+                    <div class="zhineng_3wenzi">
+                        <h3>179元 <span>199元</span></h3>
+                    </div>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/z4.png" alt="">
+                    <a href="">米家骑记电助力折叠自行车</a>
+                    <div class="zhineng_2wenzi">
+                        <p >力矩传感电助力，折叠便携设计</p>
+
+                    </div>
+                    <div class="zhineng_3wenzi">
+                        <h3>2949元 <span>2999元</span></h3>
+                    </div>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/z5.jpg" alt="">
+                    <a href="">米家多功能网关</a>
+                    <div class="zhineng_2wenzi">
+                        <p >米家智能配件控制中心</p>
+
+                    </div>
+                    <div class="zhineng_3wenzi">
+                        <h3>149</h3>
+                    </div>
+                    <div class="zhinngtankuang">
+                        大功率将如何鉴别
+                    </div>
+                </div>
+
+
+
+                <div class="zhineng_item item1">
+                    <img src="image/z7.jpg" alt="">
+                    <a href="">小米无人机4K版套装</a>
+                    <div class="zhineng_2wenzi">
+                        <p >探索触手可及的新视角</p>
+
+                    </div>
+                    <div class="zhineng_3wenzi">
+                        <h3>2999元 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item item1">
+                    <img src="image/z8.jpg" alt="">
+                    <a href="">米兔儿童电话手表2</a>
+                    <div class="zhineng_2wenzi">
+                        <p >AMOLED高清彩屏，6 天超长续航</p>
+
+                    </div>
+                    <div class="zhineng_3wenzi">
+                        <h3>399元 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item item1">
+                    <img src="image/z9.jpg" alt="">
+                    <a href="">小米网络收音机增强版</a>
+                    <div class="zhineng_2wenzi">
+                        <p >蓝牙 Wi-Fi 双无线，专业扬声器</p>
+
+                    </div>
+                    <div class="zhineng_3wenzi">
+                        <h3>149元 </h3>
+                    </div>
+                </div>
+                <div class="xiao">
+                    <div class="xiao_up">
+                        <div class="up_left">
+                            <h1  class="yangshi3">小米活塞耳...</h1>
+                            <h2 class="yangshi4">25元</h2>
+                        </div>
+                        <div class="up_right">
+                            <img src="image/z10.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="xiao_up">
+                        <div class="up_left">
+                            <h1 class="yangshi1">浏览更多</h1>
+                            <h2 class="yangshi2 ">热门</h2>
+                        </div>
+                        <div class="up_right">
+                            <div class="jiaotou">
+                                <img src="image/jiantou.png" alt="" >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </section>
+    <!-- 智能结束 -->
+    <!-- 搭配开始 -->
+
+    <section class="jd_zhineng">
+        <div class="jiadian_top">
+            <h1 class="single_title">搭配</h1>
+            <div class="dapei_right">
+                <h2 class="active" >热门</h2>
+                <h2>耳机</h2>
+                <h2>音箱</h2>
+                <h2>电池存储卡</h2>
+            </div>
+        </div>
+        <div class="jd_bottom ">
+            <div class="picyuree">
+                <img src="image/p1.jpg" alt="">
+                <img src="image/P6.jpg" alt="" class="item1">
+            </div>
+
+            <div class="zhineng_right active">
+                <div class="zhineng_item">
+                    <img src="image/p2.jpg" alt="">
+                    <a href="">小米AI音箱</a>
+                    <div class="dapei_2wenzi">
+                        <p >299元</p>
+
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>2.8万人评价 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/p3.jpg" alt="">
+                    <a href="">新小米移动电源2 (10000mAh）</a>
+                    <div class="dapei_2wenzi">
+                        <p >79元</p>
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>2805人评价 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/p4.jpg" alt="">
+                    <a href="">小米移动电源2C 20000mAh</a>
+                    <div class="dapei_2wenzi">
+                        <p >129元</p>
+
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>1.4万人评价 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/p5.jpg" alt="">
+                    <a href="">小米移动电源10000mAh高配版</a>
+                    <div class="dapei_2wenzi">
+                        <p >129元<span>149元</span></p>
+
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>2万人评价 </h3>
+                    </div>
+                </div>
+
+                <div class="zhineng_item item1">
+                    <img src="image/p7.jpg" alt="">
+                    <a href="">小米移动电源2 (5000mAh版)</a>
+                    <div class="dapei_2wenzi">
+                        <p >49元</p>
+
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>195人评价 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item item1">
+                    <img src="image/p8.jpg" alt="">
+                    <a href="">ZMI双模智能充电器+充电宝</a>
+                    <div class="dapei_2wenzi">
+                        <p >109元</p>
+
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>107人评价 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item item1">
+                    <img src="image/n.jpg" alt="">
+                    <a href="">小米移动电源5000mAh</a>
+                    <div class="dapei_2wenzi">
+                        <p >49元</p>
+
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>10.9万人评价 </h3>
+                    </div>
+                </div>
+
+                <div class="xiao">
+                    <div class="xiao_up">
+                        <div class="up_left">
+                            <h1  class="yangshi3">小米活塞耳...</h1>
+                            <h2 class="yangshi4">25元</h2>
+                        </div>
+                        <div class="up_right">
+                            <img src="image/erji.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="xiao_up">
+                        <div class="up_left">
+                            <h1 class="yangshi1">浏览更多</h1>
+                            <h2 class="yangshi2 ">热门</h2>
+                        </div>
+                        <div class="up_right">
+                            <div class="jiaotou">
+                                <img src="image/jiantou.png" alt="" >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="zhineng_right ">
+                <div class="zhineng_item">
+                    <img src="image/p2.jpg" alt="">
+                    <a href="">小米AI音箱</a>
+                    <div class="dapei_2wenzi">
+                        <p >299元</p>
+
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>2.8万人评价 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/p3.jpg" alt="">
+                    <a href="">新小米移动电源2 (10000mAh）</a>
+                    <div class="dapei_2wenzi">
+                        <p >79元</p>
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>2805人评价 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/p4.jpg" alt="">
+                    <a href="">小米移动电源2C 20000mAh</a>
+                    <div class="dapei_2wenzi">
+                        <p >129元</p>
+
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>1.4万人评价 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/p5.jpg" alt="">
+                    <a href="">小米移动电源10000mAh高配版</a>
+                    <div class="dapei_2wenzi">
+                        <p >129元<span>149元</span></p>
+
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>2万人评价 </h3>
+                    </div>
+                </div>
+
+                <div class="zhineng_item item1">
+                    <img src="image/p7.jpg" alt="">
+                    <a href="">小米移动电源2 (5000mAh版)</a>
+                    <div class="dapei_2wenzi">
+                        <p >49元</p>
+
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>195人评价 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item item1">
+                    <img src="image/p8.jpg" alt="">
+                    <a href="">ZMI双模智能充电器+充电宝</a>
+                    <div class="dapei_2wenzi">
+                        <p >109元</p>
+
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>107人评价 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item item1">
+                    <img src="image/n.jpg" alt="">
+                    <a href="">小米移动电源5000mAh</a>
+                    <div class="dapei_2wenzi">
+                        <p >49元</p>
+
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>10.9万人评价 </h3>
+                    </div>
+                </div>
+
+                <div class="xiao">
+                    <div class="xiao_up">
+                        <div class="up_left">
+                            <h1  class="yangshi3">小米活塞耳...</h1>
+                            <h2 class="yangshi4">25元</h2>
+                        </div>
+                        <div class="up_right">
+                            <img src="image/erji.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="xiao_up">
+                        <div class="up_left">
+                            <h1 class="yangshi1">浏览更多</h1>
+                            <h2 class="yangshi2 ">热门</h2>
+                        </div>
+                        <div class="up_right">
+                            <div class="jiaotou">
+                                <img src="image/jiantou.png" alt="" >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="zhineng_right ">
+                <div class="zhineng_item">
+                    <img src="image/p2.jpg" alt="">
+                    <a href="">小米AI音箱</a>
+                    <div class="dapei_2wenzi">
+                        <p >299元</p>
+
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>2.8万人评价 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/p3.jpg" alt="">
+                    <a href="">新小米移动电源2 (10000mAh）</a>
+                    <div class="dapei_2wenzi">
+                        <p >79元</p>
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>2805人评价 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/p4.jpg" alt="">
+                    <a href="">小米移动电源2C 20000mAh</a>
+                    <div class="dapei_2wenzi">
+                        <p >129元</p>
+
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>1.4万人评价 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/p5.jpg" alt="">
+                    <a href="">小米移动电源10000mAh高配版</a>
+                    <div class="dapei_2wenzi">
+                        <p >129元<span>149元</span></p>
+
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>2万人评价 </h3>
+                    </div>
+                </div>
+
+                <div class="zhineng_item item1">
+                    <img src="image/p7.jpg" alt="">
+                    <a href="">小米移动电源2 (5000mAh版)</a>
+                    <div class="dapei_2wenzi">
+                        <p >49元</p>
+
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>195人评价 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item item1">
+                    <img src="image/p8.jpg" alt="">
+                    <a href="">ZMI双模智能充电器+充电宝</a>
+                    <div class="dapei_2wenzi">
+                        <p >109元</p>
+
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>107人评价 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item item1">
+                    <img src="image/n.jpg" alt="">
+                    <a href="">小米移动电源5000mAh</a>
+                    <div class="dapei_2wenzi">
+                        <p >49元</p>
+
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>10.9万人评价 </h3>
+                    </div>
+                </div>
+
+                <div class="xiao">
+                    <div class="xiao_up">
+                        <div class="up_left">
+                            <h1  class="yangshi3">小米活塞耳...</h1>
+                            <h2 class="yangshi4">25元</h2>
+                        </div>
+                        <div class="up_right">
+                            <img src="image/erji.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="xiao_up">
+                        <div class="up_left">
+                            <h1 class="yangshi1">浏览更多</h1>
+                            <h2 class="yangshi2 ">热门</h2>
+                        </div>
+                        <div class="up_right">
+                            <div class="jiaotou">
+                                <img src="image/jiantou.png" alt="" >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="zhineng_right ">
+                <div class="zhineng_item">
+                    <img src="image/p2.jpg" alt="">
+                    <a href="">小米AI音箱</a>
+                    <div class="dapei_2wenzi">
+                        <p >299元</p>
+
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>2.8万人评价 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/p3.jpg" alt="">
+                    <a href="">新小米移动电源2 (10000mAh）</a>
+                    <div class="dapei_2wenzi">
+                        <p >79元</p>
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>2805人评价 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/p4.jpg" alt="">
+                    <a href="">小米移动电源2C 20000mAh</a>
+                    <div class="dapei_2wenzi">
+                        <p >129元</p>
+
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>1.4万人评价 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/p5.jpg" alt="">
+                    <a href="">小米移动电源10000mAh高配版</a>
+                    <div class="dapei_2wenzi">
+                        <p >129元<span>149元</span></p>
+
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>2万人评价 </h3>
+                    </div>
+                </div>
+
+                <div class="zhineng_item item1">
+                    <img src="image/p7.jpg" alt="">
+                    <a href="">小米移动电源2 (5000mAh版)</a>
+                    <div class="dapei_2wenzi">
+                        <p >49元</p>
+
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>195人评价 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item item1">
+                    <img src="image/p8.jpg" alt="">
+                    <a href="">ZMI双模智能充电器+充电宝</a>
+                    <div class="dapei_2wenzi">
+                        <p >109元</p>
+
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>107人评价 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item item1">
+                    <img src="image/n.jpg" alt="">
+                    <a href="">小米移动电源5000mAh</a>
+                    <div class="dapei_2wenzi">
+                        <p >49元</p>
+
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>10.9万人评价 </h3>
+                    </div>
+                </div>
+
+                <div class="xiao">
+                    <div class="xiao_up">
+                        <div class="up_left">
+                            <h1  class="yangshi3">小米活塞耳...</h1>
+                            <h2 class="yangshi4">25元</h2>
+                        </div>
+                        <div class="up_right">
+                            <img src="image/erji.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="xiao_up">
+                        <div class="up_left">
+                            <h1 class="yangshi1">浏览更多</h1>
+                            <h2 class="yangshi2 ">热门</h2>
+                        </div>
+                        <div class="up_right">
+                            <div class="jiaotou">
+                                <img src="image/jiantou.png" alt="" >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 搭配结束 -->
+    <!-- 配件开始 -->
+    <section class="jd_zhineng">
+        <div class="jiadian_top">
+            <h1 class="single_title">配件</h1>
+
+            <div class="dapei_right">
+                <h2 class="active" >热门</h2>
+                <h2>保护套</h2>
+                <h2>贴膜</h2>
+                <h2>其他配件</h2>
+
+            </div>
+
+        </div>
+        <div class="jd_bottom ">
+
+
+            <div class="picyuree">
+                <img src="image/pj1.jpg" alt="">
+                <img src="image/pj6.jpg" alt="" class="item1">
+
+            </div>
+
+            <div class="zhineng_right active">
+                <div class="zhineng_item">
+                    <img src="image/pj2.jpg" alt="">
+                    <a href="">MIX 2 拼色真皮保护套</a>
+                    <div class="dapei_2wenzi">
+                        <p >99元</p>
+
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>85人评价 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/pj3.jpg" alt="">
+                    <a href="">MIX 2全陶瓷版极简保护壳</a>
+                    <div class="dapei_2wenzi">
+                        <p >39元</p>
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>441人评价 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/pj4.jpg" alt="">
+                    <a href="">小米Note 3  智能立显半透保护套</a>
+                    <div class="dapei_2wenzi">
+                        <p >69元</p>
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>359人评价</h3>
+                    </div>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/pj5.jpg" alt="">
+                    <a href="">红米 5 Plus 极简防摔保护套</a>
+                    <div class="dapei_2wenzi">
+                        <p >980人评价</p>
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>2万人评价 </h3>
+                    </div>
+                </div>
+
+
+                <div class="zhineng_item item1">
+                    <img src="image/pj7.jpg" alt="">
+                    <a href="">红米 5 Plus 标准钢化玻璃膜</a>
+                    <div class="dapei_2wenzi">
+                        <p >29元</p>
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>492人评价</h3>
+                    </div>
+                </div>
+                <div class="zhineng_item item1">
+                    <img src="image/pj8.jpg" alt="">
+                    <a href="">5000mAh小米移动电源保护套</a>
+                    <div class="dapei_2wenzi">
+                        <p >19.9元</p>
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>679人评价 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item item1">
+                    <img src="image/pj9.jpg" alt="">
+                    <a href="">红米5 Plus 标准高透保护膜</a>
+                    <div class="dapei_2wenzi">
+                        <p >19元</p>
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>910人评价 </h3>
+                    </div>
+                </div>
+                <div class="xiao">
+                    <div class="xiao_up">
+                        <div class="up_left">
+                            <h1  class="yangshi3">小米5X 智能显...</h1>
+                            <h2 class="yangshi4">49元</h2>
+                        </div>
+                        <div class="up_right">
+                            <img src="image/Pj10.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="xiao_up">
+                        <div class="up_left">
+                            <h1 class="yangshi1">浏览更多</h1>
+                            <h2 class="yangshi2 ">热门</h2>
+                        </div>
+                        <div class="up_right">
+                            <div class="jiaotou">
+                                <img src="image/jiantou.png" alt="" >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="zhineng_right ">
+                <div class="zhineng_item">
+                    <img src="image/pj2.jpg" alt="">
+                    <a href="">MIX 2 拼色真皮保护套</a>
+                    <div class="dapei_2wenzi">
+                        <p >99元</p>
+
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>85人评价 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/pj3.jpg" alt="">
+                    <a href="">MIX 2全陶瓷版极简保护壳</a>
+                    <div class="dapei_2wenzi">
+                        <p >39元</p>
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>441人评价 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/pj4.jpg" alt="">
+                    <a href="">小米Note 3  智能立显半透保护套</a>
+                    <div class="dapei_2wenzi">
+                        <p >69元</p>
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>359人评价</h3>
+                    </div>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/pj5.jpg" alt="">
+                    <a href="">红米 5 Plus 极简防摔保护套</a>
+                    <div class="dapei_2wenzi">
+                        <p >980人评价</p>
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>2万人评价 </h3>
+                    </div>
+                </div>
+
+
+                <div class="zhineng_item item1">
+                    <img src="image/pj7.jpg" alt="">
+                    <a href="">红米 5 Plus 标准钢化玻璃膜</a>
+                    <div class="dapei_2wenzi">
+                        <p >29元</p>
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>492人评价</h3>
+                    </div>
+                </div>
+                <div class="zhineng_item item1">
+                    <img src="image/pj8.jpg" alt="">
+                    <a href="">5000mAh小米移动电源保护套</a>
+                    <div class="dapei_2wenzi">
+                        <p >19.9元</p>
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>679人评价 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item item1">
+                    <img src="image/pj9.jpg" alt="">
+                    <a href="">红米5 Plus 标准高透保护膜</a>
+                    <div class="dapei_2wenzi">
+                        <p >19元</p>
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>910人评价 </h3>
+                    </div>
+                </div>
+                <div class="xiao">
+                    <div class="xiao_up">
+                        <div class="up_left">
+                            <h1  class="yangshi3">小米5X 智能显...</h1>
+                            <h2 class="yangshi4">49元</h2>
+                        </div>
+                        <div class="up_right">
+                            <img src="image/Pj10.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="xiao_up">
+                        <div class="up_left">
+                            <h1 class="yangshi1">浏览更多</h1>
+                            <h2 class="yangshi2 ">热门</h2>
+                        </div>
+                        <div class="up_right">
+                            <div class="jiaotou">
+                                <img src="image/jiantou.png" alt="" >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="zhineng_right ">
+                <div class="zhineng_item">
+                    <img src="image/pj2.jpg" alt="">
+                    <a href="">MIX 2 拼色真皮保护套</a>
+                    <div class="dapei_2wenzi">
+                        <p >99元</p>
+
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>85人评价 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/pj3.jpg" alt="">
+                    <a href="">MIX 2全陶瓷版极简保护壳</a>
+                    <div class="dapei_2wenzi">
+                        <p >39元</p>
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>441人评价 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/pj4.jpg" alt="">
+                    <a href="">小米Note 3  智能立显半透保护套</a>
+                    <div class="dapei_2wenzi">
+                        <p >69元</p>
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>359人评价</h3>
+                    </div>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/pj5.jpg" alt="">
+                    <a href="">红米 5 Plus 极简防摔保护套</a>
+                    <div class="dapei_2wenzi">
+                        <p >980人评价</p>
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>2万人评价 </h3>
+                    </div>
+                </div>
+
+
+                <div class="zhineng_item item1">
+                    <img src="image/pj7.jpg" alt="">
+                    <a href="">红米 5 Plus 标准钢化玻璃膜</a>
+                    <div class="dapei_2wenzi">
+                        <p >29元</p>
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>492人评价</h3>
+                    </div>
+                </div>
+                <div class="zhineng_item item1">
+                    <img src="image/pj8.jpg" alt="">
+                    <a href="">5000mAh小米移动电源保护套</a>
+                    <div class="dapei_2wenzi">
+                        <p >19.9元</p>
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>679人评价 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item item1">
+                    <img src="image/pj9.jpg" alt="">
+                    <a href="">红米5 Plus 标准高透保护膜</a>
+                    <div class="dapei_2wenzi">
+                        <p >19元</p>
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>910人评价 </h3>
+                    </div>
+                </div>
+                <div class="xiao">
+                    <div class="xiao_up">
+                        <div class="up_left">
+                            <h1  class="yangshi3">小米5X 智能显...</h1>
+                            <h2 class="yangshi4">49元</h2>
+                        </div>
+                        <div class="up_right">
+                            <img src="image/Pj10.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="xiao_up">
+                        <div class="up_left">
+                            <h1 class="yangshi1">浏览更多</h1>
+                            <h2 class="yangshi2 ">热门</h2>
+                        </div>
+                        <div class="up_right">
+                            <div class="jiaotou">
+                                <img src="image/jiantou.png" alt="" >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="zhineng_right ">
+                <div class="zhineng_item">
+                    <img src="image/pj2.jpg" alt="">
+                    <a href="">MIX 2 拼色真皮保护套</a>
+                    <div class="dapei_2wenzi">
+                        <p >99元</p>
+
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>85人评价 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/pj3.jpg" alt="">
+                    <a href="">MIX 2全陶瓷版极简保护壳</a>
+                    <div class="dapei_2wenzi">
+                        <p >39元</p>
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>441人评价 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/pj4.jpg" alt="">
+                    <a href="">小米Note 3  智能立显半透保护套</a>
+                    <div class="dapei_2wenzi">
+                        <p >69元</p>
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>359人评价</h3>
+                    </div>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/pj5.jpg" alt="">
+                    <a href="">红米 5 Plus 极简防摔保护套</a>
+                    <div class="dapei_2wenzi">
+                        <p >980人评价</p>
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>2万人评价 </h3>
+                    </div>
+                </div>
+
+
+                <div class="zhineng_item item1">
+                    <img src="image/pj7.jpg" alt="">
+                    <a href="">红米 5 Plus 标准钢化玻璃膜</a>
+                    <div class="dapei_2wenzi">
+                        <p >29元</p>
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>492人评价</h3>
+                    </div>
+                </div>
+                <div class="zhineng_item item1">
+                    <img src="image/pj8.jpg" alt="">
+                    <a href="">5000mAh小米移动电源保护套</a>
+                    <div class="dapei_2wenzi">
+                        <p >19.9元</p>
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>679人评价 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item item1">
+                    <img src="image/pj9.jpg" alt="">
+                    <a href="">红米5 Plus 标准高透保护膜</a>
+                    <div class="dapei_2wenzi">
+                        <p >19元</p>
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>910人评价 </h3>
+                    </div>
+                </div>
+                <div class="xiao">
+                    <div class="xiao_up">
+                        <div class="up_left">
+                            <h1  class="yangshi3">小米5X 智能显...</h1>
+                            <h2 class="yangshi4">49元</h2>
+                        </div>
+                        <div class="up_right">
+                            <img src="image/Pj10.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="xiao_up">
+                        <div class="up_left">
+                            <h1 class="yangshi1">浏览更多</h1>
+                            <h2 class="yangshi2 ">热门</h2>
+                        </div>
+                        <div class="up_right">
+                            <div class="jiaotou">
+                                <img src="image/jiantou.png" alt="" >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 配件结束 -->
+
+    <!-- 周边开始 -->
+    <section class="jd_zhineng">
+        <div class="jiadian_top">
+            <h1 class="single_title">周边</h1>
+
+            <div class="dapei_right">
+                <h2 class="active" >热门</h2>
+                <h2>出行</h2>
+                <h2>居家</h2>
+                <h2>生活周边</h2>
+                <h2>箱包</h2>
+            </div>
+        </div>
+        <div class="jd_bottom ">
+            <div class="picyuree">
+
+                <img src="image/zb1.jpg" alt=""><img src="image/zb6.jpg" alt="" class="item1">
+
+            </div>
+
+            <div class="zhineng_right active">
+                <div class="zhineng_item">
+                    <img src="image/zb2.jpg" alt="">
+                    <a href="">米家运动鞋 男款</a>
+                    <div class="dapei_2wenzi">
+                        <p >199元</p>
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>7831人评价 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/zb3.jpg" alt="">
+                    <a href="">90分金属登机箱 米家定制</a>
+                    <div class="dapei_2wenzi">
+                        <p >999元</p>
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>502人评价 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/zb4.jpg" alt="">
+                    <a href="">8H天竺棉针织件套</a>
+                    <div class="dapei_2wenzi">
+                        <p >239元</p>
+                    </div>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/zb5.jpg" alt="">
+                    <a href="">8H三曲线护颈记忆绵枕</a>
+                    <div class="dapei_2wenzi">
+                        <p >99元</p>
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>1310人评价 </h3>
+                    </div>
+                </div>
+
+
+                <div class="zhineng_item item1">
+                    <img src="image/zb7.jpg" alt="">
+                    <a href="">8H蝶形护颈记忆绵枕</a>
+                    <div class="dapei_2wenzi">
+                        <p >129元</p>
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>811人评价 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item item1">
+                    <img src="image/zb8.jpg" alt="">
+                    <a href="">90分全天候机能背包更新版</a>
+                    <div class="dapei_2wenzi">
+                        <p> 199元</p>
+                    </div>
+                </div>
+                <div class="zhineng_item item1">
+                    <img src="image/zb9.jpg" alt="">
+                    <a href="">贝医生巴氏牙刷(四色装)</a>
+                    <div class="dapei_2wenzi">
+                        <p >39.9元</p>
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>8221人评价 </h3>
+                    </div>
+                </div>
+                <div class="xiao">
+                    <div class="xiao_up">
+                        <div class="up_left">
+                            <h1  class="yangshi3">8H乳胶弹簧...</h1>
+                            <h2 class="yangshi4">1599元</h2>
+                        </div>
+                        <div class="up_right">
+                            <img src="image/zb10.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="xiao_up">
+                        <div class="up_left">
+                            <h1 class="yangshi1">浏览更多</h1>
+                            <h2 class="yangshi2 ">热门</h2>
+                        </div>
+                        <div class="up_right">
+                            <div class="jiaotou">
+                                <img src="image/jiantou.png" alt="" >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="zhineng_right ">
+                <div class="picyuree">
+
+                    <img src="image/zb1.jpg" alt=""><img src="image/zb6.jpg" alt="" class="item1">
+
+                </div>
+
+                <div class="zhineng_item">
+                    <img src="image/zb2.jpg" alt="">
+                    <a href="">米家运动鞋 男款</a>
+                    <div class="dapei_2wenzi">
+                        <p >199元</p>
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>7831人评价 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/zb3.jpg" alt="">
+                    <a href="">90分金属登机箱 米家定制</a>
+                    <div class="dapei_2wenzi">
+                        <p >999元</p>
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>502人评价 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/zb4.jpg" alt="">
+                    <a href="">8H天竺棉针织件套</a>
+                    <div class="dapei_2wenzi">
+                        <p >239元</p>
+                    </div>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/zb5.jpg" alt="">
+                    <a href="">8H三曲线护颈记忆绵枕</a>
+                    <div class="dapei_2wenzi">
+                        <p >99元</p>
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>1310人评价 </h3>
+                    </div>
+                </div>
+
+
+                <div class="zhineng_item item1">
+                    <img src="image/zb7.jpg" alt="">
+                    <a href="">8H蝶形护颈记忆绵枕</a>
+                    <div class="dapei_2wenzi">
+                        <p >129元</p>
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>811人评价 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item item1">
+                    <img src="image/zb8.jpg" alt="">
+                    <a href="">90分全天候机能背包更新版</a>
+                    <div class="dapei_2wenzi">
+                        <p> 199元</p>
+                    </div>
+                </div>
+                <div class="zhineng_item item1">
+                    <img src="image/zb9.jpg" alt="">
+                    <a href="">贝医生巴氏牙刷(四色装)</a>
+                    <div class="dapei_2wenzi">
+                        <p >39.9元</p>
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>8221人评价 </h3>
+                    </div>
+                </div>
+                <div class="xiao">
+                    <div class="xiao_up">
+                        <div class="up_left">
+                            <h1  class="yangshi3">8H乳胶弹簧...</h1>
+                            <h2 class="yangshi4">1599元</h2>
+                        </div>
+                        <div class="up_right">
+                            <img src="image/zb10.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="xiao_up">
+                        <div class="up_left">
+                            <h1 class="yangshi1">浏览更多</h1>
+                            <h2 class="yangshi2 ">热门</h2>
+                        </div>
+                        <div class="up_right">
+                            <div class="jiaotou">
+                                <img src="image/jiantou.png" alt="" >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="zhineng_right ">
+                <div class="picyuree">
+
+                    <img src="image/zb1.jpg" alt=""><img src="image/zb6.jpg" alt="" class="item1">
+
+                </div>
+
+                <div class="zhineng_item">
+                    <img src="image/zb2.jpg" alt="">
+                    <a href="">米家运动鞋 男款</a>
+                    <div class="dapei_2wenzi">
+                        <p >199元</p>
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>7831人评价 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/zb3.jpg" alt="">
+                    <a href="">90分金属登机箱 米家定制</a>
+                    <div class="dapei_2wenzi">
+                        <p >999元</p>
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>502人评价 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/zb4.jpg" alt="">
+                    <a href="">8H天竺棉针织件套</a>
+                    <div class="dapei_2wenzi">
+                        <p >239元</p>
+                    </div>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/zb5.jpg" alt="">
+                    <a href="">8H三曲线护颈记忆绵枕</a>
+                    <div class="dapei_2wenzi">
+                        <p >99元</p>
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>1310人评价 </h3>
+                    </div>
+                </div>
+
+
+                <div class="zhineng_item item1">
+                    <img src="image/zb7.jpg" alt="">
+                    <a href="">8H蝶形护颈记忆绵枕</a>
+                    <div class="dapei_2wenzi">
+                        <p >129元</p>
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>811人评价 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item item1">
+                    <img src="image/zb8.jpg" alt="">
+                    <a href="">90分全天候机能背包更新版</a>
+                    <div class="dapei_2wenzi">
+                        <p> 199元</p>
+                    </div>
+                </div>
+                <div class="zhineng_item item1">
+                    <img src="image/zb9.jpg" alt="">
+                    <a href="">贝医生巴氏牙刷(四色装)</a>
+                    <div class="dapei_2wenzi">
+                        <p >39.9元</p>
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>8221人评价 </h3>
+                    </div>
+                </div>
+                <div class="xiao">
+                    <div class="xiao_up">
+                        <div class="up_left">
+                            <h1  class="yangshi3">8H乳胶弹簧...</h1>
+                            <h2 class="yangshi4">1599元</h2>
+                        </div>
+                        <div class="up_right">
+                            <img src="image/zb10.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="xiao_up">
+                        <div class="up_left">
+                            <h1 class="yangshi1">浏览更多</h1>
+                            <h2 class="yangshi2 ">热门</h2>
+                        </div>
+                        <div class="up_right">
+                            <div class="jiaotou">
+                                <img src="image/jiantou.png" alt="" >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="zhineng_right ">
+                <div class="picyuree">
+
+                    <img src="image/zb1.jpg" alt=""><img src="image/zb6.jpg" alt="" class="item1">
+
+                </div>
+
+                <div class="zhineng_item">
+                    <img src="image/zb2.jpg" alt="">
+                    <a href="">米家运动鞋 男款</a>
+                    <div class="dapei_2wenzi">
+                        <p >199元</p>
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>7831人评价 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/zb3.jpg" alt="">
+                    <a href="">90分金属登机箱 米家定制</a>
+                    <div class="dapei_2wenzi">
+                        <p >999元</p>
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>502人评价 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/zb4.jpg" alt="">
+                    <a href="">8H天竺棉针织件套</a>
+                    <div class="dapei_2wenzi">
+                        <p >239元</p>
+                    </div>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/zb5.jpg" alt="">
+                    <a href="">8H三曲线护颈记忆绵枕</a>
+                    <div class="dapei_2wenzi">
+                        <p >99元</p>
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>1310人评价 </h3>
+                    </div>
+                </div>
+
+
+                <div class="zhineng_item item1">
+                    <img src="image/zb7.jpg" alt="">
+                    <a href="">8H蝶形护颈记忆绵枕</a>
+                    <div class="dapei_2wenzi">
+                        <p >129元</p>
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>811人评价 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item item1">
+                    <img src="image/zb8.jpg" alt="">
+                    <a href="">90分全天候机能背包更新版</a>
+                    <div class="dapei_2wenzi">
+                        <p> 199元</p>
+                    </div>
+                </div>
+                <div class="zhineng_item item1">
+                    <img src="image/zb9.jpg" alt="">
+                    <a href="">贝医生巴氏牙刷(四色装)</a>
+                    <div class="dapei_2wenzi">
+                        <p >39.9元</p>
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>8221人评价 </h3>
+                    </div>
+                </div>
+                <div class="xiao">
+                    <div class="xiao_up">
+                        <div class="up_left">
+                            <h1  class="yangshi3">8H乳胶弹簧...</h1>
+                            <h2 class="yangshi4">1599元</h2>
+                        </div>
+                        <div class="up_right">
+                            <img src="image/zb10.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="xiao_up">
+                        <div class="up_left">
+                            <h1 class="yangshi1">浏览更多</h1>
+                            <h2 class="yangshi2 ">热门</h2>
+                        </div>
+                        <div class="up_right">
+                            <div class="jiaotou">
+                                <img src="image/jiantou.png" alt="" >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="zhineng_right ">
+                <div class="picyuree">
+
+                    <img src="image/zb1.jpg" alt=""><img src="image/zb6.jpg" alt="" class="item1">
+
+                </div>
+
+                <div class="zhineng_item">
+                    <img src="image/zb2.jpg" alt="">
+                    <a href="">米家运动鞋 男款</a>
+                    <div class="dapei_2wenzi">
+                        <p >199元</p>
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>7831人评价 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/zb3.jpg" alt="">
+                    <a href="">90分金属登机箱 米家定制</a>
+                    <div class="dapei_2wenzi">
+                        <p >999元</p>
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>502人评价 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/zb4.jpg" alt="">
+                    <a href="">8H天竺棉针织件套</a>
+                    <div class="dapei_2wenzi">
+                        <p >239元</p>
+                    </div>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/zb5.jpg" alt="">
+                    <a href="">8H三曲线护颈记忆绵枕</a>
+                    <div class="dapei_2wenzi">
+                        <p >99元</p>
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>1310人评价 </h3>
+                    </div>
+                </div>
+
+
+                <div class="zhineng_item item1">
+                    <img src="image/zb7.jpg" alt="">
+                    <a href="">8H蝶形护颈记忆绵枕</a>
+                    <div class="dapei_2wenzi">
+                        <p >129元</p>
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>811人评价 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item item1">
+                    <img src="image/zb8.jpg" alt="">
+                    <a href="">90分全天候机能背包更新版</a>
+                    <div class="dapei_2wenzi">
+                        <p> 199元</p>
+                    </div>
+                </div>
+                <div class="zhineng_item item1">
+                    <img src="image/zb9.jpg" alt="">
+                    <a href="">贝医生巴氏牙刷(四色装)</a>
+                    <div class="dapei_2wenzi">
+                        <p >39.9元</p>
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>8221人评价 </h3>
+                    </div>
+                </div>
+                <div class="xiao">
+                    <div class="xiao_up">
+                        <div class="up_left">
+                            <h1  class="yangshi3">8H乳胶弹簧...</h1>
+                            <h2 class="yangshi4">1599元</h2>
+                        </div>
+                        <div class="up_right">
+                            <img src="image/zb10.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="xiao_up">
+                        <div class="up_left">
+                            <h1 class="yangshi1">浏览更多</h1>
+                            <h2 class="yangshi2 ">热门</h2>
+                        </div>
+                        <div class="up_right">
+                            <div class="jiaotou">
+                                <img src="image/jiantou.png" alt="" >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 周边结束 -->
+
+    <!-- 为你推荐开始 -->
+    <section class="jd_weini">
+        <div class="jiadian_top">
+            <h1 class="single_title">为你推荐</h1>    <div class="btn4 disable">&lt;</div>
+            <div class="btn5">&gt;</div>
+        </div>
+        <div class="tuij_totle">
+            <div class="tuij_bottom ">
+
+
+                <div class="zhineng_item item2">
+                    <img src="image/w1.jpg" alt="">
+                    <a href="">红米5 Plus 全网通版 3GB内存</a>
+                    <div class="dapei_2wenzi">
+                        <p >999元</p>
+
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>9926人评价 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/w2.jpg" alt="">
+                    <a href="">小米5X 全网通版 4GB内存</a>
+                    <div class="dapei_2wenzi">
+                        <p >1399元</p>
+
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>8820人评价 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/w3.jpg" alt="">
+                    <a href="">小米6 标准高透贴膜</a>
+                    <div class="dapei_2wenzi">
+                        <p >10元</p>
+
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>1.2万人评价 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/w4.jpg" alt="">
+                    <a href="">小米MIX2 全网通版 6GB内...</a>
+                    <div class="dapei_2wenzi">
+                        <p >2999元</p>
+
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>1.1万人评价 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/w5.jpg" alt="">
+                    <a href="">米家金属签字笔</a>
+                    <div class="dapei_2wenzi">
+                        <p >24.9元</p>
+
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>1.3万人评价 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item item2">
+                    <img src="image/w1.jpg" alt="">
+                    <a href="">红米5 Plus 全网通版 3GB内存</a>
+                    <div class="dapei_2wenzi">
+                        <p >999元</p>
+
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>9926人评价 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/w2.jpg" alt="">
+                    <a href="">小米5X 全网通版 4GB内存</a>
+                    <div class="dapei_2wenzi">
+                        <p >1399元</p>
+
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>8820人评价 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/w3.jpg" alt="">
+                    <a href="">小米6 标准高透贴膜</a>
+                    <div class="dapei_2wenzi">
+                        <p >10元</p>
+
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>1.2万人评价 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/w4.jpg" alt="">
+                    <a href="">小米MIX2 全网通版 6GB内...</a>
+                    <div class="dapei_2wenzi">
+                        <p >2999元</p>
+
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>1.1万人评价 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/w5.jpg" alt="">
+                    <a href="">米家金属签字笔</a>
+                    <div class="dapei_2wenzi">
+                        <p >24.9元</p>
+
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>1.3万人评价 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item item2">
+                    <img src="image/w1.jpg" alt="">
+                    <a href="">红米5 Plus 全网通版 3GB内存</a>
+                    <div class="dapei_2wenzi">
+                        <p >999元</p>
+
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>9926人评价 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/w2.jpg" alt="">
+                    <a href="">小米5X 全网通版 4GB内存</a>
+                    <div class="dapei_2wenzi">
+                        <p >1399元</p>
+
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>8820人评价 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/w3.jpg" alt="">
+                    <a href="">小米6 标准高透贴膜</a>
+                    <div class="dapei_2wenzi">
+                        <p >10元</p>
+
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>1.2万人评价 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/w4.jpg" alt="">
+                    <a href="">小米MIX2 全网通版 6GB内...</a>
+                    <div class="dapei_2wenzi">
+                        <p >2999元</p>
+
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>1.1万人评价 </h3>
+                    </div>
+                </div>
+                <div class="zhineng_item">
+                    <img src="image/w5.jpg" alt="">
+                    <a href="">米家金属签字笔</a>
+                    <div class="dapei_2wenzi">
+                        <p >24.9元</p>
+
+                    </div>
+                    <div class="dapei_3wenzi">
+                        <h3>1.3万人评价 </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 为你推荐结束 -->
+
+    <!-- 热评产品开始 -->
+    <section class="jd_reping">
+        <div class="jiadian_top">
+            <h1 class="single_title">热评产品</h1>
+
+        </div>
+        <div class="reping_bottom ">
+            <div class="reping_item item2">
+                <img src="image/r1.jpg" alt="">
+                <div class="reping_wenzi1">
+                    <p >东西真心不错，用过最好用的插线板，做工外观没得挑剔，3个USB接口很实用，充电快，建议不包邮的应该在...</p>
+
+                </div>
+                <div class="reping_wenzi2">
+                    <h3>来自于 yinyin19891117 的评价 </h3>
+                </div>
+                <div class="reping_wenzi3">
+                    <h3>
+                        <div class="reping_xiaozi">小米插线板
+                            <span>|</span>
+                        </div>
+                        49元
+                    </h3>
+                </div>
+            </div>
+            <div class="reping_item ">
+                <img src="image/r2.jpg" alt="">
+
+                <div class="reping_wenzi1">
+                    <p>非常可爱，一拿到小宝宝还没享受，一帮大宝宝先high了一把，同事也想买，希望早点大
+                        卖</p>
+
+                </div>
+                <div class="reping_wenzi2">
+                    <h3>来自于 秘密 的评价 </h3>
+                </div>
+                <div class="reping_wenzi3">
+                    <h3>
+                        <div class="reping_xiaozi">米兔智能故事机
+                            <span>|</span>
+                        </div>
+                        199元
+                    </h3>
+                </div>
+            </div>
+            <div class="reping_item ">
+                <img src="image/r3.jpg" alt="">
+
+                <div class="reping_wenzi1">
+                    <p >非常好用，孩子使用防止沉迷于电话影响学习。做工很好，定位基本准确，通话清晰。如果加入时间显示就更完美...</p>
+
+                </div>
+                <div class="reping_wenzi2">
+                    <h3>来自于 178576259 的评价 </h3>
+                </div>
+                <div class="reping_wenzi3">
+                    <h3>
+                        <div class="reping_xiaozi">米兔定位电话
+                            <span>|</span>
+                        </div>
+                        169元
+                    </h3>
+                </div>
+            </div>
+            <div class="reping_item  item3 ">
+                <img src="image/r4.jpg" alt="">
+
+                <div class="reping_wenzi1">
+                    <p class="reping_tiaojie" >安装简洁方便，信号不错！！！！！</p>
+
+                </div>
+                <div class="reping_wenzi2">
+                    <h3>来自于 追逆 的评价 </h3>
+                </div>
+                <div class="reping_wenzi3">
+                    <h3>
+                        <div class="reping_xiaozi">小米路由器3
+                            <span>|</span>
+                        </div>
+                        149元
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 热评产品结束 -->
+
+    <!-- 小内容开始 -->
+    <section class="nr_neirong">
+        <div class="jiadian_top">
+            <h1 class="single_title">内容</h1>
+        </div>
+        <div class="neirong_bottom ">
+
+            <div class="nnv_totle">
+                <div class="sangedian">
+                    <li class="active"></li>
+                    <li></li>
+                    <li></li>
+                </div>
+                <div class="nav_prev">&lt;</div>
+                <div class="nav_next">&gt;</div>
+                <div class="container"></div>
+                <div class="content_i">
+
+                    <div class="nerong_item active si ngle_item2"  >
+
+                        <h1>图书</h1>
+                        <h2>哈利·波特与被诅咒的孩子</h2>
+                        <h3>“哈利·波特”第八个故事中文版震撼来</h3>
+                        <h4>袭！特别彩排版剧本！</h4>
+                        <h5>29.37元</h5>
+                        <img src="image/n1.png" alt="" class="">
+                    </div>
+                    <div class="nerong_item  single_item3">
+                        <h1 class="">
+                            <span class="green_haha">MIUI主题</span>
+                        </h1>
+                        <h2>米奇-有你有我</h2>
+                        <h3>米奇来啦！小米主题和迪士尼首度合</h3>
+                        <h4>作，打造精品迪士尼系列主题</h4>
+                        <h5>12米币</h5>
+                        <img src="image/n2.png" alt="" class="">
+
+                    </div>
+                    <div class="nerong_item  single_item5">
+                        <h1 class="">
+                            <span class="red_haha">游戏</span>
+                        </h1>
+                        <h2>剑侠世界2</h2>
+                        <h3>潮流武侠，炫动江湖！</h3>
+                        <h4>&nbsp;</h4>
+                        <h5>&nbsp;</h5>
+                        <img src="image/nn3.png" alt="" class="">
+                    </div>
+                    <!--  <div class="nerong_item item_quyou single_item4">
+                            <h1 class="blue_haha">
+                                <span class="blue_haha">应用</span>
+                            </h1>
+                            <h2>2017金米奖</h2>
+                            <h3>最优秀的应用和游戏</h3>
+                            <h4>&nbsp;</h4>
+                            <h5>&nbsp;</h5>
+                            <img src="image/n4.png" alt="" class="">
+                            <div class="sangedian dian_tiaojie2">
+                                <h1 >
+
+                                </h1>
+                                <span class="dian1"></span>
+                                <a href="" class="dian2"></a>
+                                <i class="dian2 "></i>
+
+                            </div>
+
+                    </div>   -->
+                </div>
+            </div>
+            <div class="nnv_totle">
+                <div class="sangedian">
+                    <li class="active"></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </div>
+                <div class="nav_prev">&lt;</div>
+                <div class="nav_next">&gt;</div>
+                <div class="content_i">
+
+                    <div class="nerong_item active si ngle_item2"  >
+
+                        <h1>图书</h1>
+                        <h2>哈利·波特与被诅咒的孩子</h2>
+                        <h3>“哈利·波特”第八个故事中文版震撼来</h3>
+                        <h4>袭！特别彩排版剧本！</h4>
+                        <h5>29.37元</h5>
+                        <img src="image/n1.png" alt="" class="">
+                    </div>
+                    <div class="nerong_item  single_item3">
+                        <h1 class="">
+                            <span class="green_haha">MIUI主题</span>
+                        </h1>
+                        <h2>米奇-有你有我</h2>
+                        <h3>米奇来啦！小米主题和迪士尼首度合</h3>
+                        <h4>作，打造精品迪士尼系列主题</h4>
+                        <h5>12米币</h5>
+                        <img src="image/n2.png" alt="" class="">
+
+                    </div>
+                    <div class="nerong_item  single_item5">
+                        <h1 class="">
+                            <span class="red_haha">游戏</span>
+                        </h1>
+                        <h2>剑侠世界2</h2>
+                        <h3>潮流武侠，炫动江湖！</h3>
+                        <h4>&nbsp;</h4>
+                        <h5>&nbsp;</h5>
+                        <img src="image/nn3.png" alt="" class="">
+                    </div>
+                    <div class="nerong_item item_quyou single_item4">
+                        <h1 class="blue_haha">
+                            <span class="blue_haha">应用</span>
+                        </h1>
+                        <h2>2017金米奖</h2>
+                        <h3>最优秀的应用和游戏</h3>
+                        <h4>&nbsp;</h4>
+                        <h5>&nbsp;</h5>
+                        <img src="image/n4.png" alt="" class="">
+                    </div>
+                </div>
+            </div>
+            <div class="nnv_totle">
+                <div class="sangedian">
+                    <li class="active"></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </div>
+                <div class="nav_prev">&lt;</div>
+                <div class="nav_next">&gt;</div>
+                <div class="content_i">
+
+                    <div class="nerong_item active si ngle_item2"  >
+
+                        <h1>图书</h1>
+                        <h2>哈利·波特与被诅咒的孩子</h2>
+                        <h3>“哈利·波特”第八个故事中文版震撼来</h3>
+                        <h4>袭！特别彩排版剧本！</h4>
+                        <h5>29.37元</h5>
+                        <img src="image/n1.png" alt="" class="">
+                    </div>
+                    <div class="nerong_item  single_item3">
+                        <h1 class="">
+                            <span class="green_haha">MIUI主题</span>
+                        </h1>
+                        <h2>米奇-有你有我</h2>
+                        <h3>米奇来啦！小米主题和迪士尼首度合</h3>
+                        <h4>作，打造精品迪士尼系列主题</h4>
+                        <h5>12米币</h5>
+                        <img src="image/n2.png" alt="" class="">
+
+                    </div>
+                    <div class="nerong_item  single_item5">
+                        <h1 class="">
+                            <span class="red_haha">游戏</span>
+                        </h1>
+                        <h2>剑侠世界2</h2>
+                        <h3>潮流武侠，炫动江湖！</h3>
+                        <h4>&nbsp;</h4>
+                        <h5>&nbsp;</h5>
+                        <img src="image/nn3.png" alt="" class="">
+                    </div>
+                    <div class="nerong_item item_quyou single_item4">
+                        <h1 class="blue_haha">
+                            <span class="blue_haha">应用</span>
+                        </h1>
+                        <h2>2017金米奖</h2>
+                        <h3>最优秀的应用和游戏</h3>
+                        <h4>&nbsp;</h4>
+                        <h5>&nbsp;</h5>
+                        <img src="image/n4.png" alt="" class="">
+
+                    </div>
+                </div>
+            </div>
+            <div class="nnv_totle">
+                <div class="sangedian">
+                    <li class="active"></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </div>
+                <div class="nav_prev">&lt;</div>
+                <div class="nav_next">&gt;</div>
+                <div class="content_i">
+
+                    <div class="nerong_item active si ngle_item2"  >
+
+                        <h1>图书</h1>
+                        <h2>哈利·波特与被诅咒的孩子</h2>
+                        <h3>“哈利·波特”第八个故事中文版震撼来</h3>
+                        <h4>袭！特别彩排版剧本！</h4>
+                        <h5>29.37元</h5>
+                        <img src="image/n1.png" alt="" class="">
+                    </div>
+                    <div class="nerong_item  single_item3">
+                        <h1 class="">
+                            <span class="green_haha">MIUI主题</span>
+                        </h1>
+                        <h2>米奇-有你有我</h2>
+                        <h3>米奇来啦！小米主题和迪士尼首度合</h3>
+                        <h4>作，打造精品迪士尼系列主题</h4>
+                        <h5>12米币</h5>
+                        <img src="image/n2.png" alt="" class="">
+
+                    </div>
+                    <div class="nerong_item  single_item5">
+                        <h1 class="">
+                            <span class="red_haha">游戏</span>
+                        </h1>
+                        <h2>剑侠世界2</h2>
+                        <h3>潮流武侠，炫动江湖！</h3>
+                        <h4>&nbsp;</h4>
+                        <h5>&nbsp;</h5>
+                        <img src="image/nn3.png" alt="" class="">
+                    </div>
+                    <div class="nerong_item item_quyou single_item4">
+                        <h1 class="blue_haha">
+                            <span class="blue_haha">应用</span>
+                        </h1>
+                        <h2>2017金米奖</h2>
+                        <h3>最优秀的应用和游戏</h3>
+                        <h4>&nbsp;</h4>
+                        <h5>&nbsp;</h5>
+                        <img src="image/n4.png" alt="" class="">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 小内容结束-->
+
+    <!-- 视频开始 -->
+    <div class="shipin">
+        <div class="shipin_top_zong">
+            <div class="shipin_top">
+                <h1 class="single_title">视频</h1>
+                <div class="zhineng_more">
+                    <h2>查看全部</h2>
+                    <div class="zhineng_btn">
+                        &gt;
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="shipin_bottom">
+            <div class="shipin_bottom_item">
+                <div class="bofang">
+                    <img src="image/s1.jpg" alt="">
+
+                    <p>&#xe78e;</p>
+                </div>
+
+                <p>
+                    品质之魂 存于匠心
+                </p>
+                <span>
+                        红米手机品质的工程师访谈
+                    </span>
+
+            </div>
+            <div class="shipin_bottom_item">
+                <div class="bofang">
+                    <img src="image/s2.jpg" alt="">
+
+                    <p>&#xe78e;</p>
+                </div>                  <p>
+                红米手机工艺视频
+            </p>
+                <span>
+                        红米5 / 红米5 Plus 高颜值机身
+                    </span>
+            </div>
+            <div class="shipin_bottom_item">
+                <div class="bofang">
+                    <img src="image/s3.jpg" alt="">
+
+                    <p>&#xe78e;</p>
+                </div>
+                <p>
+                    雷军与斯塔克打造全面屏2.0
+                </p>
+                <span>
+                        一场关于小米MIX 2 极致工艺的巅峰对话
+                    </span>
+            </div>
+            <div class="shipin_bottom_item">
+                <div class="item_quyou">
+                    <div class="bofang">
+                        <img src="image/s4.jpg" alt="">
+
+                        <p>&#xe78e;</p>
+                    </div>
+                    <p>
+                        MIUI 9 理念视频
+                    </p>
+                    <span>
+                        快如闪电，前所未有的流畅
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 视频结束 -->
+</div>
+<!-- 脚本开始 -->
+<div class="foot">
+    <div class="foot_neirong">
+        <div class="wufenzhiyi">
+            <p class="yuyue">&#xe62e;</p>
+            <span >预约维修服务</span>
+            <h1></h1>
+        </div>
+        <div class="wufenzhiyi">
+            <p class="yuyue">&#xe60e;</p>
+            <span>7天无理由退货</span>
+            <h1></h1>
+        </div>
+        <div class="wufenzhiyi">
+            <p class="yuyue">&#xe606;</p>
+            <span>15天免费换货</span>
+            <h1></h1>
+        </div>
+        <div class="wufenzhiyi">
+            <p class="yuyue">&#xe612;</p>
+            <span>满150元包邮</span>
+            <h1></h1>
+        </div>
+        <div class="wufenzhiyi">
+            <p class="yuyue">&#xe601;</p>
+            <span>520余家售后网点</span>
+        </div>
+        <div class="foot_hangxian">
+        </div>
+        <div class="foot_bangzhu">
+            <div class="bangzhu_yi">
+                <p>
+                    帮助中心
+                </p>
+                <span>账户管理</span>
+                <h1>购物指南</h1>
+                <h2>订单操作</h2>
+            </div>
+            <div class="bangzhu_yi">
+                <p>服务支持</p>
+                <span>售后政策</span>
+                <h1>自助服务</h1>
+                <h2>相关下载</h2>
+            </div>
+            <div class="bangzhu_yi ">
+                <p>
+                    线下门店
+                </p>
+                <span>小米之家</span>
+                <h1>零售网点</h1>
+                <h2>关于小米</h2>
+            </div>
+            <div class="bangzhu_yi">
+                <p>
+                    了解小米
+                </p>
+                <span>加入小米</span>
+                <h1>联系我们</h1>
+                <h2>关注我们</h2>
+            </div>
+            <div class="bangzhu_yi">
+                <p>
+                    新浪微博
+                </p>
+                <span>小米部落</span>
+                <h1>官方微信</h1>
+                <h2>特色服务</h2>
+            </div>
+            <div class="bangzhu_yi yi_fuzhu">
+                <p>
+                    帮助中心
+                </p>
+                <span>F 码通道</span>
+                <h1>礼物码</h1>
+                <h2>防伪查询</h2>
+            </div>
+            <div class="foot_right">
+                <p>400-100-5678</p>
+                <span>周一至周日 8:00-18:00</span>
+                <h1>（仅收市话费）</h1>
+                <div class="xiaoshi">
+
+                    <p>&#xe7a8;</p>
+                    <span>24小时在线客服</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 脚本结束 -->
+
+<!-- 地址开始 -->
+<div class="foot_xia_zong">
+    <div class="foot_xia">
+        <div class="foot_xia_zuo">
+            <img src="image/mi.png" alt="">
+            <a href="" class="a1">小米商城</a><span></span><a>MIUI</a><span></span><a>米家</a><span></span><a>米聊</a><span></span><a>多看</a><span></span><a>路由器</a><span></span><a>米粉卡</a><span></span><a>小米天猫店</a><span></span><a>隐私政策</a><span></span><a>问题反馈</a><span></span><a>Select Region</a>
+            <div class="jingwenzi">
+                <h3 >©mi.com 京ICP证110507号&nbsp;&nbsp;</h3> <h5>京ICP备10046444号&nbsp;&nbsp;</h5><h6>京公网安备11010802020134号&nbsp;&nbsp;</h6><h7>京网文[2014]0059-0009号 </h7>
+            </div>
+            <h4  >违法和不良信息举报电话：185-0130-1238，本网站所列数据，除特殊说明，所有数据均出自我司实验室测试</h4>
+        </div>
+        <div class="foot_xia_you">
+            <img src="image/f1.png" alt="">
+            <img src="image/f2.png" alt="">
+            <img src="image/f3.png" alt="">
+            <img src="image/f4.png" alt="">
+            <img src="image/f5.png" alt="">
+        </div>
+    </div>
+</div>
+<!-- 地址结束 -->
+<!-- 完结 -->
+<div class="foot_jieshu_zong">
+    <div class="foot_jieshu">
+        探索黑科技，小米为发烧而生
+    </div>
+</div>
+
+
+<!-- 完结结束 -->
+
+<!-- 结束内容 -->
+
+
+
+
+
+<script src="jquery-3.3.1.min.js"></script>
+<script>
+//banner
+$(".banner_nav li").each(function (index,ele) {
+    $(this).mouseenter(function () {
+            $(".me").eq(index).show();
+    })
+    $(this).mouseleave(function () {
+        $(".me").eq(index).hide();
+    })
+})
+
+$("#banner").mouseenter(function () {
+    $(".prev,.next").fadeIn(200)
+})
+    .mouseleave (function () {
+        $(".prev,.next").fadeOut(200)
+    })
+let k=1;
+let f=true;
+
+    $(".pagerbox li").click(function () {
+        $(".pagerbox li").each(function (index,ele) {
+        $(".imgbox li").removeClass("active")
+        $(".pagerbox li").removeClass("active")
+            $(".imgbox li").eq(index).addClass("active")
+            $(".pagerbox li").eq(index).addClass("active")
+    })
+
+})
+$(".next").click(function () {
+    if(f){
+        f=false;
+        k++;
+        $(".pagerbox li").click(function () {
+            $(".pagerbox li").each(function (index,ele) {
+                $(".imgbox li").removeClass("active")
+                $(".pagerbox li").removeClass("active")
+                $(".imgbox li").eq(index).addClass("active")
+                $(".pagerbox li").eq(index).addClass("active")
+            })
+
+        })
+    }
+
+})
+$(".prev").click(function () {
+    if(f){
+        k--;
+
+
+            $(".imgbox li").each(function (index,ele) {
+                $(".imgbox li").removeClass("active")
+                $(".pagerbox li").removeClass("active")
+                $(".imgbox li").eq(index).addClass("active")
+                $(".pagerbox li").eq(index).addClass("active")
+            })
+
+
+    }
+
+})
+//daohang
+$(".daohang_wenzi span").each(function (index,ele) {
+    $(this).mouseenter(function () {
+        $(".bo_tolle ").show();
+        $(".bo_tolle").css({height:240});
+        $(".bo_tolle #bbottom").eq(index).addClass("active")
+    })
+
+    $(".daohang_title").mouseleave(function () {
+        $(".bo_tolle").hide();
+        $(".bo_tolle #bbottom").eq(index).removeClass("active");
+    })
+})
+//为你推荐
+let inner=$(".tuij_bottom");
+$(".jd_weini ").mouseenter(function () {
+    $(".btn4,.btn5").fadeIn(200)
+})
+    .mouseleave (function () {
+        $(".btn4,.btn5").fadeOut(200)
+    })
+        let n=0;
+        let flag=true;
+$(".btn5").click(function () {
+    if(flag){
+        flag=false;
+        n++;
+        inner.animate({marginLeft:-n*1226},300,function () {
+            flag=true
+            $(".btn4").removeClass("disable")
+
+            if(n===2){
+                $(".btn5").addClass("disable")
+            }
+            if(n>=3){
+                n=2;
+                inner.css("marginLeft",-2452)
+            }
+        })
+    }
+
+})
+$(".btn4").click(function () {
+    if(flag){
+        n--;
+        inner.animate({marginLeft:-n*1226},300,function () {
+            flag=true;
+            $(".btn5").removeClass("disable")
+            if(n===0){
+                $(".btn4").addClass("disable")
+            }
+            if(n<=-1){
+                n=0;
+                inner.css("marginLeft",0)
+            }
+        })
+    }
+
+})
+    //哈利波特
+let content=$(".content_i");
+$(".nnv_totle").mouseenter(function () {
+    $(".nav_prev,.nav_next").fadeIn(200)
+})
+    .mouseleave (function () {
+        $(".nav_prev,.nav_next").fadeOut(200)
+    })
+let i=0;
+let fla=true;
+$(".nnv_totle").each(function (index,ele) {
+    $(".nav_next").eq(index).click(function () {
+        if(fla){
+            fla=false;
+            i++;
+            $(content).eq(index).animate({marginLeft:-i*307},300,function () {
+                fla=true
+                if(i>=3){
+                    $(content).eq(index).css("marginLeft",-614)
+                }
+                $(".sangedian li").each(function (index,ele) {
+                    $(this).click(function () {
+                        $(".sangedian li").addClass("active")
+                        $(content).eq(index).css("marginLeft",-307*index)
+                    })
+                    $(this).addClass("active")
+                })
+            })
+        }
+
+    })
+    $(".nav_prev").eq(index).click(function () {
+        if(fla){
+            i--;
+            $(content).eq(index).animate({marginLeft:-i*307},300,function () {
+                fla=true;
+                if(i<=-1){
+                    $(content).eq(index).css("marginLeft",0)
+                }
+            })
+        }
+
+    })
+})
+
+    //内容
+$(".jd_zhineng").each(function (index,ele) {
+
+       $(".dapei_right h2 ").each(function (index,ele){
+           $(this).mouseenter(function () {
+               $(".dapei_right h2").removeClass("active");
+               $(".zhineng_right").removeClass("active")
+               $(".dapei_right h2").eq(index).addClass("active");
+               $(".zhineng_right").eq(index).addClass("active")
+
+           })
+
+       })
+
+})
+//小米明星单品
+let inn=$(".ming-right");
+$(".single ").mouseenter(function () {
+    $(".btn1,.btn2").fadeIn(200)
+})
+    .mouseleave (function () {
+        $(".btn1,.btn2").fadeOut(200)
+    })
+let j=0;
+let fl=true;
+$(".btn2").click(function () {
+    if(flag){
+        flag=false;
+        j++;
+        inn.animate({marginLeft:-j*992},300,function () {
+            flag=true
+            $(".btn2").removeClass("disable")
+
+            if(j===2){
+                $(".btn2").addClass("disable")
+                inn.css("marginLeft",-1984)
+            }
+            if(j>=3){
+                n=2;
+                inn.css("marginLeft",-1984)
+            }
+        })
+    }
+
+})
+$(".btn1").click(function () {
+    if(fl){
+        j--;
+        inn.animate({marginLeft:-j*992},300,function () {
+            fl=true;
+            $(".btn1").removeClass("disable")
+            if(j===0){
+                $(".btn1").addClass("disable")
+                inn.css("marginLeft",0)
+            }
+            if(j<=-1){
+                j=0;
+                inn.css("marginLeft",0)
+            }
+        })
+    }
+
+})
+
+
+
+
+
+</script>
+</body>
+
+</html>
