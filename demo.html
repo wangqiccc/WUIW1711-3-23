@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    *{
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    .daohang{
+        background-color: #b0b0b0;
+        width: 450px;
+        height: 50px;
+        margin: 0 auto;
+    }
+    .daohang li{
+        float: left;
+        width: 50px;
+        line-height: 50px;
+        text-align: center;
+    }
+    .xiaoguoli{
+        width: 1226px;
+        height: 200px;
+        margin: 0 auto;
+        position: relative;
+    }
+    .xiaoguoli li{
+        width: 100%;
+        height: 100%;
+        background-color: #b0b0b0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        text-align: center;
+        line-height: 200px;
+        font-size: 50px;
+    }
+    .xiaoguo{
+        width: 100%;
+        background-color: #fff;
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 50px;
+    }
+    .xiaoguoli li.active1{
+        z-index: 1;
+    }
+    .daohang li.active{
+        background-color: #fff;
+    }
+
+
+    .banner{
+        width: 1226px;
+        height: 300px;
+        background-color: red;
+        margin: 0 auto;
+        margin-top: 200px;
+        position: relative;
+    }
+    .img{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #333333;
+        line-height: 300px;
+        text-align: center;
+        font-size: 50px;
+    }
+    .banner div.active{
+        z-index: 1;
+    }
+    .prev{
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        background-color: #fff;
+        z-index: 2;
+        width: 25px;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        display: none;
+        cursor: pointer;
+    }
+    .next{
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        background-color: #fff;
+        z-index: 2;
+        width: 25px;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        display: none;
+        cursor: pointer;
+    }
+    .banner ul{
+        position: absolute;
+        bottom: 10px;
+        left:85%;
+        z-index: 2;
+    }
+    .banner ul>li{
+        width: 12px;
+        height: 12px;
+        margin: 0 5px;
+        background-color: #b0b0b0;
+        float: left;
+        cursor: pointer;
+        border-radius: 50%;
+    }
+    .banner ul>li.active2{
+        background-color: #fff;
+    }
+    .star{
+        width: 1226px;
+        height: 300px;
+        background-color: red;
+        margin: 0 auto;
+        overflow: hidden;
+        position: relative;
+    }
+    .inner{
+        width: 5000px;
+        height: 100%;
+        background-color: #b0b0b0;
+    }
+    .jiantou{
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 60px;
+        height: 20px;
+        background-color: #cccccc;
+    }
+    .jiantou div{
+        float: left;
+    }
+    .jiantou_prev{
+        width: 50%;
+        height: 100%;
+        line-height: 20px;
+        text-align: center;
+        cursor: pointer;
+    }
+    .jiantou_next{
+        width: 50%;
+        height: 100%;
+        line-height: 20px;
+        text-align: center;
+        cursor: pointer;
+    }
+    .jiantou div.active3{
+        color: #fff;
+    }
+    .inner div{
+        width: 1226px;
+        height: 100%;
+        line-height: 300px;
+        text-align: center;
+        font-size: 50px;
+        float: left;
+    }
+
+    .dapei{
+        width: 1226px;
+        height: 300px;
+        background-color: red;
+        margin: 0 auto;
+        position: relative;
+    }
+    .word{
+        width: 200px;
+        height: 20px;
+        position: absolute;
+        right:0;
+        top:10px;
+        z-index: 6;
+    }
+    .word div{
+        float: left;
+        width: 30px;
+        height: 20px;
+        background: #cccccc;
+        margin: 0 10px;
+        text-align: center;
+    }
+    .word .active4{
+        background: #fa6;
+    }
+    .image .active4{
+        z-index: 5;
+    }
+    .image{
+        width: 100%;
+        height: 100%;
+        background: #333333;
+    }
+    .image1{
+        position: absolute;
+        top:0;
+        right:0;
+        width: 100%;
+        height: 100%;
+        font-size: 50px;
+        text-align: center;
+        line-height: 300px;
+        background: #333333;
+    }
+
+</style>
+<body>
+<ul class="daohang">
+    <li class="li">1</li>
+    <li class="li">2</li>
+    <li class="li">3</li>
+    <li class="li">4</li>
+    <li class="li">5</li>
+    <li class="li">6</li>
+    <li class="li">7</li>
+    <li>8</li>
+    <li>9</li>
+
+    <div class="xiaoguo">
+        <ul class="xiaoguoli">
+            <li class="active1">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+        </ul>
+    </div>
+</ul>
+
+<div class="banner">
+    <div class="img active">1</div>
+    <div class="img">2</div>
+    <div class="img">3</div>
+    <div class="img">4</div>
+    <div class="img">5</div>
+    <div class="prev">&lt;</div>
+    <div class="next">&gt;</div>
+    <ul>
+        <li class="active2"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+
+<div class="star">
+    <div class="inner">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+    <div class="jiantou">
+        <div class="jiantou_prev">&lt;</div>
+        <div class="jiantou_next active3">&gt;</div>
+    </div>
+</div>
+
+<div class="dapei">
+    <div class="word">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+    </div>
+    <div class="image">
+        <div class="image1 active4">1</div>
+        <div class="image1">2</div>
+        <div class="image1">3</div>
+        <div class="image1">4</div>
+    </div>
+</div>
+</body>
+<script src="jquery-3.3.1.min.js"></script>
+<script>
+    $(".daohang").mouseenter(function () {
+        $(".xiaoguo").slideDown(1000);
+    }).mouseleave(function () {
+        $(".xiaoguo").slideUp(1000);
+    })
+    $(".daohang").each(function () {
+        $(".li").mouseenter(function () {
+            let index=$(this).index();
+            $(this).addClass("active");
+
+            $(".xiaoguoli li").eq(index).addClass("active1");
+            console.log(index);
+        }).mouseleave(function () {
+            let index=$(this).index();
+            $(this).removeClass("active");
+            $(".xiaoguoli li").eq(index).removeClass("active1");
+        })
+
+    })
+
+
+
+    $(".banner").mouseenter(function () {
+        $(".prev").fadeIn(500);
+        $(".next").fadeIn(500);
+    }).mouseleave(function () {
+        $(".prev").fadeOut(500);
+        $(".next").fadeOut(500);
+    })
+    var n=0;
+    $(".next").click(function () {
+        n++;
+        if(n==5){
+            n=0;
+        }
+        $(".img").removeClass("active");
+        $(".img").eq(n).addClass("active");
+        $(".banner ul>li").removeClass("active2");
+        $(".banner ul>li").eq(n).addClass("active2");
+    })
+    $(".prev").click(function () {
+        n--;
+        if(n==-1){
+            n=4;
+        }
+        $(".img").removeClass("active");
+        $(".img").eq(n).addClass("active");
+        $(".banner ul>li").removeClass("active2");
+        $(".banner ul>li").eq(n).addClass("active2");
+
+    })
+    $(".banner ul>li").each(function () {
+        $(".banner ul>li").click(function () {
+            let index1=$(this).index();
+            $(".banner ul>li").removeClass("active2");
+            $(".banner ul>li").eq(index1).addClass("active2");
+            $(".img").removeClass("active");
+            $(".img").eq(index1).addClass("active");
+            n=index1;
+        })
+    })
+
+
+    let b=0;
+    $(".jiantou_next").click(function () {
+        b++;
+        $(".jiantou_prev").addClass("active3");
+        if(b==2){
+            $(".jiantou_next").removeClass("active3");
+        }
+        if(b==3){
+            b=2;
+        }
+        $(".inner").animate({marginLeft:-1226*b},500);
+    })
+    $(".jiantou_prev").click(function () {
+        b--;
+        $(".jiantou_next").addClass("active3");
+        if(b-1){
+            $(".jiantou_prev").removeClass("active3");
+        }
+        if(b==-1){
+            b=0;
+        }
+        $(".inner").animate({marginLeft:-1226*b},500);
+    })
+
+
+
+
+    $(".banner ul>li").each(function () {
+        $(".banner ul>li").click(function () {
+            let index1=$(this).index();
+            $(".banner ul>li").removeClass("active2");
+            $(".banner ul>li").eq(index1).addClass("active2");
+            $(".img").removeClass("active");
+            $(".img").eq(index1).addClass("active");
+            n=index1;
+        })
+    })
+
+
+
+
+    $(".word div").each(function () {
+        $(".word div").mouseenter(function () {
+            let index2=$(this).index();
+            $(this).addClass("active4");
+
+            $(".image1").eq(index2).addClass("active4");
+        })
+            .mouseleave(function () {
+            let index2=$(this).index();
+            $(this).removeClass("active4");
+            $(".image1").eq(index2).removeClass("active4");
+        })
+
+    })
+
+</script>
+</html>
