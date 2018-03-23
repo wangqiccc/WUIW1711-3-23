@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+<script>
+//轮播
+let lunbotu=document.querySelectorAll(".b1");
+let lunbodian=document.querySelectorAll(".banner_l1");
+let lunbo_box=document.querySelector("#banner");
+let left=document.querySelector(".banner_btn1");
+let right=document.querySelector(".banner_btn2");
+let n=0;
+$(".banner_l1").click(function(){
+	$(".banner_l1,.b1").removeClass("banner_co");
+	$(this).addClass("banner_co");
+	let index=$(".banner_l1").index($(this));
+	$(".b1").eq(index).addClass("banner_co");
+	n=index;
+})
+function move(){
+	n++;
+	if(n==lunbotu.length){
+		n=0;
+	}
+	if(n<0){
+		n=lunbotu.length-1;
+	}
+	$(".b1").each(function(){
+		flag=true;
+		$(".banner_l1,.b1").removeClass("banner_co");
+		$(".banner_l1").eq(n).addClass("banner_co");
+		$(".b1").eq(n).addClass("banner_co");
+	})
+}
+let t=setInterval(move,1000);
+$("#banner").mouseenter(function(){
+	clearInterval(t);
+})
+$("#banner").mouseleave(function(){
+	t=setInterval(move,1000);
+})
+let flag=true;
+$(".banner_btn2").click(function(){//点击太快会轮播图
+	if(flag){
+		flag=false;
+		move();
+	}
+})
+$(".banner_btn1").click(function(){
+	if(flag){
+		n-=2;
+		flag=false;
+		move();
+	}
+})
+//小米明星单品实现翻动
+//箭头移动
+let a=0;
+$(".star_btn2").click(function(){
+	$(".star_btn1").removeClass("disable");
+		a++;
+		if(a==2){
+			$(this).addClass("disable");
+		}
+		if(a==3){
+			a=2;
+			return;
+		}
+	$(".star_fan").css({"marginLeft":-1226*a});
+})
+$(".star_btn1").click(function(){
+	$(".star_btn2").removeClass("disable");
+		a--;
+		if(a==0){
+			$(this).addClass("disable");
+		}
+		if(a==-1){
+			a=0;
+			return;
+		}
+	$(".star_fan").css({"marginLeft":-1226*a});
+})
+//搭配，配件，周边实现移入翻转
+$(".dapei_top span").mouseenter(function(){
+	$(".dapei_top span,.dapei_bottom").removeClass("active");
+	let index=$(".dapei_top span").index($(this));
+	$(this).addClass("active");
+	$(".dapei_bottom").eq(index).addClass("active");
+})
+//内容箭头移动
+let nn=0;
+let obj;
+let l=$(".neirong_lunbo1").length;
+$(".neirong_btnb2").click(function(){
+	nn++;
+	 if(nn==l){
+	 	nn=l-1;
+	 	return;
+	}
+	$(".neirong_lunbo_a").css({"marginLeft":-296*nn});
+	$(".neirong_btn").eq(nn).addClass("item_lunbodian_kuang");
+	$(".neirong_btn").eq(nn-1).removeClass("item_lunbodian_kuang");
+})
+$(".neirong_btnb3").click(function(){
+	nn--;
+	if(nn==-1){
+		nn=0;
+		return;
+	}
+	$(".neirong_lunbo_a").css({"marginLeft":-296*nn});
+	$(".neirong_btn").eq(nn).addClass("item_lunbodian_kuang");
+	$(".neirong_btn").eq(nn+1).removeClass("item_lunbodian_kuang");
+})
+$(".neirong_btn").click(function(){
+	obj=$(".neirong_btn").eq(nn);
+	$(obj).removeClass("item_lunbodian_kuang");
+	$(this).addClass("item_lunbodian_kuang");
+	obj=$(this);
+	$(".neirong_lunbo_a").css({"marginLeft":-296*($(".neirong_btn").index($(this)))});
+	nn=$(".neirong_btn").index($(this))
+})
+//banner_left
+$(".banner_nav>li").mouseenter(function(){
+	let index=$(".banner_nav>li").index($(this));
+	$(".menu").eq(index).css({"display":"block","backgroundColor":"red"})
+})
+$(".banner_nav>li").mouseleave(function(){
+	let index=$(".banner_nav>li").index($(this));
+	$(".menu").eq(index).css({"display":"none"})
+})
+//顶部
+$(".nav_menu_type").mouseenter(function(){
+	$(".nav_menu_item").css({"height":300,"borderTop":"1px solid green"})
+})
+$(".nav_menuaa").mouseleave(function(){
+	$(".nav_menu_item").css({"height":0,"borderTop":"none"})
+})
+//顶部翻动
+$(".nav_menu").mouseenter(function(){
+	$(".nav_menu,.nav_menu_xia").removeClass("nav_fandongxiaoguo");
+	let index=$(".nav_menu").index($(this));
+	$(".nav_menu_xia").eq(index).addClass("nav_fandongxiaoguo");
+})
+</script>
+    </body>
+</html>
