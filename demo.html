@@ -1,0 +1,359 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>小米官网</title>
+   <link rel="shortcut icon" href="img/logo-footer.png" type="image/png">
+   <style>
+      *{
+         margin: 0;
+         padding: 0;
+         list-style: none;
+      }
+      #banner{
+         width: 1226px;
+         height: 460px;
+         margin: 0 auto;
+         position: relative;
+      }
+      .imgbox{
+         width: 1226px;
+         height: 460px;
+      }
+      .imgbox li{
+         width: 1226px;
+         height: 460px;
+         position: absolute;
+         left: 0;
+         top: 0;
+         transition: all 1s linear;
+         opacity: 0.5;
+         background: #ff6700;
+         font-size:50px;
+         line-height: 460px;
+         text-align: center;
+      }
+      .imgbox .active{
+         z-index: 9;
+         opacity: 1;
+      }
+      .pagerbox{
+         width: 150px;
+         height: 10px;
+         position: absolute;
+         right: 30px;
+         bottom: 30px;
+         z-index: 999;
+      }
+      .pagerbox li{
+         width: 6px;
+         height:6px;
+         margin: 0 10px;
+         background-color: #fff;
+         float: left;
+         border-radius: 50%;
+         border: 2px solid #6b6b6b;
+         cursor: pointer;
+         /* transition: all 0.5s; */
+      }
+      .pagerbox .active{
+         background-color: red;
+      }
+      .pagerbox li:hover{
+         background-color: red;
+      }
+      .prev,.next{
+         width: 41px;
+         height: 69px;
+         position: absolute;
+         top: 50%;
+         margin-top: -35px;
+         z-index: 100;
+         background: red;
+         opacity: 0.6;
+         cursor: pointer;
+         font-size: 40px;
+         line-height: 69px;
+         text-align: center;
+      }
+      .prev{
+         left: 234px;
+         background-position: -84px 0;
+      }
+      .prev:hover{
+         background-position: 0 0;
+      }
+      .next{
+         right: 0;
+         background-position: -124px 0;
+      }
+      .next:hover{
+         background-position: -42px 0;
+      }
+      #buy{
+         width: 1226px;
+         height: auto;
+         margin: 0 auto;
+         margin-top: 30px;
+      }
+      .buy_top{
+         width: 100%;
+         height: 30px;
+         background: red;
+      }
+      .buy_arrow{
+         width: 100px;
+         height: 30px;
+         float: right;
+         cursor: pointer;
+         background-color: blue;
+      }
+      .buy_arrow span{
+         display: block;
+         width: 50%;
+         height: 30px;
+         float: left;
+         box-sizing: border-box;
+         border: 1px solid #ccc;
+         text-align: center;
+         line-height: 30px;
+         color: #333;
+         font-weight: bold;
+         user-select: none;
+      }
+      .buy_arrow span:hover{
+         color: yellow;
+      }
+      .buy_arrow span.disable{
+         color: #ccc;
+      }
+      .buy_bottom{
+         width: 100%;
+         height: 300px;
+         /* background-color: yellow; */
+      }
+      .buy_time{
+         width: 234px;
+         float: left;
+         height: 300px;
+         margin-right: 14px;
+         background-color: yellow;
+      }
+      .buy_list{
+         width: 976px;
+         height: 300px;
+         float: left;
+         overflow: hidden;
+      }
+      .buy_inner{
+         width: 3000px;
+         height: 300px;
+         background-color: #ccc;
+         /*transition: all 1s;*/
+      }
+      .buy_item{
+         width: 234px;
+         margin-left: 14px;
+         float: left;
+         height: 300px;
+         background-repeat: no-repeat;
+         background-size: 100% 300px;
+      }
+      .buy_item1{
+         margin-left: 0;
+      }
+      .buy_inner li{
+         line-height: 300px;
+         text-align: center;
+      }
+      .content{
+         width: 1226px;
+         height: 400px;
+         margin: 0 auto;
+         background-color: red;
+         margin-top: 30px;
+      }
+      .content_top{
+         width: 100%;
+         height: 30px;
+      }
+      .content_top .type{
+         float: left;
+         height: 30px;
+         text-align: center;
+         line-height: 30px;
+         margin: 0 20px;
+         cursor: pointer;
+         transition: all 0.5s;
+         user-select:none;
+      }
+      .content_top .active{
+         height: 29px;
+         border-bottom: 1px solid orange;
+         color: orange;
+      }
+      .content_bottom{
+         width: 100%;
+         height: 365px;
+         margin-top: 5px;
+         position: relative;
+      }
+      .goodslist{
+         width: 100%;
+         height: 370px;
+         position: absolute;
+         left: 0;
+         top: 0;
+         background: #ccc;
+         font-size: 30px;
+         color: green;
+         text-align: center;
+         line-height: 370px;
+      }
+      .content_bottom .active{
+         z-index: 9;
+      }
+   </style>
+</head>
+<body>
+<div id="banner">
+   <ul class="imgbox">
+      <li class="active">1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+   </ul>
+   <ul class="pagerbox">
+      <li class="active"></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+   </ul>
+   <div class="prev">&lt;</div>
+   <div class="next">&gt;</div>
+</div>
+<div id="buy">
+   <div class="buy_top">
+      <div class="buy_arrow">
+         <span class="buy_prev disable">&lt;</span>
+         <span class="buy_next">&gt;</span>
+      </div>
+   </div>
+   <div class="buy_bottom">
+      <div class="buy_time"></div>
+      <div class="buy_list">
+         <ul class="buy_inner">
+            <li class="buy_item buy_item1">1</li>
+            <li class="buy_item">2</li>
+            <li class="buy_item">3</li>
+            <li class="buy_item">4</li>
+            <li class="buy_item">5</li>
+            <li class="buy_item">6</li>
+            <li class="buy_item">7</li>
+            <li class="buy_item">8</li>
+            <li class="buy_item">9</li>
+            <li class="buy_item">10</li>
+            <li class="buy_item">11</li>
+            <li class="buy_item">12</li>
+         </ul>
+      </div>
+   </div>
+</div>
+<div class="content">
+   <div class="content_top">
+      <div class="type active">热门</div>
+      <div class="type">电视电影</div>
+      <div class="type">家居</div>
+      <div class="type">游戏</div>
+   </div>
+   <div class="content_bottom">
+      <div class="goodslist active">1</div>
+      <div class="goodslist">2</div>
+      <div class="goodslist">3</div>
+      <div class="goodslist">4</div>
+   </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+   //banner
+    {
+        $(".pagerbox li").click(function(){
+            let index=$(this).index();
+            $(".pagerbox li").removeClass("active").eq(index).addClass("active");
+            $(this).addClass("active").siblings(".active").removeClass("active");
+            $(".imgbox li").removeClass("active").eq(index).addClass("active");
+            $(this).addClass("active").siblings(".active").removeClass("active");
+        })
+        $("#banner").mouseenter(function(){
+            $(".prev").fadeIn(500);
+            $(".next").fadeIn(500);
+        }).mouseleave(function(){
+            $(".prev").fadeOut(500);
+            $(".next").fadeOut(500);
+        })
+        var n=0;
+        $(".next").click(function(){
+            n++;
+            if(n===5){
+                n=0;
+            }
+            $(".imgbox li").removeClass("active");
+            $(".imgbox li").eq(n).addClass("active");
+            $(".pagerbox li").removeClass("active");
+            $(".pagerbox li").eq(n).addClass("active");
+        })
+        $(".prev").click(function(){
+            n--;
+            if(n===-1){
+                n=4;
+            }
+            $(".imgbox li").removeClass("active");
+            $(".imgbox li").eq(n).addClass("active");
+            $(".pagerbox li").removeClass("active");
+            $(".pagerbox li").eq(n).addClass("active");
+        })
+    }
+    //buy
+   {
+       let inner=$(".buy_inner");
+       let n=0;
+       $(".buy_next").click(function(){
+           n++;
+           $(".buy_prev").removeClass("disable");
+           if(n===2){
+               $(this).addClass("disable");
+           }
+           if(n===3){
+               n=2;
+               return;
+           }
+           inner.animate({marginLeft:-n*992},1000);
+       });
+       $(".buy_prev").click(function(){
+           n--;
+           $(".buy_next").removeClass("disable");
+           if(n===0){
+               $(".buy_prev").addClass("disable");
+           }
+           if(n===-1){
+               n=0;
+               return;
+           }
+           inner.animate({marginLeft:-n*992},1000);
+       });
+   }
+   // 选项卡
+   {
+       $(".content").each(function() {
+           $(".type").mouseenter(function () {
+               $(this).addClass("active").siblings(".active").removeClass("active");
+               var index = $(this).index();
+               $(".goodslist").removeClass("active").eq(index).addClass("active");
+           })
+       });
+   }
+</script>
+</body>
+</html>
