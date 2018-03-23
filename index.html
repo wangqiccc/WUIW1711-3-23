@@ -1,0 +1,629 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>小米jQuery</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-decoration: none;
+
+        }
+        body{
+            background: #cccccc;
+        }
+        #banner{
+            width: 1226px;
+            height: 460px;
+            margin:0 auto;
+            position: relative;
+        }
+        .imgbox{
+            width: 1226px;
+            height: 460px;
+            position: relative;
+        }
+        .imgbox li{
+            width: 1226px;
+            height: 460px;
+            position: absolute;
+            left:0;
+            top:0;
+            transition: all 1s ease-in-out;
+            opacity: 0;
+        }
+        .imgbox li.active{
+            z-index: 9;
+            opacity: 1;
+        }
+        .pagebox{
+            width: 150px;
+            height: 10px;
+            position: absolute;
+            right:30px;
+            bottom: 30px;
+            z-index: 99;
+        }
+        .pagebox li{
+            width: 6px;
+            height: 6px;
+            margin:0 10px;
+            background: #fff;
+            float: left;
+            border-radius: 50%;
+            border: 2px solid #ccc8b1;
+            cursor: pointer;
+            transition: all 0.5s;
+        }
+        .pagebox li.active{
+            background: red;
+        }
+        .pagebox li:hover{
+            background: red;
+        }
+        .prev,.next{
+            width: 41px;
+            height: 69px;
+            position: absolute;
+            top:50%;
+            margin-top:-35px;
+            z-index: 999;
+            background: url("img/icon-slides.png");
+            cursor: pointer;
+            opacity: 0.6;
+        }
+        .prev{
+            left:234px;
+            background-position: -84px 0;
+        }
+        .next{
+            right: 0;
+            background-position: -124px 0;
+        }
+        .prev:hover{
+            background-position: 0 0;
+        }
+        .next:hover{
+            background-position: -42px 0;
+        }
+
+        .buy{
+            width: 1226px;
+            height: 398px;
+            margin: 0 auto;
+        }
+        .buy-top{
+            width: 1226px;
+            height: 58px;
+            background: skyblue;
+        }
+        .buy-bottom{
+            width: 1226px;
+            height: 340px;
+            background: #fff;
+        }
+        .buy-arrow{
+            width: 100px;
+            height: 58px;
+            float: right;
+            cursor: pointer;
+            background: yellow;
+        }
+        .buy-arrow span{
+            display: block;
+            width: 50%;
+            height: 30px;
+            float: left;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            text-align: center;
+            line-height: 30px;
+            color: #ccc;
+            font-weight: bold;
+            user-select: none;
+            margin-top: 14px;
+        }
+        .buy-arrow span:hover{
+            color: red;
+        }
+        .buy-arrow span.disable{
+            color: #333;
+        }
+        .buy-time{
+            width: 234px;
+            height: 340px;
+            float: left;
+            background: green;
+            margin-right: 14px;
+        }
+        .buy-list{
+            width: 978px;
+            height: 340px;
+            float: left;
+            overflow: hidden;
+        }
+        .buy-inner{
+            width: 3000px;
+            height: 340px;
+            background: #fff;
+            transition: all 1s;
+        }
+        .buy-item{
+            width: 234px;
+            height: 340px;
+            float: left;
+            background-size: 100% auto;
+            background-repeat: no-repeat;
+            margin-right: 14px;
+            background-color: #fafafa;
+        }
+        .buy-item:nth-child(2n){
+            background-image: url('img/1-1.png');
+        }
+        .buy-item:nth-child(2n-1){
+            background-image: url('img/1-2.png');
+        }
+
+        .content{
+            width: 1226px;
+            height: 400px;
+            margin:0 auto;
+            border:1px solid #000;
+        }
+        .content-top{
+            width: 100%;
+            height: 30px;
+        }
+        .content-top .type{
+            float: left;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            margin:0 20px;
+            cursor: pointer;
+            transition: all 0.5s;
+        }
+        .content-top .type.active{
+            color:#f60;
+            height: 29px;
+            border-bottom: 1px solid #f60;
+        }
+        .content-bottom{
+            width: 1226px;
+            height: 370px;
+            position: relative;
+        }
+        .goodslist{
+            width: 1226px;
+            height: 370px;
+            position: absolute;
+            left: 0;
+            top:0;
+            background: gray;
+            text-align: center;
+            font-size: 30px;
+        }
+        .active{
+            z-index: 9999;
+        }
+
+        .reping{
+            width: 1226px;
+            height: 473px;
+            margin: 0 auto;
+            margin-top: 22px;
+        }
+        .neirong_beijing{
+            width: 1226px;
+            height: 420px;
+        }
+        .neirong_item{
+            width: 296px;
+            height: 419px;
+            margin-left: 14px;
+            border-top: 1px solid #ffac13;
+            background-color:#FEFEFE;
+            float: left;
+            position: relative;
+            transition: all 0.3s linear;
+        }
+        .neirong_item1{
+            margin-left: 0;
+        }
+        .neirong_item2{
+            border-top: 1px solid #83c44e;
+        }
+        .neirong_item3{
+            border-top: 1px solid #e53935;
+        }
+        .neirong_item4{
+            border-top: 1px solid #2196f3;
+        }
+        .neirong_item img{
+            width: 216px;
+            height: 154px;
+            margin-top: 0;
+            display: block;
+        }
+        .neirong_item p{
+            display: block;
+            width: 276px;
+            height: 24px;
+            margin: 50px 10px 18px 10px;
+            text-align: center;
+            line-height: 24px;
+            color: #ffac13;
+        }
+        .neirong_wenzi{
+            display: block;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+            line-height: 25px;
+            color: #333;
+        }
+        .neirong_wenzi1{
+            display: block;
+            width: 200px;
+            height: 40px;
+            font-size: 12px;
+            text-align: center;
+            color: #b0b0b0;
+            margin: 0 auto;
+            margin-top: 12px;
+            margin-bottom: 20px;
+        }
+        .neirong_wenzi2{
+            display: block;
+            width: 50px;
+            height: 16px;
+            font-size: 12px;
+            color: #333;
+            margin: 0 auto;
+            margin-bottom: 15px;
+        }
+        .neirong_beijing .neirong_wenzi3{
+            color: #83c44e;
+        }
+        .neirong_beijing .neirong_wenzi4{
+            color: #e53935;
+        }
+        .neirong_beijing .neirong_wenzi5{
+            color:#2196f3 ;
+        }
+        .neirong_beijing img{
+            width: 216px;
+            height: 154px;
+            margin: 0 auto;
+        }
+        .neirong_btn{
+            width: 20px;
+            height: 48px;
+            font-weight: normal;
+            line-height: 48px;
+            text-align: center;
+            font-size: 20px;
+            background: #757575;
+            color: #fff;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            display: none;
+            opacity: 0.3;
+            cursor: pointer;
+        }
+        .neirong_btn1{
+            left: 0;
+        }
+        .neirong_btn2{
+            right:0;
+        }
+
+        .neirong_item5{
+            width: 296px;
+            height: 30px;
+            position: relative;
+        }
+
+        .neirong_item5_lunbo1{
+            width: 6px;
+            height: 6px;
+            background-color:#b0b0b0;
+            left: 100px;
+            top: 10px;
+            border-radius: 50%;
+            position: absolute;
+            border: 2px solid #f5f5f5;
+            margin-right: 15px;
+            cursor: pointer;
+
+        }
+        .neirong_item5_lunbo2{
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: #b0b0b0;
+            position: absolute;
+            top: 10px;
+            left: 145px;
+            cursor: pointer;
+            border: 2px solid #f5f5f5;
+        }
+        .neirong_item5_lunbo3{
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: #b0b0b0;
+            position: absolute;
+            top: 10px;
+            left: 185px;
+            cursor: pointer;
+            border: 2px solid #f5f5f5;
+        }
+        .neirong-content{
+            width: 296px;
+            height:290px;
+            overflow:hidden;
+        }
+        .qiehuan{
+            width: 296px;
+            height:290px;
+            background: #fff;
+            float: left;
+        }
+        .neirong-inner{
+            width: 888px;
+            height: 290px;
+            transition: all 1s;
+        }
+        .neirong_item5 .active{
+            border:2px solid #ff6700;
+            background: #fff;
+        }
+    </style>
+</head>
+<body>
+<!--小米轮播-->
+<div id="banner">
+    <ul class="imgbox">
+        <li class="active"><img src="img/banner1.jpg" alt=""></li>
+        <li><img src="img/banner2.jpg" alt=""></li>
+        <li><img src="img/banner3.jpg" alt=""></li>
+        <li><img src="img/banner2.jpg" alt=""></li>
+        <li><img src="img/banner3.jpg" alt=""></li>
+    </ul>
+    <ul class="pagebox">
+        <li class="active"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <div class="prev"></div>
+    <div class="next"></div>
+</div>
+<!--选项卡-->
+<div class="buy">
+    <div class="buy-top">
+        <!-- <h1>小米明星单品</h1> -->
+        <div class="buy-arrow">
+            <span class="buy-prev disable">&lt;</span>
+            <span class="buy-next">&gt;</span>
+        </div>
+    </div>
+    <div class="buy-bottom">
+        <div class="buy-time"></div>
+        <div class="buy-list">
+            <ul class="buy-inner">
+                <li class="buy-item"></li>
+                <li class="buy-item"></li>
+                <li class="buy-item"></li>
+                <li class="buy-item"></li>
+                <li class="buy-item"></li>
+                <li class="buy-item"></li>
+                <li class="buy-item"></li>
+                <li class="buy-item"></li>
+                <li class="buy-item"></li>
+                <li class="buy-item"></li>
+                <li class="buy-item"></li>
+                <li class="buy-item"></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--热门-->
+<div class="content">
+    <div class="content-top">
+        <div class="type active">热门</div>
+        <div class="type">电视影音</div>
+        <div class="type">电脑</div>
+        <div class="type">家具</div>
+
+    </div>
+    <div class="content-bottom">
+        <div class="goodslist active">1</div>
+        <div class="goodslist">2</div>
+        <div class="goodslist">3</div>
+        <div class="goodslist">4</div>
+    </div>
+</div>
+<!--内容-->
+<div class="reping">
+    <div class="danpin_top">
+        <h1>内容</h1>
+    </div>
+    <div class="neirong_beijing">
+        <div class="neirong_item neirong_item1">
+            <p>图书</p>
+            <div class="neirong-content">
+            <div class="neirong-inner">
+                <div class="qiehuan">
+                    <a href=""class="neirong_wenzi">哈利·波特与被诅咒的孩子</a>
+                    <a href=""class="neirong_wenzi1">“哈利·波特”第八个故事中文版震撼来袭！特别彩排版剧本！
+                    </a>
+                    <a href=""class="neirong_wenzi2">29.37元
+                    </a>
+                    <a href=""><img src="img/11.png" alt=""></a>
+                </div>
+                <div class="qiehuan">
+                    <a href=""class="neirong_wenzi">哈利·波特与被诅咒的孩子</a>
+                    <a href=""class="neirong_wenzi1">“哈利·波特”第八个故事中文版震撼来袭！特别彩排版剧本！
+                    </a>
+                    <a href=""class="neirong_wenzi2">29.37元
+                    </a>
+                    <a href=""><img src="img/n1.png" alt=""></a>
+                </div>
+                <div class="qiehuan">
+                    <a href=""class="neirong_wenzi">哈利·波特与被诅咒的孩子</a>
+                    <a href=""class="neirong_wenzi1">“哈利·波特”第八个故事中文版震撼来袭！特别彩排版剧本！
+                    </a>
+                    <a href=""class="neirong_wenzi2">29.37元
+                    </a>
+                    <a href=""><img src="img/n2.jpg" alt=""></a>
+                </div>
+            </div>
+            </div>
+            <div class="neirong_btn neirong_btn1">&lt;</div>
+            <div class="neirong_btn neirong_btn2">&gt;</div>
+            <div class="neirong_item5">
+                <div class="pager neirong_item5_lunbo1 active">
+                </div>
+                <div class="pager neirong_item5_lunbo2">
+                </div>
+                <div class="pager neirong_item5_lunbo3">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="jquery-3.3.1.min.js"></script>
+<script>
+    //内容
+    {
+        let inner=$(".neirong-inner");
+        let n=0;
+        let a=$(".qiehuan").length;
+        $(".neirong_item")
+            .mouseenter(function(){
+                $(".neirong_btn").fadeIn(500);
+            })
+            .mouseleave(function(){
+                $(".neirong_btn").fadeOut(500);
+            });
+        $(".neirong_btn")
+            .mouseenter(function(){
+                $(".neirong_btn").css("opacity",0.6);
+            })
+            .mouseleave(function(){
+                $(".neirong_btn").css("opacity",0.3);
+            });
+        $(".neirong_btn1").click(function () {
+            n--;
+            if(n<0){
+                n=1;
+                return;
+            }
+            inner.animate({marginLeft: -n * 296}, 100);
+            $(".pager").removeClass("active").eq(n).addClass("active");
+        });
+        $(".neirong_btn2").click(function () {
+            n++;
+            if(n===a){
+                n=a-1;
+                return;
+            }
+            inner.animate({marginLeft: -n * 296}, 100);
+            $(".pager").removeClass("active").eq(n).addClass("active");
+        });
+        $(".pager").click(function () {
+            let index=$(this).index(".pager");
+            inner.animate({marginLeft:-index *296},100);
+            $(".pager").removeClass("active").eq(index).addClass("active");
+        })
+    }
+    //热门
+    {
+        $(".type")
+            .mouseenter(function () {
+                let index=$(this).index(".type");
+                $(".type").removeClass("active").eq(index).addClass("active");
+                $(".goodslist").removeClass("active").eq(index).addClass("active");
+            })
+    }
+    //小米明星单品
+    {
+    let inner=$(".buy-inner");
+    let n=0;
+    $(".buy-prev").click(function () {
+        n--;
+        $(".buy-next").removeClass("disable");
+        if(n===0){
+            $(".buy-prev").addClass("disable");
+        }
+        if(n===-1){
+            n=0;
+            return;
+        }
+        inner.animate({marginLeft:-n *992},500);
+    });
+        $(".buy-next").click(function () {
+            n++;
+            $(".buy-prev").removeClass("disable");
+            if(n===2){
+                $(".buy-next").addClass("disable");
+            }
+            if(n===3){
+                n=2;
+                return;
+            }
+            inner.animate({marginLeft:-n *992},500);
+        });
+    }
+    //轮播
+    {
+        $(".pagebox li").click(function () {
+            let index = $(this).index(".pagebox li");
+            $(".pagebox li").removeClass("active").eq(index).addClass("active");
+            $(".imgbox li").removeClass("active").eq(index).addClass("active");
+            n = index;
+        });
+        let n = 0;
+        let flag = true;
+        function move() {
+            n++;
+            if (n === $(".imgbox li").length) {
+                n = 0;
+            }
+            if (n < 0) {
+                n = $(".imgbox li").length - 1;
+            }
+            $(".imgbox li").each(function () {
+                flag = true;
+                $(".imgbox li").removeClass("active").eq(n).addClass("active");
+                $(".pagebox li").removeClass("active").eq(n).addClass("active");
+            });
+        }
+        $(".next").click(function () {
+            if (flag) {
+                flag = false;
+                move();
+            }
+        });
+        $(".prev").click(function () {
+            if (flag) {
+                flag = false;
+                n -= 2;
+                move();
+            }
+        });
+    }
+</script>
+</body>
+</html>
