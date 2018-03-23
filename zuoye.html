@@ -1,0 +1,706 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>作业</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            list-style: none;
+        }
+        .zong{
+            background-color: darkred;
+            width: 450px;
+            height: 50px;
+            margin: 0 auto;
+        }
+        .zong li{
+            float: left;
+            width: 50px;
+            line-height: 50px;
+        }
+        .neirong{
+            width: 100%;
+            height: 200px;
+            background-color: yellow;
+            margin: 0 auto;
+            position: relative;
+        }
+        .neirong li{
+            width: 100%;
+            height: 100%;
+            background-color: yellow;
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin-left: 500px;
+            line-height: 200px;
+            font-size: 50px;
+        }
+        .xiala{
+            width: 100%;
+            background-color: red;
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 50px;
+        }
+        .xiala li.active{
+            z-index: 1;
+        }
+        .zong li.active{
+            background-color: yellow;
+        }
+        #banner{
+            width: 1226px;
+            height: 460px;
+            margin:0 auto;
+            position: relative;
+            margin-top: 300px;
+        }
+        .imgbox{
+            width: 1226px;
+            height: 460px;
+            position: relative;
+        }
+        .imgbox li{
+            width: 1226px;
+            height: 460px;
+            position: absolute;
+            left:0;
+            top:0;
+            transition: all 1s ease-in;
+            opacity:0;
+        }
+        .imgbox li.active{
+            z-index: 9;
+            opacity:1;
+        }
+        .pagerbox{
+            width: 150px;
+            height: 10px;
+            /*background-color: aqua;*/
+            position: absolute;
+            right:30px;
+            bottom:30px;
+            z-index: 33;
+        }
+        .pagerbox li{
+            width: 6px;
+            height: 6px;
+            margin:0 10px;
+            background-color:#717987;
+            /*position: absolute;*/
+            float:left;
+            border-radius: 50%;
+            border:2px solid #9da2ac;
+            cursor: pointer;
+            transition: all 1s;
+        }
+        .pagerbox li.active{
+            background-color: #ffffff;
+            border:2px solid #82868f;
+        }
+        .pagerbox li:hover{
+            background-color: #ffffff;
+            border:2px solid #82868f;
+        }
+        .prev,.next{
+            width: 41px;
+            height: 69px;
+            position: absolute;
+            top:50%;
+            margin-top: -35px;
+            z-index: 999;
+            background: url("img/icon-slides.png");
+            cursor: pointer;
+            opacity:0.6;
+        }
+        .prev{
+            left:234px;
+            background-position: -84px 0;
+        }
+        .prev:hover{
+            background-position: 0 0;
+            z-index: 999;
+        }
+        .next{
+            right:0;
+            background-position: -124px 0;
+        }
+        .next:hover{
+            background-position: -42px 0;
+            z-index: 999;
+        }
+
+        #buy{
+            width: 1226px;
+            height:auto;
+            margin:0 auto;
+        }
+        .buy-top{
+            width: 100%;
+            height: 30px;
+            background: darkred;
+        }
+        .buy-arrow{
+            width: 100px;
+            height: 30px;
+            float:right;
+            cursor:pointer;
+            background: blue;
+        }
+        .buy-arrow span{
+            display:block;
+            width: 50%;
+            height: 30px;
+            float:left;
+            box-sizing:border-box;
+            border:1px solid #ccc;
+            text-align:center;
+            line-height:30px;
+            color:#ccc;
+            font-weight: bold;
+            user-select:none;
+        }
+        .buy-arrow span:hover{
+            color:yellow;
+        }
+        .buy-arrow span.disable{
+            color:#f69;
+        }
+        .buy-bottom{
+            width: 100%;
+            height: 300px;
+            background: skyblue;
+        }
+        .buy-list{
+            width: 978px;
+            height: 300px;
+            float:left;
+        }
+        .buy-time{
+            width: 234px;
+            height: 300px;
+            float: left;
+            margin-right: 14px;
+            background: blueviolet;
+        }
+        .buy-list{
+            width: 976px;
+            height: 300px;
+            float: left;
+            overflow: hidden;
+        }
+        .buy-inner{
+            width: 6000px;
+            height: 300px;
+            background:#ccc;
+            /*margin-left:-992px;*/
+            /*transition: all 1s;*/
+        }
+        .buy-item{
+            width: 234px;
+            height: 300px;
+            margin-right: 14px;
+            float: left;
+            background-size: 100% auto;
+            background-repeat: no-repeat;
+            background-color: #fff;
+        }
+        .content{
+            width: 1226px;
+            height: 400px;
+            margin:0 auto;
+            border:1px solid #000;
+        }
+        .content-top{
+            width:100%;
+            height: 30px;
+        }
+        .content-top .type{
+            float: left;
+            height: 30px;
+            text-align:center;
+            line-height:30px;
+            margin:0 20px;
+            cursor:pointer;
+            /*transition: all 1s;*/
+        }
+        .content-top.activee{
+            color:orange;
+            border-bottom: 1px solid #ff6700;
+        }
+        .content-bottom{
+            width: 1226px;
+            height: 370px;
+            position: relative;
+        }
+        .goodslist{
+            width: 1226px;
+            height: 370px;
+            position: absolute;
+            top:0;
+            left:0;
+            background: #ccc;
+            font-size: 30px;
+            color:#000;
+        }
+        .goodslist.activee{
+            z-index: 9;
+        }
+
+        .neirong_item {
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+        }
+        .reping_item {
+            width: 296px;
+            height: 415px;
+            background-color: #f8f8f8;
+            transition: all 0.1s linear;
+            margin: 0 auto;
+            margin-top: 30px;
+        }
+        .title {
+            width: 296px;
+            height: 51px;
+            border-top: 1px solid #FFAC13;
+            text-align: center;
+        }
+        .title h1 {
+            padding-top: 45px;
+            color: #ffac13;
+            font-size: 16px;
+        }
+        .dapei_img h1 {
+            font-size: 14px;
+            color: #ff6700;
+            text-align: center;
+            margin-top: 0;
+        }
+        .tw_box {
+            width: 1200px;
+            height: 310px;
+            position: absolute;
+            top: 50px;
+            left: 0;
+            transition: all .5s;
+        }
+        .tuwen {
+            width: 296px;
+            height: 310px;
+            float: left;
+        }
+        .lbd {
+            width: 296px;
+            height: 30px;
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+        }
+        .nr_lbtn {
+            margin-left: 0;
+        }
+        .nr_btn {
+            width: 20px;
+            height: 48px;
+            text-align: center;
+            line-height: 48px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #fff;
+            position: absolute;
+            top: 183px;
+            margin: auto;
+            cursor: pointer;
+            background-color: rgba(0, 0, 0, 0.2);
+            display: none;
+            user-select: none;
+        }
+        .nr_rbtn {
+            margin-left: 276px;
+        }
+        .wenzi1 {
+            width: 256px;
+            height: 25px;
+            margin: 0 auto;
+            font-size: 20px;
+            font-weight: 400;
+            text-align: center;
+            padding-top: 28px;
+            cursor: pointer;
+        }
+        .wenzi2 {
+            width: 192px;
+            height: 34px;
+            margin: 0 auto;
+            margin-top: 12px;
+            margin-bottom: 21px;
+            font-size: 12px;
+            color: #b0b0b0;
+            text-align: center;
+            cursor: pointer;
+        }
+        .wenzi3 {
+            width: 276px;
+            height: 21px;
+            margin: 0 auto;
+            margin-bottom: 15px;
+            font-size: 14px;
+            color: #333;
+            text-align: center;
+            cursor: pointer;
+        }
+        .neirong_item img {
+            width: 216px;
+            height: 154px;
+            margin: 0 auto;
+            display: block;
+        }
+        .lbd .active3 {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            border: 2px solid #ff6700;
+            background-color: #fff;
+            cursor: default;
+        }
+        .lbd1 {
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            background-color: #B0B0B0;
+            border: 2px solid rgba(0, 0, 0, 0);
+            margin-top: 10px;
+            margin-left: 113px;
+            position: absolute;
+            cursor: pointer;
+            float: left;
+        }
+        .lbd2 {
+            margin-left: 143px;
+        }
+        .lbd3 {
+            margin-left: 173px;
+        }
+
+    </style>
+</head>
+<body>
+<ul class="zong">
+    <li class="xuanxiang">一</li>
+    <li class="xuanxiang">二</li>
+    <li class="xuanxiang">三</li>
+    <li class="xuanxiang">四</li>
+    <li class="xuanxiang">五</li>
+    <li class="xuanxiang">六</li>
+    <li class="xuanxiang">七</li>
+    <li class="xuanxiang">八</li>
+    <li class="xuanxiang">九</li>
+    <div class="xiala">
+        <ul class="neirong">
+            <li class="active">内容一</li>
+            <li>内容二</li>
+            <li>内容三</li>
+            <li>内容四</li>
+            <li>内容五</li>
+            <li>内容六</li>
+            <li>内容七</li>
+            <li>内容八</li>
+            <li>内容九</li>
+        </ul>
+    </div>
+</ul>
+<div id="banner">
+    <ul class="imgbox">
+        <li class="active"><img src="img/B1.jpg" alt=""></li>
+        <li><img src="img/B2.jpg" alt=""></li>
+        <li><img src="img/B3.jpg" alt=""></li>
+        <li><img src="img/B4.jpg" alt=""></li>
+        <li><img src="img/B5.jpg" alt=""></li>
+    </ul>
+    <ul class="pagerbox">
+        <li class="active"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <div class="prev"></div>
+    <div class="next"></div>
+</div>
+<div id="buy">
+    <div class="buy-top">
+        <div class="buy-arrow">
+            <span class="buy-prev disable">&lt;</span>
+            <span class="buy-next">&gt;</span>
+        </div>
+    </div>
+    <div class="buy-bottom">
+        <div class="buy-time"></div>
+        <div class="buy-list">
+            <ul class="buy-inner">
+                <li class="buy-item">A</li>
+                <li class="buy-item">B</li>
+                <li class="buy-item">C</li>
+                <li class="buy-item">D</li>
+                <li class="buy-item">a</li>
+                <li class="buy-item">b</li>
+                <li class="buy-item">c</li>
+                <li class="buy-item">d</li>
+                <li class="buy-item">1</li>
+                <li class="buy-item">2</li>
+                <li class="buy-item">3</li>
+                <li class="buy-item">4</li>
+                <li class="buy-item">A</li>
+                <li class="buy-item">B</li>
+                <li class="buy-item">C</li>
+                <li class="buy-item">D</li>
+                <li class="buy-item">a</li>
+                <li class="buy-item">b</li>
+                <li class="buy-item">c</li>
+                <li class="buy-item">d</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="content">
+    <div class="content-top">
+        <div class="type activee">家电</div>
+        <div class="type">热门</div>
+        <div class="type">手机</div>
+        <div class="type">充电器</div>
+    </div>
+    <div class="content-bottom">
+        <div class="goodslist activee">1</div>
+        <div class="goodslist">2</div>
+        <div class="goodslist">3</div>
+        <div class="goodslist">4</div>
+    </div>
+</div>
+<div class="reping_item neirong_item">
+    <div class="title">
+        <h1>图书</h1>
+    </div>
+    <div class="tw_box">
+        <div class="tuwen">
+            <div class="wenzi1">
+                哈利·波特与被诅咒的孩子
+            </div>
+            <div class="wenzi2">
+                “哈利·波特”第八个故事中文版震撼来袭！特别彩排版剧本！
+            </div>
+            <div class="wenzi3">
+                <span>29.37元</span>
+            </div>
+            <img src="img/neirong1.png" alt="" class="">
+            <div class="lunbodian">
+                <main class="dian2"></main>
+            </div>
+        </div>
+        <div class="tuwen">
+            <div class="wenzi1">
+                哈利与被诅咒的孩子
+            </div>
+            <div class="wenzi2">
+                “哈利”第八个故事中文版震撼来袭
+            </div>
+            <div class="wenzi3">
+                <span>29.37元</span>
+            </div>
+            <img src="img/neirong1.png" alt="" class="">
+            <div class="lunbodian">
+                <main class="dian2"></main>
+            </div>
+        </div>
+        <div class="tuwen">
+            <div class="wenzi1">
+                波特与被诅咒的孩子
+            </div>
+            <div class="wenzi2">
+                “波特”第八个故事中文版特别彩排版剧本！
+            </div>
+            <div class="wenzi3">
+                <span>29.37元</span>
+            </div>
+            <img src="img/neirong1.png" alt="" class="">
+            <div class="lunbodian">
+                <main class="dian2"></main>
+            </div>
+        </div>
+    </div>
+    <div class="lbd">
+        <span class="lbd1 activea"></span>
+        <span class="lbd1 lbd2"></span>
+        <span class="lbd1 lbd3"></span>
+    </div>
+    <div class="nr_btn nr_lbtn">&lt;</div>
+    <div class="nr_btn nr_rbtn">&gt;</div>
+</div>
+
+
+<script src="jQuery3.3.1.js"></script>
+<script>
+    //下拉效果
+    {
+        $(".zong").mouseenter(function () {
+            $(".xiala").slideDown(1000);
+        }).mouseleave(function () {
+            $(".xiala").slideUp(1000);
+        })
+        $(".zong").each(function () {
+            $(".xuanxiang").mouseenter(function () {
+                let index=$(this).index();
+                $(this).addClass("active");
+                $(".neirong li").eq(index).addClass("active");
+                console.log(index);
+            }).mouseleave(function () {
+                let index=$(this).index();
+                $(this).removeClass("active");
+                $(".neirong li").eq(index).removeClass("active");
+            })
+        })
+    }
+
+
+    //banner效果
+    {
+        $(".pagerbox li").click(function () {
+            let index = $(this).index(".pagerbox li");
+            $(".pagerbox li").removeClass("active").eq(index).addClass("active");
+            $(".imgbox li").removeClass("active").eq(index).addClass("active");
+            n = index;
+        });
+        let n = 0;
+        let flag = true;
+        function move() {
+            n++;
+            if (n === $(".imgbox li").length) {
+                n = 0;
+            }
+            if (n < 0) {
+                n = $(".imgbox li").length - 1;
+            }
+            $(".imgbox li").each(function () {
+                flag = true;
+                $(".imgbox li").removeClass("active").eq(n).addClass("active");
+                $(".pagerbox li").removeClass("active").eq(n).addClass("active");
+            });
+        }
+        $(".next").click(function () {
+            if (flag) {
+                flag = false;
+                move();
+            }
+        });
+        $(".prev").click(function () {
+            if (flag) {
+                flag = false;
+                n -=2;
+                move();
+            }
+        });
+    }
+
+    //闪购效果
+    {
+        let inner = $(".buy-inner");
+        let n = 1;
+        let flag = true;
+        $(".buy-next").click(function () {
+            if (flag) {
+                flag = false;
+                n++;
+                inner.animate({marginLeft: -n * 992}, 1000, function () {
+                    flag = true;
+                    if (n === 4) {
+                        inner.css("marginLeft", -992);
+                        n = 1;
+                    }
+                })
+            }
+        });
+        $(".buy-prev").click(function () {
+            if (flag) {
+                flag = false;
+                n--;
+                inner.animate({marginLeft: -n * 992}, 1000, function () {
+                    flag = true;
+                    if (n === 0) {
+                        inner.css("marginLeft", -2976);
+                        n = 3;
+                    }
+                })
+            }
+        })
+    }
+
+    // 内容区效果
+    {
+        $(".type")
+            .mouseenter(function () {
+                let index = $(this).index(".type");
+                $(".type").removeClass("activee").eq(index).addClass("activee");
+                $(".goodslist ").removeClass("activee").eq(index).addClass("activee");
+            })
+    }
+
+    //图书效果
+    {
+        let box = $(".tw_box");
+        $(".reping_item ")
+            .mouseenter(function () {
+                $(".nr_btn").fadeIn(1);
+            })
+            .mouseleave(function () {
+                $(".nr_btn").fadeOut(1);
+            });
+        $(".nr_lbtn ")
+            .mouseenter(function () {
+                $(".nr_lbtn").css({"background": "rgba(0, 0, 0,0.4)"});
+            })
+            .mouseleave(function () {
+                $(".nr_lbtn").css({"background": "rgba(0, 0, 0,0.2)"});
+            });
+        $(".nr_rbtn ")
+            .mouseenter(function () {
+                $(".nr_rbtn").css({"background": "rgba(0, 0, 0,0.4)"});
+            })
+            .mouseleave(function () {
+                $(".nr_rbtn").css({"background": "rgba(0, 0, 0,0.2)"});
+            });
+        let n = 0;
+        let l = $(".tuwen").length;
+        $(".nr_rbtn ").click(function () {
+            n++;
+            if (n === l) {
+                n = l - 1;
+                return;
+            }
+            box.animate({left: -n * 296}, 100);
+            $(".lbd1").removeClass("activea").eq(n).addClass("activea");
+        });
+        $(".nr_lbtn ").click(function () {
+            n--;
+            if (n < 0) {
+                n = 0;
+                return;
+            }
+            box.animate({left: -n * 296}, 100);
+            $(".lbd1").removeClass("activea").eq(n).addClass("activea");
+        });
+        $(".lbd1").click(function () {
+            let index = $(this).index(".lbd1");
+            $(".lbd1").removeClass("activea").eq(index).addClass("activea");
+            box.animate({left: -index * 296}, 100);
+        })
+    }
+</script>
+</body>
+</html>
