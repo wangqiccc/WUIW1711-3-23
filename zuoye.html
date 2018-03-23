@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>轮播图</title>
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	#banner{
+		width: 1226px;
+		height: 460px;
+		margin: 0 auto;
+		position: relative;
+	}
+	.imgbox{
+		width: 1226px;
+		height: 460px;
+		position: relative;
+	}
+	.imgbox li{
+		width: 1226px;
+		height: 460px;
+		position: absolute;
+		left: 0;
+		top: 0;
+		transition: all 1s ease-in;
+		opacity: 0;
+	}
+	.imgbox li.active{
+		z-index: 9;
+		opacity: 1;
+	}
+	.pagerbox{
+		width: 150px;
+		height: 10px;
+		/* background-color: red; */
+		position: absolute;
+		right: 30px;
+		bottom: 30px;
+		z-index: 999;
+	}
+	.pagerbox li{
+		width: 6px;
+		height: 6px;
+		margin: 0 10px;
+		border-radius: 50%;
+		background-color: #fff;
+		float: left;
+		border: 2px solid #c2c2c2;
+		cursor: pointer;
+	}
+	.pagerbox li.active{
+		background: red;
+	}
+	.pagerbox li:hover{
+		background: red;
+	}
+	.prev,.next{
+		width: 41px;
+		height: 69px;
+		position: absolute;
+		top: 50%;
+		margin-top: -35px;
+		background: url("img/1.png");
+		cursor: pointer;
+		/* opacity: 0.6; */
+		z-index: 999;
+	}
+	.prev{
+		left: 234px;
+		background-position: -84px 0;
+
+	}
+	.prev:hover{
+		background-position: 0 0;
+	}
+	.next{
+		right: 0;
+		background-position: -124px 0;
+	}
+	.next:hover{
+		background-position: -42px 0;
+	}
+
+	.cebanner{
+		width: 1226px;
+		height: 460px;
+		position: relative;
+		margin: 0 auto;
+		background: #ccc;
+	}
+	.sidebar{
+		width: 234px;
+		height: 100%;
+		background-color: rgba(0, 0, 0, .5);
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+	.label{
+		width: 100%;
+		height: 50px;
+		text-align: center;
+		line-height: 50px;
+	}
+	.label:hover{
+		background-color: #ff6700;
+	}
+	.menu{
+		width: 500px;
+		height: 400px;
+		background: red;
+		position: absolute;
+		left: 234px;
+		top: 0;
+		display: none;
+	}
+
+
+
+
+
+
+	.buy{
+		width: 1226px;
+		height: auto;
+		margin: 0 auto;
+	}
+	.buy-top{
+		width: 100%;
+		height: 30px;
+		background-color: red;
+	}
+	.buy-arrow{
+		width: 100px;
+		height: 30px;
+		background-color: blue;
+		float: right;
+		cursor: pointer;
+	}
+	.buy-arrow span{
+		display: block;
+		width: 50%;
+		height: 30px;
+		float: left;
+		box-sizing: border-box;
+		border: 1px solid #ccc;
+		text-align: center;
+		line-height: 30px;
+		font-weight: bold;
+		user-select: none;
+		color: red;
+
+	}
+	.buy-arrow span:hover{
+		color: yellow;
+
+	}
+	.buy-arrow span.disable{
+		color: #333;
+
+	}
+	.buy-prev{
+		width: 50px;
+		height: 40px;
+		background: #fff;
+	}
+	.buy-next{
+		width: 50px;
+		height: 40px;
+		background: #fff;
+	}
+	.buy-bottom{
+		width: 100%;
+		height: 300px;
+		background-color: seagreen;
+	}
+	.buy-time{
+		width: 234px;
+		height: 300px;
+		background-color: yellow;
+		float: left;
+		margin-right: 14px;
+	}
+	.buy-inner{
+		width: 3000px;
+		height: 300px;
+		background-color: #ccc;
+		transition: all 1s;
+
+	}
+	.buy-list{
+		width: 978px;
+		height: 300px;
+		float: left;
+		overflow: hidden;
+	}
+	.buy-item{
+		width: 234px;
+		height: 300px;
+		margin-right: 14px;
+		background-color: skyblue;
+		float: left;
+		background-size: 100% auto;
+		background-repeat: no-repeat;
+	}
+	.content{
+		width: 1226px;
+		height: 400px;
+		margin: 0 auto;
+		border: 1px solid #eee;
+	}
+	.content_top{
+		width: 100%;
+		height: 30px;
+	}
+	.content_top .type{
+		float: left;
+		height: 29px;
+		text-align: center;
+		line-height: 30px;
+		margin: 0 20px;
+		cursor: pointer;
+		transition: all 0.5s;
+	}
+	.content_top .active{
+		color: orange;
+		border-bottom: 1px solid orange;
+		height: 30px;
+	}
+	.content_bottom{
+		width: 1226px;
+		height: 370px;
+		position: relative;
+	}
+	.goodlist{
+		width: 1226px;
+		height: 370px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background-color: #ccc;
+		text-align: center;
+		line-height: 370px;
+		font-size: 40px;
+
+	}
+	.goodlist.active{
+		z-index: 50;
+	}
+
+
+	.contaner{
+		width: 1226px;
+		height: 420px;
+		border: 1px solid red;
+		margin: 0 auto;
+	}
+	.neirong_item{
+		width: 296px;
+		height: 420px;
+		margin-right: 14px;
+		background: #ccc;
+		overflow: hidden;
+		position: relative;
+		float: left;
+	}
+	.neirong_item:last-child{
+		margin-right: 0;
+	}
+	.neirong_inner{
+		width: 2000px;
+		height: 420px;
+		background: #f33;
+		position: absolute;
+		top: 0;
+		left: 0;
+		transition: all .5s;
+		margin-left: -296px;
+	}
+	.neirong_content{
+		width: 296px;
+		height: 420px;
+		line-height: 420px;
+		text-align: center;
+		font-size: 30px;
+		float: left;
+	}
+	.neirong_prev,.neirong_next{
+		width: 30px;
+		height: 50px;
+		position: absolute;
+		top: 50%;
+		display: none;
+		justify-content: center;
+		background-color: #f2f2f2;
+		text-align: center;
+		line-height: 50px;
+		font-size: 30px;
+		user-select: none;
+		cursor: pointer;
+	}
+	.neirong_prev{
+		left: 0;
+	}
+	.neirong_next{
+		right: 0;
+	}
+	.neirong_item:hover .neirong_prev{
+		display: block;
+		opacity: 0.5;
+	}
+	.neirong_item:hover .neirong_next{
+		display: block;
+		opacity: 0.5;
+	}
+	.neirong_prev:hover{
+		opacity: 0.8!important;
+	}
+	.neirong_next:hover{
+		opacity: 0.8!important;
+	}
+	.yuanquan{
+		width: auto;
+		height: 7px;
+		margin: 0 auto;
+		position: absolute;
+		right: 110px;
+		bottom: 50px;
+		z-index: 999;
+	}
+	.yuanquan1{
+		width: auto;
+		height: 7px;
+		margin: 0 auto;
+		position: absolute;
+		right: 90px;
+		bottom: 50px;
+		z-index: 999;
+	}
+	.yuan.active{
+		width: 7px;
+		height: 7px;
+		border-radius: 50%;
+		color: white;
+		border: 2px solid #ff6700;
+		float: left;
+		margin-top: 18px;
+		background: #fff;
+	}
+	.yuan{
+		width: 7px;
+		height: 7px;
+		border-radius: 50%;
+		background-color: #b0b0b0;
+		float: left;
+		margin-left:26px;
+		margin-top: 20px;
+	}
+</style>
+</head>
+<body>
+	<div id="banner">
+		<ul class="imgbox">
+			<li class="active"><img src="img/banner1.jpg" alt=""></li>
+			<li><img src="img/banner2.jpg" alt=""></li>
+			<li><img src="img/banner3.jpg" alt=""></li>
+			<li><img src="img/banner4.jpg" alt=""></li>
+			<li><img src="img/banner5.jpg" alt=""></li>
+		</ul>
+		<ul class="pagerbox">
+			<li class="active"></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		<div class="prev"></div>
+		<div class="next"></div>
+	</div>
+
+	<div class="cebanner">
+		<div class="sidebar">
+			<div class="label">
+				1<div class="menu">1</div>
+			</div>
+			<div class="label">
+				2<div class="menu">2</div>
+			</div>
+			<div class="label">
+				3<div class="menu">3</div>
+			</div>
+			<div class="label">
+				4<div class="menu">4</div>
+			</div>
+			<div class="label">
+				5<div class="menu">5</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="buy">
+		<div class="buy-top">
+			<div class="buy-arrow">
+				<span class="buy-prev disable">&lt;</span>
+				<span class="buy-next">&gt;</span>
+			</div>
+		</div>
+		<div class="buy-bottom">
+			<div class="buy-time"></div>
+			<div class="buy-list">
+				<ul class="buy-inner">
+					<li class="buy-item"></li>
+					<li class="buy-item"></li>
+					<li class="buy-item"></li>
+					<li class="buy-item"></li>
+					<li class="buy-item"></li>
+					<li class="buy-item"></li>
+					<li class="buy-item"></li>
+					<li class="buy-item"></li>
+					<li class="buy-item"></li>
+					<li class="buy-item"></li>
+					<li class="buy-item"></li>
+					<li class="buy-item"></li>
+				</ul>
+			</div>
+		</div>	
+	</div>
+
+
+	<div class="content">
+		<div class="content_top">
+			<div class="type active">热门</div>
+			<div class="type">电视</div>
+			<div class="type">电脑</div>
+			<div class="type">电脑</div>
+		</div>
+		<div class="content_bottom">
+			<div class="goodlist active">1</div>
+			<div class="goodlist">2</div>
+			<div class="goodlist">3</div>
+			<div class="goodlist">4</div>
+		</div>
+	</div>
+	
+	<div class="contaner">
+		<div class="neirong_item">
+			<div class="neirong_inner">
+				<div class="neirong_content">1</div>
+				<div class="neirong_content">2</div>
+				<div class="neirong_content">3</div>
+			</div>
+			<div class="neirong_prev">&lt;</div>
+			<div class="neirong_next">&gt;</div>
+			<div class="yuanquan">
+				<div class="yuan active"></div>
+				<div class="yuan"></div>
+				<div class="yuan"></div>		
+			</div>
+		</div>
+		
+	</div>
+</body>
+<script src="jquery-3.3.1.js"></script>
+<script>
+//banner
+{
+	$(".pagerbox li").click(function(){
+		$(".pagerbox li").removeClass("active");
+    	$(this).addClass("active");
+    	var index = $(this).index();
+    	$(".imgbox li").removeClass("active").eq(index).addClass("active");
+	})
+	
+	let n = 0;
+    let flag = true;
+    $(".next").click(function () {
+        if (flag) {
+            flag = false;
+            n++;
+            if (n === $(".imgbox li").length) {
+                n = 0;
+            }
+        $(".pagerbox li").removeClass("active").eq(n).addClass("active");
+        $(".imgbox li").removeClass("active").eq(n).addClass("active");
+        $(".imgbox li").animate({}, 3000, function (){
+                flag = true;
+            })
+        }
+    })
+    $(".prev").click(function () {
+        if (flag) {
+            flag = false;
+            n--;
+            if (n < 0) {
+                n = $(".imgbox li").length - 1;
+            }
+        $(".pagerbox li").removeClass("active").eq(n).addClass("active");
+        $(".imgbox li").removeClass("active").eq(n).addClass("active");
+        $(".imgbox li").animate({}, 3000, function (){
+                flag = true;
+            })
+        }
+    })
+ 
+    function move(){
+		n++;
+		if(n===$(".imgbox li").length){
+			n=0;
+		}
+		if(n<0){
+			n=$(".imgbox li").length-1;
+		}
+		$(".pagebox li").removeClass("active")
+			.eq(n).addClass("active");
+		$(".imgbox li").removeClass("active")
+			.eq(n).addClass("active");
+		
+	}
+
+	let t=setInterval(move,3000);
+
+	banner.onmouseenter=function(){
+		clearInterval(t);
+	};
+	banner.onmouseleave=function(){
+		t=setInterval(move,3000);
+	};
+}
+
+
+//侧导航		
+{	
+	let p=0;	
+	$(".label").mouseenter(function(){
+		let index=$(this).index();
+		console.log(index)
+		$(".menu").eq(p).hide()
+		$(".menu").eq(index).show()
+		p=index;
+	})
+	$(".label").mouseleave(function(){
+		let index=$(this).index();
+		$(".menu").eq(index).hide()
+	})
+}
+
+
+//单品、闪购
+{	
+	let k=0;
+	$(".buy-next").click(function(){
+		k++;
+		$(".buy-prev").removeClass("disable");
+		if(k===2){
+			$(".buy-prev").addClass("disable")
+		}
+		if(k===3){
+			k=2;
+			return;
+		}
+		$(".buy-inner").css("marginLeft",-992*k)
+
+	})
+	$(".buy-prev").click(function(){
+		k--;
+		$(".buy-next").removeClass("disable");
+		if(k===0){
+			$(".buy-next").addClass("disable")
+		}
+		if(k===-1){
+			k=0;
+			return;
+		}
+		$(".buy-inner").css("marginLeft",-992*k)
+
+	})	
+}
+
+
+//选项卡
+{	
+	$(".type").mouseenter(function () {
+		let index=$(this).index();
+		$(".type").removeClass("active").eq(index).addClass("active");
+        $(".goodlist").removeClass("active").eq(index).addClass("active");	        
+	})	
+}
+
+
+//内容
+{
+	let inner=$(".neirong_inner");
+	let n=0;
+	$(".neirong_next").click(function(){
+		n++;
+		if(n===$(".neirong_content").length){
+			n=$(".neirong_content").length-1;
+			return;
+		}
+	})
+}
+
+
+{	
+	let n=0;
+	let flag=true;
+	$(".neirong_next").click(function(){
+		if(flag){
+			flag=false;
+			n++;
+			$(".neirong_inner").animate(300,function(){
+				flag=true;
+				if(n===$(".neirong_content").length){
+					n=$(".neirong_content").length-1;
+					return;
+				}
+
+			});
+		$(".neirong_inner").css("marginLeft",-296*n);
+		$(".yuan").eq(n).addClass("active");
+		$(".yuan").eq(n-1).removeClass("active");
+		p=$(".yuan").eq(n);
+		}
+	});
+	$(".neirong_prev").click(function(){
+		if(flag){
+		flag=false;
+		n--;
+		$(".neirong_inner").animate(300,function(){
+			flag=true;
+				if(n<0){
+					n=0;
+					return;
+				}
+			});
+		$(".neirong_inner").css("marginLeft",-296*n);
+		$(".yuan").eq(n).addClass("active");
+		$(".yuan").eq(n+1).removeClass("active");
+		p=$(".yuan").eq(n);
+		}
+	});
+	$(".yuan").each(function(index,ele){
+		$(this).click(function(){
+			$(".yuan").removeClass("active");
+			$(this).addClass("active");
+			n=index;
+			$(".neirong_inner").css("marginLeft",-296*n);
+		})
+	})
+	
+}
+</script>
+</html>
