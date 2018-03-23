@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*清除默认样式*/
+        *{
+            margin: 0;/*body -8px;清除body*/
+            text-decoration-line:none;
+            font-style: normal;/*字体斜体i,em*/
+            padding:0;
+            margin:0;
+            list-style: none;/*清除列表默认样式*/
+        }
+        @font-face {
+            font-family: 'iconfont';  /* project id 561407 */
+            src: url('https://at.alicdn.com/t/font_561407_smqx3142ak8olxr.eot');
+            src: url('https://at.alicdn.com/t/font_561407_smqx3142ak8olxr.eot?#iefix') format('embedded-opentype'),
+            url('https://at.alicdn.com/t/font_561407_smqx3142ak8olxr.woff') format('woff'),
+            url('https://at.alicdn.com/t/font_561407_smqx3142ak8olxr.ttf') format('truetype'),
+            url('https://at.alicdn.com/t/font_561407_smqx3142ak8olxr.svg#iconfont') format('svg');
+        }
+        .imgbox{
+            width: 1226px;
+            height: 460px;
+            position: relative;
+
+        }
+        .imgbox li{
+            width: 1226px;
+            height: 460px;
+            position: absolute;
+            top:0;
+            left: 0;
+            transition: all 0.6s;
+            /*opacity: 0;*/
+        }
+        .active{
+
+            z-index: 9;
+            opacity: 1;
+        }
+        .pagerbox{
+            width: 150px;
+            height: 30px;
+            position: absolute;
+            right: 30px;
+            bottom:30px;
+            z-index: 9;
+            /*background: green;*/
+            line-height: 30px;
+
+        }
+        .pagerbox li{
+            width: 6px;
+            height: 6px;
+            margin: 0 10px;
+            background: white;
+            border: 2px solid #fff;
+            float: left;
+            border-radius: 50%;
+            margin-top: 10px;
+            cursor: pointer;
+            transition: all 0.6s;
+        }
+        .pagerbox .btn{
+            background: #838386;
+            z-index: 299;
+        }
+
+        .banner_image img{
+            width: 1226px;
+            height: 460px;
+            position: absolute;
+            top:0;
+            left: 0;
+
+
+        }
+        .banner_image {
+            width: 1226px;
+            height: 460px;
+            background-color: pink;
+            position: absolute;
+        }
+        #banner {
+            width: 1226px;
+            height: 460px;
+            background-color: #383B44;
+            margin: 0 auto;
+            position: relative;
+        }
+        .banner_btn1 {
+            left: 234px;
+            z-index: 199;
+        }
+        .banner_btn2 {
+            right: 0;
+            z-index: 199;
+        }
+        .pagerbox .btn{
+            background: #838386;
+            z-index: 299;
+        }
+        .star{
+            width: 1226px;
+            height:398px;
+            margin:0 auto;/*水平居中*/
+
+        }
+        .star_top{
+            width: 1226px;
+            height: 58px;
+
+        }
+        .star_top h1{
+            float: left;
+            color: #333;
+            font-size: 21px;
+            line-height: 58px;
+        }
+        .star_btn{
+            width: 69px;
+            height: 22px;
+            font-family: 'iconfont';
+            float: right;
+            margin-top: 17px;
+            border: 1px solid #E0E0E0;
+            cursor: pointer;
+            color:#B0B0B2;
+        }
+        .star_btn div{
+            width: 34px;
+            height: 22px;
+            text-align: center;
+            line-height: 22px;
+            float: left;
+
+        }
+        .star_btn1{
+            border-right:1px solid #E0E0E0;
+            float: left;
+
+        }
+        .star_bottom{
+            width: 1226px;
+            height: 340px;
+
+        }
+        .star_item{
+            width: 234px;
+            height: 300px;
+            background-color: #FAFAFA;
+            border-top:1px solid #FFAC13;
+            padding-top: 39px;
+            float: left;
+            margin-right: 14px;
+
+        }
+        .star_item1{
+            /*margin-right: 0;*/
+            border-top:1px solid #00C0A5;
+        }
+        .star_item2{
+            border-top:1px solid #E53935;
+        }
+
+        .star_item3{
+            border-top:1px solid #2196F3;
+        }
+
+        .star_item4{
+            border-top:1px solid #83C44E;
+
+        }
+
+
+        .star_item img{
+            width: 160px;
+            height: 166px;
+            display: block;/*使其变成块元素，先变成块元素在margin才能起作用*/
+            margin:0 auto;
+
+
+        }
+        .star_item h1{
+            text-align: center;
+            font-size: 14px;
+            color: #212121;
+
+            margin-top: 22px;
+        }
+        .star_item h2{
+            text-align: center;
+            font-size: 12px;
+            color: #B0B0B0;
+            font-weight: normal;/*粗细*/
+            margin-top:3px;
+        }
+        .star_item h3{
+            text-align: center;
+            font-size: 14px;
+            color: #FF6709;
+            font-weight: normal;
+            margin-top: 12px;
+        }
+        .star_bottom {
+            width: 1226px;
+            height: 340px;
+        }
+        .buy_time {
+            width: 246px;
+            height: 341px;
+            /* background: red; */
+            float: left;
+        }
+        .buy_list {
+            width: 976px;
+            height: 341px;
+             /*background: green;*/
+            float: left;
+            overflow: hidden;
+        }
+        .buy_inner {
+            width: 3000px;
+            height: 341px;
+             /*background: #ccc;*/
+            transition: all 1s;
+        }
+        .star_btn {
+            width: 69px;
+            height: 22px;
+            font-family: 'iconfont';
+            float: right;
+            margin-top: 17px;
+            border: 1px solid #E0E0E0;
+            cursor: pointer;
+            color: #B0B0B2;
+        }
+        .star_btn .disable {
+            color: #E0E0E0;
+        }
+        .star_btn span {
+            width: 34px;
+            height: 22px;
+            text-align: center;
+            line-height: 22px;
+            float: left;
+            user-select: none;
+        }
+        .zhineng {
+            width: 1226px;
+            height: 672px;
+            margin: 0 auto;
+            background: #eee;
+        }
+        .dapei {
+            margin-top: 40px;
+        }
+        .star_top {
+            width: 1226px;
+            height: 58px;
+        }
+        .zhineng_more {
+            float: right;
+        }
+        .zhineng_more h2{
+            font-size: 16px;
+            font-weight: normal;
+            margin-top: 20px;
+            display: block;
+            float: left;
+            margin-left:32px;
+            cursor: pointer;/*抓手*/
+            padding-bottom: 5px;
+
+
+        }
+        .zhineng_btn{
+            width: 23px;
+            height: 23px;
+            background-color: #B0B0B0;
+            float: right;
+            margin-top: 17.5px;
+            margin-left:10px;
+            border-radius: 11.5px;/*半径画圆*/
+            text-align: center;
+
+        }
+        .zhineng_bottom{
+            width: 1226px;
+            height:100%;
+            position: relative;
+            /*background-color:pink;*/
+        }
+        .zhineng_left{
+            width: 234px;
+            /*height: 100%;*/
+            float: left;
+            background-color: black;
+        }
+        .zhineng_right{
+            width: 992px;
+            height:614px;
+            float: right;
+
+        }
+
+        .zhineng_item{
+            width: 234px;
+            height: 266px;
+            background-color: #FFFFFF;
+            margin-left: 14px;
+            padding-top: 34px;
+            float: left;
+            position: relative;
+            /*overflow: hidden;/*超出部分隐藏*/*/
+
+        }
+        .zhineng_item img{
+            width:150px;
+            height:156px;
+            display:block;
+            margin: 0 auto;
+
+        }
+        .zhineng_item a{
+            display:block;
+            margin-top: 18px;
+            font-size: 14px;
+            text-align: center;
+            color: black;
+
+
+        }
+        .zhineng_item p{
+            font-size:12px;
+            text-align: center;
+            opacity: 0.6;
+
+
+        }
+        .zhineng_item h5{
+            display:block;
+            font-size:12px;
+            text-align: center;
+            margin-top: 10px;
+            color: #FF6700;
+        }
+        .zhineng_item span{
+            display:block;
+            font-size:12px;
+            text-align: center;
+            font-weight :bold; /*加粗*/
+            color: #FF6700;
+
+        }
+        .dapeishuzi{
+            color: #FF6700;
+            font-weight: bold;
+        }
+        .dapeiwenzi{
+            color: black;
+            margin-top: 10px;
+            opacity:0.6;
+        }
+        .zhineng_more .cactive {
+            border-bottom: 2px solid #ff6700;
+        }
+        .dapei_left {
+            width: 234px;
+            height: 614px;
+            /* background-color: red; */
+            float: left;
+        }
+
+
+        .zhineng_bottom .cactive {
+            z-index: 29;
+        }
+        .goodlist {
+            width: 992px;
+            height: 614px;
+            /* background: yellow; */
+            font-size: 30px;
+            text-align: center;
+            position: absolute;
+            right: 0;
+            bottom: 58px;
+        }
+        .dapei_right {
+            width: 992px;
+            height: 614px;
+            /* background-color: green; */
+            float: right;
+            transition: all 1s;
+        }
+        .item1 {
+            margin-bottom: 14px;
+        }
+
+        .zhineng_item img {
+            width: 150px;
+            height: 156px;
+            display: block;
+            margin: 0 auto;
+        }
+        .item5 img {
+            width: 234px;
+            height: 300px;
+        }
+        .item20 {
+            margin-bottom: 14px;
+        }
+        .book {
+            width: 296px;
+            height: 420px;
+            background: red;
+            margin-top: 50px;
+            margin-left: 200px;
+            position: relative;
+            margin-bottom: 300px;
+        }
+        .bookinner{
+            width: 3000px;
+            height: 100%;
+            background: green;
+        }
+        .bkitem1{
+            float: left;
+            width: 296px;
+            height: 420px;
+            font-size: 50px;
+            text-align: center;
+        }
+        .leftbtn {
+            width: 30px;
+            height: 100px;
+            background: yellow;
+            position: absolute;
+            top: 140px;
+
+            left: 0;
+
+
+        }
+        .rightbtn {
+            width: 30px;
+            height: 100px;
+            background: yellow;
+            position: absolute;
+            top: 140px;
+            right: 0;
+        }
+
+    </style>
+</head>
+<body>
+<!-- banner开始 -->
+<div id="banner">
+
+    <div class="banner_image">
+
+        <ul class="imgbox">
+            <li class="active"><img src="images/1.jpg" alt=""></li>
+            <li><img src="images/2.jpg" alt=""></li>
+            <li><img src="images/3.jpg" alt=""></li>
+            <li><img src="images/4.jpg" alt=""></li>
+            <li><img src="images/5.jpg" alt=""></li>
+        </ul>
+
+        <ul class="pagerbox">
+            <li class="btn"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+
+    <div class="banner_btn1">&lt;</div>
+    <div class="banner_btn2">&gt;</div>
+
+
+    <script src="jquery-3.3.1.js"></script>
+</div>
+
+<!-- 小米单品开始 -->
+
+<section class="star">
+    <div class="star_top">
+        <h1>小米明星单品</h1>
+        <div class="star_btn">
+				<span class="buy_prev star_btn1 disable"><b>&#xe63c;</b>
+				</span>
+            <span class="buy_next"><b>&#xe620;</b></span>
+        </div>
+    </div>
+    <div class="star_bottom">
+        <div class="buy_time">
+            <div class="star_item">
+                <img src="images/congdianbo.jpg" alt="ffff">
+                <h1>10000mAh小米移动电源2</h1>
+                <h2>双向快充，高密度锂聚合物电芯</h2>
+                <h3>79元</h3>
+            </div>
+        </div>
+
+        <div class="buy_list">
+            <ul class="buy_inner">
+                <div class="star_item star_item4">
+                    <img src="images/erji.png" alt="ffff">
+                    <h1>小米家铁耳机pro</h1>
+                    <h2>独创双动圈加动铁</h2>
+                    <h3>399元</h3>
+                </div>
+
+                <div class="star_item star_item3">
+                    <img src="images/b.jpg" alt="ffff">
+                    <h1>米家LED智能台灯</h1>
+                    <h2>无可视频闪，亮度色温无极调节</h2>
+                    <h3>169元</h3>
+                </div>
+
+                <div class="star_item star_item2">
+                    <img src="images/2.png" alt="ffff">
+                    <h1>米家扫地机器人</h1>
+                    <h2>智能路径规划，扫的干净扫的快</h2>
+                    <h3>1699元</h3>
+                </div>
+
+                <div class="star_item star_item1">
+                    <img src="images/luyouqi.png" alt="ffff">
+                    <h1>小米路由器3</h1>
+                    <h2>更快更强，不止四天线</h2>
+                    <h3>149元</h3>
+                </div>
+                <div class="star_item star_item4">
+                    <img src="images/erji.png" alt="ffff">
+                    <h1>小米家铁耳机pro</h1>
+                    <h2>独创双动圈加动铁</h2>
+                    <h3>399元</h3>
+                </div>
+
+                <div class="star_item star_item3">
+                    <img src="images/b.jpg" alt="ffff">
+                    <h1>米家LED智能台灯</h1>
+                    <h2>无可视频闪，亮度色温无极调节</h2>
+                    <h3>169元</h3>
+                </div>
+
+                <div class="star_item star_item2">
+                    <img src="images/2.png" alt="ffff">
+                    <h1>米家扫地机器人</h1>
+                    <h2>智能路径规划，扫的干净扫的快</h2>
+                    <h3>1699元</h3>
+                </div>
+
+                <div class="star_item star_item1">
+                    <img src="images/luyouqi.png" alt="ffff">
+                    <h1>小米路由器3</h1>
+                    <h2>更快更强，不止四天线</h2>
+                    <h3>149元</h3>
+                </div>
+
+                <div class="star_item star_item4">
+                    <img src="images/erji.png" alt="ffff">
+                    <h1>小米家铁耳机pro</h1>
+                    <h2>独创双动圈加动铁</h2>
+                    <h3>399元</h3>
+                </div>
+
+                <div class="star_item star_item3">
+                    <img src="images/b.jpg" alt="ffff">
+                    <h1>米家LED智能台灯</h1>
+                    <h2>无可视频闪，亮度色温无极调节</h2>
+                    <h3>169元</h3>
+                </div>
+
+                <div class="star_item star_item2">
+                    <img src="images/2.png" alt="ffff">
+                    <h1>米家扫地机器人</h1>
+                    <h2>智能路径规划，扫的干净扫的快</h2>
+                    <h3>1699元</h3>
+                </div>
+                <div class="star_item star_item2">
+                    <img src="images/2.png" alt="ffff">
+                    <h1>米家扫地机器人</h1>
+                    <h2>智能路径规划，扫的干净扫的快</h2>
+                    <h3>1699元</h3>
+                </div>
+
+
+            </ul>
+        </div>
+
+
+    </div>
+</section>
+
+<!-- 小米单品结束 -->
+
+<!-- 搭配开始 -->
+<div class="zhineng dapei dd">
+    <div class="star_top">
+        <h1>搭配</h1>
+        <div class="zhineng_more">
+            <h2 class="renmen type cactive">热门</h2>
+            <h2 class="type">保护套</h2>
+            <h2 class="type">贴膜</h2>
+            <h2 class="type">其他配件</h2>
+
+        </div>
+    </div>
+    <div class="zhineng_bottom">
+        <div class="dapei_left">
+
+            <div class="zhineng_item item5 item20">
+                <img src="images/dp02.jpg" alt="">
+            </div>
+
+            <div class="zhineng_item item5">
+                <img src="images/dapei01.jpg" alt="">
+            </div>
+        </div>
+        <div class="dapei_right goodlist cactive">
+
+
+            <div class="zhineng_item item1">
+                <img src="images/dapei6.jpg" alt="">
+                <a href="">小米移动电源</a>
+                <p class="dapeishuzi">1111元</p>
+                <p class="dapeiwenzi">这是第一块</p>
+            </div>
+
+            <div class="zhineng_item item1">
+                <img src="images/dapei4.jpg" alt="">
+                <a href="">电饭煲</a>
+                <p class="dapeishuzi">1995元</p>
+                <p class="dapeiwenzi">1111人评价</p>
+            </div>
+
+            <div class="zhineng_item item1">
+                <img src="images/dapei2.jpg" alt="ggg">
+                <a href="">电饭煲</a>
+                <p class="dapeishuzi">1111元</p>
+                <p class="dapeiwenzi">1111人评价</p>
+            </div>
+
+            <div class="zhineng_item item1">
+                <img src="images/dapei3.jpg" alt="">
+                <a href="">电饭煲</a>
+                <p class="dapeishuzi">1111元</p>
+                <p class="dapeiwenzi">1111人评价</p>
+            </div>
+
+
+            <div class="zhineng_item">
+                <img src="images/dapei5.jpg" alt="">
+                <a href="">双模智能充电器+充电宝</a>
+                <p class="dapeishuzi">1111元</p>
+                <p class="dapeiwenzi">这是第一块</p>
+            </div>
+
+            <div class="zhineng_item">
+                <img src="images/dpp5.jpg" alt="">
+                <a href="">小米活塞耳机  清新版</a>
+                <p class="dapeishuzi">1111元</p>
+                <p class="dapeiwenzi">1111人评价</p>
+            </div>
+
+            <div class="zhineng_item">
+                <img src="images/z7.png" alt="">
+                <a href="">小米移动电源新品</a>
+                <p class="dapeishuzi">1111元</p>
+                <p class="dapeiwenzi">1111人评价</p>
+            </div>
+
+            <div class="zhineng_item item4">
+                <div class="zhineng_item2">
+                    <div class="item2_left">
+                        <p>智能皆无法</p>
+                        <p id="fenkuait">399元<p>
+                    </div>
+                    <img src="images/dapei11.jpg" alt="" >
+
+                </div>
+                <div class="zhineng_item2 item3 item10">
+                    <div class="item2_left">
+                        <p id=liulanmore>浏览更多</p>
+                        <p id="fenkuaib">热门<p>
+                    </div>
+                    <span class="item10_right">&#xe62a;</span>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="dapei_right goodlist ">
+
+            <div class="zhineng_item item1">
+                <img src="images/222.png" alt="">
+                <a href="">电饭煲</a>
+                <p class="dapeishuzi">2222元</p>
+                <p class="dapeiwenzi">这是第二块</p>
+            </div>
+
+            <div class="zhineng_item item1">
+                <img src="images/222.png" alt="">
+                <a href="">小米移动电源</a>
+                <p class="dapeishuzi">95元</p>
+                <p class="dapeiwenzi">3026人评价</p>
+            </div>
+
+
+
+            <div class="zhineng_item item1">
+                <img src="images/222.png" alt="ggg">
+                <a href="">电饭煲</a>
+                <p class="dapeishuzi">1995元</p>
+                <p class="dapeiwenzi">3026人评价</p>
+            </div>
+
+            <div class="zhineng_item item1">
+                <img src="images/222.png" alt="">
+                <a href="">电饭煲</a>
+                <p class="dapeishuzi">1995元</p>
+                <p class="dapeiwenzi">这是第二块</p>
+            </div>
+
+
+            <div class="zhineng_item">
+                <img src="images/222.png" alt="">
+                <a href="">双模智能充电器+充电宝</a>
+                <p class="dapeishuzi">105元</p>
+                <p class="dapeiwenzi">这是第二块</p>
+            </div>
+
+            <div class="zhineng_item">
+                <img src="images/222.png" alt="">
+                <a href="">小米活塞耳机  清新版</a>
+                <p class="dapeishuzi">29元</p>
+                <p class="dapeiwenzi">3026人评价</p>
+            </div>
+
+            <div class="zhineng_item">
+                <img src="images/222.png" alt="">
+                <a href="">小米移动电源新品</a>
+                <p class="dapeishuzi">59元</p>
+                <p class="dapeiwenzi">这是第二块</p>
+            </div>
+
+            <div class="zhineng_item item4">
+                <div class="zhineng_item2">
+                    <div class="item2_left">
+                        <p>智能皆无法</p>
+                        <p id="fenkuait">399元<p>
+                    </div>
+                    <img src="images/dapei11.jpg" alt="" >
+
+                </div>
+                <div class="zhineng_item2 item3 item10">
+                    <div class="item2_left">
+                        <p id=liulanmore>浏览更多</p>
+                        <p id="fenkuaib">热门<p>
+                    </div>
+                    <span class="item10_right">&#xe62a;</span>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="dapei_right goodlist">
+
+
+            <div class="zhineng_item item1">
+                <img src="images/333.png" alt="">
+                <a href="">小米移动电源</a>
+                <p class="dapeishuzi">3333元</p>
+                <p class="dapeiwenzi">这是第三块</p>
+            </div>
+
+            <div class="zhineng_item item1">
+                <img src="images/333.png" alt="">
+                <a href="">电饭煲</a>
+                <p class="dapeishuzi">3333元</p>
+                <p class="dapeiwenzi">这是第三块</p>
+            </div>
+
+            <div class="zhineng_item item1">
+                <img src="images/333.png" alt="">
+                <a href="">电饭煲</a>
+                <p class="dapeishuzi">3333元</p>
+                <p class="dapeiwenzi">这是第三块</p>
+            </div>
+
+            <div class="zhineng_item item1">
+                <img src="images/333.png" alt="ggg">
+                <a href="">电饭煲</a>
+                <p class="dapeishuzi">3333元</p>
+                <p class="dapeiwenzi">3333人评价</p>
+            </div>
+
+
+
+
+            <div class="zhineng_item">
+                <img src="images/333.png" alt="">
+                <a href="">双模智能充电器+充电宝</a>
+                <p class="dapeishuzi">3333元</p>
+                <p class="dapeiwenzi">3333人评价</p>
+            </div>
+
+            <div class="zhineng_item">
+                <img src="images/333.png" alt="">
+                <a href="">小米活塞耳机  清新版</a>
+                <p class="dapeishuzi">3333元</p>
+                <p class="dapeiwenzi">3026人评价</p>
+            </div>
+
+            <div class="zhineng_item">
+                <img src="images/333.png" alt="">
+                <a href="">小米移动电源新品</a>
+                <p class="dapeishuzi">3333元</p>
+                <p class="dapeiwenzi">3333人评价</p>
+            </div>
+
+            <div class="zhineng_item item4">
+                <div class="zhineng_item2">
+                    <div class="item2_left">
+                        <p>智能皆无法</p>
+                        <p id="fenkuait">399元<p>
+                    </div>
+                    <img src="images/dapei11.jpg" alt="" >
+
+                </div>
+                <div class="zhineng_item2 item3 item10">
+                    <div class="item2_left">
+                        <p id=liulanmore>浏览更多</p>
+                        <p id="fenkuaib">热门<p>
+                    </div>
+                    <span class="item10_right">&#xe62a;</span>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="dapei_right goodlist">
+
+            <div class="zhineng_item item1">
+                <img src="images/444.jpg" alt="ggg">
+                <a href="">电饭煲</a>
+                <p class="dapeishuzi">4444元</p>
+                <p class="dapeiwenzi">3026人评价</p>
+            </div>
+
+            <div class="zhineng_item item1">
+                <img src="images/444.jpg" alt="">
+                <a href="">小米移动电源</a>
+                <p class="dapeishuzi">4444元</p>
+                <p class="dapeiwenzi">4444人评价</p>
+            </div>
+
+            <div class="zhineng_item item1">
+                <img src="images/dapei3.jpg" alt="">
+                <a href="">电饭煲</a>
+                <p class="dapeishuzi">4444元</p>
+                <p class="dapeiwenzi">4444人评价</p>
+            </div>
+
+            <div class="zhineng_item item1">
+                <img src="images/444.jpg" alt="">
+                <a href="">电饭煲</a>
+                <p class="dapeishuzi">4444元</p>
+                <p class="dapeiwenzi">4444人评价</p>
+            </div>
+
+            <div class="zhineng_item">
+                <img src="images/444.jpg" alt="">
+                <a href="">双模智能充电器+充电宝</a>
+                <p class="dapeishuzi">4444元</p>
+                <p class="dapeiwenzi">4444人评价</p>
+            </div>
+
+            <div class="zhineng_item">
+                <img src="images/444.jpg" alt="">
+                <a href="">小米活塞耳机  清新版</a>
+                <p class="dapeishuzi">4444元</p>
+                <p class="dapeiwenzi">4444人评价</p>
+            </div>
+
+            <div class="zhineng_item">
+                <img src="images/z7.png" alt="">
+                <a href="">小米移动电源新品</a>
+                <p class="dapeishuzi">4444元</p>
+                <p class="dapeiwenzi">4444人评价</p>
+            </div>
+
+            <div class="zhineng_item item4">
+                <div class="zhineng_item2">
+                    <div class="item2_left">
+                        <p>智能皆无法</p>
+                        <p id="fenkuait">4444元<p>
+                    </div>
+                    <img src="images/dapei11.jpg" alt="" >
+
+                </div>
+                <div class="zhineng_item2 item3 item10">
+                    <div class="item2_left">
+                        <p id=liulanmore>浏览更多</p>
+                        <p id="fenkuaib">热门<p>
+                    </div>
+                    <span class="item10_right">&#xe62a;</span>
+                </div>
+
+
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<!-- 搭配结束 -->
+
+<!--图书部分开始-->
+<div class="book">
+    <div class="bookinner">
+        <div class="bkitem1"><p>第1屏</p></div>
+        <div class="bkitem1"><p>第2屏</p></div>
+        <div class="bkitem1"><p>第3屏</p>
+
+
+    </div>
+    <div class="leftbtn"></div>
+    <div class="rightbtn"></div>
+</div>
+<!--图书部分结束-->
+<script>
+    {
+//banner部分
+        $(".pagerbox li").each(function (index,ele) {
+            $(this).click(function () {
+                $(this).addClass("btn").siblings(".btn")
+                    .removeClass("btn")
+                $(".imgbox li").removeClass("active")
+                    .eq(index)
+                    .addClass("active")
+            })
+         })
+    }
+//明星单品部分
+    {
+        let n=0;
+        let flag=true;
+        let inner=$(".buy_inner");
+
+        $(".buy_prev ").click(function () {
+
+            $(".buy_next").removeClass("disable")
+            if(flag){
+                n--;
+                flag=false;
+                if(n===-1) {
+                    inner.css("marginLeft", 0);
+                    n = 0;
+                    $(".buy_prev").addClass("disable")
+                }
+
+                inner.animate({marginLeft:-n*992},200,function () {
+                        flag=true;
+                })
+
+            }
+
+        })
+
+        $(".buy_next ").click(function () {
+
+            $(".buy_prev").removeClass("disable")
+            if(flag){
+                flag=false;
+                n++;
+                if(n===3) {
+                    inner.css("marginLeft", -1984);
+                    n = 2;
+                    $(".buy_next").addClass("disable")
+
+                }
+                inner.animate({marginLeft:-n*992},200,function () {
+                    flag=true;
+
+                })
+            }
+
+
+
+        })
+    }
+//选项卡部分
+    {
+        $(".type").each(function (index,ele) {
+
+            $(this).mouseenter(function () {
+                $(this).addClass("cactive").siblings(".cactive")
+                    .removeClass("cactive");
+               $(".goodlist ")
+                    .removeClass("cactive")
+                    .eq(index)
+                     .addClass("cactive");
+
+                // console.log(index);
+
+            })
+        })
+
+
+    }
+//图书部分
+    {
+        let n=0;
+        $(".leftbtn").click(function () {
+            n--;
+            if(n===-1) {
+                $(".bookinner").css("marginLeft", 0);
+                n = 0;
+
+            }
+            $(".bookinner").animate({marginLeft:-n*296}
+                ,500)
+        })
+
+        $(".rightbtn").click(function () {
+            n++;
+            if(n===3) {
+                $(".bookinner").css("marginLeft", -592);
+                n = 2;
+
+            }
+            $(".bookinner").animate({marginLeft:-n*296}
+                ,500)
+        })
+
+    }
+</script>
+</body>
+</html>
