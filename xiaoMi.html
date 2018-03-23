@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>小米</title>
+</head>
+<body>
+<script>
+    {
+        //banner
+        //点击轮播点改变颜色,banner图相应改变
+        $(".pagebox li").click(function () {
+            $(".pagebox li").removeClass("active");
+            $(this).addClass("active");
+            var index = $(this).index();
+            $(".imgbox li").removeClass("active").eq(index).addClass("active");
+        })
+        //箭头出现消失
+        $("#banner")
+            .mouseenter(function () {
+                $(".banner_lbtn,.banner_rbtn").fadeIn(500);
+            })
+            .mouseleave(function () {
+                $(".banner_lbtn,.banner_rbtn").fadeOut(500);
+            })
+
+        $("#banner").mouseleave(function(){
+            var t=setInterval(function(){
+                n++;
+                if(n===$(".imgbox li").length){
+                    n=0;
+                }
+                if(n<0){
+                    n=$(".imgbox li").length-1;
+                }
+                $(".imgbox li").each(function (){
+                    $(".pagebox li").removeClass("active").eq(n).addClass("active");
+
+                    $(".imgbox li").removeClass("active").eq(n).addClass("active");
+                })
+            },3000)
+        })
+        //banner图自动轮播
+        //点击箭头banner图变化
+        let n = 0;
+        let flag = true;
+        $(".banner_rbtn").click(function () {
+            if (flag) {
+                flag = false;
+                n++;
+                if (n === $(".imgbox li").length) {
+                    n = 0;
+                }
+                $(".pagebox li").removeClass("active").eq(n).addClass("active");
+                $(".imgbox li").removeClass("active").eq(n).addClass("active");
+                $(".imgbox li").animate({}, 3000, function () {
+                    flag = true;
+                })
+            }
+        })
+        $(".banner_lbtn").click(function () {
+            if (flag) {
+                flag = false;
+                n--;
+                if (n < 0) {
+                    n = $(".imgbox li").length - 1;
+                }
+                $(".pagebox li").removeClass("active").eq(n).addClass("active");
+                $(".imgbox li").removeClass("active").eq(n).addClass("active");
+                $(".imgbox li").animate({}, 3000, function () {
+                    flag = true;
+                })
+            }
+        })
+    }
+    {
+        //小米单品
+        let inner = $(".buy_inner");
+        let n = 0;
+        $(".buy-next").click(function () {
+            n++;
+            $(".buy-prev").removeClass("disable");
+            if (n === 2) {
+                $(this).addClass("disable");
+            }
+            if (n === 3) {
+                n = 2;
+                return;
+            }
+            inner.css("marginLeft", -992 * n);
+        })
+        $(".buy-prev").click(function () {
+            n--;
+            $(".buy-next").removeClass("disable");
+            if (n === 0) {
+                $(this).addClass("disable");
+            }
+            if (n === -1) {
+                n = 0;
+                return;
+            }
+            inner.css("marginLeft", -992 * n);
+        })
+    }
+    {
+        //选项卡
+        let word=$(".dapei_right span");
+        $("word").click(function () {
+            $(".btn").removeClass("active");
+            $(this).addClass("active");
+            var index=$(this).index();
+            $(".dapei_goodlist").removeClass("active").eq(index).addClass("active");
+        })
+
+    }
+</script>
+</body>
+</html>
