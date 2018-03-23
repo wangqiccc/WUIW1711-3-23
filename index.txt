@@ -1,0 +1,2009 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>小米官网</title>
+	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="css/public.css">
+	<link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+</head>
+<body>
+<!-- 导航模块开始 -->
+	<main class="daohang">
+		<img src="img/logo-footer.png" alt="" class="mi_logo">
+		<div class="nav_wenzi">
+			<div class="gif_img"></div>
+			<span class="nav_span" style="padding-left:0">小米手机</span>
+			<span class="nav_span">红米</span>
+			<span class="nav_span">电视</span>
+			<span class="nav_span">平板.笔记本</span>
+			<span class="nav_span">电视</span>
+			<span class="nav_span">盒子·影音</span>
+			<span class="nav_span">路由器</span>
+			<span class="nav_span">智能硬件</span>
+			<a href="">
+				<span>服务</span>
+			</a>
+			<a href="">
+				<span>社区</span>
+			</a>
+		</div>
+		<div class="search">
+			<form action="" class="search_form" method="get">
+				<input type="text" placeholder="  红米5Plus     小米Note3" class="search_input">
+				<input type="submit" class="search_icon" value="&#xe627;">
+			</form>
+		</div>
+	</main>
+	<!-- 导航模块结束 -->
+	
+	<!-- 盒子下拉开始 -->
+	<div class="nav_xiala">
+		<div class="nav_xiala_content nav_content1">
+			<a href="">
+				<div class="xiala_item">
+					<img src="img/2.png" alt="小米笔记本Air 12.5">
+					<div class="item_title">小米笔记本Air12.5</div>
+					<p>3599元</p>
+					<div class="item_line"></div>
+				</div>
+			</a>
+			<a href="">
+				<div class="xiala_item">
+					<div class="flags">双频</div>
+					<img src="img/2.png" alt="小米笔记本Air 12.5">
+					<div class="item_title">小米笔记本Air12.5</div>
+					<p>3599元</p>
+					<div class="item_line"></div>
+				</div>
+			</a>
+			<a href="">
+				<div class="xiala_item">
+					<img src="img/2.png" alt="小米笔记本Air 12.5">
+					<div class="item_title">小米笔记本Air12.5</div>
+					<p>3599元</p>
+					<div class="item_line"></div>
+				</div>
+			</a>
+			<a href="">
+				<div class="xiala_item">
+					<div class="flags">大容量</div>
+					<img src="img/2.png" alt="小米笔记本Air 12.5">
+					<div class="item_title">小米笔记本Air12.5</div>
+					<p>3599元</p>
+					<div class="item_line"></div>
+				</div>
+			</a>
+			<a href="">
+				<div class="xiala_item">
+					<div class="flags">大容量</div>
+					<img src="img/2.png" alt="小米笔记本Air 12.5">
+					<div class="item_title">小米笔记本Air12.5</div>
+					<p>3599元</p>
+					<div class="item_line"></div>
+				</div>
+			</a>
+			<a href="">
+				<div class="xiala_item">
+					<img src="img/2.png" alt="小米笔记本Air 12.5">
+					<div class="item_title">小米笔记本Air12.5</div>
+					<p>3599元</p>
+				</div>
+			</a>
+		</div>
+		<div class="nav_xiala_content">
+			<a href="">
+				<div class="xiala_item">
+					<img src="img/4.jpg" alt="小米笔记本Air 12.5">
+					<div class="item_title">小米笔记本Air12.5</div>
+					<p>3599元</p>
+					<div class="item_line"></div>
+				</div>
+			</a>
+			<a href="">
+				<div class="xiala_item">
+					<div class="flags">热卖</div>
+					<img src="img/4.jpg" alt="小米笔记本Air 12.5">
+					<div class="item_title">小米笔记本Air12.5</div>
+					<p>3599元</p>
+					<div class="item_line"></div>
+				</div>
+			</a>
+			<a href="">
+				<div class="xiala_item">
+					<img src="img/4.jpg" alt="小米笔记本Air 12.5">
+					<div class="item_title">小米笔记本Air12.5</div>
+					<p>3599元</p>
+					<div class="item_line"></div>
+				</div>
+			</a>
+			<a href="">
+				<div class="xiala_item">
+					<div class="flags">大容量</div>
+					<img src="img/2.png" alt="小米笔记本Air 12.5">
+					<div class="item_title">小米笔记本Air12.5</div>
+					<p>3599元</p>
+					<div class="item_line"></div>
+				</div>
+			</a>
+			<a href="">
+				<div class="xiala_item">
+					<div class="flags">大容量</div>
+					<img src="img/4.jpg" alt="小米笔记本Air 12.5">
+					<div class="item_title">小米笔记本Air12.5</div>
+					<p>3599元</p>
+					<div class="item_line"></div>
+				</div>
+			</a>
+			<a href="">
+				<div class="xiala_item">
+					<img src="img/4.jpg" alt="小米笔记本Air 12.5">
+					<div class="item_title">小米笔记本Air12.5</div>
+					<p>3599元</p>
+				</div>
+			</a>
+		</div>
+		<div class="nav_xiala_content">
+			<a href="">
+				<div class="xiala_item">
+					<div class="flags">大容量</div>
+					<img src="img/5.png" alt="小米笔记本Air 12.5">
+					<div class="item_title">小米笔记本Air12.5</div>
+					<p>3599元</p>
+					<div class="item_line"></div>
+				</div>
+			</a>
+			<a href="">
+				<div class="xiala_item">
+					<img src="img/5.png" alt="小米笔记本Air 12.5">
+					<div class="item_title">小米笔记本Air12.5</div>
+					<p>3599元</p>
+					<div class="item_line"></div>
+				</div>
+			</a>
+			<a href="">
+				<div class="xiala_item">
+					<img src="img/5.png" alt="小米笔记本Air 12.5">
+					<div class="item_title">小米笔记本Air12.5</div>
+					<p>3599元</p>
+					<div class="item_line"></div>
+				</div>
+			</a>
+			<a href="">
+				<div class="xiala_item">
+					<div class="flags">大容量</div>
+					<img src="img/5.png" alt="小米笔记本Air 12.5">
+					<div class="item_title">小米笔记本Air12.5</div>
+					<p>3599元</p>
+					<div class="item_line"></div>
+				</div>
+			</a>
+			<a href="">
+				<div class="xiala_item">
+					<div class="flags">大容量</div>
+					<img src="img/5.png" alt="小米笔记本Air 12.5">
+					<div class="item_title">小米笔记本Air12.5</div>
+					<p>3599元</p>
+					<div class="item_line"></div>
+				</div>
+			</a>
+			<a href="">
+				<div class="xiala_item">
+					<img src="img/5.png" alt="小米笔记本Air 12.5">
+					<div class="item_title">小米笔记本Air12.5</div>
+					<p>3599元</p>
+				</div>
+			</a>
+		</div>
+		<div class="nav_xiala_content">
+			<a href="">
+				<div class="xiala_item">
+					<img src="img/6.png" alt="小米笔记本Air 12.5">
+					<div class="item_title">小米笔记本Air12.5</div>
+					<p>3599元</p>
+					<div class="item_line"></div>
+				</div>
+			</a>
+			<a href="">
+				<div class="xiala_item">
+					<div class="flags">大容量</div>
+					<img src="img/6.png" alt="小米笔记本Air 12.5">
+					<div class="item_title">小米笔记本Air12.5</div>
+					<p>3599元</p>
+					<div class="item_line"></div>
+				</div>
+			</a>
+			<a href="">
+				<div class="xiala_item">
+					<img src="img/6.png" alt="小米笔记本Air 12.5">
+					<div class="item_title">小米笔记本Air12.5</div>
+					<p>3599元</p>
+					<div class="item_line"></div>
+				</div>
+			</a>
+			<a href="">
+				<div class="xiala_item">
+					<div class="flags">大容量</div>
+					<img src="img/6.png" alt="小米笔记本Air 12.5">
+					<div class="item_title">小米笔记本Air12.5</div>
+					<p>3599元</p>
+					<div class="item_line"></div>
+				</div>
+			</a>
+			<a href="">
+				<div class="xiala_item">
+					<div class="flags">大容量</div>
+					<img src="img/6.png" alt="小米笔记本Air 12.5">
+					<div class="item_title">小米笔记本Air12.5</div>
+					<p>3599元</p>
+					<div class="item_line"></div>
+				</div>
+			</a>
+			<a href="">
+				<div class="xiala_item">
+					<img src="img/6.png" alt="小米笔记本Air 12.5">
+					<div class="item_title">小米笔记本Air12.5</div>
+					<p>3599元</p>
+				</div>
+			</a>
+		</div>
+		<div class="nav_xiala_content">
+			<a href="">
+				<div class="xiala_item">
+					<img src="img/2.png" alt="小米笔记本Air 12.5">
+					<div class="item_title">小米笔记本Air12.5</div>
+					<p>3599元</p>
+					<div class="item_line"></div>
+				</div>
+			</a>
+			<a href="">
+				<div class="xiala_item">
+					<div class="flags">大容量</div>
+					<img src="img/2.png" alt="小米笔记本Air 12.5">
+					<div class="item_title">小米笔记本Air12.5</div>
+					<p>3599元</p>
+					<div class="item_line"></div>
+				</div>
+			</a>
+			<a href="">
+				<div class="xiala_item">
+					<img src="img/2.png" alt="小米笔记本Air 12.5">
+					<div class="item_title">小米笔记本Air12.5</div>
+					<p>3599元</p>
+					<div class="item_line"></div>
+				</div>
+			</a>
+			<a href="">
+				<div class="xiala_item">
+					<div class="flags">大容量</div>
+					<img src="img/2.png" alt="小米笔记本Air 12.5">
+					<div class="item_title">小米笔记本Air12.5</div>
+					<p>3599元</p>
+					<div class="item_line"></div>
+				</div>
+			</a>
+			<a href="">
+				<div class="xiala_item">
+					<div class="flags">大容量</div>
+					<img src="img/2.png" alt="小米笔记本Air 12.5">
+					<div class="item_title">小米笔记本Air12.5</div>
+					<p>3599元</p>
+					<div class="item_line"></div>
+				</div>
+			</a>
+			<a href="">
+				<div class="xiala_item">
+					<img src="img/2.png" alt="小米笔记本Air 12.5">
+					<div class="item_title">小米笔记本Air12.5</div>
+					<p>3599元</p>
+				</div>
+			</a>
+		</div>
+		<div class="nav_xiala_content">
+			<a href="">
+				<div class="xiala_item">
+					<img src="img/4.jpg" alt="小米笔记本Air 12.5">
+					<div class="item_title">小米笔记本Air12.5</div>
+					<p>3599元</p>
+					<div class="item_line"></div>
+				</div>
+			</a>
+			<a href="">
+				<div class="xiala_item">
+					<div class="flags">大容量</div>
+					<img src="img/4.jpg" alt="小米笔记本Air 12.5">
+					<div class="item_title">小米笔记本Air12.5</div>
+					<p>3599元</p>
+					<div class="item_line"></div>
+				</div>
+			</a>
+			<a href="">
+				<div class="xiala_item">
+					<img src="img/4.jpg" alt="小米笔记本Air 12.5">
+					<div class="item_title">小米笔记本Air12.5</div>
+					<p>3599元</p>
+					<div class="item_line"></div>
+				</div>
+			</a>
+			<a href="">
+				<div class="xiala_item">
+					<div class="flags">大容量</div>
+					<img src="img/4.jpg" alt="小米笔记本Air 12.5">
+					<div class="item_title">小米笔记本Air12.5</div>
+					<p>3599元</p>
+					<div class="item_line"></div>
+				</div>
+			</a>
+			<a href="">
+				<div class="xiala_item">
+					<div class="flags">大容量</div>
+					<img src="img/4.jpg" alt="小米笔记本Air 12.5">
+					<div class="item_title">小米笔记本Air12.5</div>
+					<p>3599元</p>
+					<div class="item_line"></div>
+				</div>
+			</a>
+			<a href="">
+				<div class="xiala_item">
+					<img src="img/4.jpg" alt="小米笔记本Air 12.5">
+					<div class="item_title">小米笔记本Air12.5</div>
+					<p>3599元</p>
+				</div>
+			</a>
+		</div>
+		<div class="nav_xiala_content">
+			<a href="">
+				<div class="xiala_item">
+					<img src="img/2.png" alt="小米笔记本Air 12.5">
+					<div class="item_title">小米笔记本Air12.5</div>
+					<p>3599元</p>
+					<div class="item_line"></div>
+				</div>
+			</a>
+			<a href="">
+				<div class="xiala_item">
+					<div class="flags">大容量</div>
+					<img src="img/2.png" alt="小米笔记本Air 12.5">
+					<div class="item_title">小米笔记本Air12.5</div>
+					<p>3599元</p>
+					<div class="item_line"></div>
+				</div>
+			</a>
+			<a href="">
+				<div class="xiala_item">
+					<img src="img/2.png" alt="小米笔记本Air 12.5">
+					<div class="item_title">小米笔记本Air12.5</div>
+					<p>3599元</p>
+					<div class="item_line"></div>
+				</div>
+			</a>
+			<a href="">
+				<div class="xiala_item">
+					<div class="flags">大容量</div>
+					<img src="img/2.png" alt="小米笔记本Air 12.5">
+					<div class="item_title">小米笔记本Air12.5</div>
+					<p>3599元</p>
+					<div class="item_line"></div>
+				</div>
+			</a>
+			<a href="">
+				<div class="xiala_item">
+					<div class="flags">大容量</div>
+					<img src="img/2.png" alt="小米笔记本Air 12.5">
+					<div class="item_title">小米笔记本Air12.5</div>
+					<p>3599元</p>
+					<div class="item_line"></div>
+				</div>
+			</a>
+			<a href="">
+				<div class="xiala_item">
+					<img src="img/2.png" alt="小米笔记本Air 12.5">
+					<div class="item_title">小米笔记本Air12.5</div>
+					<p>3599元</p>
+				</div>
+			</a>
+		</div>
+		<div class="nav_xiala_content">
+			<a href="">
+				<div class="xiala_item">
+					<img src="img/8.jpg" alt="小米笔记本Air 12.5">
+					<div class="item_title">小米笔记本Air12.5</div>
+					<p>3599元</p>
+					<div class="item_line"></div>
+				</div>
+			</a>
+			<a href="">
+				<div class="xiala_item">
+					<div class="flags">大容量</div>
+					<img src="img/8.jpg" alt="小米笔记本Air 12.5">
+					<div class="item_title">小米笔记本Air12.5</div>
+					<p>3599元</p>
+					<div class="item_line"></div>
+				</div>
+			</a>
+			<a href="">
+				<div class="xiala_item">
+					<div class="flags">大容量</div>
+					<img src="img/8.jpg" alt="小米笔记本Air 12.5">
+					<div class="item_title">小米笔记本Air12.5</div>
+					<p>3599元</p>
+					<div class="item_line"></div>
+				</div>
+			</a>
+			<a href="">
+				<div class="xiala_item">
+					<div class="flags">大容量</div>
+					<img src="img/8.jpg" alt="小米笔记本Air 12.5">
+					<div class="item_title">小米笔记本Air12.5</div>
+					<p>3599元</p>
+					<div class="item_line"></div>
+				</div>
+			</a>
+			<a href="">
+				<div class="xiala_item">
+					<img src="img/8.jpg" alt="小米笔记本Air 12.5">
+					<div class="item_title">小米笔记本Air12.5</div>
+					<p>3599元</p>
+				</div>
+			</a>
+		</div>
+	</div>
+	<!-- 盒子下拉结束 -->
+<!-- banner开始 -->
+	<div id="banner">
+		<ul class="imgbox">
+			<li class="imgbox1"><img src="img/banner1.jpg" alt=""></li>
+			<li><img src="img/banner2.jpg" alt=""></li>
+			<li><img src="img/banner3.jpg" alt=""></li>
+			<li><img src="img/banner4.jpg" alt=""></li>
+			<li><img src="img/banner5.jpg" alt=""></li>
+		</ul>
+		<ul class="pargerbox">
+			<li class="active"></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		<ul class="banner_nav">
+			<li class="banner_label">
+				<span class="banner_title">手机电话卡</span>
+				<span class="banner_jiantou">&gt;</span>
+				<div class="banner_inner">
+					<div class="scroll_item">
+					<ul>
+						<li>
+							<img src="img/1.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/1.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/1.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/1.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/1.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/1.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+					</ul>
+					</div>
+					<div class="scroll_item">
+					<ul>
+						<li>
+							<img src="img/1.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/1.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/1.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/1.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/1.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/1.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+					</ul>
+					</div>
+					<div class="scroll_item">
+					<ul>
+						<li>
+							<img src="img/1.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/1.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/1.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/1.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+					</ul>
+					</div>
+				</div>
+			</li>
+			<li class="banner_label">
+				<span class="banner_title">手机电话卡</span>
+				<span class="banner_jiantou">&gt;</span>
+				<div class="banner_inner">
+					<div class="scroll_item">
+					<ul>
+						<li>
+							<img src="img/2.png" alt="">
+							<span>小米电视</span>
+						</li>
+						<li>
+							<img src="img/2.png" alt="">
+							<span>小米电视</span>
+						</li>
+						<li>
+							<img src="img/2.png" alt="">
+							<span>小米电视</span>
+						</li>
+						<li>
+							<img src="img/2.png" alt="">
+							<span>小米电视</span>
+						</li>
+						<li>
+							<img src="img/2.png" alt="">
+							<span>小米电视</span>
+						</li>
+						<li>
+							<img src="img/2.png" alt="">
+							<span>小米电视</span>
+						</li>
+					</ul>
+					</div>
+					<div class="scroll_item">
+					<ul>
+						<li>
+							<img src="img/2.png" alt="">
+							<span>小米电视</span>
+						</li>
+						<li>
+							<img src="img/2.png" alt="">
+							<span>小米电视</span>
+						</li>
+						<li>
+							<img src="img/2.png" alt="">
+							<span>小米电视</span>
+						</li>
+						<li>
+							<img src="img/2.png" alt="">
+							<span>小米电视4A</span>
+						</li>
+						<li>
+							<img src="img/2.png" alt="">
+							<span>小米电视4A</span>
+						</li>
+						<li>
+							<img src="img/2.png" alt="">
+							<span>小米电视4A</span>
+						</li>
+					</ul>
+					</div>
+					<div class="scroll_item">
+					<ul>
+						<li>
+							<img src="img/2.png" alt="">
+							<span>小米电视</span>
+						</li>
+						<li>
+							<img src="img/2.png" alt="">
+							<span>小米电视</span>
+						</li>
+						<li>
+							<img src="img/2.png" alt="">
+							<span>小米电视</span>
+						</li>
+						<li>
+							<img src="img/2.png" alt="">
+							<span>小米电视</span>
+						</li>
+						<li>
+							<img src="img/2.png" alt="">
+							<span>小米电视</span>
+						</li>
+						<li>
+							<img src="img/2.png" alt="">
+							<span>小米电视</span>
+						</li>
+					</ul>
+					</div>
+					<div class="scroll_item">
+					<ul>
+						<li>
+							<img src="img/2.png" alt="">
+							<span>小米电视4A</span>
+						</li>
+						<li>
+							<img src="img/2.png" alt="">
+							<span>小米电视4A</span>
+						</li>
+						<li>
+							<img src="img/2.png" alt="">
+							<span>小米电视4A</span>
+						</li>
+						<li>
+							<img src="img/2.png" alt="">
+							<span>小米电视4A</span>
+						</li>
+					</ul>
+					</div>
+				</div>
+			</li>
+
+			<li class="banner_label">
+				<span class="banner_title">手机电话卡</span>
+				<span class="banner_jiantou">&gt;</span>
+				<div class="banner_inner">
+					<div class="scroll_item">
+						<ul>
+							<li>
+								<img src="img/1.jpg" alt="">
+								<span>小米电视4A 32英寸</span>
+							</li>
+							<li>
+								<img src="img/1.jpg" alt="">
+								<span>小米电视4A 32英寸</span>
+							</li>
+							<li>
+								<img src="img/1.jpg" alt="">
+								<span>小米电视4A 32英寸</span>
+							</li>
+							<li>
+								<img src="img/1.jpg" alt="">
+								<span>小米电视4A 32英寸</span>
+							</li>
+							<li>
+								<img src="img/1.jpg" alt="">
+								<span>小米电视4A 32英寸</span>
+							</li>
+							<li>
+								<img src="img/1.jpg" alt="">
+								<span>小米电视4A 32英寸</span>
+							</li>
+						</ul>
+					</div>
+					<div class="scroll_item">
+						<ul>
+							<li>
+								<img src="img/1.jpg" alt="">
+								<span>小米电视4A 32英寸</span>
+							</li>
+							<li>
+								<img src="img/1.jpg" alt="">
+								<span>小米电视4A 32英寸</span>
+							</li>
+							<li>
+								<img src="img/1.jpg" alt="">
+								<span>小米电视4A 32英寸</span>
+							</li>
+							<li>
+								<img src="img/1.jpg" alt="">
+								<span>小米电视4A 32英寸</span>
+							</li>
+							<li>
+								<img src="img/1.jpg" alt="">
+								<span>小米电视4A 32英寸</span>
+							</li>
+							<li>
+								<img src="img/1.jpg" alt="">
+								<span>小米电视4A 32英寸</span>
+							</li>
+						</ul>
+					</div>
+					<div class="scroll_item">
+						<ul>
+							<li>
+								<img src="img/1.jpg" alt="">
+								<span>小米电视4A 32英寸</span>
+							</li>
+							<li>
+								<img src="img/1.jpg" alt="">
+								<span>小米电视4A 32英寸</span>
+							</li>
+							<li>
+								<img src="img/1.jpg" alt="">
+								<span>小米电视4A 32英寸</span>
+							</li>
+							<li>
+								<img src="img/1.jpg" alt="">
+								<span>小米电视4A 32英寸</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</li>
+			<li class="banner_label">
+				<span class="banner_title">手机电话卡</span>
+				<span class="banner_jiantou">&gt;</span>
+				<div class="banner_inner">
+					<div class="scroll_item">
+						<ul>
+							<li>
+								<img src="img/3.jpg" alt="">
+								<span>小米电视4A 32英寸</span>
+							</li>
+							<li>
+								<img src="img/3.jpg" alt="">
+								<span>小米电视4A 32英寸</span>
+							</li>
+							<li>
+								<img src="img/3.jpg" alt="">
+								<span>小米电视4A 32英寸</span>
+							</li>
+							<li>
+								<img src="img/3.jpg" alt="">
+								<span>小米电视4A 32英寸</span>
+							</li>
+							<li>
+								<img src="img/3.jpg" alt="">
+								<span>小米电视4A 32英寸</span>
+							</li>
+							<li>
+								<img src="img/3.jpg" alt="">
+								<span>小米电视4A 32英寸</span>
+							</li>
+						</ul>
+					</div>
+					<div class="scroll_item">
+						<ul>
+							<li>
+								<img src="img/3.jpg" alt="">
+								<span>小米电视4A 32英寸</span>
+							</li>
+							<li>
+								<img src="img/3.jpg" alt="">
+								<span>小米电视4A 32英寸</span>
+							</li>
+							<li>
+								<img src="img/3.jpg" alt="">
+								<span>小米电视4A 32英寸</span>
+							</li>
+							<li>
+								<img src="img/3.jpg" alt="">
+								<span>小米电视4A 32英寸</span>
+							</li>
+							<li>
+								<img src="img/3.jpg" alt="">
+								<span>小米电视4A 32英寸</span>
+							</li>
+							<li>
+								<img src="img/3.jpg" alt="">
+								<span>小米电视4A 32英寸</span>
+							</li>
+						</ul>
+					</div>
+					<div class="scroll_item">
+						<ul>
+							<li>
+								<img src="img/3.jpg" alt="">
+								<span>小米电视4A 32英寸</span>
+							</li>
+							<li>
+								<img src="img/3.jpg" alt="">
+								<span>小米电视4A 32英寸</span>
+							</li>
+							<li>
+								<img src="img/3.jpg" alt="">
+								<span>小米电视4A 32英寸</span>
+							</li>
+							<li>
+								<img src="img/3.jpg" alt="">
+								<span>小米电视4A 32英寸</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</li>
+			<li class="banner_label">
+				<span class="banner_title">手机电话卡</span>
+				<span class="banner_jiantou">&gt;</span>
+				<div class="banner_inner">
+					<div class="scroll_item">
+					<ul>
+						<li>
+							<img src="img/4.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/4.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/4.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/4.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/4.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/4.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+					</ul>
+					</div>
+					<div class="scroll_item">
+					<ul>
+						<li>
+							<img src="img/4.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/4.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/4.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/4.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/4.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/4.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+					</ul>
+					</div>
+					<div class="scroll_item">
+					<ul>
+						<li>
+							<img src="img/4.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/4.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/4.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/4.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+					</ul>
+					</div>
+				</div>
+			</li>
+			<li class="banner_label">
+				<span class="banner_title">手机电话卡</span>
+				<span class="banner_jiantou">&gt;</span>
+				<div class="banner_inner">
+					<div class="scroll_item">
+					<ul>
+						<li>
+							<img src="img/1.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/1.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/1.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/1.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/1.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/1.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+					</ul>
+					</div>
+					<div class="scroll_item">
+					<ul>
+						<li>
+							<img src="img/1.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/1.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/1.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/1.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/1.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/1.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+					</ul>
+					</div>
+					<div class="scroll_item">
+					<ul>
+						<li>
+							<img src="img/1.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/1.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/1.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/1.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/1.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/1.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+					</ul>
+					</div>
+					<div class="scroll_item">
+					<ul>
+						<li>
+							<img src="img/1.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/1.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/1.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/1.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+					</ul>
+					</div>
+				</div>
+			</li>
+			<li class="banner_label">
+				<span class="banner_title">手机电话卡</span>
+				<span class="banner_jiantou">&gt;</span>
+				<div class="banner_inner">
+					<div class="scroll_item">
+					<ul>
+						<li>
+							<img src="img/1.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/1.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/1.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/1.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/1.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/1.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+					</ul>
+					</div>
+					<div class="scroll_item">
+					<ul>
+						<li>
+							<img src="img/1.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/1.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/1.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/1.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/1.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/1.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+					</ul>
+					</div>
+					<div class="scroll_item">
+					<ul>
+						<li>
+							<img src="img/1.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/1.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/1.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/1.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+					</ul>
+					</div>
+				</div>
+			</li>
+			<li class="banner_label">
+				<span class="banner_title">手机电话卡</span>
+				<span class="banner_jiantou">&gt;</span>
+				<div class="banner_inner">
+					<div class="scroll_item">
+					<ul>
+						<li>
+							<img src="img/5.png" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/5.png" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/5.png" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/5.png" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/5.png" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/5.png" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+					</ul>
+					</div>
+					<div class="scroll_item">
+					<ul>
+						<li>
+							<img src="img/5.png" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/5.png" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/5.png" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/5.png" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/5.png" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/5.png" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+					</ul>
+					</div>
+					<div class="scroll_item">
+					<ul>
+						<li>
+							<img src="img/5.png" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/5.png" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/5.png" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/5.png" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+					</ul>
+					</div>
+				</div>
+			</li>
+			<li class="banner_label">
+				<span class="banner_title">手机电话卡</span>
+				<span class="banner_jiantou">&gt;</span>
+				<div class="banner_inner">
+					<div class="scroll_item">
+					<ul>
+						<li>
+							<img src="img/5.png" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/1.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/1.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/1.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/1.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/1.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+					</ul>
+					</div>
+					<div class="scroll_item">
+					<ul>
+						<li>
+							<img src="img/1.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/1.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/1.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/1.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/1.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/1.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+					</ul>
+					</div>
+					<div class="scroll_item">
+					<ul>
+						<li>
+							<img src="img/5.png" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/1.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/1.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/1.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/1.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/1.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+					</ul>
+					</div>
+					<div class="scroll_item">
+					<ul>
+						<li>
+							<img src="img/1.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/1.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/1.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/1.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+					</ul>
+					</div>
+				</div>
+			</li>
+			<li class="banner_label">
+				<span class="banner_title">手机电话卡</span>
+				<span class="banner_jiantou">&gt;</span>
+				<div class="banner_inner">
+					<div class="scroll_item">
+					<ul>
+						<li>
+							<img src="img/3.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/3.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/3.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/3.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/3.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/3.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+					</ul>
+					</div>
+					<div class="scroll_item">
+					<ul>
+						<li>
+							<img src="img/3.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/3.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/3.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/3.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/3.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/3.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+					</ul>
+					</div>
+					<div class="scroll_item">
+					<ul>
+						<li>
+							<img src="img/3.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/3.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/3.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+						<li>
+							<img src="img/3.jpg" alt="">
+							<span>小米电视4A 32英寸</span>
+						</li>
+					</ul>
+					</div>
+				</div>
+			</li>
+		</ul>
+		<div class="btn_left"></div>
+		<div class="btn_right"></div>
+	</div>
+<!-- banner结束 -->
+<!-- 小米明星单品开始 -->
+	<section class="star">
+		<div class="star_top">
+			<h1 >小米明星单品</h1>
+			<div class="star_btn">
+				<div class="star_btn1 disable">&lt;</div>
+				<div class="star_btn2 ">&gt;</div>
+			</div>
+		</div>
+		<div class="star_bottom">
+			<div class="bottom_inner">
+				<div class="star_item star_item1">
+					<img class="img" src="img/6ef55907-bbed-49be-a2bb-be0821b5f7b8.png" alt="">
+					<h1>10000mAh小米手环2</h1>
+					<h2>OLED显示屏幕，升级计算算法</h2>
+					<h3>149元</h3>
+				</div>
+				<div class="star_item star_item2">
+					<img src="img/302f2608-655a-489c-a0c5-a3b9172defd1.png" alt="">
+					<h1>小米圈铁耳机Pro</h1>
+					<h2>独创双动圈+动铁，三单元发声</h2>
+					<h3>129元</h3>
+				</div>
+				<div class="star_item star_item3">
+					<img src="img/T1KvdjBX_v1RXrhCrK.jpg" alt="">
+					<h1>小米净水器 厨下式</h1>
+					<h2>直出纯净水，隐藏式安装</h2>
+					<h3>1999元</h3>
+				</div>
+				<div class="star_item star_item4">
+					<img src="img/848def18-47d9-4ca0-8822-c2ac61b83779.png" alt="">
+					<h1>米家扫地机器人</h1>
+					<h2>智能路径规划，扫得干净扫得快</h2>
+					<h3>1699元</h3>
+				</div>
+				<div class="star_item star_item6">
+					<img src="img/de35852a-1be5-4ef5-846f-dcdd2efcfea6.png" alt="">
+					<h1>小米路由器</h1>
+					<h2>更快更强，不止四天线</h2>
+					<h3>149元</h3>
+				</div>
+
+				<div class="star_item star_item1">
+					<img class="img" src="img/6ef55907-bbed-49be-a2bb-be0821b5f7b8.png" alt="">
+					<h1>10000mAh小米手环2</h1>
+					<h2>OLED显示屏幕，升级计算算法</h2>
+					<h3>149元</h3>
+				</div>
+				<div class="star_item star_item2">
+					<img src="img/302f2608-655a-489c-a0c5-a3b9172defd1.png" alt="">
+					<h1>小米圈铁耳机Pro</h1>
+					<h2>独创双动圈+动铁，三单元发声</h2>
+					<h3>129元</h3>
+				</div>
+				<div class="star_item star_item3">
+					<img src="img/T1KvdjBX_v1RXrhCrK.jpg" alt="">
+					<h1>小米净水器 厨下式</h1>
+					<h2>直出纯净水，隐藏式安装</h2>
+					<h3>1999元</h3>
+				</div>
+				<div class="star_item star_item4">
+					<img src="img/848def18-47d9-4ca0-8822-c2ac61b83779.png" alt="">
+					<h1>米家扫地机器人</h1>
+					<h2>智能路径规划，扫得干净扫得快</h2>
+					<h3>1699元</h3>
+				</div>
+				<div class="star_item star_item6">
+					<img src="img/de35852a-1be5-4ef5-846f-dcdd2efcfea6.png" alt="">
+					<h1>小米路由器</h1>
+					<h2>更快更强，不止四天线</h2>
+					<h3>149元</h3>
+				</div>
+
+				<div class="star_item star_item1">
+					<img class="img" src="img/6ef55907-bbed-49be-a2bb-be0821b5f7b8.png" alt="">
+					<h1>10000mAh小米手环2</h1>
+					<h2>OLED显示屏幕，升级计算算法</h2>
+					<h3>149元</h3>
+				</div>
+				<div class="star_item star_item2">
+					<img src="img/302f2608-655a-489c-a0c5-a3b9172defd1.png" alt="">
+					<h1>小米圈铁耳机Pro</h1>
+					<h2>独创双动圈+动铁，三单元发声</h2>
+					<h3>129元</h3>
+				</div>
+				<div class="star_item star_item3">
+					<img src="img/T1KvdjBX_v1RXrhCrK.jpg" alt="">
+					<h1>小米净水器 厨下式</h1>
+					<h2>直出纯净水，隐藏式安装</h2>
+					<h3>1999元</h3>
+				</div>
+				<div class="star_item star_item4">
+					<img src="img/848def18-47d9-4ca0-8822-c2ac61b83779.png" alt="">
+					<h1>米家扫地机器人</h1>
+					<h2>智能路径规划，扫得干净扫得快</h2>
+					<h3>1699元</h3>
+				</div>
+				<div class="star_item star_item5">
+					<img src="img/de35852a-1be5-4ef5-846f-dcdd2efcfea6.png" alt="">
+					<h1>小米路由器</h1>
+					<h2>更快更强，不止四天线</h2>
+					<h3>149元</h3>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- 小米明星单品结束 -->
+<!--  搭配开始 -->
+	<div class="two">
+		<div class="two_top">
+			<div class="two_top_left">搭配</div>
+			<div class="two_top_right">
+				<span class="type active">热门</span>
+				<span class="type">耳机音箱</span>
+				<span class="type">电源</span>
+				<span class="type">电池存储卡</span>
+			</div>
+		</div>
+		<div class="two_bottom">
+			<div class="two_bottom_left">
+				<div class="two_bottom_left1">
+					<img src="img/xmad_15034816547397_TKBOF.jpg" alt="">
+				</div>	
+				<div class="two_bottom_left2">
+					<img src="img/xmad_15094387477095_BAdZH.jpg" alt="">
+				</div>
+			</div>
+			<div class="two_bottom_right active">
+				<div class="two_item">
+					<div class="item1">
+						<img src="img/p1.jpg" alt="" >
+					</div>
+					<div class="wenzi">
+						<a href="">小米运动蓝牙耳机</a>
+						<p class="wenzi1">319元</p>
+						<p class="wenzi2">632人已评论</p>
+					</div>
+				</div>
+
+				<div class="two_item">
+					<div class="item1">
+						<img src="img/302f2608-655a-489c-a0c5-a3b9172defd1.png" alt="" >
+					</div>
+					<div class="wenzi">
+						<a href="">小米运动蓝牙耳机</a>
+						<p class="wenzi1">319元</p>
+						<p class="wenzi2">632人已评论</p>
+					</div>
+				</div>
+
+				<div class="two_item">
+					<div class="item1">
+						<img src="img/T1SkV_BCd_1RXrhCrK!220x220.jpg" alt="" >
+					</div>
+					<div class="wenzi">
+						<a href="">小米运动蓝牙耳机</a>
+						<p class="wenzi1">319元</p>
+						<p class="wenzi2">632人已评论</p>
+					</div>
+				</div>
+
+				<div class="two_item">
+					<div class="item1">
+						<img src="img/pms_1504498936.11861982!220x220.jpg" alt="" >
+					</div>
+					<div class="wenzi">
+						<a href="">小米运动蓝牙耳机</a>
+						<p class="wenzi1">319元</p>
+						<p class="wenzi2">632人已评论</p>
+					</div>
+				</div>
+
+				<div class="two_item two_item1">
+					<div class="item1">
+						<img src="img/pms_1517214417.03015779!220x220.jpg" alt="" >
+					</div>
+					<div class="wenzi">
+						<a href="">小米运动蓝牙耳机</a>
+						<p class="wenzi1">319元</p>
+						<p class="wenzi2">632人已评论</p>
+					</div>
+				</div>
+
+				<div class="two_item two_item1">
+					<div class="item1">
+						<img src="img/2b69b930-a2fd-4d09-a46a-8690cb79f764.jpg" alt="" >
+					</div>
+					<div class="wenzi">
+						<a href="">小米运动蓝牙耳机</a>
+						<p class="wenzi1">319元</p>
+						<p class="wenzi2">632人已评论</p>
+					</div>
+				</div>
+
+				<div class="two_item two_item1">
+					<div class="item1">
+						<img src="img/xmad_14987297093922_POaTU.jpg" alt="" >
+					</div>
+					<div class="wenzi">
+						<a href="">小米运动蓝牙耳机</a>
+						<p class="wenzi1">319元</p>
+						<p class="wenzi2">632人已评论</p>
+					</div>
+				</div>
+
+				<div class="two_item two_item1">
+					<div class="item1">
+						<img src="img/5x-2.jpg" alt="" >
+					</div>
+					<div class="wenzi">
+						<a href="">小米运动蓝牙耳机</a>
+						<p class="wenzi1">319元</p>
+						<p class="wenzi2">632人已评论</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="two_bottom_right">
+				<div class="two_item">
+					<div class="item1">
+						<img src="img/848def18-47d9-4ca0-8822-c2ac61b83779.png" alt="" >
+					</div>
+					<div class="wenzi">
+						<a href="">小米运动蓝牙耳机</a>
+						<p class="wenzi1">319元</p>
+						<p class="wenzi2">632人已评论</p>
+					</div>
+				</div>
+
+				<div class="two_item">
+					<div class="item1">
+						<img src="img/8949026b-fa9a-4370-989b-5d5e2f149106.jpg" alt="" >
+					</div>
+					<div class="wenzi">
+						<a href="">小米运动蓝牙耳机</a>
+						<p class="wenzi1">319元</p>
+						<p class="wenzi2">632人已评论</p>
+					</div>
+				</div>
+
+				<div class="two_item">
+					<div class="item1">
+						<img src="img/p1.jpg" alt="" >
+					</div>
+					<div class="wenzi">
+						<a href="">小米运动蓝牙耳机</a>
+						<p class="wenzi1">319元</p>
+						<p class="wenzi2">632人已评论</p>
+					</div>
+				</div>
+
+				<div class="two_item">
+					<div class="item1">
+						<img src="img/2b69b930-a2fd-4d09-a46a-8690cb79f764.jpg" alt="" >
+					</div>
+					<div class="wenzi">
+						<a href="">小米运动蓝牙耳机</a>
+						<p class="wenzi1">319元</p>
+						<p class="wenzi2">632人已评论</p>
+					</div>
+				</div>
+
+				<div class="two_item two_item1">
+					<div class="item1">
+						<img src="img/1.jpg" alt="" >
+					</div>
+					<div class="wenzi">
+						<a href="">小米运动蓝牙耳机</a>
+						<p class="wenzi1">319元</p>
+						<p class="wenzi2">632人已评论</p>
+					</div>
+				</div>
+
+				<div class="two_item two_item1">
+					<div class="item1">
+						<img src="img/2b69b930-a2fd-4d09-a46a-8690cb79f764.jpg" alt="" >
+					</div>
+					<div class="wenzi">
+						<a href="">小米运动蓝牙耳机</a>
+						<p class="wenzi1">319元</p>
+						<p class="wenzi2">632人已评论</p>
+					</div>
+				</div>
+
+				<div class="two_item two_item1">
+					<div class="item1">
+						<img src="img/3.jpg" alt="" >
+					</div>
+					<div class="wenzi">
+						<a href="">小米运动蓝牙耳机</a>
+						<p class="wenzi1">319元</p>
+						<p class="wenzi2">632人已评论</p>
+					</div>
+				</div>
+
+				<div class="two_item two_item1">
+					<div class="item1">
+						<img src="img/p1.jpg" alt="" >
+					</div>
+					<div class="wenzi">
+						<a href="">小米运动蓝牙耳机</a>
+						<p class="wenzi1">319元</p>
+						<p class="wenzi2">632人已评论</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="two_bottom_right ">
+				<div class="two_item">
+					<div class="item1">
+						<img src="img/p1.jpg" alt="" >
+					</div>
+					<div class="wenzi">
+						<a href="">小米运动蓝牙耳机</a>
+						<p class="wenzi1">319元</p>
+						<p class="wenzi2">632人已评论</p>
+					</div>
+				</div>
+
+				<div class="two_item">
+					<div class="item1">
+						<img src="img/302f2608-655a-489c-a0c5-a3b9172defd1.png" alt="" >
+					</div>
+					<div class="wenzi">
+						<a href="">小米运动蓝牙耳机</a>
+						<p class="wenzi1">319元</p>
+						<p class="wenzi2">632人已评论</p>
+					</div>
+				</div>
+
+				<div class="two_item">
+					<div class="item1">
+						<img src="img/T1SkV_BCd_1RXrhCrK!220x220.jpg" alt="" >
+					</div>
+					<div class="wenzi">
+						<a href="">小米运动蓝牙耳机</a>
+						<p class="wenzi1">319元</p>
+						<p class="wenzi2">632人已评论</p>
+					</div>
+				</div>
+
+				<div class="two_item">
+					<div class="item1">
+						<img src="img/pms_1504498936.11861982!220x220.jpg" alt="" >
+					</div>
+					<div class="wenzi">
+						<a href="">小米运动蓝牙耳机</a>
+						<p class="wenzi1">319元</p>
+						<p class="wenzi2">632人已评论</p>
+					</div>
+				</div>
+
+				<div class="two_item two_item1">
+					<div class="item1">
+						<img src="img/pms_1517214417.03015779!220x220.jpg" alt="" >
+					</div>
+					<div class="wenzi">
+						<a href="">小米运动蓝牙耳机</a>
+						<p class="wenzi1">319元</p>
+						<p class="wenzi2">632人已评论</p>
+					</div>
+				</div>
+
+				<div class="two_item two_item1">
+					<div class="item1">
+						<img src="img/2b69b930-a2fd-4d09-a46a-8690cb79f764.jpg" alt="" >
+					</div>
+					<div class="wenzi">
+						<a href="">小米运动蓝牙耳机</a>
+						<p class="wenzi1">319元</p>
+						<p class="wenzi2">632人已评论</p>
+					</div>
+				</div>
+
+				<div class="two_item two_item1">
+					<div class="item1">
+						<img src="img/xmad_14987297093922_POaTU.jpg" alt="" >
+					</div>
+					<div class="wenzi">
+						<a href="">小米运动蓝牙耳机</a>
+						<p class="wenzi1">319元</p>
+						<p class="wenzi2">632人已评论</p>
+					</div>
+				</div>
+
+				<div class="two_item two_item1">
+					<div class="item1">
+						<img src="img/5x-2.jpg" alt="" >
+					</div>
+					<div class="wenzi">
+						<a href="">小米运动蓝牙耳机</a>
+						<p class="wenzi1">319元</p>
+						<p class="wenzi2">632人已评论</p>
+					</div>
+				</div>
+			</div>
+			
+			<div class="two_bottom_right">
+				<div class="two_item">
+					<div class="item1">
+						<img src="img/848def18-47d9-4ca0-8822-c2ac61b83779.png" alt="" >
+					</div>
+					<div class="wenzi">
+						<a href="">小米运动蓝牙耳机</a>
+						<p class="wenzi1">319元</p>
+						<p class="wenzi2">632人已评论</p>
+					</div>
+				</div>
+
+				<div class="two_item">
+					<div class="item1">
+						<img src="img/8949026b-fa9a-4370-989b-5d5e2f149106.jpg" alt="" >
+					</div>
+					<div class="wenzi">
+						<a href="">小米运动蓝牙耳机</a>
+						<p class="wenzi1">319元</p>
+						<p class="wenzi2">632人已评论</p>
+					</div>
+				</div>
+
+				<div class="two_item">
+					<div class="item1">
+						<img src="img/p1.jpg" alt="" >
+					</div>
+					<div class="wenzi">
+						<a href="">小米运动蓝牙耳机</a>
+						<p class="wenzi1">319元</p>
+						<p class="wenzi2">632人已评论</p>
+					</div>
+				</div>
+
+				<div class="two_item">
+					<div class="item1">
+						<img src="img/2b69b930-a2fd-4d09-a46a-8690cb79f764.jpg" alt="" >
+					</div>
+					<div class="wenzi">
+						<a href="">小米运动蓝牙耳机</a>
+						<p class="wenzi1">319元</p>
+						<p class="wenzi2">632人已评论</p>
+					</div>
+				</div>
+
+				<div class="two_item two_item1">
+					<div class="item1">
+						<img src="img/1.jpg" alt="" >
+					</div>
+					<div class="wenzi">
+						<a href="">小米运动蓝牙耳机</a>
+						<p class="wenzi1">319元</p>
+						<p class="wenzi2">632人已评论</p>
+					</div>
+				</div>
+
+				<div class="two_item two_item1">
+					<div class="item1">
+						<img src="img/2b69b930-a2fd-4d09-a46a-8690cb79f764.jpg" alt="" >
+					</div>
+					<div class="wenzi">
+						<a href="">小米运动蓝牙耳机</a>
+						<p class="wenzi1">319元</p>
+						<p class="wenzi2">632人已评论</p>
+					</div>
+				</div>
+
+				<div class="two_item two_item1">
+					<div class="item1">
+						<img src="img/3.jpg" alt="" >
+					</div>
+					<div class="wenzi">
+						<a href="">小米运动蓝牙耳机</a>
+						<p class="wenzi1">319元</p>
+						<p class="wenzi2">632人已评论</p>
+					</div>
+				</div>
+
+				<div class="two_item two_item1">
+					<div class="item1">
+						<img src="img/p1.jpg" alt="" >
+					</div>
+					<div class="wenzi">
+						<a href="">小米运动蓝牙耳机</a>
+						<p class="wenzi1">319元</p>
+						<p class="wenzi2">632人已评论</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<!-- 搭配结束 --> 
+</body>
+<script src="js/jquery-3.3.1.js"></script>
+<script>
+    //导航选项卡效果
+	{
+	    let navitem=$(".nav_xiala_content");
+	    let length=navitem.length;
+	    $(".nav_span").each(function(index,ele){
+            ele.onmouseenter=function(){
+                $(".nav_xiala").css({"height":"229px","display":"block"});
+				navitem.removeClass("nav_content1").eq(index).addClass("nav_content1");
+            }
+            ele.onmouseleave=function(){
+                $(".nav_xiala").css({"height":0,"display":"none"});
+            }
+		});
+	}
+
+    //banner侧滑效果
+	{
+        $(".banner_label")
+            .mouseenter(function () {
+                let index = $(this).index(".banner_label");
+                $(".banner_inner").eq(index).show();
+            })
+            .mouseleave(function () {
+                let index = $(this).index(".banner_label");
+                $(".banner_inner").eq(index).hide();
+            })
+	}
+
+	//banner图片轮播效果
+    {
+        $(".pagerbox li").click(function () {
+            	let index = $(this).index(".pagerbox li");
+            	$(".pagerbox li").removeClass("active").eq(index).addClass("active");
+            	$(".imgbox li").removeClass("imgbox1").eq(index).addClass("imgbox1");
+            	n = index;
+        });
+        let n = 0;
+        let flag = true;
+        function move() {
+            n++;
+            if (n === $(".imgbox li").length) {
+                n = 0;
+            }
+            if (n < 0) {
+                n = $(".imgbox li").length - 1;
+            }
+            $(".imgbox li").each(function () {
+                flag = true;
+                $(".imgbox li").removeClass("imgbox1").eq(n).addClass("imgbox1");
+                $(".pagerbox li").removeClass("active").eq(n).addClass("active");
+            });
+        }
+        $(".btn_right").click(function () {
+            if (flag) {
+                flag = false;
+                move();
+            }
+        });
+        $(".btn_left").click(function () {
+            if (flag) {
+                flag = false;
+                n -= 2;
+                move();
+            }
+        });
+    }
+
+    //小米明星单品效果
+    {
+        let left = $(".star_btn1");
+        let right = $(".star_btn2 ");
+        let n = 0;
+        right.click(function () {
+            n++;
+            left.attr("disable");
+            if (n == 2) {
+                right.attr("disable", false);
+            }
+            if (n === 3) {
+                n = 2;
+                return;
+            }
+            $(".bottom_inner").animate({marginLeft: -1240 * n});
+        });
+        left.click(function () {
+            n--;
+            left.attr("disable");
+            if (n == 0) {
+                right.attr("disable", false);
+            }
+            if (n === -1) {
+                n = 0;
+                return;
+            }
+            $(".bottom_inner").animate({marginLeft: -1240 * n});
+        });
+    }
+
+	//搭配选项卡效果
+	{
+        $(".type ")
+            .mouseenter(function () {
+                let index = $(this).index(".type");
+                $(".type").removeClass("active").eq(index).addClass("active");
+                $(".two_bottom_right ").removeClass("active").eq(index).addClass("active");
+            })
+	}
+
+	//内容效果
+    {
+        let box = $(".content_inner");
+        let n = 0;
+        let length = box.length;
+        $(".next ").click(function () {
+            n++;
+            if (n === length) {
+                n = length - 1;
+                return;
+            }
+            box.animate({left: -n * 296}, 100);
+            $(".dian1").removeClass("dian2").eq(n).addClass("dian2");
+        });
+        $(".prev ").click(function () {
+            n--;
+            if (n < 0) {
+                n = 0;
+                return;
+            }
+            box.animate({left: -n * 296}, 100);
+            $(".dian1").removeClass("dian2").eq(n).addClass("dian2");
+        });
+        $(".dian1").click(function () {
+            let index = $(this).index(".btn");
+            $(".dian1").removeClass("dian2").eq(index).addClass("dian2");
+        });
+    }
+
+</script>
+</html>
