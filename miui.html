@@ -1,0 +1,1561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>小米jQuery版</title>
+</head>
+<style>
+	*{
+		margin: 0;
+		text-decoration: none;
+		font-style: normal;
+		padding: none;
+		list-style: none;
+	}
+	.nav{
+		width: 1226px;
+		height: 100px;
+		margin: 0 auto;
+		position: relative;
+	}
+	.nav_text{
+		float: left;
+		margin-left:189px;
+	}
+	.nav_text span{
+		line-height: 100px;
+		color:#333333;
+		font-size: 15px;
+		float: left;
+		padding: 0 10px;
+		cursor: pointer;
+	}
+	.nav_active{
+		color: #ff6700!important;;
+	}
+	.nav_drop{
+		display: none;
+		width: 100%;
+		height: 300px;
+		background-color: #fff;
+		border-top: 1px solid #e0e0e0;
+		position: absolute;
+		bottom: -300px;
+		left: 0;
+		z-index: 100;
+		box-shadow: 0 8px 16px rgba(0,0,0,0.18);
+		transition: all .5s;
+	}
+	#banner{
+		width: 1226px;
+		height: 460px;
+		margin: 0 auto;
+		position: relative;
+	}
+	.banner_img{
+		width: 1226px;
+		height: 460px;
+		position: absolute;
+	}
+	.banner_img img{
+		width: 1226px;
+		height: 460px; 
+		position: absolute;
+		top: 0；
+		left:0;
+		transition: all 1s;
+		opacity: 0;
+	}
+	.banner_img .banner_img1{
+		z-index: 9;
+		opacity: 1;
+	}
+	.banner_nav{
+		width: 234px;
+		height: 420px;
+		background-color: rgba(0,0,0,0.6);
+		top: 0；
+		left: 0;
+		padding: 20px 0;
+		position: absolute;
+		z-index: 99;
+	}
+	.lunbo{
+		width: 400px;
+		height: 18px;
+		text-align: right;
+		position: absolute;
+		right: 30px;
+		bottom: 20px;
+		z-index: 10;
+	}
+	.lunbo_con{
+		display: inline-block;
+		width: 6px;
+		height: 6px;
+		border-radius: 10px;
+		border: 2px solid #fff;
+		border-color: rgba(255,255,255,0.3);
+		background-color: rgba(0,0,0,0.4);
+		margin: 0 5px;
+		transition: all 1s;
+	}
+	.lunbo_this{
+		border-color: rgba(0,0,0,0.4);
+		background-color: rgba(255,255,255,0.4);
+	}
+	.lunbo_con:hover{
+		border-color: rgba(0,0,0,0.4);
+		background-color: rgba(255,255,255,0.4);
+	}
+	.banner_nav li{
+		width: 174px;
+		height: 42px;
+		line-height: 42px;
+		font-size: 14px;
+		color:#ffffff;
+		padding: 0 30px;
+	}
+	.banner_jiantou{
+		float: right;
+	}
+	.banner_btn{
+		width: 41px;
+		height: 69px;
+		text-align:center;
+		color: #b0b0b0;
+		font-size: 50px;
+		top: 0;
+		bottom: 0;
+		margin: auto;
+		position: absolute;
+		opacity: 0;
+	}
+	.banner_btn1{
+		left: 234px;
+		z-index: 10;
+	}
+	.banner_btn2{
+		right: 0;
+		z-index: 10;
+	}
+	#banner:hover .banner_btn{
+		opacity: 1;
+		background-color: rgba(0,0,0,0.6);
+		color: #fff;
+		cursor: pointer;
+	}
+	.banner_nav_con{
+		width: 795px;
+		height: 458px;
+		border: 1px solid #e0e0e0;
+	    border-left: 0;
+		background-color: #fff;
+		position: absolute;
+		left: 234px;
+		top: 0;
+		box-shadow: 0 8px 16px rgba(0,0,0,0.18);
+		transition: all .5s;
+		display: none;
+		text-align: center;
+		color: black;
+	}
+	.star{
+		height: 398px;
+		width: 1226px;
+		margin: 0 auto;
+	}
+	.star_top{
+		width: 1226px;
+		height: 58px;
+	}
+	.star_top h1{
+		color: #333;
+		font-size: 21px;
+		font-weight: 400;
+		line-height: 58px;
+		float: left;
+	}
+	.star_btn{
+		width: 69px;
+		height: 22px;
+		float: right;
+		margin-top: 17px;
+		border: 1px solid #e0e0e0;
+	}
+	.star_btn div{
+		width: 34px;
+		height: 22px;
+		text-align: center;
+		line-height: 22px;
+		float: left;
+		cursor: pointer;
+		font-weight: bold;
+		-webkit-user-select:none;
+	}
+	.star_btn1{
+		border-right: 1px solid #e0e0e0;
+		color: #e0e2e4;
+	}
+	.star_btn2{
+		color:#e0e2e4;
+	}
+	.disable{
+		color:#b0b0b4;
+	}
+	.disable:hover{
+		color: #ff6700;
+	}
+	.star_buttom{
+		width: 1226px;
+		height: 340px;
+		position: relative;
+	}
+	.star_item{
+		width: 234px;
+		height: 300px;
+		background-color: #fafafa;
+		border-top: 1px solid #ffac13;
+		padding-top: 39px;
+		float: left;
+		margin-right: 14px;
+	}
+	.star_item_con{
+		width: 978px;
+		height: 340px;
+		overflow: hidden;
+		position: absolute;
+		bottom: 0;
+		left:248px;
+	}
+	.star_item_right{
+		width: 3000px;
+		height: 340px;
+		transition: all 1s;
+	}
+	.star_item2{
+		border-top-color: #83c44e;
+	}
+	.star_item3{
+		border-top-color: #2196f3;
+	}
+	.star_item4{
+		border-top-color: #e53935;
+	}
+	.star_item5{
+		border-top-color: #00c0a5;
+	}
+	.star_item img{
+		width: 160px;
+		height: 166px;
+		display: block;
+		margin: 0 auto;
+	}
+	.star_item h1{
+		font-size: 14px;
+		color: #212121;
+		font-weight: 400;
+		text-align: center;
+		margin-top: 22px;
+	}
+	.star_item h2{
+		font-size: 12px;
+		color: #b0b0b0;
+		font-weight: normal;
+		text-align: center;
+		margin-top: 3px;
+	}
+	.star_item h3{
+		font-size: 14px;
+		color: #ff6700;
+		font-weight: normal;
+		text-align: center;
+		margin-top: 12px;
+	}
+	.zhineng{
+		width: 1226px;
+		height: 672px;
+		margin: 0 auto;
+	}
+	.zhineng_more{
+		float: right;
+	}
+	.zhineng_more h2{
+		font-size: 16px;
+		font-weight: normal;
+		line-height: 58px;
+		float: left;
+	}
+	.zhineng_btn{
+		width: 23px;
+		height: 23px;
+		background-color: #b0b0b0;
+		float: left;
+		margin-top: 17.5px;
+		margin-left: 10px;
+		border-radius: 11.5px; /*半径*/
+		text-align: center;
+		line-height: 23px;
+		color: #f3fcff;
+	}
+	.zhineng_buttom{
+		width: 1226px;
+		height:614px;
+		position: relative;
+	}
+	.zhineng_left{
+		width: 234px;
+		height: 614px;
+		float: left;
+	}
+	.zhineng_right{
+		width: 992px;
+		height: 614px;
+		float: right;
+	}
+	.zhineng_item{
+		width: 234px;
+		height: 266px;
+		background-color: #ffffff;
+		margin-left: 14px;
+		padding-top: 34px;
+		float: left;
+		position: relative;
+		overflow: hidden;
+	}
+	.zhineng_item1{
+		margin-bottom: 14px;
+	}
+	.zhineng_item2{
+		padding-top: 0px;
+		background-color: #f5f5f5;
+	}
+	.zhineng_item img{
+		width: 150px;
+		height: 156px;
+		display: block;
+		margin: 0 auto;
+	}
+	.zhineng_item a{
+		display: block;
+		color:#333333;
+		font-size: 14px;
+		margin-top: 18px;
+		text-align: center;
+	}
+	.zhineng_item p{
+		font-size: 12px;
+		color:#b0b0b0;
+		text-align: center;
+	}
+	.zhineng_item h1{
+		font-size: 14px;
+		color: #ff6700;
+		margin-top: 10px;
+		text-align: center;
+		font-weight: normal;
+	}
+	.zhineng_itop{
+		width: 234px;
+		height: 143px;
+		background-color: #fff;
+		float: right;
+	}
+	.zhineng_genduo{
+		color:#333333;
+		font-size: 18px;
+		text-align: left;
+	}
+	.zhineng_ileft h3{
+		font-size: 14px;
+		color: #ff6700;
+		margin-top: 15px;
+		font-weight: normal;
+		float: left;
+		display: block;
+	}
+	.zhineng_ileft h2{
+		font-size: 12px;
+		color: #757575;
+		margin-top: 10px;
+		font-weight: normal;
+		text-align: left;
+	}
+	.zhineng_ileft{
+		width: 94px;
+		height: 143px;
+		margin-left: 30px;
+		float: left;
+		margin-top: 45px;
+	}
+	.zhineng_itop img{
+		margin-top: 31.5px;
+		width: 80px;
+		height: 80px;
+		float: left;
+	}
+	.zhineng_iright{
+		color:#333333;
+		font-size: 14px;
+		text-align: left;
+		float: left;
+	}
+	.zhineng_tan{
+		width: 100%;
+		height: 80px;
+		background-color: #ff6700;
+		position: absolute;
+		left: 0;
+		bottom: -80px;
+		transition: bottom 1s linear,opacity 1s linear;
+		opacity: 0;
+		text-align: center;
+		line-height: 80px;
+		color: #fff;
+		font-size: 14px;
+	}
+	.zhineng_zhe{
+		width: 64px;
+		height: 20px;
+		position: absolute;
+		left: 85px;
+		top: 0;
+		background-color: #e53935;
+		font-size: 12px;
+		text-align: center;
+		line-height: 20px;
+		color: #fff;
+	}
+	.dapei{
+		margin-top: 22px;
+	}
+	.dapei_right{
+		float: right;
+	}
+	.dapei_right span{
+		float: left;
+		margin-left: 32px;
+		margin-top: 22px;
+		font-size: 14px;
+	}
+	.dapei_remen{
+		color: #ff6700;
+		border-bottom: 2px solid #ff6700;
+		padding-bottom: 2px;
+	}
+	.dapei_bottom_left{
+		width: 234px;
+		height: 614px;
+		float: left;
+	}
+	.dapei_bottom_right{
+		width: 992px;
+		height: 614px;
+		float: left;
+	}
+	.dapei_top{
+		z-index: 10;
+	}
+	.dapei_item{
+		width: 234px;
+		height: 300px;
+		margin-left: 0;
+		padding-top: 0;
+	}
+	.dapei_item img{
+		width: 234px;
+		height: 300px;
+	}
+	.dapei_item1 h1{
+		margin-top: 0;
+	}
+	.dapei_item1 p{
+		margin-top: 10px;
+	}
+	.dapei_last{
+		width: 234px;
+		height: 300px;
+		float: left;
+		margin-left: 14px;
+	}
+	.dingwei{
+		position: absolute;
+		top:0;
+		left: 234px;
+	}
+	.neirong{
+		height: 478px;
+	}
+	.content_bottom{
+		width: 1226px;
+		height: 420px;
+	}
+	.content_item{
+		width: 296px;
+		height: 374px;
+		border-top: 1px solid #ffac13;
+		padding-top: 45px;
+		background-color: #fff;
+		position: relative;
+		float: left;
+		color: #ffac13;
+	}
+	.content_marginleft{
+		margin-left: 14px;
+	}
+	.content_border1{
+		border-color: #83c44e;
+		color: #83c44e;
+	}
+	.content_border2{
+		border-color: #e53935;
+		color: #e53935;
+	}
+	.content_border3{
+		border-color: #2196f3;
+		color: #2196f3;
+	}
+	.content_title{
+		text-align: center;
+		margin: 0 10px 18px;
+		font-size: 16px;
+		font-weight: 400;
+	}
+	.content_item_bottom{
+		width: 296px;
+		height: 335px;
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		overflow: hidden;
+	}
+	.content_item1{
+		width: 888px;
+		height: 335px;
+		transition: all 0.5s;
+	}
+	.content_item2{
+		width: 1184px;
+	}
+	.content_con{
+		width: 296px;
+		height: 335px;
+		float: left;
+	}
+	.content_name{
+		color: #333;
+		margin: 0 20px 5px;
+		font-size: 20px;
+		text-align: center;
+		font-weight: 400;
+	}
+	.content_text{
+		height: 40px;
+		font-size: 12px;
+		line-height: 20px;
+		text-align: center;
+		color: #b0b0b0;
+		margin: 0 48px 10px; 
+	}
+	.content_price{
+		color: #333;
+		height: 21px;
+		font-size: 14px;
+		text-align: center;
+		margin: 0 10px 15px;
+	}
+	.content_img{
+		width: 216px;
+		height: 154px;
+		margin: 0 auto;
+	}
+	.content_img img{
+		width: 216px;
+		height: 154px;
+	}
+	.content_dian{
+		width: 296px;
+		height: 30px;
+		text-align: center;
+		position: absolute;
+		left: 0;
+		bottom: 15px;
+		user-select:none;
+	}
+	.content_dian_item{
+		display: inline-block;
+		width: 6px;
+		height: 6px;
+		margin: 10px 2px;
+		border: 2px solid #fff;
+		background-color: #b0b0b0;
+		border-radius: 50%;
+		transition: all 0.5s;
+	}
+	.content_active{
+		border-color: #ff6700;
+		background-color: transparent!important;
+	}
+	.content_prev{
+		width: 20px;
+		height: 24px;
+		text-align: center;
+		line-height: 24px;
+		padding: 12px 0;
+		font-size: 18px;
+		position: absolute;
+		left: 0;
+		top:167px;
+		cursor: pointer;
+		font-weight: 900;
+		color: #fff;
+		background-color: #b0b0b0;
+		opacity: 0;
+		transition: all 0.5s;
+		user-select:none;
+	}
+	.content_next{
+		width: 20px;
+		height: 24px;
+		text-align: center;
+		line-height: 24px;
+		padding: 12px 0;
+		font-size: 18px;
+		font-weight: 900;
+		color: #fff;
+		position: absolute;
+		right: 0;
+		top:167px;
+		cursor: pointer;
+		background-color: #b0b0b0;
+		opacity: 0;
+		transition: all 0.5s;
+		user-select:none;
+	}
+	.content_item:hover .content_prev,.content_item:hover .content_next{
+		opacity: 0.3;
+	}
+	.content_item .content_prev:hover,.content_item .content_next:hover{
+		opacity: 1;
+	}
+	.content_dian_item:hover{
+		background-color: #ff6700;
+		cursor: pointer;
+	}
+</style>
+<script src="jQuery.js"></script>
+<body>
+	<main class="nav">
+		<div class="nav_text">
+			<span>小米手机<div class="nav_drop">1</div></span>
+			<span>红米<div class="nav_drop">2</div></span>
+			<span>平板·笔记本<div class="nav_drop">3</div></span>
+			<span>电视<div class="nav_drop">4</div></span>
+			<span>盒子·影音<div class="nav_drop">5</div></span>
+			<span>路由器<div class="nav_drop">6</div></span>
+			<span>智能硬件<div class="nav_drop">7</div></span>
+		</div>
+	</main>
+
+	<div id="banner">
+		<div class="banner_img">
+			<img class="banner_img1" src="image/banner1.jpg" alt="">
+			<img src="image/banner2.jpg" alt="">
+			<img src="image/banner3.jpg" alt="">
+			<img src="image/banner4.jpg" alt="">
+			<img src="image/banner5.jpg" alt="">
+		</div>
+		<div class="lunbo">
+			<div class="lunbo_con lunbo_this"></div>
+			<div class="lunbo_con"></div>
+			<div class="lunbo_con"></div>
+			<div class="lunbo_con"></div>
+			<div class="lunbo_con"></div>
+		</div>
+		<ul class="banner_nav">
+			<li>
+				<span class="banner_title">手机 电话卡</span>
+				<span class="banner_jiantou">&gt;</span>
+				<div class="banner_nav_con">1</div>
+			</li>
+
+			<li>
+				<span class="banner_title">电视 盒子</span>
+				<span class="banner_jiantou">&gt;</span>
+				<div class="banner_nav_con">2</div>
+			</li>
+
+			<li>
+				<span class="banner_title">笔记本</span>
+				<span class="banner_jiantou">&gt;</span>
+				<div class="banner_nav_con">3</div>
+			</li>
+
+			<li>
+				<span class="banner_title">智能 家电</span>
+				<span class="banner_jiantou">&gt;</span>
+				<div class="banner_nav_con">4</div>
+			</li>
+
+			<li>
+				<span class="banner_title">健康 家居</span>
+				<span class="banner_jiantou">&gt;</span>
+				<div class="banner_nav_con">5</div>
+			</li>
+
+			<li>
+				<span class="banner_title">出行 儿童</span>
+				<span class="banner_jiantou">&gt;</span>
+				<div class="banner_nav_con">6</div>
+			</li>
+
+			<li>
+				<span class="banner_title">路由器 手机配件</span>
+				<span class="banner_jiantou">&gt;</span>
+				<div class="banner_nav_con">7</div>
+			</li>
+
+			<li>
+				<span class="banner_title">移动电源 插线板</span>
+				<span class="banner_jiantou">&gt;</span>
+				<div class="banner_nav_con">8</div>
+			</li>
+
+			<li>
+				<span class="banner_title">耳机 音箱</span>
+				<span class="banner_jiantou">&gt;</span>
+				<div class="banner_nav_con">9</div>
+			</li>
+
+			<li>
+				<span class="banner_title">生活 米兔</span>
+				<span class="banner_jiantou">&gt;</span>
+				<div class="banner_nav_con">10</div>
+			</li>
+		</ul>
+		<div class="banner_btn banner_btn1">&lt;</div>
+		<div class="banner_btn banner_btn2">&gt;</div>
+	</div>
+
+	<section class="star">
+		<div class="star_top">
+			<h1>小米明星单品</h1>
+			<div class="star_btn">
+				<div class="star_btn1 ">&lt;</div>
+				<div class="star_btn2 disable">&gt;</div>
+			</div>
+		</div>
+		<div class="star_buttom">
+			<div class="star_item">
+				<img src="image/shohuan.png" alt="">
+				<h1>小米手环2</h1>
+				<h2>OLED 显示屏幕，升级计步算法</h2>
+				<h3>149元</h3>
+			</div>
+			<div class="star_item_con">
+				<div class="star_item_right">
+					<div class="star_item star_item2">
+						<img src="image/dianbao.jpg" alt="">
+						<h1>小米净水器 厨下式</h1>
+						<h2>直出纯净水，隐藏式安装</h2>
+						<h3>599元</h3>
+					</div>
+
+					<div class="star_item star_item3">
+						<img src="image/erji.png" alt="">
+						<h1>小米铁圈耳机Pro</h1>
+						<h2>独创双动圈+动铁，三单元发声</h2>
+						<h3>129元</h3>
+					</div>
+
+					<div class="star_item star_item4">
+						<img src="image/saodi.png" alt="">
+						<h1>米家扫地机器人</h1>
+						<h2>爱干净，高效完成清扫任务</h2>
+						<h3>1699元</h3>
+					</div>
+
+					<div class="star_item star_item5">
+						<img src="image/luyou.png" alt="">
+						<h1>小米路由器3</h1>
+						<h2>更快更强，不止四天线</h2>
+						<h3>119元</h3>
+					</div>
+
+					<div class="star_item star_item2">
+						<img src="image/dianbao.jpg" alt="">
+						<h1>小米净水器 厨下式</h1>
+						<h2>直出纯净水，隐藏式安装</h2>
+						<h3>599元</h3>
+					</div>
+
+					<div class="star_item star_item3">
+						<img src="image/erji.png" alt="">
+						<h1>小米铁圈耳机Pro</h1>
+						<h2>独创双动圈+动铁，三单元发声</h2>
+						<h3>129元</h3>
+					</div>
+
+					<div class="star_item star_item4">
+						<img src="image/saodi.png" alt="">
+						<h1>米家扫地机器人</h1>
+						<h2>爱干净，高效完成清扫任务</h2>
+						<h3>1699元</h3>
+					</div>
+
+					<div class="star_item star_item5">
+						<img src="image/luyou.png" alt="">
+						<h1>小米路由器3</h1>
+						<h2>更快更强，不止四天线</h2>
+						<h3>119元</h3>
+					</div>
+
+					<div class="star_item star_item2">
+						<img src="image/dianbao.jpg" alt="">
+						<h1>小米净水器 厨下式</h1>
+						<h2>直出纯净水，隐藏式安装</h2>
+						<h3>599元</h3>
+					</div>
+
+					<div class="star_item star_item3">
+						<img src="image/erji.png" alt="">
+						<h1>小米铁圈耳机Pro</h1>
+						<h2>独创双动圈+动铁，三单元发声</h2>
+						<h3>129元</h3>
+					</div>
+
+					<div class="star_item star_item4">
+						<img src="image/saodi.png" alt="">
+						<h1>米家扫地机器人</h1>
+						<h2>爱干净，高效完成清扫任务</h2>
+						<h3>1699元</h3>
+					</div>
+
+					<div class="star_item star_item5">
+						<img src="image/luyou.png" alt="">
+						<h1>小米路由器3</h1>
+						<h2>更快更强，不止四天线</h2>
+						<h3>119元</h3>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- 搭配开始 -->
+	<section class="zhineng dapei">
+		<div class="star_top">
+			<h1>搭配</h1>
+			<div class="dapei_right">
+				<span class="dapei_remen">热门</span>
+				<span>耳机音响</span>
+				<span>电源</span>
+				<span>电池存储卡</span>
+			</div>
+		</div>
+
+		<div class="zhineng_buttom">
+			<div class="dapei_bottom_left">
+				<div class="zhineng_item zhineng_item1 dapei_item">
+					<img src="image/dapei1.jpg" alt="">
+				</div>
+				<div class="zhineng_item dapei_item">
+					<img src="image/dapei6.jpg" alt="">
+				</div>
+			</div>
+
+			<div class="dapei_bottom_right dapei_top">
+				<div class="zhineng_item zhineng_item1 dapei_item1">
+					<img src="image/dapei2.jpg" alt="">
+					<a href="">新小米移动电源2（10000mAh）</a>
+					<h1>79元</h1>
+					<p>2824人评价</p>
+				</div>
+
+				<div class="zhineng_item zhineng_item1 dapei_item1">
+					<img src="image/dapei3.jpg" alt="">
+					<a href="">小米移动电源2C 20000mAh</a>
+					<h1>129元</h1>
+					<p>1.4万人评价</p>
+				</div>
+
+				<div class="zhineng_item zhineng_item1 dapei_item1">
+					<img src="image/dapei4.jpg" alt="">
+					<a href="">小米移动电源10000mAh高配版</a>
+					<h1>149元</h1>
+					<p>2万人评价</p>
+				</div>
+
+				<div class="zhineng_item zhineng_item1 dapei_item1">
+					<img src="image/dapei5.jpg" alt="">
+					<a href="">小米移动电源2（5000mAh版）</a>
+					<h1>49元</h1>
+					<p>196人评价</p>
+				</div>
+
+				<div class="zhineng_item dapei_item1">
+					<img src="image/dapei7.jpg" alt="">
+					<a href="">ZMI双模智能充电器+充电宝</a>
+					<h1>109元</h1>
+					<p>110人评价</p>
+				</div>
+
+				<div class="zhineng_item dapei_item1">
+					<img src="image/dapei8.jpg" alt="">
+					<a href="">小米移动电源5000mAh</a>
+					<h1>49元</h1>
+					<p>10.9万人评价</p>
+				</div>
+
+				<div class="zhineng_item dapei_item1">
+					<img src="image/dapei9.jpg" alt="">
+					<a href="">小米活塞耳机 清新版</a>
+					<h1>29元</h1>
+					<p>9万人评价</p>
+				</div>
+
+				<div class="dapei_last">
+					<div class="zhineng_itop zhineng_item1">
+						<div class="zhineng_ileft">
+							<a href="" class="zhineng_iright">彩虹7号电池…</a>
+							<h3>9.9元</h3>
+						</div>
+						<img src="image/dapei10.jpg" alt="">	
+					</div>
+					<div class="zhineng_itop">
+						<div class="zhineng_ileft">
+							<a href="" class="zhineng_genduo">浏览更多</a>
+							<br>
+							<h2>热门</h2>
+						</div>
+						<img src="image/gengduo.png" alt="">
+					</div>
+				</div>
+			</div>
+
+			<div class="dapei_bottom_right dingwei">
+				<div class="zhineng_item zhineng_item1 dapei_item1">
+					<img src="image/dapei3.jpg" alt="">
+					<a href="">新小米移动电源2（10000mAh）</a>
+					<h1>79元</h1>
+					<p>2824人评价</p>
+				</div>
+
+				<div class="zhineng_item zhineng_item1 dapei_item1">
+					<img src="image/dapei3.jpg" alt="">
+					<a href="">小米移动电源2C 20000mAh</a>
+					<h1>129元</h1>
+					<p>1.4万人评价</p>
+				</div>
+
+				<div class="zhineng_item zhineng_item1 dapei_item1">
+					<img src="image/dapei4.jpg" alt="">
+					<a href="">小米移动电源10000mAh高配版</a>
+					<h1>149元</h1>
+					<p>2万人评价</p>
+				</div>
+
+				<div class="zhineng_item zhineng_item1 dapei_item1">
+					<img src="image/dapei5.jpg" alt="">
+					<a href="">小米移动电源2（5000mAh版）</a>
+					<h1>49元</h1>
+					<p>196人评价</p>
+				</div>
+
+				<div class="zhineng_item dapei_item1">
+					<img src="image/dapei7.jpg" alt="">
+					<a href="">ZMI双模智能充电器+充电宝</a>
+					<h1>109元</h1>
+					<p>110人评价</p>
+				</div>
+
+				<div class="zhineng_item dapei_item1">
+					<img src="image/dapei8.jpg" alt="">
+					<a href="">小米移动电源5000mAh</a>
+					<h1>49元</h1>
+					<p>10.9万人评价</p>
+				</div>
+
+				<div class="zhineng_item dapei_item1">
+					<img src="image/dapei9.jpg" alt="">
+					<a href="">小米活塞耳机 清新版</a>
+					<h1>29元</h1>
+					<p>9万人评价</p>
+				</div>
+
+				<div class="dapei_last">
+					<div class="zhineng_itop zhineng_item1">
+						<div class="zhineng_ileft">
+							<a href="" class="zhineng_iright">彩虹7号电池…</a>
+							<h3>9.9元</h3>
+						</div>
+						<img src="image/dapei10.jpg" alt="">	
+					</div>
+					<div class="zhineng_itop">
+						<div class="zhineng_ileft">
+							<a href="" class="zhineng_genduo">浏览更多</a>
+							<br>
+							<h2>热门</h2>
+						</div>
+						<img src="image/gengduo.png" alt="">
+					</div>
+				</div>
+			</div>
+
+			<div class="dapei_bottom_right dingwei">
+				<div class="zhineng_item zhineng_item1 dapei_item1">
+					<img src="image/dapei4.jpg" alt="">
+					<a href="">新小米移动电源2（10000mAh）</a>
+					<h1>79元</h1>
+					<p>2824人评价</p>
+				</div>
+
+				<div class="zhineng_item zhineng_item1 dapei_item1">
+					<img src="image/dapei3.jpg" alt="">
+					<a href="">小米移动电源2C 20000mAh</a>
+					<h1>129元</h1>
+					<p>1.4万人评价</p>
+				</div>
+
+				<div class="zhineng_item zhineng_item1 dapei_item1">
+					<img src="image/dapei4.jpg" alt="">
+					<a href="">小米移动电源10000mAh高配版</a>
+					<h1>149元</h1>
+					<p>2万人评价</p>
+				</div>
+
+				<div class="zhineng_item zhineng_item1 dapei_item1">
+					<img src="image/dapei5.jpg" alt="">
+					<a href="">小米移动电源2（5000mAh版）</a>
+					<h1>49元</h1>
+					<p>196人评价</p>
+				</div>
+
+				<div class="zhineng_item dapei_item1">
+					<img src="image/dapei7.jpg" alt="">
+					<a href="">ZMI双模智能充电器+充电宝</a>
+					<h1>109元</h1>
+					<p>110人评价</p>
+				</div>
+
+				<div class="zhineng_item dapei_item1">
+					<img src="image/dapei8.jpg" alt="">
+					<a href="">小米移动电源5000mAh</a>
+					<h1>49元</h1>
+					<p>10.9万人评价</p>
+				</div>
+
+				<div class="zhineng_item dapei_item1">
+					<img src="image/dapei9.jpg" alt="">
+					<a href="">小米活塞耳机 清新版</a>
+					<h1>29元</h1>
+					<p>9万人评价</p>
+				</div>
+
+				<div class="dapei_last">
+					<div class="zhineng_itop zhineng_item1">
+						<div class="zhineng_ileft">
+							<a href="" class="zhineng_iright">彩虹7号电池…</a>
+							<h3>9.9元</h3>
+						</div>
+						<img src="image/dapei10.jpg" alt="">	
+					</div>
+					<div class="zhineng_itop">
+						<div class="zhineng_ileft">
+							<a href="" class="zhineng_genduo">浏览更多</a>
+							<br>
+							<h2>热门</h2>
+						</div>
+						<img src="image/gengduo.png" alt="">
+					</div>
+				</div>
+			</div>
+
+			<div class="dapei_bottom_right dingwei">
+				<div class="zhineng_item zhineng_item1 dapei_item1">
+					<img src="image/dapei5.jpg" alt="">
+					<a href="">新小米移动电源2（10000mAh）</a>
+					<h1>79元</h1>
+					<p>2824人评价</p>
+				</div>
+
+				<div class="zhineng_item zhineng_item1 dapei_item1">
+					<img src="image/dapei3.jpg" alt="">
+					<a href="">小米移动电源2C 20000mAh</a>
+					<h1>129元</h1>
+					<p>1.4万人评价</p>
+				</div>
+
+				<div class="zhineng_item zhineng_item1 dapei_item1">
+					<img src="image/dapei4.jpg" alt="">
+					<a href="">小米移动电源10000mAh高配版</a>
+					<h1>149元</h1>
+					<p>2万人评价</p>
+				</div>
+
+				<div class="zhineng_item zhineng_item1 dapei_item1">
+					<img src="image/dapei5.jpg" alt="">
+					<a href="">小米移动电源2（5000mAh版）</a>
+					<h1>49元</h1>
+					<p>196人评价</p>
+				</div>
+
+				<div class="zhineng_item dapei_item1">
+					<img src="image/dapei7.jpg" alt="">
+					<a href="">ZMI双模智能充电器+充电宝</a>
+					<h1>109元</h1>
+					<p>110人评价</p>
+				</div>
+
+				<div class="zhineng_item dapei_item1">
+					<img src="image/dapei8.jpg" alt="">
+					<a href="">小米移动电源5000mAh</a>
+					<h1>49元</h1>
+					<p>10.9万人评价</p>
+				</div>
+
+				<div class="zhineng_item dapei_item1">
+					<img src="image/dapei9.jpg" alt="">
+					<a href="">小米活塞耳机 清新版</a>
+					<h1>29元</h1>
+					<p>9万人评价</p>
+				</div>
+
+				<div class="dapei_last">
+					<div class="zhineng_itop zhineng_item1">
+						<div class="zhineng_ileft">
+							<a href="" class="zhineng_iright">彩虹7号电池…</a>
+							<h3>9.9元</h3>
+						</div>
+						<img src="image/dapei10.jpg" alt="">	
+					</div>
+					<div class="zhineng_itop">
+						<div class="zhineng_ileft">
+							<a href="" class="zhineng_genduo">浏览更多</a>
+							<br>
+							<h2>热门</h2>
+						</div>
+						<img src="image/gengduo.png" alt="">
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</section>
+	<!-- 搭配结束 -->
+
+	<section class="zhineng dapei neirong">
+		<div class="star_top">
+			<h1>内容</h1>
+		</div>
+
+		<div class="content_bottom">
+			<div class="content_item">
+				<h2 class="content_title">图书</h2>
+
+				<div class="content_item_bottom">
+					<div class="content_item1">
+						<div class="content_con">
+							<h4 class="content_name">哈利·波特与被诅咒的孩子</h4>
+							<p class="content_text">“哈利·波特”第八个故事中文版震撼来袭！特别彩排版剧本！</p>
+							<p class="content_price">29.37元</p>
+							<div class="content_img">
+								<img src="image/content1-1.png" alt="">
+							</div>
+						</div>
+
+						<div class="content_con">
+							<h4 class="content_name">哈利·波特与被诅咒的孩子</h4>
+							<p class="content_text">“哈利·波特”第八个故事中文版震撼来袭！特别彩排版剧本！</p>
+							<p class="content_price">29.37元</p>
+							<div class="content_img">
+								<img src="image/content1-2.png" alt="">
+							</div>
+						</div>
+
+						<div class="content_con">
+							<h4 class="content_name">哈利·波特与被诅咒的孩子</h4>
+							<p class="content_text">“哈利·波特”第八个故事中文版震撼来袭！特别彩排版剧本！</p>
+							<p class="content_price">29.37元</p>
+							<div class="content_img">
+								<img src="image/content1-3.jpg" alt="">
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="content_dian">
+					<div class="content_dian_item content_active"></div>
+					<div class="content_dian_item"></div>
+					<div class="content_dian_item"></div>
+				</div>
+
+				<div class="content_prev">&lt;</div>
+				<div class="content_next">&gt;</div>
+			</div>
+
+			<div class="content_item content_marginleft content_border1">
+				<h2 class="content_title">MIUI 主题</h2>
+
+				<div class="content_item_bottom">
+					<div class="content_item1 content_item2">
+						<div class="content_con">
+							<h4 class="content_name">米奇-有你有我</h4>
+							<p class="content_text">米奇来啦！小米主题和迪士尼首度合作，打造精品迪士尼系列主题</p>
+							<p class="content_price">12米币</p>
+							<div class="content_img">
+								<img src="image/content2-1.png" alt="">
+							</div>
+						</div>
+
+						<div class="content_con">
+							<h4 class="content_name">哈利·波特与被诅咒的孩子</h4>
+							<p class="content_text">“哈利·波特”第八个故事中文版震撼来袭！特别彩排版剧本！</p>
+							<p class="content_price">29.37元</p>
+							<div class="content_img">
+								<img src="image/content2-2.png" alt="">
+							</div>
+						</div>
+
+						<div class="content_con">
+							<h4 class="content_name">哈利·波特与被诅咒的孩子</h4>
+							<p class="content_text">“哈利·波特”第八个故事中文版震撼来袭！特别彩排版剧本！</p>
+							<p class="content_price">29.37元</p>
+							<div class="content_img">
+								<img src="image/content2-3.png" alt="">
+							</div>
+						</div>
+
+						<div class="content_con">
+							<h4 class="content_name">米奇-有你有我</h4>
+							<p class="content_text">米奇来啦！小米主题和迪士尼首度合作，打造精品迪士尼系列主题</p>
+							<p class="content_price">12米币</p>
+							<div class="content_img">
+								<img src="image/content2-4.jpg" alt="">
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="content_dian">
+					<div class="content_dian_item content_active"></div>
+					<div class="content_dian_item"></div>
+					<div class="content_dian_item"></div>
+					<div class="content_dian_item"></div>
+				</div>
+
+				<div class="content_prev">&lt;</div>
+				<div class="content_next">&gt;</div>
+			</div>
+
+			<div class="content_item content_marginleft content_border2">
+				<h2 class="content_title">游戏</h2>
+
+				<div class="content_item_bottom">
+					<div class="content_item1 content_item2">
+						<div class="content_con">
+							<h4 class="content_name">剑侠世界2</h4>
+							<p class="content_text">潮流武侠，炫动江湖！</p>
+							<p class="content_price"></p>
+							<div class="content_img">
+								<img src="image/content3-1.png" alt="">
+							</div>
+						</div>
+
+						<div class="content_con">
+							<h4 class="content_name">哈利·波特与被诅咒的孩子</h4>
+							<p class="content_text">“哈利·波特”第八个故事中文版震撼来袭！特别彩排版剧本！</p>
+							<p class="content_price">29.37元</p>
+							<div class="content_img">
+								<img src="image/content3-2.png" alt="">
+							</div>
+						</div>
+
+						<div class="content_con">
+							<h4 class="content_name">哈利·波特与被诅咒的孩子</h4>
+							<p class="content_text">“哈利·波特”第八个故事中文版震撼来袭！特别彩排版剧本！</p>
+							<p class="content_price">29.37元</p>
+							<div class="content_img">
+								<img src="image/content3-3.png" alt="">
+							</div>
+						</div>
+
+						<div class="content_con">
+							<h4 class="content_name">剑侠世界2</h4>
+							<p class="content_text">潮流武侠，炫动江湖！</p>
+							<p class="content_price"></p>
+							<div class="content_img">
+								<img src="image/content3-4.jpg" alt="">
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="content_dian">
+					<div class="content_dian_item content_active"></div>
+					<div class="content_dian_item"></div>
+					<div class="content_dian_item"></div>
+					<div class="content_dian_item"></div>
+				</div>
+
+				<div class="content_prev">&lt;</div>
+				<div class="content_next">&gt;</div>
+			</div>
+
+			<div class="content_item content_marginleft content_border3">
+				<h2 class="content_title">应用</h2>
+
+				<div class="content_item_bottom">
+					<div class="content_item1 content_item2">
+						<div class="content_con">
+							<h4 class="content_name">2017金米奖</h4>
+							<p class="content_text">最优秀的应用和游戏</p>
+							<p class="content_price"></p>
+							<div class="content_img">
+								<img src="image/content4-1.png" alt="">
+							</div>
+						</div>
+
+						<div class="content_con">
+							<h4 class="content_name">哈利·波特与被诅咒的孩子</h4>
+							<p class="content_text">“哈利·波特”第八个故事中文版震撼来袭！特别彩排版剧本！</p>
+							<p class="content_price">29.37元</p>
+							<div class="content_img">
+								<img src="image/content4-2.png" alt="">
+							</div>
+						</div>
+
+						<div class="content_con">
+							<h4 class="content_name">哈利·波特与被诅咒的孩子</h4>
+							<p class="content_text">“哈利·波特”第八个故事中文版震撼来袭！特别彩排版剧本！</p>
+							<p class="content_price">29.37元</p>
+							<div class="content_img">
+								<img src="image/content4-3.png" alt="">
+							</div>
+						</div>
+
+						<div class="content_con">
+							<h4 class="content_name">2017金米奖</h4>
+							<p class="content_text">最优秀的应用和游戏</p>
+							<p class="content_price"></p>
+							<div class="content_img">
+								<img src="image/content4-4.jpg" alt="">
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="content_dian">
+					<div class="content_dian_item content_active"></div>
+					<div class="content_dian_item"></div>
+					<div class="content_dian_item"></div>
+					<div class="content_dian_item"></div>
+				</div>
+
+				<div class="content_prev">&lt;</div>
+				<div class="content_next">&gt;</div>
+			</div>
+		</div>
+	</section>
+<script>
+	//导航栏效果
+	{
+		$(".nav_text span").each(function(index,ele){
+			$(this).mouseenter(function(){
+				$(".nav_drop").eq(index).show();
+				$(".nav_text span").removeClass("nav_active");
+				$(this).addClass("nav_active");
+			})
+			$(this).mouseleave(function(){
+				$(".nav_drop").hide();
+				$(".nav_text span").removeClass("nav_active");
+			})
+		})
+	}
+
+	//左导航效果
+	{
+		$(".banner_nav li").each(function(index,ele){
+			$(this).mouseenter(function(){
+				$(".banner_nav_con").eq(index).show();
+			})
+			$(this).mouseleave(function(){
+				$(".banner_nav_con").hide();
+			})
+		})
+	}
+
+	//banner
+	{
+		let imgs=$(".banner_img img");
+		let pagers=$(".lunbo_con");
+		let next=$(".banner_btn2");
+		let prev=$(".banner_btn1");
+		let bannner=$("#banner");
+		pagers.each(function(index,ele){
+			$(this).click(function move(){
+				imgs.removeClass("banner_img1").eq(index).addClass("banner_img1");
+				pagers.removeClass("lunbo_this").eq(index).addClass("lunbo_this");
+			})
+		})
+		let n=0;
+		function move(){
+			n++;
+			if(n==imgs.length){
+	 			n=0;
+	 		}
+	 		if(n<0){
+	 			n=imgs.length-1;
+	 		}
+			imgs.removeClass("banner_img1").eq(n).addClass("banner_img1");
+			pagers.removeClass("lunbo_this").eq(n).addClass("lunbo_this");
+		}
+		let flag=true;
+		next.click(function(){
+			if(flag){
+	 			// flag=false;
+	 			move();
+	 		}
+		})
+		prev.click(function(){
+			if(flag){
+				// flag=false;
+				n-=2;
+				move();
+			}
+	 	})
+	}
+
+	//明星单品效果
+	{
+		let next=$(".star_btn2");
+		let prev=$(".star_btn1");
+		let inner=$(".star_item_right");
+		let n=0;
+		next.click(function(){
+			n++;
+			prev.addClass("disable");
+			if(n===2){
+				next.removeClass("disable");
+			}
+			if(n===3){
+				n=2;
+				return;
+			}
+			inner.css("marginLeft",-992*n);
+		})
+		prev.click(function(){
+			n--;
+			next.addClass("disable");
+			if(n===0){
+				prev.removeClass("disable");
+			}
+			if(n===-1){
+				n=0;
+				return;
+			}
+			inner.css("marginLeft",-992*n);
+		})
+	}
+
+	//搭配效果
+	{
+		
+		let types=$(".dapei_right span");
+		let cons=$(".dapei_bottom_right");
+		types.each(function(index,ele){
+			$(this).mouseenter(function(){
+				types.removeClass("dapei_remen").eq(index).addClass("dapei_remen");
+				cons.removeClass("dapei_top").eq(index).addClass("dapei_top");
+			})
+		})
+	}
+// {
+// 	function wheel(parent){
+// 		let prev=parent.querySelector(".content_prev");
+// 		let next=parent.querySelector(".content_next");
+// 		let inner=parent.querySelector(".content_item1");
+// 		let contents=parent.querySelectorAll(".content_con");
+// 		let pagers=parent.querySelectorAll(".content_dian_item");
+// 		console.log(inner);
+
+// 		let n=0;
+// 		let l=contents.length;
+// 		let obj=pagers[0];
+// 		next.onclick=function(){
+// 			n++;
+// 			if(n==l){
+// 				n=l-1;
+// 				return;
+// 			}
+// 			inner.style.marginLeft=-296*n+"px";
+// 			pagers[n].classList.add("content_active");
+// 			pagers[n-1].classList.remove("content_active");
+// 			obj=pagers[n];
+// 		}
+// 		prev.onclick=function(){
+// 			n--;
+// 			if(n<0){
+// 				n=0;
+// 				return;
+// 			}
+// 			inner.style.marginLeft=-296*n+"px";
+// 			pagers[n].classList.add("content_active");
+// 			pagers[n+1].classList.remove("content_active");
+// 			obj=pagers[n];
+// 		}
+		
+// 		
+// 	}
+// 	let items=document.querySelectorAll(".content_item");
+// 	console.log(items);
+// 	items.forEach(function(ele,index){
+// 		wheel(ele);
+// 	});
+	
+// }
+	//内容
+	{
+		let items=$(".content_item");
+		items.each(function(index,ele){
+			let prev=$(".content_prev");
+			let next=$(".content_next");
+			let inner=$(".content_item1");
+			let contents=$(".content_con");
+			let pagers=$(".content_dian_item");
+
+			let n=0;
+			next.eq(index).click(function(){
+				n++;
+				if(n==contents.length){
+					n=contents.length-1;
+					return;
+				}
+				inner.eq(index).css("marginLeft",-296*n);
+				pagers.eq(n).addClass("content_active");
+				pagers.eq(n-1).removeClass("content_active");
+			})
+			prev.eq(index).click(function(){
+				n--;
+				if(n<0){
+					n=0;
+					return;
+				}
+				inner.eq(index).css("marginLeft",-296*n);
+				pagers.eq(n).addClass("content_active");
+				pagers.eq(n+1).removeClass("content_active");
+			})
+			pagers.each(function(index,ele){
+				$(this).click(function(){
+					pagers.removeClass("content_active");
+					$(this).addClass("content_active");
+					n=index;
+					inner.css("marginLeft",-296*n);
+				})
+			})
+		})
+	}
+</script>
+</body>
+
+</html>
