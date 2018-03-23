@@ -1,0 +1,2692 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jquery</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        #banner {
+            width: 1226px;
+            height: 460px;
+            /*background-color: red;*/
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .imgbox {
+            width: 1226px;
+            height: 460px;
+            position: relative;
+        }
+
+        .imgbox li {
+            width: 1226px;
+            height: 460px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            z-index: 999;
+            transition: all 1s linear;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .imgbox li.active {
+            z-index: 9;
+            opacity: 1;
+        }
+
+        .pagerbox {
+            position: absolute;
+            right: 30px;
+            bottom: 30px;
+            width: 150px;
+            height: 10px;
+            z-index: 99;
+            cursor: pointer;
+        }
+
+        .pagerbox li {
+            margin: 0 10px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            float: left;
+            background: #ccc;
+            transition: all 1s;
+            opacity: 0.5;
+            cursor: pointer;
+        }
+
+        .pagerbox li.active {
+            background: green;
+
+        }
+
+        .pagerbox li:hover {
+            background: green;
+        }
+
+        .banner_daohang {
+            width: 234px;
+            height: 420px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            padding: 20px 0;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: 1000;
+        }
+
+        .banner_title {
+            color: white;
+        }
+
+        .banner_daohang li {
+            width: 174px;
+            height: 42px;
+            line-height: 42px;
+            font-size: 14px;
+            color: #333;
+            padding: 0 30px;
+            cursor: pointer;
+        }
+
+        .menu {
+            width: 795px;
+            height: 400px;
+            background-color: #fff;
+            display: none;
+            z-index: 9999;
+            position: absolute;
+            left: 234px;
+            top: 0;
+        }
+
+        .menu_tuwen {
+            width: 250px;
+            height: 66px;
+            float: left;
+            margin-right: 15px;
+        }
+
+        .menu_tuwen img {
+            width: 45px;
+            height: 50px;
+            padding: 8px 10px;
+            float: left;
+        }
+
+        .menu_tuwen span {
+            font-size: 12px;
+            color: #333;
+            float: left;
+            padding-top: 12px;
+        }
+
+        .menu_wenzi1 {
+            font-weight: bold;
+        }
+
+        .banner_btn {
+            width: 41px;
+            height: 69px;
+            text-align: center;
+            line-height: 69px;
+            font-size: 50px;
+            color: #b0b0b0;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            z-index: 666;
+            cursor: pointer;
+        }
+
+        .banner_lbtn {
+            left: 234px;
+        }
+
+        .banner_rbtn {
+            right: 0;
+        }
+
+        .banner_jiantou {
+            float: right;
+            margin-right: 5px;
+            color: #fff;
+        }
+
+        .head_wenzi:hover {
+            color: #fff;
+        }
+
+        .head_car:hover {
+            background-color: #fff;
+        }
+
+        /* .head_right:hover{
+            color: #fff;
+        } */
+        .head_car:hover span {
+            color: #ff6700;
+            cursor: pointer;
+        }
+
+        .daohang_wenzi span:hover {
+            color: #ff6700;
+            cursor: pointer;
+        }
+
+        .banner_btn:hover {
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        .banner_daohang li:hover {
+            background-color: #ff6700;
+            cursor: pointer;
+        }
+
+        /* 导航开始 */
+        .daohang {
+            width: 1226px;
+            margin: 0 auto;
+        }
+
+        .daohang_top {
+            width: 1226px;
+            height: 100px;
+            margin: 0 auto;
+        }
+
+        .daohang_logo {
+            width: 55px;
+            height: 55px;
+            margin-top: 22px;
+            background-color: #FF6500;
+            float: left;
+        }
+
+        .daohang_wenzi {
+            float: left;
+            margin-left: 189px;
+        }
+
+        .daohang_wenzi_top {
+            float: left;
+        }
+
+        .daohang_wenzi span {
+            line-height: 100px;
+            background-color: #fff;
+            font-size: 15px;
+            float: left;
+            padding: 0 10px;
+            cursor: pointer;
+        }
+
+        .search {
+            border: 1px solid #E7E3E7;
+            width: 295px;
+            height: 48px;
+            float: right;
+            margin-top: 25px;
+        }
+
+        .search_left {
+            float: left;
+            width: 243px;
+            height: 48px;
+            border-right: 1px solid #E7E3E7;
+        }
+
+        .search_right {
+            float: right;
+            width: 51px;
+            height: 48px;
+            text-align: center;
+        }
+
+        .search1 {
+            background-color: #EFEFEF;
+            line-height: 48px;
+            /* float: right; */
+        }
+
+        .search_hongmi {
+            margin-left: 80px;
+        }
+
+        .search2 {
+            font-family: 'iconfont';
+            line-height: 48px;
+        }
+
+        .daohang_xiala {
+            position: absolute;
+            top:100px;
+            left:0;
+            z-index: 2000;
+            width: 100%;
+            height: 229px;
+            background: #fff;
+            border-top: 1px solid #e0e0e0;
+            overflow: hidden;
+            transition: box-shadow 0.5s;
+            box-shadow: 0 3px 4px rgba(0,0,0,0.18);
+
+            /*display:none;*/
+        }
+        .xiala_img img{
+            width: 160px;
+            height: 110px;
+            /*float: left;*/
+        }
+        .daohang_xiala p{
+            line-height: 20px;
+            color: #ff6700;
+        }
+        .title{
+            color: #333;
+            line-height: 20px;
+            text-align: center;
+            font-size: 12px;
+        }
+        .flag{
+            display: inline-block;
+            height: 18px;
+            padding: 1px 20px;
+            border: 1px solid #ff6700;
+            color: #ff6700;
+        }
+        .flags{
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            width: 100%;
+            font-size: 12px;
+            text-align: center;
+        }
+        .daohang_container{
+            width: 1226px;
+            height: 0;
+            background: red;
+        }
+        .daohang_container{
+            width: 1226px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+        .children_list{
+            font-size: 12px;
+        }
+        .children_list li{
+            position: relative;
+            width: 180px;
+            float: left;
+            padding: 35px 12px 0;
+            text-align: center;
+        }
+        .xiala_img{
+            width: 160px;
+            height: 110px;
+        }
+        /* 导航结束 */
+
+        /*单品*/
+        .star {
+            width: 1226px;
+            height: 398px;
+            margin: 0 auto;
+        }
+
+        .star_top {
+            width: 1226px;
+            height: 58px;
+        }
+
+        .star_top h1 {
+            font-size: 21px;
+            color: #333;
+            font-weight: 200;
+            line-height: 58px;
+            float: left;
+        }
+
+        .star_btn {
+            width: 69px;
+            height: 22px;
+            float: right;
+            margin-top: 17px;
+            border: 1px solid #E7E3E7;
+        }
+
+        .star_btn div {
+            width: 34px;
+            height: 22px;
+            text-align: center;
+            line-height: 22px;
+            float: left;
+            cursor: pointer;
+        }
+
+        .star_btn1 {
+            border-right: 1px solid #BDB2B5;
+        }
+
+        .star_btn2 {
+            color: #E7E3E7;
+        }
+
+        .star_bottom {
+            width: 1226px;
+            height: 340px;
+            float: left;
+        }
+
+        .star_item {
+            width: 234px;
+            height: 340px;
+            background-color: #fff;
+            border-top: 1px solid #FFAE10;
+            padding-top: 39px;
+            float: left;
+            margin-right: 14px;
+            text-align: center;
+        }
+
+        .star_item img {
+            width: 160px;
+            height: 166px;
+            margin: 0 auto;
+            display: block;
+            cursor: pointer;
+        }
+
+        .star_item1 {
+            margin-right: 0px;
+            border-top-color: green;
+            float: left;
+        }
+
+        .star_item2 {
+            margin-right: 14px;
+            border-top-color: blue;
+            float: left;
+        }
+
+        .star_item3 {
+            margin-right: 14px;
+            border-top-color: red;
+            float: left;
+        }
+
+        .star_item4 {
+            margin-right: 14px;
+            border-top-color: #00C3A5;
+            float: left;
+        }
+
+        .star_item h1 {
+            text-align: center;
+            font-size: 14px;
+            color: #212121;
+            font-weight: 200;
+            cursor: pointer;
+        }
+
+        .star_item h2 {
+            text-align: center;
+            font-size: 12px;
+            color: #b0b0b0;
+            font-weight: normal;
+            margin-top: 10px;
+        }
+
+        .star_item h3 {
+            font-size: 14px;
+            color: #ff6700;
+            margin-top: 0;
+            /* margin-top:20px;  */
+            font-weight: normal;
+            float: right;
+        }
+
+        .star_top {
+            width: 1226px;
+            height: 58px;
+            margin-top: 80px;
+        }
+
+        .star_title {
+            float: left;
+            font-size: 21px;
+            font-weight: 200;
+            line-height: 58px;
+            color: #333;
+        }
+
+        .buy_list {
+            width: 978px;
+            height: 340px;
+            overflow: hidden;
+            float: left;
+        }
+
+        .buy_inner {
+            width: 3000px;
+            height: 340px;
+            background: red;
+            transition: all 1s;
+            float: left;
+        }
+        .star_btn div.disable{
+            color: #333 ;
+        }
+        .content {
+            width: 1226px;
+            height: 400px;
+            margin: 0 auto;
+            border: 1px solid #000;
+        }
+
+        .top {
+            width: 100%;
+            height: 30px;
+        }
+
+        .top .type {
+            /*width: 100px;*/
+            float: left;
+            line-height: 30px;
+            height: 30px;
+            text-align: center;
+            margin: 0 20px;
+            transition: all 0.5s;
+            cursor: pointer;
+        }
+
+        .top .active {
+            color: orange;
+            border-bottom: 1px solid orange;
+            height: 29px;
+        }
+
+        .content .bottom {
+            width: 1226px;
+            height: 370px;
+            position: relative;
+        }
+
+        .goods_list {
+            width: 1226px;
+            height: 370px;
+            left: 0;
+            top: 0;
+            line-height: 370px;
+            text-align: center;
+            font-size: 36px;
+            position: absolute;
+            /*background: red;*/
+        }
+
+        .goods_list.active {
+            z-index: 9;
+        }
+        /*内容开始*/
+        .neirong_item {
+            width: 296px;
+            height: 380px;
+            background-color: #fff;
+            /* margin-left: 14px; */
+            margin-bottom: 14px;
+            text-align: center;
+            float: left;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .neirong_btn {
+            width: 36px;
+            background-color: rgba(0, 0, 0, 0.2);
+            height: 69px;
+            text-align: center;
+            line-height: 69px;
+            font-size: 30px;
+            color: #6F6F6F;
+            position: absolute;
+            margin: auto;
+            top: 0;
+            bottom: 0;
+            visibility: hidden;
+            z-index: 122;
+            transition: all 1s linear;
+        }
+
+        .neirong_item:hover .neirong_btn {
+            visibility: visible;
+            cursor: pointer;
+            background-color: #6F6F6F;
+            color: #fff;
+        }
+
+        .neirong_lbtn {
+            left: 0;
+        }
+
+        .neirong_rbtn {
+            right: 0;
+        }
+
+        .neirong_item h2 {
+            font-size: 20px;
+            font-weight: 400;
+            color: #000;
+        }
+
+        .neirong_item h3 {
+            color: #b0b0b0;
+            line-height: 20px;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .neirong_item h4 {
+            color: #333;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 16px;
+        }
+
+        .neirong_item1 {
+            margin-left: 0;
+        }
+
+        .neirong_item img {
+            width: 216px;
+            height: 154px;
+            margin-bottom: 60px;
+        }
+
+        .neirong_bottom {
+            width: 1240px;
+            height: 420px;
+            margin-bottom: 14px;
+            /* background-color: plum; */
+            float: left;
+        }
+
+        .neirong_title {
+            width: 276px;
+            height: 23px;
+            text-align: center;
+            /* background-color: plum; */
+            margin: 0 10px 18px;
+            color: #FFAA10;
+            font-size: 24px;
+        }
+
+        .neirong_title1 {
+            color: #84C34A;
+        }
+
+        .neirong_title2 {
+            color: #E73831;
+        }
+
+        .neirong_title3 {
+            color: #219AF7;
+        }
+        .inner{
+            float: left;
+            width: 2000px;
+            height: 380px;
+        }
+        .neirong_content{
+            width: 1000px;
+            height: 380px;
+            transition: all 2s;
+
+        }
+
+        .lunbo_box{
+            position: absolute;
+            left:50px;
+            bottom: 30px;
+            width: 100px;
+            height: 10px;
+            float: left;
+            z-index: 999;
+        }
+        .lunbo_box li{
+            border-radius: 50%;
+            width: 6px;
+            height: 6px;
+            border:2px solid #ccc;
+            background-color: #00C3A5;
+            margin:0 10px;
+            transition: all 0.5s;
+
+        }
+        /*内容结束*/
+        /* 智能开始 */
+        .content {
+            width: 100%;
+            background-color: #f5f5f5;
+            margin-top: 40px;
+            padding-top: 60px;
+        }
+
+        .smart {
+            width: 1226px;
+            height: 672px;
+            margin: 0 auto;
+        }
+
+        .smart_top {
+            width: 1226px;
+            height: 58px;
+        }
+
+        .smart_top h1 {
+            font-size: 21px;
+            font-weight: 200;
+            line-height: 58px;
+            float: left;
+            color: #333;
+        }
+
+        .smart_right {
+            float: right;
+        }
+
+        .smart_wenzi span {
+            font-size: 16px;
+            font-weight: 100;
+            float: left;
+            margin-left: 32px;
+            margin-top: 22px;
+            cursor: pointer;
+
+        }
+
+        /*.line {*/
+        /*border-bottom: 2px solid #ff6700;*/
+        /*padding-bottom: 2px;*/
+        /*}*/
+
+        .smart_wenzi span {
+            float: left;
+            margin-right: 10px;
+        }
+
+        .smart_wenzi .active {
+            color: orange;
+            border-bottom: 1px solid orange;
+            /*height: 29px;*/
+        }
+
+        .smart_bottom {
+            width: 1226px;
+            height: 614px;
+            float: left;
+        }
+
+        .smart_item {
+            width: 234px;
+            height: 300px;
+            margin-right: 14px;
+            background-color: #fff;
+            padding-top: 34px;
+            float: left;
+            margin-bottom: 14px;
+            position: relative;
+        }
+
+        .smart_item1 {
+            margin-right: 0;
+        }
+
+        .smart_item2 {
+            margin-right: 0;
+        }
+
+        .smart_item3 {
+            overflow: hidden;
+        }
+
+        .smart_item h1 {
+            text-align: center;
+            font-size: 14px;
+            color: #212121;
+            font-weight: 200;
+            margin-top: 22px;
+            cursor: pointer;
+
+        }
+
+        .smart_item h2 {
+            text-align: center;
+            font-size: 12px;
+            color: #b0b0b0;
+            font-weight: normal;
+            margin-top: 3px;
+            cursor: pointer;
+        }
+
+        .smart_item h3 {
+            text-align: center;
+            font-size: 14px;
+            color: #ff6700;
+            font-weight: normal;
+            margin-top: 12px;
+            cursor: pointer;
+        }
+
+        .smart_item img {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto;
+            display: block;
+            cursor: pointer;
+        }
+
+        .smart_left img {
+            width: 234px;
+            height: 334px;
+        }
+
+        .smart_left1 {
+            padding-top: 0;
+        }
+
+        .smart .smart_bottom {
+            width: 1226px;
+            height: 370px;
+            position: relative;
+        }
+
+        .goods_list {
+            width: 1226px;
+            left: 0;
+            top: 0;
+            text-align: center;
+            position: absolute;
+        }
+
+        .goods_list.active {
+            z-index: 9;
+        }
+
+        /* 智能结束 */
+        .neirong_inner{
+            width: 1500px;
+            height: 380px;
+            /*background: red;*/
+            float: left;
+        }
+        .neirong_inner1{
+            width:296px ;
+            height:380px;
+            float: left;
+        }
+        .neirong_item {
+            width: 296px;
+            height: 380px;
+            background-color: #fff;
+            /* margin-left: 14px; */
+            margin-bottom: 14px;
+            text-align: center;
+            float: left;
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        .neirong_btn {
+            width: 36px;
+            background-color: rgba(0, 0, 0, 0.2);
+            height: 69px;
+            text-align: center;
+            line-height: 69px;
+            font-size: 30px;
+            color: #6F6F6F;
+            position: absolute;
+            margin: auto;
+            top: 0;
+            bottom: 0;
+            visibility: hidden;
+            z-index: 122;
+            transition: all 1s linear;
+        }
+
+        .neirong_item:hover .neirong_btn {
+            visibility: visible;
+            cursor: pointer;
+            background-color: #6F6F6F;
+            color: #fff;
+        }
+
+        .neirong_lbtn {
+            left: 0;
+        }
+
+        .neirong_rbtn {
+            right: 0;
+        }
+        .neirong_dian{
+            position: absolute;
+            top:365px;
+            left:100px;
+            width: 120px;
+            height: 10px;
+        }
+        .neirong_dian li{
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            border:2px solid #ccc;
+            float: left;
+            margin:0 10px;
+            background-color: #00C3A5;
+        }
+        .neirong_item h2 {
+            font-size: 20px;
+            font-weight: 400;
+            color: #000;
+        }
+
+        .neirong_item h3 {
+            color: #b0b0b0;
+            line-height: 20px;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .neirong_item h4 {
+            color: #333;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 16px;
+        }
+
+        .neirong_item1 {
+            margin-left: 0;
+        }
+
+        .neirong_item img {
+            width: 216px;
+            height: 154px;
+            margin-bottom: 60px;
+        }
+
+        .neirong_bottom {
+            width: 1240px;
+            height: 420px;
+            margin-bottom: 14px;
+            /* background-color: plum; */
+            float: left;
+        }
+
+        .neirong_title {
+            width: 276px;
+            height: 23px;
+            text-align: center;
+            /* background-color: plum; */
+            margin: 0 10px 18px;
+            color: #FFAA10;
+            font-size: 24px;
+        }
+
+        .neirong_title1 {
+            color: #84C34A;
+        }
+
+        .neirong_title2 {
+            color: #E73831;
+        }
+
+        .neirong_title3 {
+            color: #219AF7;
+        }
+    </style>
+</head>
+<body>
+<!-- banner开始 -->
+<div id="banner">
+    <ul class="imgbox">
+        <li class="active"><img src="img/banner1.jpg" alt=""></li>
+        <li><img src="img/banner2.jpg" alt=""></li>
+        <li><img src="img/banner3.jpg" alt=""></li>
+        <li><img src="img/banner4.jpg" alt=""></li>
+        <li><img src="img/banner5.jpg" alt=""></li>
+    </ul>
+    <ul class="pagerbox">
+        <li class="active"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <ul class="banner_daohang">
+        <li>
+            <span class="banner_title">手机 电话卡</span>
+            <span class="banner_jiantou">&gt;</span>
+            <div class="menu">
+                <div class="menu_tuwen">
+                    <img src="img/ce_img1.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/ce_img2.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/ce_img3.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/ce_img4.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/ce_img5.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/ce_img6.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/ce_img7.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/ce_img8.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/ce_img9.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/ce_img10.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/ce_img11.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/ce_img12.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/ce_img13.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/ce_img14.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/ce_img15.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/ce_img16.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/ce_img14.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/ce_img13.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+            </div>
+        </li>
+        <li>
+            <span class="banner_title">电视 盒子</span>
+            <span class="banner_jiantou">&gt;</span>
+            <div class="menu">
+                <div class="menu_tuwen">
+                    <img src="img/zuodaohang1.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/zuodaohang2.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/zuodaohang3.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/zuodaohang4.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/zuodaohang5.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/zuodaohang6.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/zuodaohang7.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/zuodaohang8.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/zuodaohang10.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/zuodaohang11.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/zuodaohang12.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/zuodaohang13.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/zuodaohang14.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/zuodaohang15.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/zuodaohang16.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/zuodaohang17.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/zuodaohang18.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/zuodaohang19.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+            </div>
+        </li>
+        <li>
+            <span class="banner_title">笔记本</span>
+            <span class="banner_jiantou">&gt;</span>
+            <div class="menu">
+                <div class="menu_tuwen">
+                    <img src="img/cebi1.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/cebi2.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/cebi3.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/cebi4.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/cebi5.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/cebi6.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/cebi7.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/cebi8.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/cebi9.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/cebi10.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/cebi11.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/cebi12.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/cebi13.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/cebi14.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/cebi15.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/cebi6.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/cebi10.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/cebi4.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+            </div>
+        </li>
+        <li>
+            <span class="banner_title">智能 家电</span>
+            <span class="banner_jiantou">&gt;</span>
+            <div class="menu">
+                <div class="menu_tuwen">
+                    <img src="img/ce_img1.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/ce_img1.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/ce_img1.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/ce_img1.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/ce_img1.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/ce_img1.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/ce_img1.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/ce_img1.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/ce_img1.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/ce_img1.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/ce_img1.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/ce_img1.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/ce_img1.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/ce_img1.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/ce_img1.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/ce_img1.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/ce_img1.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/ce_img1.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+            </div>
+        </li>
+        <li>
+            <span class="banner_title">健康 家居</span>
+            <span class="banner_jiantou">&gt;</span>
+            <div class="menu">
+                <div class="menu_tuwen">
+                    <img src="img/jiaju1.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/jiaju2.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/jiaju3.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/jiaju4.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/jiaju5.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/jiaju6.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/jiaju7.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/jiaju8.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/jiaju9.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/jiaju10.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/jiaju11.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/jiaju12.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/jiaju13.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/jiaju14.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/jiaju15.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/jiaju16.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/jiaju17.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/jiaju18.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+            </div>
+        </li>
+        <li>
+            <span class="banner_title">出行 儿童</span>
+            <span class="banner_jiantou">&gt;</span>
+            <div class="menu">
+                <div class="menu_tuwen">
+                    <img src="img/go1.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/go2.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/go3.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/go4.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/go5.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/go6.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/go7.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/go8.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/go9.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/go10.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/go11.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/go12.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/go13.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/go14.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/go15.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/go16.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/go17.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/go14.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+            </div>
+        </li>
+        <li>
+            <span class="banner_title">路由器 手机配件</span>
+            <span class="banner_jiantou">&gt;</span>
+            <div class="menu">
+                <div class="menu_tuwen">
+                    <img src="img/ce_img1.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/ce_img1.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/ce_img1.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/ce_img1.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/ce_img1.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/ce_img1.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/ce_img1.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/ce_img1.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/ce_img1.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/ce_img1.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/ce_img1.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/ce_img1.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/ce_img1.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/ce_img1.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/ce_img1.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/ce_img1.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/ce_img1.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/ce_img1.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+            </div>
+        </li>
+        <li>
+            <span class="banner_title">移动电源 插线板</span>
+            <span class="banner_jiantou">&gt;</span>
+            <div class="menu">
+                <div class="menu_tuwen">
+                    <img src="img/move1.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/move2.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/move3.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/move4.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/move5.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/move6.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/move7.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/move8.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/move9.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/move10.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/move11.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/move12.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/move13.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/move14.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/move2.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/ce_img1.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/ce_img1.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/ce_img1.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+            </div>
+        </li>
+        <li>
+            <span class="banner_title">耳机 音箱</span>
+            <span class="banner_jiantou">&gt;</span>
+            <div class="menu">
+                <div class="menu_tuwen">
+                    <img src="img/ce_img1.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/ce_img1.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/ce_img1.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/ce_img1.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/ce_img1.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/ce_img1.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/ce_img1.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/ce_img1.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/ce_img1.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/ce_img1.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/ce_img1.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/ce_img1.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/ce_img1.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/ce_img1.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/ce_img1.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/ce_img1.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/ce_img1.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/ce_img1.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+            </div>
+        </li>
+        <li>
+            <span class="banner_title">生活 米兔</span>
+            <span class="banner_jiantou">&gt;</span>
+            <div class="menu">
+                <div class="menu_tuwen">
+                    <img src="img/life1.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/life2.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/life3.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/life4.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/life5.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/life6.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/life7.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/life8.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/life9.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/life10.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/life11.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/life12.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/life13.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/life14.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/life15.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/life16.png" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/life17.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+                <div class="menu_tuwen">
+                    <img src="img/life18.jpg" alt="">
+                    <span>小米</span>
+                    <span class="menu_wenzi1">Note3</span>
+                </div>
+            </div>
+        </li>
+    </ul>
+
+    <div class="banner_btn banner_lbtn">&lt;</div>
+    <div class="banner_btn banner_rbtn">&gt;</div>
+</div>
+<!-- banner结束 -->
+<!--导航开始-->
+<div class="daohang_xiala">
+    <div class="daohang_container">
+        <ul class="children_list">
+            <li class="first">
+                <div class="flags">
+                    <div class="flag">热卖</div>
+                </div>
+                <a href="" class="xiala_img">
+                    <img src="img/xiala1.png" alt="">
+                </a>
+                <div class="title">
+                    <a href="">小米MIX2</a>
+                </div>
+                <p>3299元起</p>
+            </li>
+            <li>
+                <div class="flags">
+                    <div class="flag">热卖</div>
+                </div>
+                <a href="" class="xiala_img">
+                    <img src="img/xiala2.png" alt="">
+                </a>
+                <div class="title">
+                    <a href="">小米MIX2</a>
+                </div>
+                <p>3299元起</p>
+            </li>
+            <li>
+                <a href="" class="xiala_img">
+                    <img src="img/xiala3.png" alt="">
+                </a>
+                <div class="title">
+                    <a href="">小米MIX2</a>
+                </div>
+                <p>3299元起</p>
+            </li>
+            <li>
+                <a href="" class="xiala_img">
+                    <img src="img/xiala4.png" alt="">
+                </a>
+                <div class="title">
+                    <a href="">小米MIX2</a>
+                </div>
+                <p>3299元起</p>
+            </li>
+            <li>
+                <a href="" class="xiala_img">
+                    <img src="img/xiala5.jpg" alt="">
+                </a>
+                <div class="title">
+                    <a href="">小米MIX2</a>
+                </div>
+                <p>3299元起</p></li>
+        </ul>
+    </div>
+</div>
+<!-- 小米单品开始 -->
+<section class="star">
+    <div class="star_top">
+        <h1>小米明星单品</h1>
+        <div class="star_btn">
+            <div class="star_btn1 disable">&lt;</div>
+            <div class="star_btn2">&gt;</div>
+        </div>
+    </div>
+    <div class="star_bottom">
+        <div class="star_item">
+            <img src="../img/3.png" alt="">
+            <h1>小米MIX2</h1>
+            <h2>全面屏2.0，5.99"大屏</h2>
+            <h3>3299元起</h3>
+        </div>
+        <div class="buy_list">
+            <ul class="buy_inner">
+                <li class="star_item star_item2">
+                    <img src="img/1.png" alt="">
+                    <h1>红米5A</h1>
+                    <h2>8天超长待机，137g轻巧机身</h2>
+                    <h3>599元</h3>
+                </li>
+
+                <li class="star_item star_item3">
+                    <img src="img/a.png" alt="">
+                    <h1>小米6</h1>
+                    <h2>变焦双像，4轴防抖</h2>
+                    <h3>2299元</h3>
+                </li>
+
+                <li class="star_item star_item4">
+                    <img src="img/b.png" alt="">
+                    <h1>小米电视 4A 43英寸 标准版</h1>
+                    <h2>全高清HDR 四核高性能处理器</h2>
+                    <h3>1999元</h3>
+                </li>
+
+                <li class="star_item star_item1">
+                    <img src="img/c.png" alt="">
+                    <h1>小米笔记本</h1>
+                    <h2>更轻更薄，像杂志一样随身</h2>
+                    <h3>3599元起</h3>
+                </li>
+                <li class="star_item star_item2">
+                    <img src="img/1.png" alt="">
+                    <h1>红米5A</h1>
+                    <h2>8天超长待机，137g轻巧机身</h2>
+                    <h3>599元</h3>
+                </li>
+
+                <li class="star_item star_item3">
+                    <img src="img/a.png" alt="">
+                    <h1>小米6</h1>
+                    <h2>变焦双像，4轴防抖</h2>
+                    <h3>2299元</h3>
+                </li>
+
+                <li class="star_item star_item4">
+                    <img src="img/b.png" alt="">
+                    <h1>小米电视 4A 43英寸 标准版</h1>
+                    <h2>全高清HDR 四核高性能处理器</h2>
+                    <h3>1999元</h3>
+                </li>
+                <li class="star_item star_item2">
+                    <img src="img/1.png" alt="">
+                    <h1>红米5A</h1>
+                    <h2>8天超长待机，137g轻巧机身</h2>
+                    <h3>599元</h3>
+                </li>
+
+                <li class="star_item star_item3">
+                    <img src="img/a.png" alt="">
+                    <h1>小米6</h1>
+                    <h2>变焦双像，4轴防抖</h2>
+                    <h3>2299元</h3>
+                </li>
+
+                <li class="star_item star_item4">
+                    <img src="img/b.png" alt="">
+                    <h1>小米电视 4A 43英寸 标准版</h1>
+                    <h2>全高清HDR 四核高性能处理器</h2>
+                    <h3>1999元</h3>
+                </li>
+                <li class="star_item star_item2">
+                    <img src="img/1.png" alt="">
+                    <h1>红米5A</h1>
+                    <h2>8天超长待机，137g轻巧机身</h2>
+                    <h3>599元</h3>
+                </li>
+
+                <li class="star_item star_item3">
+                    <img src="img/a.png" alt="">
+                    <h1>小米6</h1>
+                    <h2>变焦双像，4轴防抖</h2>
+                    <h3>2299元</h3>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- 小米单品结束 -->
+<!--小内容开始-->
+<div class="star_item star_item2 neirong_item">
+    <div class="neirong_inner">
+        <div class="neirong_inner1">
+            <span class="neirong_title neirong_title1">MIUI主题</span>
+            <h2>米奇-有你有我</h2>
+            <h3>米奇来啦！小米主题和首度合作，打造精品迪士尼系列主题</h3>
+            <h4>12米币</h4>
+            <img src="img/neirong2.png" alt="" class="neirong_img">
+        </div>
+        <div class="neirong_inner1">
+            <span class="neirong_title neirong_title1">MIUI主题</span>
+            <h2>黑豹-迅猛来袭</h2>
+            <h3>小米主题和首度合作，打造精品迪士尼系列主题</h3>
+            <h4>8米币</h4>
+            <img src="img/neirong7.png" alt="" class="neirong_img">
+        </div>
+        <div class="neirong_inner1">
+            <span class="neirong_title neirong_title1">MIUI主题</span>
+            <h2>疯狂动物城</h2>
+            <h3>米奇来啦！小米主题和首度合作，打造精品迪士尼系列主题</h3>
+            <h4>12米币</h4>
+            <img src="img/neirong8.png" alt="" class="neirong_img">
+        </div>
+    </div>
+    <div class="neirong_btn neirong_lbtn">&lt;</div>
+    <div class="neirong_btn neirong_rbtn">&gt;</div>
+    <ul class="neirong_dian">
+        <li class="dian1 neirong_active"></li>
+        <li class="dian1 dian2"></li>
+        <li class="dian1 dian3"></li>
+    </ul>
+</div>
+<!--小内容结束-->
+<!-- 智能开始 -->
+<div class="smart js-move">
+    <div class="smart_top">
+        <div class="smart_left">
+            <h1>智能</h1>
+        </div>
+
+        <div class="smart_right">
+            <div class="smart_wenzi">
+                <span class="type active">热门</span>
+                <span class="type">出行</span>
+                <span class="type">健康</span>
+                <span class="type">酷玩</span>
+                <span class="type">路由器</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="smart_bottom">
+        <div class="goods_list active">
+            <div class="smart_item smart_left smart_left1 ">
+                <img src="img/zhineng1.jpg" alt="">
+            </div>
+
+            <div class="smart_item smart_item3">
+                <img src="img/zhineng3.jpg" alt="">
+                <h1>米家激光投影电视</h1>
+                <h2>150英寸超大投影尺寸</h2>
+                <h3>9999元</h3>
+                <div class="smart_tan">
+								<span class="pingjia">超级棒啊，双十一便宜500元,
+								非常的喜欢，推荐给大家...</span>
+                    <span class="author">来自于小琪的评价</span>
+                </div>
+            </div>
+
+            <div class="smart_item smart_item3">
+                <img src="img/zhineng8.jpg" alt="">
+                <h1>9号平衡车plus</h1>
+                <h2>35km超长续航，一键自动跟随</h2>
+                <h3>3499元</h3>
+                <div class="smart_tan">ID过节费搞快点v</div>
+            </div>
+
+            <div class="smart_item smart_item3">
+                <img src="img/zhineng7.jpg" alt="">
+                <h1>米兔智能故事机</h1>
+                <h2>微信远程互动，智能语音交互</h2>
+                <h3>179元</h3>
+                <div class="smart_tan">ID过节费搞快点v</div>
+            </div>
+
+            <div class="smart_item smart_item1 smart_item3">
+                <img src="img/zhineng10.jpg" alt="">
+                <h1>米家恒温电水壶</h1>
+                <h2>304不锈钢内胆</h2>
+                <h3>179元</h3>
+                <div class="smart_tan">ID过节费搞快点v</div>
+            </div>
+
+            <div class="smart_item smart_left smart_left1">
+                <img src="img/zhineng2.jpg" alt="">
+            </div>
+
+            <div class="smart_item smart_item3">
+                <img src="img/zhineng4.jpg" alt="">
+                <h1>车载空气净化器（USB车充版）</h1>
+                <h2>高效净化车内空气</h2>
+                <h3>389元</h3>
+                <div class="smart_tan">ID过节费搞快点v</div>
+            </div>
+
+            <div class="smart_item smart_item3">
+                <img src="img/zhineng6.jpg" alt="">
+                <h1>米家行车记录仪</h1>
+                <h2>晚上能拍清车牌的行车记录仪</h2>
+                <h3>349元</h3>
+                <div class="smart_tan">ID过节费搞快点v</div>
+            </div>
+
+            <div class="smart_item smart_item3">
+                <img src="img/zhineng3.jpg" alt="">
+                <h1>米家iHealth血压计</h1>
+                <h2>爸妈上手就会用的智能血压计</h2>
+                <h3>379元</h3>
+                <div class="smart_tan">ID过节费搞快点v</div>
+            </div>
+
+            <div class="smart_item smart_item2 smart_item3">
+                <img src="img/zhineng11.jpg" alt="">
+                <h1>小米VR眼镜</h1>
+                <h2>299元</h2>
+            </div>
+        </div>
+        <div class="goods_list">
+            <div class="smart_item smart_left smart_left1 ">
+                <img src="img/zhineng1.jpg" alt="">
+            </div>
+
+            <div class="smart_item smart_item3">
+                <img src="img/chuxing1.jpg" alt="">
+                <h1>米家激光投影电视</h1>
+                <h2>150英寸超大投影尺寸</h2>
+                <h3>9999元</h3>
+                <div class="smart_tan">
+								<span class="pingjia">超级棒啊，双十一便宜500元,
+								非常的喜欢，推荐给大家...</span>
+                    <span class="author">来自于小琪的评价</span>
+                </div>
+            </div>
+
+            <div class="smart_item smart_item3">
+                <img src="img/chuxing2.jpg" alt="">
+                <h1>9号平衡车plus</h1>
+                <h2>35km超长续航，一键自动跟随</h2>
+                <h3>3499元</h3>
+                <div class="smart_tan">ID过节费搞快点v</div>
+            </div>
+
+            <div class="smart_item smart_item3">
+                <img src="img/chuxing3.jpg" alt="">
+                <h1>米兔智能故事机</h1>
+                <h2>微信远程互动，智能语音交互</h2>
+                <h3>179元</h3>
+                <div class="smart_tan">ID过节费搞快点v</div>
+            </div>
+
+            <div class="smart_item smart_item1 smart_item3">
+                <img src="img/chuxing4.jpg" alt="">
+                <h1>米家恒温电水壶</h1>
+                <h2>304不锈钢内胆</h2>
+                <h3>179元</h3>
+                <div class="smart_tan">ID过节费搞快点v</div>
+            </div>
+
+            <div class="smart_item smart_left smart_left1">
+                <img src="img/zhineng2.jpg" alt="">
+            </div>
+
+            <div class="smart_item smart_item3">
+                <img src="img/chuxing5.jpg" alt="">
+                <h1>车载空气净化器（USB车充版）</h1>
+                <h2>高效净化车内空气</h2>
+                <h3>389元</h3>
+                <div class="smart_tan">ID过节费搞快点v</div>
+            </div>
+
+            <div class="smart_item smart_item3">
+                <img src="img/chuxing6.jpg" alt="">
+                <h1>米家行车记录仪</h1>
+                <h2>晚上能拍清车牌的行车记录仪</h2>
+                <h3>349元</h3>
+                <div class="smart_tan">ID过节费搞快点v</div>
+            </div>
+
+            <div class="smart_item smart_item3">
+                <img src="img/chuxing7.jpg" alt="">
+                <h1>米家iHealth血压计</h1>
+                <h2>爸妈上手就会用的智能血压计</h2>
+                <h3>379元</h3>
+                <div class="smart_tan">ID过节费搞快点v</div>
+            </div>
+
+            <div class="smart_item smart_item2 smart_item3">
+                <img src="img/zhineng6.jpg" alt="">
+                <h1>小米VR眼镜</h1>
+                <h2>299元</h2>
+            </div>
+        </div>
+        <div class="goods_list">
+            <div class="smart_item smart_left smart_left1 ">
+                <img src="img/zhineng1.jpg" alt="">
+            </div>
+
+            <div class="smart_item smart_item3">
+                <img src="img/hot1.jpg" alt="">
+                <h1>米家激光投影电视</h1>
+                <h2>150英寸超大投影尺寸</h2>
+                <h3>9999元</h3>
+                <div class="smart_tan">
+								<span class="pingjia">超级棒啊，双十一便宜500元,
+								非常的喜欢，推荐给大家...</span>
+                    <span class="author">来自于小琪的评价</span>
+                </div>
+            </div>
+
+            <div class="smart_item smart_item3">
+                <img src="img/hot2.jpg" alt="">
+                <h1>9号平衡车plus</h1>
+                <h2>35km超长续航，一键自动跟随</h2>
+                <h3>3499元</h3>
+                <div class="smart_tan">ID过节费搞快点v</div>
+            </div>
+
+            <div class="smart_item smart_item3">
+                <img src="img/hot3.jpg" alt="">
+                <h1>米兔智能故事机</h1>
+                <h2>微信远程互动，智能语音交互</h2>
+                <h3>179元</h3>
+                <div class="smart_tan">ID过节费搞快点v</div>
+            </div>
+
+            <div class="smart_item smart_item1 smart_item3">
+                <img src="img/hot4.png" alt="">
+                <h1>米家恒温电水壶</h1>
+                <h2>304不锈钢内胆</h2>
+                <h3>179元</h3>
+                <div class="smart_tan">ID过节费搞快点v</div>
+            </div>
+
+            <div class="smart_item smart_left smart_left1">
+                <img src="img/zhineng2.jpg" alt="">
+            </div>
+
+            <div class="smart_item smart_item3">
+                <img src="img/hot5.jpg" alt="">
+                <h1>车载空气净化器（USB车充版）</h1>
+                <h2>高效净化车内空气</h2>
+                <h3>389元</h3>
+                <div class="smart_tan">ID过节费搞快点v</div>
+            </div>
+
+            <div class="smart_item smart_item3">
+                <img src="img/hot6.jpg" alt="">
+                <h1>米家行车记录仪</h1>
+                <h2>晚上能拍清车牌的行车记录仪</h2>
+                <h3>349元</h3>
+                <div class="smart_tan">ID过节费搞快点v</div>
+            </div>
+
+            <div class="smart_item smart_item3">
+                <img src="img/hot6.jpg" alt="">
+                <h1>米家iHealth血压计</h1>
+                <h2>爸妈上手就会用的智能血压计</h2>
+                <h3>379元</h3>
+                <div class="smart_tan">ID过节费搞快点v</div>
+            </div>
+
+            <div class="smart_item smart_item2 smart_item3">
+                <img src="img/hot7.jpg" alt="">
+                <h1>小米VR眼镜</h1>
+                <h2>299元</h2>
+            </div>
+        </div>
+        <div class="goods_list">
+            <div class="smart_item smart_left smart_left1 ">
+                <img src="img/zhineng1.jpg" alt="">
+            </div>
+
+            <div class="smart_item smart_item3">
+                <img src="img/kuw1.jpg" alt="">
+                <h1>米家激光投影电视</h1>
+                <h2>150英寸超大投影尺寸</h2>
+                <h3>9999元</h3>
+                <div class="smart_tan">
+								<span class="pingjia">超级棒啊，双十一便宜500元,
+								非常的喜欢，推荐给大家...</span>
+                    <span class="author">来自于小琪的评价</span>
+                </div>
+            </div>
+
+            <div class="smart_item smart_item3">
+                <img src="img/kuw2.jpg" alt="">
+                <h1>9号平衡车plus</h1>
+                <h2>35km超长续航，一键自动跟随</h2>
+                <h3>3499元</h3>
+                <div class="smart_tan">ID过节费搞快点v</div>
+            </div>
+
+            <div class="smart_item smart_item3">
+                <img src="img/kuw3.png" alt="">
+                <h1>米兔智能故事机</h1>
+                <h2>微信远程互动，智能语音交互</h2>
+                <h3>179元</h3>
+                <div class="smart_tan">ID过节费搞快点v</div>
+            </div>
+
+            <div class="smart_item smart_item1 smart_item3">
+                <img src="img/kuw4.jpg" alt="">
+                <h1>米家恒温电水壶</h1>
+                <h2>304不锈钢内胆</h2>
+                <h3>179元</h3>
+                <div class="smart_tan">ID过节费搞快点v</div>
+            </div>
+
+            <div class="smart_item smart_left smart_left1">
+                <img src="img/zhineng2.jpg" alt="">
+            </div>
+
+            <div class="smart_item smart_item3">
+                <img src="img/kuw5.jpg" alt="">
+                <h1>车载空气净化器（USB车充版）</h1>
+                <h2>高效净化车内空气</h2>
+                <h3>389元</h3>
+                <div class="smart_tan">ID过节费搞快点v</div>
+            </div>
+
+            <div class="smart_item smart_item3">
+                <img src="img/kuw6.jpg" alt="">
+                <h1>米家行车记录仪</h1>
+                <h2>晚上能拍清车牌的行车记录仪</h2>
+                <h3>349元</h3>
+                <div class="smart_tan">ID过节费搞快点v</div>
+            </div>
+
+            <div class="smart_item smart_item3">
+                <img src="img/kuw7.jpg" alt="">
+                <h1>米家iHealth血压计</h1>
+                <h2>爸妈上手就会用的智能血压计</h2>
+                <h3>379元</h3>
+                <div class="smart_tan">ID过节费搞快点v</div>
+            </div>
+
+            <div class="smart_item smart_item2 smart_item3">
+                <img src="img/zhineng11.jpg" alt="">
+                <h1>小米VR眼镜</h1>
+                <h2>299元</h2>
+            </div>
+        </div>
+        <div class="goods_list">
+            <div class="smart_item smart_left smart_left1 ">
+                <img src="img/zhineng1.jpg" alt="">
+            </div>
+
+            <div class="smart_item smart_item3">
+                <img src="img/zhineng3.jpg" alt="">
+                <h1>米家激光投影电视</h1>
+                <h2>150英寸超大投影尺寸</h2>
+                <h3>9999元</h3>
+                <div class="smart_tan">
+								<span class="pingjia">超级棒啊，双十一便宜500元,
+								非常的喜欢，推荐给大家...</span>
+                    <span class="author">来自于小琪的评价</span>
+                </div>
+            </div>
+
+            <div class="smart_item smart_item3">
+                <img src="img/zhineng5.png" alt="">
+                <h1>9号平衡车plus</h1>
+                <h2>35km超长续航，一键自动跟随</h2>
+                <h3>3499元</h3>
+                <div class="smart_tan">ID过节费搞快点v</div>
+            </div>
+
+            <div class="smart_item smart_item3">
+                <img src="img/zhineng7.jpg" alt="">
+                <h1>米兔智能故事机</h1>
+                <h2>微信远程互动，智能语音交互</h2>
+                <h3>179元</h3>
+                <div class="smart_tan">ID过节费搞快点v</div>
+            </div>
+
+            <div class="smart_item smart_item1 smart_item3">
+                <img src="img/zhineng10.jpg" alt="">
+                <h1>米家恒温电水壶</h1>
+                <h2>304不锈钢内胆</h2>
+                <h3>179元</h3>
+                <div class="smart_tan">ID过节费搞快点v</div>
+            </div>
+
+            <div class="smart_item smart_left smart_left1">
+                <img src="img/zhineng2.jpg" alt="">
+            </div>
+
+            <div class="smart_item smart_item3">
+                <img src="img/zhineng4.jpg" alt="">
+                <h1>车载空气净化器（USB车充版）</h1>
+                <h2>高效净化车内空气</h2>
+                <h3>389元</h3>
+                <div class="smart_tan">ID过节费搞快点v</div>
+            </div>
+
+            <div class="smart_item smart_item3">
+                <img src="img/zhineng6.jpg" alt="">
+                <h1>米家行车记录仪</h1>
+                <h2>晚上能拍清车牌的行车记录仪</h2>
+                <h3>349元</h3>
+                <div class="smart_tan">ID过节费搞快点v</div>
+            </div>
+
+            <div class="smart_item smart_item3">
+                <img src="img/zhineng8.jpg" alt="">
+                <h1>米家iHealth血压计</h1>
+                <h2>爸妈上手就会用的智能血压计</h2>
+                <h3>379元</h3>
+                <div class="smart_tan">ID过节费搞快点v</div>
+            </div>
+
+            <div class="smart_item smart_item2 smart_item3">
+                <img src="img/zhineng11.jpg" alt="">
+                <h1>小米VR眼镜</h1>
+                <h2>299元</h2>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 智能结束 -->
+</body>
+<script src="jquery-3.3.1.min.js"></script>
+<script>
+    //banner
+    {
+        $("#banner").mouseenter(function () {
+            $(".banner_lbtn,.banner_rbtn").fadeIn(500);
+        });
+        $("#banner").mouseleave(function () {
+            $(".banner_lbtn,.banner_rbtn").fadeOut(500);
+        });
+        $(".pagerbox>li").click(function () {
+            let index = $(this).index();
+            $(".imgbox>li").removeClass("active").eq(index).addClass("active");
+            $(this).addClass("active").siblings(".active").removeClass("active");
+            n = index;
+        });
+        let n = 0;
+        $(".banner_rbtn").click(function () {
+            n++;
+            if (n === 5) {
+                n = 0;
+            }
+            $(".imgbox>li").removeClass("active");
+            $(".imgbox>li").eq(n).addClass("active");
+            $(".pagerbox>li").removeClass("active");
+            $("pagerbox>li").eq(n).addClass("active");
+        });
+        $(".banner_rbtn").click(function () {
+            n--;
+            if (n === -1) {
+                n = 4;
+            }
+            $(".imgbox>li").removeClass("active");
+            $(".imgbox>li").eq(n).addClass("active");
+            $(".pagerbox>li").removeClass("active");
+            $("pagerbox>li").eq(n).addClass("active");
+        });
+    }
+    //nav
+    {
+        $(".daohang_wenzi_top").mouseenter(function () {
+            $(".daohang_xiala").slideUp();
+        });
+        $(".daohang_wenzi_top").mouseleave(function () {
+            $(".daohang_xiala").slideDown();
+        });
+    }
+    //单品
+    {
+        let n=0;
+        $(".star_btn2").click(function () {
+            n++;
+            $(".star_btn1").addClass("disable");
+            if(n===2){
+                $(".star_btn2").removeClass("disable");
+            }
+            if(n===3){
+                n=2;
+            }
+            $(".buy_inner").animate({marginLeft:-992*n},400)
+        });
+        $(".star_btn1").click(function () {
+            n--;
+            $(".star_btn2").addClass("disable");
+            if(n===-1){
+                $(".star_btn1").removeClass("disable");
+            }
+            if(n===-1){
+                n=0;
+            }
+            $(".buy_inner").animate({marginLeft:-992*n},400)
+        })
+    }
+    //cedaohang
+    {
+
+        $(".label")
+            .mouseenter(function () {
+                let index = $(this).index(".label");
+                $(".menu").eq(index).show();
+            })
+            .mouseleave(function () {
+                let index = $(this).index(".label");
+                $(".menu").eq(index).hide();
+            })
+
+    }
+//neirong
+    {
+        $(".type ")
+            .mouseenter(function () {
+                let index = $(this).index(".type");
+                $(".type").removeClass("active1").eq(index).addClass("active1");
+                $(".goodslist ").removeClass("active1").eq(index).addClass("active1");
+            })
+    }
+//xiaoneirong
+    {
+        let box = $(".neirong_inner");
+        $(".neirong_inner1 ")
+            .mouseenter(function () {
+                $(".neirong_btn").fadeIn(1);
+            })
+            .mouseleave(function () {
+                $(".neirong_btn").fadeOut(1);
+            });
+        $(".neirong_lbtn ")
+            .mouseenter(function () {
+                $(".neirong_lbtn").css({"background": "rgba(0, 0, 0,0.4)"});
+            })
+            .mouseleave(function () {
+                $(".neirong_lbtn").css({"background": "rgba(0, 0, 0,0.2)"});
+            });
+        $(".neirong_rbtn ")
+            .mouseenter(function () {
+                $(".neirong_rbtn").css({"background": "rgba(0, 0, 0,0.4)"});
+            })
+            .mouseleave(function () {
+                $(".neirong_rbtn").css({"background": "rgba(0, 0, 0,0.2)"});
+            });
+        let n = 0;
+        let l = $(".tuwen").length;
+        $(".neirong_rbtn ").click(function () {
+            n++;
+            if (n === l) {
+                n = l - 1;
+                return;
+            }
+            box.animate({left: -n * 296}, 100);
+            $(".dian1").removeClass("neirong_active").eq(n).addClass("neirong_active");
+        });
+        $(".neirong_lbtn ").click(function () {
+            n--;
+            if (n < 0) {
+                n = 0;
+                return;
+            }
+            box.animate({left: -n * 296}, 100);
+            $(".dian1").removeClass("neirong_active").eq(n).addClass("neirong_active");
+        });
+        $(".dian1").click(function () {
+            let index = $(this).index(".dian1");
+            $(".dian1").removeClass("neirong_active").eq(index).addClass("neirong_active");
+            box.animate({left: -index * 296}, 100);
+        })
+
+    }
+
+</script>
+</body>
+</html>
