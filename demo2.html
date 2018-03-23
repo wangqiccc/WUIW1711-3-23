@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/index.css">
+    <style>
+        .dapei{
+            width: 1226px;
+            height: 672px;
+            background-color: #F5F5F5;
+            margin: 0 auto;
+            margin-top: 22px;
+        }
+        .dapei_top_right{
+            height: 58px;
+            width: 100%;
+        }
+        .dapei_top_right h1{
+            font-size: 22px;
+            color: #333;
+            line-height: 58px;
+            float: left;
+            font-weight: 400;
+        }
+        .dapei-top{
+            float: right;
+        }
+        .type{
+            height: 30px;
+            float: left;
+            text-align: center;
+            line-height: 30px;
+            margin: 0 20px;
+            cursor: pointer;
+            transition: all .5s;
+        }
+        .type.active{
+            color: #ff6700;
+            border-bottom: 1px solid #ff6700;
+            height: 29px;
+        }
+        .dapei-bottom{
+            width: 1226px;
+            height: 370px;
+            position: relative;
+        }
+        .goodlist{
+            width: 1226px;
+            height: 370px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: #ccc;
+            font-size: 50px;
+            color: #000;
+            text-align: center;
+            line-height: 370px;
+        }
+        .goodlist.active{
+            color: red;
+            z-index: 9;
+        }
+    </style>
+</head>
+<body>
+<div id="banner">
+    <ul class="imgbox">
+        <li class="active"><img src="img/banner.jpg" alt=""></li>
+        <li><img src="img/banner2.jpg" alt=""></li>
+        <li><img src="img/banner3.jpg" alt=""></li>
+        <li><img src="img/banner4.jpg" alt=""></li>
+        <li><img src="img/banner5.jpg" alt=""></li>
+    </ul>
+    <ul class="pagerbox">
+        <li class="active"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <div class="prev"></div>
+    <div class="next"></div>
+</div>
+
+<div id="buy">
+    <div class="buy-top">
+        <div class="buy-arrow">
+            <span class="buy-prev disable">&lt;</span>
+            <span class="buy-next">&gt;</span>
+        </div>
+    </div>
+    <div class="buy-bottom">
+        <div class="buy-time"></div>
+        <div class="buy-list">
+            <ul class="buy-inner">
+                <li class="buy-item"><img src="img/1.png" alt=""></li>
+                <li class="buy-item"><img src="img/2.png" alt=""></li>
+                <li class="buy-item"><img src="img/3.png" alt=""></li>
+                <li class="buy-item"><img src="img/4.png" alt=""></li>
+                <li class="buy-item"><img src="img/5.png" alt=""></li>
+                <li class="buy-item"><img src="img/1.png" alt=""></li>
+                <li class="buy-item"><img src="img/2.png" alt=""></li>
+                <li class="buy-item"><img src="img/3.png" alt=""></li>
+                <li class="buy-item"><img src="img/4.png" alt=""></li>
+                <li class="buy-item"><img src="img/5.png" alt=""></li>
+                <li class="buy-item"><img src="img/1.png" alt=""></li>
+                <li class="buy-item"><img src="img/2.png" alt=""></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="dapei">
+    <div class="dapei_top_right">
+        <h1>搭配</h1>
+        <div class="dapei-top">
+            <div class="type active">热门</div>
+            <div class="type">电视影音</div>
+            <div class="type">电脑</div>
+            <div class="type">手机</div>
+        </div>
+    </div>
+    <div class="dapei-bottom">
+        <div class="goodlist active">1</div>
+        <div class="goodlist">2</div>
+        <div class="goodlist">3</div>
+        <div class="goodlist">4</div>
+    </div>
+</div>
+</body>
+<script src="jquery.js"></script>
+<script>
+//banner
+{
+    let pagers = $(".pagerbox>li");
+    let imgs = $(".imgbox>li");
+    pagers.click(function() {
+        pagers.removeClass("active");
+        $(this).addClass("active");
+        let index=$(this).index();
+        imgs.removeClass("active").eq(index).addClass("active");
+    });
+    let n = 0;
+    let flag = true;
+    $(".next").click(function () {
+        if (flag) {
+            flag = false;
+            n++;
+            if (n === imgs.length) {
+                n = 0;
+            }
+            imgs.removeClass("active").eq(n).addClass("active");
+            pagers.removeClass("active").eq(n).addClass("active");
+            imgs.animate({},
+                1000, function () {
+                    flag = true;
+                });
+        }
+    });
+    $(".prev").click(function () {
+        n--;
+        if (n < 0) {
+            n = imgs.length - 1;
+        }
+        imgs.removeClass("active").eq(n).addClass("active");
+        pagers.removeClass("active").eq(n).addClass("active");
+    });
+}
+
+//闪购
+{
+    let inner = $(".buy-inner");
+    let n = 0;
+    $(".buy-next").click(function () {
+        n++;
+        $(this).removeClass("disable");
+        if (n === 2) {
+            $(this).addClass("disable");
+        }
+        if (n === 3) {
+            n = 2;
+            return;
+        }
+        inner.css("marginLeft",-992 * n);
+    });
+    $(".buy-prev").click(function () {
+        n--;
+        $(this).removeClass("disable");
+        if(n===0){
+            $(this).addClass("disable");
+        }
+        if(n===-1){
+            n=0;
+            return;
+        }
+        inner.css("marginLeft",-992 * n);
+    });
+}
+
+//搭配
+{
+    $(".type").mouseenter(function(){
+       $(".type").removeClass("active");
+       $(this).addClass("active");
+       let index=$(this).index();
+       $(".goodlist").removeClass("active").eq(index).addClass("active");
+    });
+}
+</script>
+</html>
