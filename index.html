@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>小米jQuery</title>
+<body>
+<script src="jquery-3.3.1.min.js"></script>
+<script>
+    //内容
+    {
+        let inner=$(".neirong-inner");
+        let n=0;
+        let a=$(".qiehuan").length;
+        $(".neirong_item")
+            .mouseenter(function(){
+                $(".neirong_btn").fadeIn(500);
+            })
+            .mouseleave(function(){
+                $(".neirong_btn").fadeOut(500);
+            });
+        $(".neirong_btn")
+            .mouseenter(function(){
+                $(".neirong_btn").css("opacity",0.6);
+            })
+            .mouseleave(function(){
+                $(".neirong_btn").css("opacity",0.3);
+            });
+        $(".neirong_btn1").click(function () {
+            n--;
+            if(n<0){
+                n=1;
+                return;
+            }
+            inner.animate({marginLeft: -n * 296}, 100);
+            $(".pager").removeClass("active").eq(n).addClass("active");
+        });
+        $(".neirong_btn2").click(function () {
+            n++;
+            if(n===a){
+                n=a-1;
+                return;
+            }
+            inner.animate({marginLeft: -n * 296}, 100);
+            $(".pager").removeClass("active").eq(n).addClass("active");
+        });
+        $(".pager").click(function () {
+            let index=$(this).index(".pager");
+            inner.animate({marginLeft:-index *296},100);
+            $(".pager").removeClass("active").eq(index).addClass("active");
+        })
+    }
+    //热门
+    {
+        $(".type")
+            .mouseenter(function () {
+                let index=$(this).index(".type");
+                $(".type").removeClass("active").eq(index).addClass("active");
+                $(".goodslist").removeClass("active").eq(index).addClass("active";
+            })
+    }
+    //小米明星单品
+    {
+    let inner=$(".buy-inner");
+    let n=0;
+    $(".buy-prev").click(function () {
+        n--;
+        $(".buy-next").removeClass("disable");
+        if(n===0){
+            $(".buy-prev").addClass("disable");
+        }
+        if(n===-1){
+            n=0;
+            return;
+        }
+        inner.animate({marginLeft:-n *992},500);
+    });
+        $(".buy-next").click(function () {
+            n++;
+            $(".buy-prev").removeClass("disable");
+            if(n===2){
+                $(".buy-next").addClass("disable");
+            }
+            if(n===3){
+                n=2;
+                return;
+            }
+            inner.animate({marginLeft:-n *992},500);
+        });
+    }
+    //轮播
+    {
+        $(".pagebox li").click(function () {
+            let index = $(this).index(".pagebox li");
+            $(".pagebox li").removeClass("active").eq(index).addClass("active");
+            $(".imgbox li").removeClass("active").eq(index).addClass("active");
+            n = index;
+        });
+        let n = 0;
+        let flag = true;
+        function move() {
+            n++;
+            if (n === $(".imgbox li").length) {
+                n = 0;
+            }
+            if (n < 0) {
+                n = $(".imgbox li").length - 1;
+            }
+            $(".imgbox li").each(function () {
+                flag = true;
+                $(".imgbox li").removeClass("active").eq(n).addClass("active");
+                $(".pagebox li").removeClass("active").eq(n).addClass("active");
+            });
+        }
+        $(".next").click(function () {
+            if (flag) {
+                flag = false;
+               move();
+            }
+        });
+        $(".prev").click(function () {
+            if (flag) {
+                flag = false;
+                n -= 2;
+                move();
+            }
+        });
+    }
+</script>
+</body>
+</html> 
