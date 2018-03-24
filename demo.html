@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>小米</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        #banner {
+            width: 1226px;
+            height: 460px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .imgbox {
+            width: 1226px;
+            height: 460px;
+            position: relative;
+        }
+
+        .imgbox li {
+            width: 1226px;
+            height: 460px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            transition: all 0.8s ease-in;
+            opacity: 0;
+        }
+
+        .imgbox li.active {
+            z-index: 9;
+            opacity: 1;
+        }
+
+        .pagerbox {
+            width: 150px;
+            position: absolute;
+            height: 10px;
+            right: 30px;
+            bottom: 30px;
+            z-index: 999;
+        }
+
+        .pagerbox li {
+            width: 6px;
+            height: 6px;
+            margin: 0 10px;
+            background: grey;
+            float: left;
+            border-radius: 50%;
+            border: 1px solid #ccc;
+            cursor: pointer;
+            transition: all 1s;
+        }
+
+        .pagerbox li.active {
+            background: red;
+        }
+
+        .pagerbox li:hover {
+            background: gold;
+        }
+
+        .prev, .next {
+            width: 41px;
+            height: 69px;
+            position: absolute;
+            top: 50%;
+            margin-top: -35px;
+            z-index: 999;
+            background-image: url("img/jiantou.png");
+            cursor: pointer;
+            opacity: 0.6;
+        }
+
+        .prev {
+            left: 234px;
+            background-position: -84px 0;
+        }
+
+        .prev:hover {
+            background-position: 0 0;
+        }
+
+        .next:hover {
+            background-position: -42px 0;
+        }
+
+        .next {
+            right: 0;
+            background-position: -125px 0;
+        }
+
+        #buy {
+            width: 1226px;
+            margin: 0 auto;
+            height: auto;
+        }
+
+        .buy-top {
+            width: 100%;
+            height: 30px;
+            background: red;
+        }
+
+        .buy-arrow {
+            width: 100px;
+            height: 30px;
+            float: right;
+            cursor: pointer;
+            background: blue;
+        }
+
+        .buy-arrow span {
+            display: block;
+            width: 50%;
+            height: 30px;
+            float: left;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            text-align: center;
+            line-height: 30px;
+            color: #ccc;
+            font-weight: bold;
+            user-select: none;
+        }
+
+        .buy-arrow span:hover {
+            color: yellow;
+        }
+
+        .buy-arrow span.disable {
+            color: #333;
+        }
+
+        .buy-list {
+            width: 978px;
+            height: 300px;
+            float: left;
+            overflow: hidden;
+        }
+
+        .buy-inner {
+            width: 3000px;
+            height: 300px;
+            background-color: #ccc;
+            transition: all 1s;
+        }
+
+        .buy-item {
+            width: 234px;
+            margin-right: 14px;
+            float: left;
+            background-size: 100% auto;
+            background-repeat: no-repeat;
+            height: 300px;
+            background: #fff;
+        }
+
+        .buy-item:nth-child(2n) {
+            background-image: url("img/a1.jpg");
+        }
+
+        .buy-item:nth-child(2n-1) {
+            background-image: url("img/a2.jpg");
+        }
+
+        .buy-bottom {
+            width: 100%;
+            height: 300px;
+            background-color: yellow;
+        }
+
+        .buy-time {
+            width: 234px;
+            float: left;
+            height: 300px;
+            margin-right: 14px;
+            background: green;
+        }
+
+        .daohang {
+            width: 1226px;
+            height: 100px;
+            margin: 0 auto;
+        }
+
+        .dh_wenzi {
+            float: left;
+            margin-left: 189px;
+        }
+
+        .dh_wenzi_he {
+            float: left;
+        }
+
+        .dh_wenzi_span {
+            line-height: 100px;
+            color: #333;
+            font-size: 15px;
+            float: left;
+            padding: 0 10px;
+            cursor: pointer;
+        }
+
+        .dh_wenzi_chu {
+            width: 1226px;
+            position: absolute;
+            height: 230px;
+            background-color: skyblue;
+            z-index: 222;
+            display: none;
+            left: 0;
+            top: 100px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+<div class="daohang">
+    <div class="dh_wenzi">
+        <div class="dh_wenzi_he">
+            <div class="dh_wenzi_span">小米手机
+            </div>
+            <div class="dh_wenzi_chu">
+                小米手机
+            </div>
+        </div>
+        <div class="dh_wenzi_he">
+            <div class="dh_wenzi_span">红米
+            </div>
+            <div class="dh_wenzi_chu">
+                红米
+            </div>
+        </div>
+        <div class="dh_wenzi_he">
+            <div class="dh_wenzi_span">平板·笔记本
+            </div>
+            <div class="dh_wenzi_chu">
+                平板·笔记本
+            </div>
+        </div>
+        <div class="dh_wenzi_he">
+            <div class="dh_wenzi_span">电视
+            </div>
+            <div class="dh_wenzi_chu">
+                电视
+            </div>
+        </div>
+        <div class="dh_wenzi_he">
+            <div class="dh_wenzi_span">盒子·影音
+            </div>
+            <div class="dh_wenzi_chu">
+                盒子·影音
+            </div>
+        </div>
+        <div class="dh_wenzi_he">
+            <div class="dh_wenzi_span">路由器
+            </div>
+            <div class="dh_wenzi_chu">
+                路由器
+            </div>
+        </div>
+        <div class="dh_wenzi_he">
+            <div class="dh_wenzi_span">智能硬件
+            </div>
+            <div class="dh_wenzi_chu">
+                智能硬件
+            </div>
+        </div>
+    </div>
+</div>
+<div id="banner">
+    <ul class="imgbox">
+        <li class="active"><img src="img/1.jpg" alt=""></li>
+        <li><img src="img/2.jpg" alt=""></li>
+        <li><img src="img/3.jpg" alt=""></li>
+        <li><img src="img/4.jpg" alt=""></li>
+        <li><img src="img/5.jpg" alt=""></li>
+    </ul>
+    <ul class="pagerbox">
+        <li class="active"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <div class="prev"></div>
+    <div class="next"></div>
+</div>
+<div id="buy">
+    <div class="buy-top">
+        <div class="buy-arrow">
+            <span class="buy-prev disable">&lt;</span>
+            <span class="buy-next">&gt;</span>
+        </div>
+    </div>
+    <div class="buy-bottom">
+        <div class="buy-time"></div>
+        <div class="buy-list">
+            <ul class="buy-inner">
+                <li class="buy-item"></li>
+                <li class="buy-item"></li>
+                <li class="buy-item"></li>
+                <li class="buy-item"></li>
+                <li class="buy-item"></li>
+                <li class="buy-item"></li>
+                <li class="buy-item"></li>
+                <li class="buy-item"></li>
+                <li class="buy-item"></li>
+                <li class="buy-item"></li>
+                <li class="buy-item"></li>
+                <li class="buy-item"></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script src="jquery-3.3.1.min.js"></script>
+<script>
+    {
+        //导航文字效果，未实现内容的变化
+        // console.log($(".dh_wenzi_he"));
+        $(".dh_wenzi_he").each(function (index, ele) {
+            $(".dh_wenzi_he").mouseenter(function () {
+                $(".dh_wenzi_chu").css("display", "block");
+            })
+                .mouseleave(function () {
+                    $(".dh_wenzi_chu").css("display", "none");
+                });
+        });
+    }
+    {
+        //banner
+        $(".pagerbox li").click(function () {
+            let index = $(this).index(".pagerbox li");
+            $(".pagerbox li").removeClass("active").eq(index).addClass("active");
+            $(".imgbox li").removeClass("active").eq(index).addClass("active");
+            n = index;
+        });
+        let n = 0;
+        let flag = true;
+
+        function move() {
+            n++;
+            if (n === $(".imgbox li").length) {
+                n = 0;
+            }
+            if (n < 0) {
+                n = $(".imgbox li").length - 1;
+            }
+            $(".imgbox li").each(function () {
+                flag = true;
+                $(".imgbox li").removeClass("active").eq(n).addClass("active");
+                $(".pagerbox li").removeClass("active").eq(n).addClass("active");
+            });
+        }
+
+        $(".next").click(function () {
+            if (flag) {
+                flag = false;
+                move();
+            }
+        });
+        $(".prev").click(function () {
+            if (flag) {
+                flag = false;
+                n -= 2;
+                move();
+            }
+        });
+    }
+    {
+        //闪购
+        let inner = $(".buy-inner");
+        console.log(inner);
+        let n = 0;
+        $(".buy-next").click(function () {
+            n++;
+            $(".buy-prev").removeClass("disable");
+            if (n === 2) {
+                $(this).addClass("disable");
+            }
+            if (n === 3) {
+                n = 2;
+                return;
+            }
+            inner.css("marginLeft", -992 * n);
+        });
+        $(".buy-prev").click(function () {
+            n--;
+            $(".buy-next").removeClass("disable");
+            if (n === 0) {
+                $(this).addClass("disable");
+            }
+            if (n === -1) {
+                n = 0;
+                return;
+            }
+            inner.css("marginLeft", -992 * n);
+        })
+    }
+</script>
+</body>
+</html>
