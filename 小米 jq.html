@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .head{
+            width: 100%;
+            height: 100px;
+            background: pink;
+            margin: 0 auto;
+        }
+        .head span{
+            margin-right:60px;
+            line-height: 100px;
+            font-size: 20px;
+
+        }
+        .spans{
+            margin:0 auto;
+            width: 1000px;
+            position: relative;
+        }
+        .bottom{
+            width: 1000px;
+            height: 100px;
+            background: greenyellow;
+            position: absolute;
+            left: 0;
+            top: 100px;
+            display: none;
+            cursor: pointer;
+        }
+        .banner{
+            width: 1266px;
+            height: 400px;
+            margin: 30px  auto;
+            background:aliceblue;
+            position: relative;
+        }
+        .cenav{
+            width: 300px;
+            height: 400px;
+            background: greenyellow;
+            position: absolute;
+            left: 0;
+            top:0;
+            z-index: 9;
+        }
+        .tips{
+            width: 300px;
+            height: 49px;
+            float: left;
+            text-align: center;
+            line-height: 49px;
+            border-bottom: 1px solid #ccc;
+        }
+        .b1{
+            width: 500px;
+            height: 400px;
+            background: #F0C92E;
+            position: absolute;
+            left: 300px;
+            top: 0;
+            display: none;
+        }
+        .b_bottom{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .b2{
+            background: #8c5fdb;
+        }
+        .prev{
+            position: absolute;
+            top: 180px;
+            left: 0;
+            color: #333;
+            width: 30px;
+            height: 40px;
+            background:#ccc;
+            z-index: 10;
+            line-height: 40px;
+            font-size: 30px;
+            opacity: 0;
+        }
+        .next{
+            margin-left: 1236px;
+        }
+        .banner:hover .prev{
+            opacity: 1;
+        }
+        .active{
+            z-index: 999;
+        }
+        .y1{
+            position: absolute;
+            bottom: 20px;
+            right:20px;
+        }
+        .y{
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #FFDAAB;
+            margin-right: 10px;
+            float: left;
+        }
+        .y:hover{
+            background: red;
+        }
+        .actives{
+            background: red;
+        }
+        .jt{
+            width: 70px;
+            height: 30px;
+            float: right;
+            background: #e0e0e0;
+        }
+        .top{
+            width: 1226px;
+            margin: 0 auto;
+            height: 30px;
+            background: #e0e0e0;
+        }
+        .top span{
+            line-height: 30px;
+        }
+        .p1,.p2{
+            height: 100%;
+            width: 30px;
+            color: #000;
+            line-height: 30px;
+            text-align: center;
+            float: left;
+            margin-right: 10px;
+            background: #ccc;
+            cursor: pointer;
+        }
+        .p3{
+            margin-right: 0;
+        }
+        .bottom1{
+            width: 1226px;
+            height: 300px;
+            background: #ccc;
+            margin: 0 auto;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+        .inner{
+            width: 4000px;
+            height: 300px;
+            background: #f1ab62;
+            float: left;
+        }
+        .ietm{
+            width: 300px;
+            margin-right: 6.5px;
+            height: 300px;
+            background: skyblue;
+            float: left;
+        }
+        .disable{
+            background: #e0e0e0;
+                 }
+        .ss{
+            float: right;
+        }
+        .ss span{
+            margin-right: 20px;
+            cursor: pointer;
+        }
+        .ss span:hover{
+            color: #f90;
+        }
+        .b31{
+            width: 1226px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .b3{
+            width: 1226px;
+            height: 300px;
+            background: #F0C92E;
+            margin: 0 auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            text-align: center;
+            line-height: 300px;
+            font-size: 60px;
+        }
+        .activ{
+            z-index: 9;
+        }
+        .b4{
+            background: pink;
+        }
+    </style>
+</head>
+<body>
+<!--导航-->
+<div class="head">
+    <div class="spans">
+        <span>平板
+            <div class="bottom">1</div>
+        </span>
+        <span>手机
+             <div class="bottom">2</div>
+        </span>
+        <span>电视
+             <div class="bottom">3</div>
+        </span>
+        <span>电视
+             <div class="bottom">4</div>
+        </span>
+        <span>电视
+             <div class="bottom">5</div>
+        </span>
+        <span>电视
+             <div class="bottom">6</div>
+        </span>
+    </div>
+</div>
+<!--导航结束-->
+<script src="jquery-3.3.1.js"></script>
+<!--banner开始-->
+<div class="banner">
+    <div class="cenav">
+        <div class="tips">1
+        <div class="b1">1</div>
+        </div>
+        <div class="tips">2
+            <div class="b1">2</div>
+        </div>
+        <div class="tips">3
+            <div class="b1">3</div>
+        </div>
+        <div class="tips">4
+            <div class="b1">4</div>
+        </div>
+        <div class="tips">5
+            <div class="b1">5</div>
+        </div>
+        <div class="tips">6
+            <div class="b1">6</div>
+        </div>
+        <div class="tips">7
+            <div class="b1">7</div>
+        </div>
+        <div class="tips">8
+            <div class="b1">8</div>
+        </div>
+    </div>
+    <div class="b_bottom active">1</div>
+    <div class="b_bottom b2">2</div>
+    <div class="b_bottom">3</div>
+    <div class="b_bottom b2">4</div>
+    <div class="b_bottom">5</div>
+    <div class="prev"><</div>
+    <div class="prev next">></div>
+    <div class="y1">
+        <div class="y actives"></div>
+        <div class="y"></div>
+        <div class="y"></div>
+        <div class="y"></div>
+        <div class="y"></div>
+    </div>
+</div>
+<!--banner结束-->
+<!--小米单品-->
+<div class="top">
+    <span>小米单品</span>
+    <div class="jt">
+        <div class="p1"><</div>
+        <div class="p2 p3">></div>
+    </div>
+</div>
+<div class="bottom1">
+    <div class="inner">
+        <div class="ietm">1</div>
+        <div class="ietm item2">2</div>
+        <div class="ietm">3</div>
+        <div class="ietm item2">4</div>
+        <div class="ietm">1</div>
+        <div class="ietm item2">2</div>
+        <div class="ietm">3</div>
+        <div class="ietm item2">4</div>
+        <div class="ietm">1</div>
+        <div class="ietm item2">2</div>
+        <div class="ietm">3</div>
+        <div class="ietm item2">4</div>
+    </div>
+</div>
+<!--小米单品结束-->
+<!--智能-->
+<div class="top">
+    <span>智能</span>
+    <div class="ss">
+        <span>热门</span>
+        <span>出行</span>
+        <span>健康</span>
+    </div>
+</div>
+<div class="b31">
+    <div class="b3 activ">1</div>
+    <div class="b3 b4">2</div>
+    <div class="b3">3</div>
+</div>
+
+
+<!--智能结束-->
+<script>
+    //导航效果
+    {
+            $("span").each(function(){
+                let index=$(this).index();
+                $(this).mouseenter(function(){
+                    $(".bottom").eq(index).show();
+                })
+                $(this).mouseleave(function(){
+                    $(".bottom").eq(index).hide();
+                })
+        })
+
+    }
+    //banner效果
+    {
+        $(".tips").each(function(){
+            let index=$(this).index();
+            $(this).mouseenter(function(){
+                $(".b1").eq(index).show();
+            })
+            $(this).mouseleave(function(){
+                $(".b1").eq(index).hide();
+            })
+        })
+    }
+    {
+        $(".y").each(function(){
+            $(this).click(function(){
+                let index=$(".y").index();
+                $(this).removeClass("actives").eq(index).addClass("actives");
+                $(".b_bottom").removeClass("active").eq(index).addClass("active");
+            })
+        });
+        let n=0;
+        function move(){
+            n++;
+            if(n===$(".b_bottom").length){
+                n=0;
+            }
+            if(n<0){
+                n=$(".b_bottom").length-1;
+            }
+            $(".y").each(function(){
+                let index=$(this).index(".y");
+                $(this).removeClass("actives").eq(index).addClass("actives");
+                $(".b_bottom").removeClass("active").eq(index).addClass("active");
+            });
+        }
+        let flag=true;
+        $(".next").click(function(){
+            if(flag){
+                n++;
+                flag=false;
+                move();
+            }
+            flag=true;
+        })
+        $(".prev").click(function(){
+            if(flag){
+                n-=2;
+                flag=false;
+                move();
+            }
+            flag=true;
+        })
+
+    }
+    //小米单品
+    {
+        let prev=$(".p1");
+        let next=$(".p2");
+        let inner=$(".inner");
+        let n=0;
+        next.click(function(){
+            n++;
+            next.removeClass("disable");
+            if(n===2){
+                next.addClass("disable");
+            }
+            if(n===3){
+                n=2;
+            }
+            inner.animate({marginLeft:-1226*n},500);
+        })
+
+
+        prev.click(function(){
+            n--;
+            prev.removeClass("disable");
+            if(n===0){
+                prev.addClass("disable");
+            }
+            if(n===-1){
+                n=0;
+            }
+            inner.animate({marginLeft:-1226*n},500);
+        })
+
+    }
+    //智能
+    {
+        let span=$(".ss>span");
+        let img=$(".b3");
+        span.mouseenter(function(){
+            let index=$(this).index();
+            img.removeClass("activ").eq(index).addClass("activ");
+        });
+    }
+</script>
+</body>
+</html>
