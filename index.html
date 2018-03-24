@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>小米官网</title>
+	<link rel="icon" href="img/logo.png" type="image/png">
+	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="css/public.css">
+	<style>
+		* {
+		    /* body-8px */
+			margin: 0;
+			padding: 0;
+			/* 文本修饰 */
+			text-decoration: none;
+			font-style: normal;
+			list-style: none;
+		}
+		body{
+			/*background-color:rgb(0,0,0)*/
+		}
+		#igs {
+		    margin: 10px auto;
+		    width: 1226px;
+		    height: 460px;
+		    position: relative;
+		}
+
+		.ig {
+		    position: absolute;
+		}
+
+		#tabs {
+		    position: absolute;
+		    list-style: none;
+		    float: right;
+		    /*background-color: rgba(255,255,255,.5);*/
+		    right: 100px;
+		    bottom: 10px;
+		    border-radius: 10px;
+		    padding: 5px 0 5px 5px;
+		}
+
+		.tab{
+		    float: left;
+		    text-align: center;
+		    line-height: 20px;
+		    width: 10px;
+		    height: 10px;
+		    cursor: pointer;
+		    overflow: hidden;
+		    margin-right: 4px;
+		    border-radius: 100%;
+		    background-color: rgb(200,100,150);
+		}
+
+		.btn{
+		    position: absolute;
+		    color: #fff;
+		    top: 110px;
+		    width: 40px;
+		    height: 100px;
+		    background-color: rgba(255,255,255,.3);
+		    font-size: 40px;
+		    font-weight: bold;
+		    text-align: center;
+		    line-height: 100px;
+		    border-radius: 5px;
+		    margin: 100px 0;
+		    cursor: pointer;
+		    /*margin: 0 5px;*/
+		}
+
+		.btn2{
+		    position: absolute;
+		    right: 0px;
+		}
+
+		.btn:hover{
+		    background-color: rgba(0,0,0,.7);
+		}
+		/*.bg{
+			width: 10px;
+		    height: 10px;
+			background-color:red;
+		}*/
+
+		.container{
+			width: 1000px;
+			height: 200px;
+			border: 1px solid #ccc;
+			margin: 0 auto;
+			overflow: hidden;
+			position: relative;
+
+		}
+		.inner{
+			width: 5000px;
+			height: 200px;
+			transition: all .1s;
+			margin-left: -1000px;
+		}
+		.inner li{
+			width: 200px;
+			height: 200px;
+			float: left;
+			
+			/*border-right: 1px solid red;*/
+		}
+		.inner li a{
+			display: block;
+		}
+		.container li img{
+			width: 200px;
+			height: 200px;
+		}
+		#prev,#next{
+			width: 30px;
+			height: 30px;
+			background: red;
+			color: #fff;
+			text-align: center;
+			line-height: 30px;
+			position: absolute;
+			top: 85px;
+			cursor: pointer;
+			display: none;
+		}
+		#prev{
+			left: 0;
+		}
+		#next{
+			right: 0;
+		}
+	</style>
+</head>
+<body>
+	<!-- banner开始 -->
+	<div id="igs">
+	    <a class="ig" href="#"><img src="img/bn4.jpg"/></a>
+	    <a class="ig" href="#"><img src="img/banner1.jpg"/></a>
+	    <a class="ig" href="#"><img src="img/banner2.jpg"/></a>
+	    <a class="ig" href="#"><img src="img/bn1.jpg"/></a>
+	    <a class="ig" href="#"><img src="img/bn2.jpg"/></a>
+	       
+	    <div class="btn btn1"><</div>
+	    <div class="btn btn2">></div>
+	       
+	    <ul id="tabs">
+	    	<li class="tab"></li>
+	    	<li class="tab"></li>
+	    	<li class="tab"></li>
+	    	<li class="tab"></li>
+	    	<li class="tab"></li>
+	    </ul>
+    </div>
+	<!-- banner结束 -->
+	<!-- 明星单品开始 -->
+	<section class="star">
+		<div class="star_top">
+ 			<h2>小米明星单品</h2>
+ 			<div class="star_btn">
+ 				<div class="star_btn1 disable">&lt;</div>
+ 				<div class="start_bt2" >&gt;</div>
+ 			</div>
+		</div>
+		<div class="star_bottom">
+			<div class="star_item ">
+				<img src="img/a1.png" alt="">
+				<h1>小米MIX 2</h1>
+				<h2>全面屏2.0，5.99"大屏</h2>
+				<h3>3299元起</h3>
+			</div>	
+
+			<div class="star_item star_item2">
+				<img src="img/a2.png" alt="">
+				<h1>红米5A</h1>
+				<h2>8天超长待机，137g轻巧机身</h2>
+				<h3>599元</h3>
+			</div>
+
+			<div class="star_item star_item3">
+				<img src="img/a3.png" alt="">
+				<h1>小米6</h1>
+				<h2>变焦双摄，4 轴防抖</h2>
+				<h3>2299元起</h3>
+			</div>
+
+			<div class="star_item star_item4">
+				<img src="img/a4.png" alt="">
+				<h1>小米电视4A 43英寸 标准版</h1>
+				<h2>全高清HDR 四核高性能处理器</h2>
+				<h3>1999元起</h3>
+			</div>
+
+			<div class="star_item star_item4">
+				<img src="img/a5.png" alt="">
+				<h1>小米笔记本</h1>
+				<h2>更轻更薄，像杂志一样随身携带</h2>
+				<h3>3599元</h3>
+			</div>
+			<div class="star_item star_item2">
+				<img src="img/a5.png" alt="">
+				<h1>小米笔记本</h1>
+				<h2>更轻更薄，像杂志一样随身携带</h2>
+				<h3>3599元</h3>
+			</div>
+			<div class="star_item star_item3">
+				<img src="img/a5.png" alt="">
+				<h1>小米笔记本</h1>
+				<h2>更轻更薄，像杂志一样随身携带</h2>
+				<h3>3599元</h3>
+			</div>
+			<div class="star_item star_item4">
+				<img src="img/a4.png" alt="">
+				<h1>小米笔记本</h1>
+				<h2>更轻更薄，像杂志一样随身携带</h2>
+				<h3>3599元</h3>
+			</div>
+			<div class="star_item star_item4">
+				<img src="img/a3.png" alt="">
+				<h1>小米笔记本</h1>
+				<h2>更轻更薄，像杂志一样随身携带</h2>
+				<h3>3599元</h3>
+			</div>
+			<div class="star_item star_item4">
+				<img src="img/a2.png" alt="">
+				<h1>小米笔记本</h1>
+				<h2>更轻更薄，像杂志一样随身携带</h2>
+				<h3>3599元</h3>
+			</div>
+			<div class="star_item star_item4">
+				<img src="img/a1.png" alt="">
+				<h1>小米笔记本</h1>
+				<h2>更轻更薄，像杂志一样随身携带</h2>
+				<h3>3599元</h3>
+			</div>
+			<div class="star_item star_item4">
+				<img src="img/a2.png" alt="">
+				<h1>小米笔记本</h1>
+				<h2>更轻更薄，像杂志一样随身携带</h2>
+				<h3>3599元</h3>
+			</div>
+			<div class="star_item star_item1">
+				<img src="img/a3.png" alt="">
+				<h1>小米笔记本</h1>
+				<h2>更轻更薄，像杂志一样随身携带</h2>
+				<h3>3599元</h3>
+			</div>
+			<div class="star_item star_item1">
+				<img src="img/a4.png" alt="">
+				<h1>小米笔记本</h1>
+				<h2>更轻更薄，像杂志一样随身携带</h2>
+				<h3>3599元</h3>
+			</div>
+		</div>
+	</section>
+	<!-- 明星单品结束 -->
+	<!-- 内容开始 -->
+
+	<div class="bg">
+		<section class="dapei">
+			<div class="dapeitop">
+				<div class="dapei_left">搭配</div>
+				<div class="dapei_right">
+				    <div class="dapei_wenzi activedapei">热门</div>
+				    <div class="dapei_wenzi">耳机音箱</div>
+				    <div class="dapei_wenzi">电源</div>
+					<div class="dapei_wenzi dapei_wenzit">耳机储存</div>
+				</div>
+			</div>
+			<div class="dabo active2">
+				<div class="dabo_t">
+					<div class="p10">
+						<img src="img/d1.jpg" alt="">
+					</div>
+					<div class="p1">
+						<img src="img/d2.jpg" alt="">
+						<a href="">新小米移动电源2 (10000mAh) </a>
+						<h3>79元</h3>
+						<h2>23534人评价</h2>
+					</div>
+					<div class="p1">
+						<img src="img/d3.jpg" alt="">
+						<a href="">小米移动电源2C 20000mAh </a>
+						<h3>149元</h3>
+						<h2>2334人评价</h2>
+					</div>
+					<div class="p1">
+						<img src="img/d4.jpg" alt="">
+						<a href="">小米移动电源10000mAh高配版 </a>
+						<h3>149元</h3>
+						<h2>58384人评价</h2>
+					</div>
+					<div class="p2">
+						<img src="img/d5.jpg" alt="">
+						<a href="">小米移动电源5000mAh </a>
+						<h3>149元</h3>
+						<h2>23874人评价</h2>
+					</div>
+				</div>
+					<div class="dabo_b">
+					<div class="b10"><img src="img/d6.jpg" alt=""></div>
+					<div class="b1">
+						<img src="img/d2.jpg" alt="">
+						<a href="">小米移动电源2 (5000mAh版) </a>
+						<h3>149元</h3>
+						<h2>3274人评价</h2>
+					</div>
+					<div class="b1">
+						<img src="img/d7.jpg" alt="">
+						<a href="">ZMI双模智能充电器+充电宝</a>
+						<h3>149元</h3>
+						<h2>283782人评价</h2>
+					</div>
+					<div class="b1">
+						<img src="img/d8.jpg" alt="">
+						<a href="">小米活塞耳机 清新版 </a>
+						<h3>149元</h3>
+						<h2>3万人评价</h2>
+					</div>
+					<div class="b2">
+						<div class="b2a">
+							<div class="b2a1">
+								<h1>彩虹七号电池</h1>
+								<h2>9.9元</h2>
+							</div>
+							<div class="b2a2">
+								<img src="img/d9.jpg" alt="">
+							</div>
+						</div>
+						<div class="b2b">
+							<div class="b2b1">
+								<h1>浏览更多</h1>
+								<h2>热门</h2>
+							</div>
+							<div class="b2b2">
+								&#xe62a;
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="dabo">
+				<div class="dabo_t">
+					<div class="p10">
+						<img src="img/d6.jpg" alt="">
+					</div>
+					<div class="p1">
+						<img src="img/d3.jpg" alt="">
+						<a href="">新小米移动电源2 (10000mAh) </a>
+						<h3>79元</h3>
+						<h2>23534人评价</h2>
+					</div>
+					<div class="p1">
+						<img src="img/d2.jpg" alt="">
+						<a href="">小米移动电源2C 20000mAh </a>
+						<h3>149元</h3>
+						<h2>2334人评价</h2>
+					</div>
+					<div class="p1">
+						<img src="img/d5.jpg" alt="">
+						<a href="">小米移动电源10000mAh高配版 </a>
+						<h3>149元</h3>
+						<h2>58384人评价</h2>
+					</div>
+					<div class="p2">
+						<img src="img/d4.jpg" alt="">
+						<a href="">小米移动电源5000mAh </a>
+						<h3>149元</h3>
+						<h2>23874人评价</h2>
+					</div>
+				</div>
+					<div class="dabo_b">
+					<div class="b10"><img src="img/d6.jpg" alt=""></div>
+					<div class="b1">
+						<img src="img/d2.jpg" alt="">
+						<a href="">小米移动电源2 (5000mAh版) </a>
+						<h3>149元</h3>
+						<h2>3274人评价</h2>
+					</div>
+					<div class="b1">
+						<img src="img/d7.jpg" alt="">
+						<a href="">ZMI双模智能充电器+充电宝</a>
+						<h3>149元</h3>
+						<h2>283782人评价</h2>
+					</div>
+					<div class="b1">
+						<img src="img/d8.jpg" alt="">
+						<a href="">小米活塞耳机 清新版 </a>
+						<h3>149元</h3>
+						<h2>3万人评价</h2>
+					</div>
+					<div class="b2">
+						<div class="b2a">
+							<div class="b2a1">
+								<h1>彩虹七号电池</h1>
+								<h2>9.9元</h2>
+							</div>
+							<div class="b2a2">
+								<img src="img/d9.jpg" alt="">
+							</div>
+						</div>
+						<div class="b2b">
+							<div class="b2b1">
+								<h1>浏览更多</h1>
+								<h2>热门</h2>
+							</div>
+							<div class="b2b2">
+								&#xe62a;
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="dabo">
+				<div class="dabo_t">
+					<div class="p10">
+						<img src="img/d1.jpg" alt="">
+					</div>
+					<div class="p1">
+						<img src="img/d5.jpg" alt="">
+						<a href="">新小米移动电源2 (10000mAh) </a>
+						<h3>79元</h3>
+						<h2>23534人评价</h2>
+					</div>
+					<div class="p1">
+						<img src="img/d4.jpg" alt="">
+						<a href="">小米移动电源2C 20000mAh </a>
+						<h3>149元</h3>
+						<h2>2334人评价</h2>
+					</div>
+					<div class="p1">
+						<img src="img/d3.jpg" alt="">
+						<a href="">小米移动电源10000mAh高配版 </a>
+						<h3>149元</h3>
+						<h2>58384人评价</h2>
+					</div>
+					<div class="p2">
+						<img src="img/d5.jpg" alt="">
+						<a href="">小米移动电源5000mAh </a>
+						<h3>149元</h3>
+						<h2>23874人评价</h2>
+					</div>
+				</div>
+					<div class="dabo_b">
+					<div class="b10"><img src="img/d6.jpg" alt=""></div>
+					<div class="b1">
+						<img src="img/d2.jpg" alt="">
+						<a href="">小米移动电源2 (5000mAh版) </a>
+						<h3>149元</h3>
+						<h2>3274人评价</h2>
+					</div>
+					<div class="b1">
+						<img src="img/d7.jpg" alt="">
+						<a href="">ZMI双模智能充电器+充电宝</a>
+						<h3>149元</h3>
+						<h2>283782人评价</h2>
+					</div>
+					<div class="b1">
+						<img src="img/d8.jpg" alt="">
+						<a href="">小米活塞耳机 清新版 </a>
+						<h3>149元</h3>
+						<h2>3万人评价</h2>
+					</div>
+					<div class="b2">
+						<div class="b2a">
+							<div class="b2a1">
+								<h1>彩虹七号电池</h1>
+								<h2>9.9元</h2>
+							</div>
+							<div class="b2a2">
+								<img src="img/d9.jpg" alt="">
+							</div>
+						</div>
+						<div class="b2b">
+							<div class="b2b1">
+								<h1>浏览更多</h1>
+								<h2>热门</h2>
+							</div>
+							<div class="b2b2">
+								&#xe62a;
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="dabo">
+				<div class="dabo_t">
+					<div class="p10">
+						<img src="img/d1.jpg" alt="">
+					</div>
+					<div class="p1">
+						<img src="img/d5.jpg" alt="">
+						<a href="">新小米移动电源2 (10000mAh) </a>
+						<h3>79元</h3>
+						<h2>23534人评价</h2>
+					</div>
+					<div class="p1">
+						<img src="img/d4.jpg" alt="">
+						<a href="">小米移动电源2C 20000mAh </a>
+						<h3>149元</h3>
+						<h2>2334人评价</h2>
+					</div>
+					<div class="p1">
+						<img src="img/d3.jpg" alt="">
+						<a href="">小米移动电源10000mAh高配版 </a>
+						<h3>149元</h3>
+						<h2>58384人评价</h2>
+					</div>
+					<div class="p2">
+						<img src="img/d2.jpg" alt="">
+						<a href="">小米移动电源5000mAh </a>
+						<h3>149元</h3>
+						<h2>23874人评价</h2>
+					</div>
+				</div>
+					<div class="dabo_b">
+					<div class="b10"><img src="img/d6.jpg" alt=""></div>
+					<div class="b1">
+						<img src="img/d2.jpg" alt="">
+						<a href="">小米移动电源2 (5000mAh版) </a>
+						<h3>149元</h3>
+						<h2>3274人评价</h2>
+					</div>
+					<div class="b1">
+						<img src="img/d7.jpg" alt="">
+						<a href="">ZMI双模智能充电器+充电宝</a>
+						<h3>149元</h3>
+						<h2>283782人评价</h2>
+					</div>
+					<div class="b1">
+						<img src="img/d8.jpg" alt="">
+						<a href="">小米活塞耳机 清新版 </a>
+						<h3>149元</h3>
+						<h2>3万人评价</h2>
+					</div>
+					<div class="b2">
+						<div class="b2a">
+							<div class="b2a1">
+								<h1>彩虹七号电池</h1>
+								<h2>9.9元</h2>
+							</div>
+							<div class="b2a2">
+								<img src="img/d9.jpg" alt="">
+							</div>
+						</div>
+						<div class="b2b">
+							<div class="b2b1">
+								<h1>浏览更多</h1>
+								<h2>热门</h2>
+							</div>
+							<div class="b2b2">
+								&#xe62a;
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+	<!-- 内容结束 -->
+
+</body>
+<script src="js/jquery-3.3.1.min.js" ></script>
+<script >
+    {
+    	//定义全局变量和定时器
+		var i = 0 ;
+		var timer;
+		var count;
+		$(document).ready(function(){
+			count= $("#igs a").length; /*给动态变化的n备用*/;
+			console.log(count);
+			//用jquery方法设置第一张图片显示，其余隐藏
+			//$('.ig').eq(0).show().siblings('.ig').hide();
+			$("#igs a:not(:first-child)").hide();
+			//这样来看的话，在a标签中的class我们都可以省略
+			//调用showTime()函数（轮播函数）
+			showTime();
+			//当鼠标经过下面的数字时，触发两个事件（鼠标悬停和鼠标离开）
+			$('.tab').hover(function(){
+				//获取当前i的值，并显示，同时还要清除定时器
+				i = $(this).index();
+				Show();
+				clearInterval(timer);
+			},function(){
+				//
+				showTime();
+			});
+			//鼠标点击左侧的箭头
+			$('.btn1').click(function(){
+				clearInterval(timer);
+				if(i == 0){
+					i = count;//注意此时i的值
+				}
+				i--;
+				Show();
+				showTime();
+			});
+			
+			//鼠标点击右侧的箭头
+			$('.btn2').click(function(){
+				clearInterval(timer);
+				//console.log(count-1);
+				if(i == count-1){
+					i = -1;//注意此时i的值
+				}
+				i++;
+				Show();
+				showTime();
+			});
+			
+		});
+		//创建一个showTime函数（轮播函数）
+		function showTime(){
+			//定时器
+			timer = setInterval(function(){
+				//调用一个Show()函数
+				Show();
+				i++;
+				//当图片是最后一张的后面时，设置图片为第一张
+				if(i==count){
+					i=0;
+				}
+			},2000);
+		}
+		//创建一个Show函数（）
+		function Show(){
+			//在这里可以用其他jquery的动画
+			$('.ig').eq(i).fadeTo(300,0.5).siblings('.ig').fadeOut(300);
+			//给.tab创建一个新的Class为其添加一个新的样式，并且要在css代码中设置该样式
+			$('.tab').eq(i).addClass('bg').siblings('.tab').removeClass('bg');
+		}
+	}
+
+    {
+        let n = 0;
+        $(".start_bt2").click(function () {
+            n++;
+            $(".star_btn1").removeClass("disable");
+            if(n===2){            $(".start_bt2").addClass("disable");
+            }
+            if(n>2){n=2};
+            $(".star_bottom").css({"marginLeft": -992 * n});
+        });
+        $(".star_btn1").click(function () {
+            n--;
+            $(".start_bt2").removeClass("disable");
+            if(n===0){            $(".star_btn1").addClass("disable");
+            }
+            if(n<0){n=0};
+            $(".star_bottom").css("marginLeft", -992 * n);
+        });
+    }
+
+    {
+        $(".dapei_wenzi").mouseenter(function () {
+            let index= $(this).index();
+            $(".dapei_wenzi").removeClass("activedapei").eq(index).addClass("activedapei");
+            $(".dabo").removeClass("active2").eq(index).addClass("active2");
+        })
+    }
+    {
+        $(".banner_nav >li").mouseenter(function () {
+            let index = $(this).index();
+            $(".banner_nav_side").eq(index).css("display", "block");
+        });
+        $(".banner_nav >li").mouseleave(function () {
+            let index = $(this).index();
+            $(".banner_nav_side").eq(index).css("display", "none");
+        })
+    }
+    {
+        let nav=document.querySelectorAll(".nav_xiao");
+        let box=document.querySelectorAll(".nav_bot");
+        let dabox=document.querySelector(".nav_botbox");
+        nav.forEach(function(ele,index){
+            ele.onmouseenter=function(){
+                dabox.style.height="300px";
+                dabox.style.borderTop="1px solid #ccc";
+
+                box[index].style.display="block";
+                // box[index].style.opacity=1;
+            }
+            ele.onmouseleave=function(){
+                box[index].style.display="none";
+                dabox.style.height="0px";
+                dabox.style.border=" 0";
+
+            }
+        })
+
+    }
+
+</script>
+</html>
