@@ -279,7 +279,6 @@
 		top: 0;
 		left: 0;
 		transition: all .5s;
-		margin-left: -296px;
 	}
 	.neirong_content{
 		width: 296px;
@@ -551,31 +550,31 @@
 
 //单品、闪购
 {	
-	let k=0;
+	let n=0;
 	$(".buy-next").click(function(){
-		k++;
+		n++;
 		$(".buy-prev").removeClass("disable");
-		if(k===2){
-			$(".buy-prev").addClass("disable")
+		if(n===2){
+			$(".buy-next").addClass("disable")
 		}
-		if(k===3){
-			k=2;
+		if(n===3){
+			n=2;
 			return;
 		}
-		$(".buy-inner").css("marginLeft",-992*k)
+		$(".buy-inner").css("marginLeft",-992*n)
 
 	})
 	$(".buy-prev").click(function(){
-		k--;
+		n--;
 		$(".buy-next").removeClass("disable");
-		if(k===0){
-			$(".buy-next").addClass("disable")
+		if(n===0){
+			$(".buy-prev").addClass("disable")
 		}
-		if(k===-1){
-			k=0;
+		if(n===-1){
+			n=0;
 			return;
 		}
-		$(".buy-inner").css("marginLeft",-992*k)
+		$(".buy-inner").css("marginLeft",-992*n)
 
 	})	
 }
@@ -605,7 +604,7 @@
 }
 
 
-{	
+{	 	
 	let n=0;
 	let flag=true;
 	$(".neirong_next").click(function(){
@@ -623,7 +622,6 @@
 		$(".neirong_inner").css("marginLeft",-296*n);
 		$(".yuan").eq(n).addClass("active");
 		$(".yuan").eq(n-1).removeClass("active");
-		p=$(".yuan").eq(n);
 		}
 	});
 	$(".neirong_prev").click(function(){
@@ -640,7 +638,6 @@
 		$(".neirong_inner").css("marginLeft",-296*n);
 		$(".yuan").eq(n).addClass("active");
 		$(".yuan").eq(n+1).removeClass("active");
-		p=$(".yuan").eq(n);
 		}
 	});
 	$(".yuan").each(function(index,ele){
