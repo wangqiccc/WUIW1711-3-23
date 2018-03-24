@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            list-style: none;
+        }
+        #banner{
+            width: 1226px;
+            height: 460px;
+            margin:0 auto;
+            position: relative;
+        }
+        .imgbox{
+            width: 1226px;
+            height: 460px;
+        }
+        .imgbox li{
+            width: 1226px;
+            height: 460px;
+            position: absolute;
+            top:0;
+            left: 0;
+            transition: all 1s;
+            opacity: 0;
+        }
+        .imgbox li.active{
+            z-index: 9;
+            opacity: 1;
+        }
+        .pagerbox{
+            width: 150px;
+            height:10px;
+            /*background-color: red;*/
+            position: absolute;
+            right: 30px;
+            bottom: 30px;
+            z-index: 999;
+        }
+        .pagerbox li{
+            width: 6px;
+            height: 6px;
+            margin: 0 10px;
+            background-color: #fff;
+            float: left;
+            border-radius: 50%;
+            border: 2px solid #ccc;
+        }
+        .pagerbox li.active{
+            background-color: red;
+            transition: all 1s;
+        }
+        .pagerbox li:hover{
+            background-color: red;
+        }
+        .nav_prev,.nav_next{
+            width:41px;
+            height: 69px;
+            position: absolute;
+            top:50%;
+            margin-top: -35px;
+            z-index: 9999;
+            background: url("img/icon-slides.png");
+            cursor: pointer;
+            opacity: 0.6;
+        }
+        .nav_prev{
+            left:234px;
+            background-position: -83px 0;
+        }
+        .nav_prev:hover{
+            background-position: 0 0;
+        }
+        .nav_next{
+            right:0;
+            background-position: -124px 0;
+        }
+        .nav_next:hover{
+            background-position: -42px 0;
+        }
+        /*.demo{*/
+        /*width:100px;*/
+        /*height: 100px;*/
+        /*background: red;*/
+        /*transition: all 1s;*/
+        /*}*/
+        .sidebar {
+            width: 234px;
+            height: 460px;
+            background: #1b6d85;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 998;
+        }
+        .label {
+            width: 234px;
+            height: 40px;
+            font-size: 18px;
+            text-align: center;
+            line-height: 40px;
+            color: #fff;
+            float: left;
+        }
+        .label:hover {
+            background-color: plum;
+        }
+        .menu {
+            width: 992px;
+            height: 460px;
+            background: plum;
+            float: left;
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 234px;
+            font-size: 50px;
+            text-align: center;
+            line-height: 300px;
+        }
+        #buy{
+            width:1226px;
+            height: auto;
+            margin:0 auto;
+        }
+        .buy_top{
+            width: 100%;
+            height: 30px;
+            background: red;
+        }
+        .buy_top_topic h1{
+            display: inline-block;
+            line-height: 30px;
+            font-size: 20px;
+            float: left;
+        }
+        .buy_arrow{
+            width: 100px;
+            height: 30px;
+            float: right;
+            cursor: pointer;
+            background: blue;
+        }
+        .buy_arrow span{
+            float: left;
+            display:block;
+            width:50%;
+            height: 30px;
+            box-sizing: border-box;
+            border:1px solid #ccc;
+            text-align: center;
+            line-height: 30px;
+            color: #ccc;
+            font-weight: bold;
+            user-select: none;
+        }
+        .buy_arrow span:hover{
+            color: #ff6700;
+        }
+        .buy_arrow span.disable{
+            color:#333;
+        }
+        .buy_bottom{
+            width: 100%;
+            height: 300px;
+            background: yellow;
+        }
+        .buy_time{
+            float: left;
+            width: 234px;
+            height: 300px;
+            margin-right: 14px;
+            background: green;
+        }
+        .buy_list{
+            float: left;
+            width: 978px;
+            height: 300px;
+            overflow: hidden;
+            background-color: orange;
+        }
+        .buy_inner{
+            float: left;
+            width: 3000px;
+            height: 300px;
+            transition: all 1s;
+            background-color: skyblue;
+        }
+        .buy_item{
+            width: 234px;
+            margin-right: 14px;
+            float: left;
+            background-size: 100% auto;
+            background-repeat: no-repeat;
+            height: 300px;
+            background-color: #fff;
+        }
+        /*.buy_item:nth-child(2n){*/
+        /*background-image: ;*/
+        /*}*/
+        /*.buy_item:nth-child(2n-1){*/
+        /*background-image: ;*/
+        /*}*/
+        .content{
+            width: 1226px;
+            height: 400px;
+            margin:0 auto;
+            border:1px solid yellow;
+        }
+        .content_top{
+            width: 100%;
+            height: 30px;
+        }
+        .content_top .type{
+            /*width: 100px;*/
+            height: 30px;
+            line-height: 30px;
+            float: left;
+            text-align: center;
+            margin:0 20px;
+            cursor: pointer;
+            transition: all 0.5s;
+        }
+        .content_top .active1{
+            color: orange;
+            height: 29px;
+            border-bottom: 1px solid #ff6700;
+        }
+        .content_bottom{
+            width: 1226px;
+            height: 370px;
+            position: relative;
+        }
+        .goodslist{
+            width: 1226px;
+            height: 370px;
+            position: absolute;
+            top:0;
+            left:0;
+            color: red;
+            text-align: center;
+            line-height: 370px;
+            font-size: 30px;
+            background-color: blue;
+        }
+        .content_bottom div.active1{
+            z-index: 9;
+        }
+    </style>
+
+</head>
+<body>
+<div id="banner">
+    <ul class="imgbox">
+        <li class="active"><img src="img/banner.jpg" alt=""></li>
+        <li><img src="img/banner1.jpg" alt=""></li>
+        <li><img src="img/banner2.jpg" alt=""></li>
+        <li><img src="img/banner4.jpg" alt=""></li>
+        <li><img src="img/banner5.jpg" alt=""></li>
+    </ul>
+    <ul class="pagerbox">
+        <li class="active"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <div class="nav_prev"></div>
+    <div class="nav_next"></div>
+
+</div>
+<!--<div class="demo"></div>-->
+<div id="buy">
+    <div class="buy_top">
+        <div class="buy_top_topic">
+            <h1>单品</h1>
+        </div>
+        <div class="buy_arrow">
+            <span class="buy_prev disable" class="active"><</span>
+            <span class="buy_next">&gt;</span>
+        </div>
+    </div>
+    <div class="buy_bottom">
+        <div class="buy_time"></div>
+        <div class="buy_list">
+            <ul class="buy_inner">
+                <li class="buy_item">1</li>
+                <li class="buy_item">2</li>
+                <li class="buy_item">3</li>
+                <li class="buy_item">4</li>
+                <li class="buy_item">5</li>
+                <li class="buy_item">6</li>
+                <li class="buy_item">7</li>
+                <li class="buy_item">8</li>
+                <li class="buy_item">9</li>
+                <li class="buy_item">10</li>
+                <li class="buy_item">11</li>
+                <li class="buy_item">12</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="content">
+    <div class="content_top">
+        <div class="type active1" >热门</div>
+        <div class="type">电视影音</div>
+        <div class="type">电脑</div>
+        <div class="type">家居</div>
+        <div class="type">手机</div>
+    </div>
+    <div class="content_bottom">
+        <div class="goodslist active1">1</div>
+        <div class="goodslist">2</div>
+        <div class="goodslist">3</div>
+        <div class="goodslist">4</div>
+        <div class="goodslist">5</div>
+    </div>
+</div>
+<script src="jquery-3.3.1.js"></script>
+<script>
+    //
+    {
+    $(".pagerbox li").click(function () {
+        let index = $(this).index(".pagerbox li");
+        $(".pagerbox li").removeClass("active").eq(index).addClass("active");
+        $(".imgbox li").removeClass("active").eq(index).addClass("active");
+        n = index;
+    });
+    let n = 0;
+    let flag = true;
+    function move() {
+        n++;
+        if (n === $(".imgbox li").length) {
+            n = 0;
+        }
+        if (n < 0) {
+            n = $(".imgbox li").length - 1;
+        }
+        $(".imgbox li").each(function () {
+            flag = true;
+            $(".imgbox li").removeClass("active").eq(n).addClass("active");
+            $(".pagerbox li").removeClass("active").eq(n).addClass("active");
+        });
+    }
+    $(".next").click(function () {
+        if (flag) {
+            flag = false;
+            move();
+        }
+    });
+    $(".prev").click(function () {
+        if (flag) {
+            flag = false;
+            n -= 2;
+            move();
+        }
+    });
+    }
+
+
+
+    //  单品
+    {
+        let n=0;
+        $(".buy_next").click(function () {
+            n++;
+            $(".buy_prev").removeClass("disable");
+            if(n===2){
+                $(this).addClass("disable");
+            }
+            if(n===3){
+                n=2;
+                return;
+            }
+            $(".buy_inner").animate({marginLeft:-992*n})
+        })
+        $(".buy_prev").click(function () {
+            n--;
+            $(".buy_next").removeClass("disable");
+            if(n===0){
+                $(this).addClass("disable");
+            }
+            if(n===-1){
+                n=0;
+                return;
+            }
+            $(".buy_inner").animate({marginLeft:-992*n})
+        })
+    }
+
+    //内容
+    {
+        $(".type ")
+            .mouseenter(function () {
+                let index = $(this).index(".type");
+                $(".type").removeClass("active1").eq(index).addClass("active1");
+                $(".goodslist ").removeClass("active1").eq(index).addClass("active1");
+            })
+    }
+</script>
+
+</body>
+</html>
