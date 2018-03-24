@@ -323,58 +323,62 @@
 </div>
 <script src="jquery-3.3.1.min.js"></script>
 <script>
-    //导航文字效果，未实现内容的变化
-    // console.log($(".dh_wenzi_he"));
-    $(".dh_wenzi_he").each(function (index, ele) {
-        $(".dh_wenzi_he").mouseenter(function () {
-            $(".dh_wenzi_chu").css("display", "block");
-        })
-            .mouseleave(function () {
-                $(".dh_wenzi_chu").css("display", "none");
-            });
-    });
-    //banner
-    $(".pagerbox li").click(function () {
-        let index = $(this).index(".pagerbox li");
-        $(".pagerbox li").removeClass("active").eq(index).addClass("active");
-        $(".imgbox li").removeClass("active").eq(index).addClass("active");
-        n = index;
-    });
-    let n = 0;
-    let flag = true;
-
-    function move() {
-        n++;
-        if (n === $(".imgbox li").length) {
-            n = 0;
-        }
-        if (n < 0) {
-            n = $(".imgbox li").length - 1;
-        }
-        $(".imgbox li").each(function () {
-            flag = true;
-            $(".imgbox li").removeClass("active").eq(n).addClass("active");
-            $(".pagerbox li").removeClass("active").eq(n).addClass("active");
+    {
+        //导航文字效果，未实现内容的变化
+        // console.log($(".dh_wenzi_he"));
+        $(".dh_wenzi_he").each(function (index, ele) {
+            $(".dh_wenzi_he").mouseenter(function () {
+                $(".dh_wenzi_chu").css("display", "block");
+            })
+                .mouseleave(function () {
+                    $(".dh_wenzi_chu").css("display", "none");
+                });
         });
     }
-
-    $(".next").click(function () {
-        if (flag) {
-            flag = false;
-            move();
-        }
-    });
-    $(".prev").click(function () {
-        if (flag) {
-            flag = false;
-            n -= 2;
-            move();
-        }
-    });
-
-    //闪购
     {
-        let inner = $(".buy_inner");
+        //banner
+        $(".pagerbox li").click(function () {
+            let index = $(this).index(".pagerbox li");
+            $(".pagerbox li").removeClass("active").eq(index).addClass("active");
+            $(".imgbox li").removeClass("active").eq(index).addClass("active");
+            n = index;
+        });
+        let n = 0;
+        let flag = true;
+
+        function move() {
+            n++;
+            if (n === $(".imgbox li").length) {
+                n = 0;
+            }
+            if (n < 0) {
+                n = $(".imgbox li").length - 1;
+            }
+            $(".imgbox li").each(function () {
+                flag = true;
+                $(".imgbox li").removeClass("active").eq(n).addClass("active");
+                $(".pagerbox li").removeClass("active").eq(n).addClass("active");
+            });
+        }
+
+        $(".next").click(function () {
+            if (flag) {
+                flag = false;
+                move();
+            }
+        });
+        $(".prev").click(function () {
+            if (flag) {
+                flag = false;
+                n -= 2;
+                move();
+            }
+        });
+    }
+    {
+        //闪购
+        let inner = $(".buy-inner");
+        console.log(inner);
         let n = 0;
         $(".buy-next").click(function () {
             n++;
